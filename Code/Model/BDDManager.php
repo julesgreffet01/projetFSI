@@ -14,4 +14,3 @@ function initialiseConnexionBDD() {
 
     return $bdd;
 }
-
