@@ -4,18 +4,18 @@ namespace BO;
 
 abstract class Utilisateur
 {
-    protected $idUti;
-    protected $logUti;
-    protected $mdpUti;
-    protected $mailUti;
-    protected $telUti;
-    protected $nomUti;
-    protected $preUti;
-    protected $vilUti;
-    protected $adrUti;
-    protected $CPUti;
+    protected int $idUti;
+    protected string $logUti;
+    protected string $mdpUti;
+    protected string $mailUti;
+    protected string $telUti;
+    protected string $nomUti;
+    protected string $preUti;
+    protected string $vilUti;
+    protected string $adrUti;
+    protected string $cpUti;
 
-    public function __construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $vilUti, $adrUti, $CPUti)
+    public function __construct(int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $vilUti, string $adrUti, string $cpUti)
     {
         $this->idUti = $idUti;
         $this->logUti = $logUti;
@@ -26,7 +26,7 @@ abstract class Utilisateur
         $this->preUti = $preUti;
         $this->vilUti = $vilUti;
         $this->adrUti = $adrUti;
-        $this->CPUti = $CPUti;
+        $this->cpUti = $cpUti;
     }
 
 
@@ -43,12 +43,12 @@ abstract class Utilisateur
 
     public function getCPUti()
     {
-        return $this->CPUti;
+        return $this->cpUti;
     }
 
-    public function setCPUti($CPUti)
+    public function setCPUti($cpUti)
     {
-        $this->CPUti = $CPUti;
+        $this->cpUti = $cpUti;
     }
 
 
