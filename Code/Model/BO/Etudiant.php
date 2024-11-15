@@ -11,6 +11,8 @@ class Etudiant extends Utilisateur
     private Classe $maClasse;
     private Maitre_Apprentissage $monMaitreAp;
     private Entreprise $monEnt;
+    private array $mesBilan1;
+    private array $mesBilan2;
 
 
     public function __construct(bool $altEtu,Entreprise $monEnt, Maitre_Apprentissage $monMaitreAp, Classe $maClasse, Specialite $maSpec, Tuteur $monTuteur, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $vilUti, string $adrUti, string $cpUti)
@@ -23,6 +25,8 @@ class Etudiant extends Utilisateur
         $this->maClasse = $maClasse;
         $this->maSpec = $maSpec;
         $this->monTuteur = $monTuteur;
+        $this->mesBilan1 = [null];
+        $this->mesBilan2 = [null];
     }
 
     public function isAltEtu(): bool
@@ -84,5 +88,27 @@ class Etudiant extends Utilisateur
     {
         $this->monEnt = $monEnt;
     }
+
+    public function getMesBilan1(): array
+    {
+        return $this->mesBilan1;
+    }
+
+    public function setMesBilan1(array $mesBilan1): void
+    {
+        $this->mesBilan1 = $mesBilan1;
+    }
+
+    public function getMesBilan2(): array
+    {
+        return $this->mesBilan2;
+    }
+
+    public function setMesBilan2(array $mesBilan2): void
+    {
+        $this->mesBilan2 = $mesBilan2;
+    }
+
+
 
 }
