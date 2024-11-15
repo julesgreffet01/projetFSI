@@ -41,12 +41,12 @@ abstract class Utilisateur
         $this->idUti = $idUti;
     }
 
-    public function getCPUti()
+    public function getCpUti()
     {
         return $this->cpUti;
     }
 
-    public function setCPUti($cpUti)
+    public function setCpUti($cpUti)
     {
         $this->cpUti = $cpUti;
     }
