@@ -7,16 +7,17 @@ use DateTime;
 
 class Bilan1 extends Bilan
 {
-    private float $notEnt;
     private string $remBil;
+    private float $notEnt;
+
     private DateTime $datVisEnt;
 
 
-    public function __construct(float $notEnt, string $remBil, DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
+    public function __construct(string $remBil, float $notEnt, DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
     {
         parent::__construct($idBil, $libBil, $notBil, $notOra, $monEtu);
-        $this->notEnt = $notEnt;
         $this->remBil = $remBil;
+        $this->notEnt = $notEnt;
         $this->datVisEnt = $datVisEnt;
     }
 

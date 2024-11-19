@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Alerte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Alerte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Bilan.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Bilan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Model/BO/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Bilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Bilan2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Classe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +95,7 @@
       <workItem from="1732004918783" duration="20000" />
       <workItem from="1732004984885" duration="6446000" />
       <workItem from="1732022480794" duration="5346000" />
-      <workItem from="1732046379616" duration="1948000" />
+      <workItem from="1732046379616" duration="2844000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -168,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732011598209</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732049982889</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732049982889</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
