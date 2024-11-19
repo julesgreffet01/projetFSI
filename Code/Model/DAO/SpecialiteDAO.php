@@ -13,18 +13,20 @@ class SpecialiteDAO extends DAO
     public function create(object $obj): bool
     {
         $result = false;
-        if ($obj->getIdSpec()!= $this->find($obj->getIdSpec())->getIdSpec()) {
-            $query = "INSERT INTO Specialite (NomSpe) values (:libSpe)";
-            $stmt = $this->bdd->prepare($query);
-            $r = $stmt -> execute(
-            [
-                ":libSpe"=>$obj->getNom()
-            ]
-            );
-            if($r !== false){
-                $result = true;
-            }
+        if($obj instanceof Specialite){
+            if ($obj->getIdSpec()!= $this->find($obj->getIdSpec())->getIdSpec()) {
+                $query = "INSERT INTO Specialite (NomSpe) values (:libSpe)";
+                $stmt = $this->bdd->prepare($query);
+                $r = $stmt -> execute(
+                    [
+                        ":libSpe"=>$obj->getNomSpec()
+                    ]
+                );
+                if($r !== false){
+                    $result = true;
+                }
 
+            }
         }
         return $result;
     }
@@ -32,17 +34,19 @@ class SpecialiteDAO extends DAO
     public function update(object $obj): bool
     {
         $result = false;
-        if ($obj->getIdSpec() == $this->find($obj->getIdSpec())->getIdSpec()) {
-            $query = "UPDATE  Specialite SET NomSpe = :libSpe WHERE IdSpe = :id";
-            $stmt = $this->bdd->prepare($query);
-            $r = $stmt -> execute(
-                [
-                    ":libSpe"=>$obj->getNom(),
-                    ":id"=>$obj->getId()
-                ]
-            );
-            if($r !== false){
-                $result = true;
+        if ($obj instanceof Specialite) {
+            if ($obj->getIdSpec() == $this->find($obj->getIdSpec())->getIdSpec()) {
+                $query = "UPDATE  Specialite SET NomSpe = :libSpe WHERE IdSpe = :id";
+                $stmt = $this->bdd->prepare($query);
+                $r = $stmt -> execute(
+                    [
+                        ":libSpe"=>$obj->getNomSpec(),
+                        ":id"=>$obj->getIdSpec()
+                    ]
+                );
+                if($r !== false){
+                    $result = true;
+                }
             }
         }
         return $result;
@@ -51,16 +55,18 @@ class SpecialiteDAO extends DAO
     public function delete(object $obj): bool
     {
         $result = false;
-        if ($obj->getIdSpec == $this->find($obj->getIdSpec())->getIdSpec()) {
-            $query = "DELETE FROM Specialite WHERE IdSpe = :id";
-            $stmt = $this->bdd->prepare($query);
-            $r = $stmt -> execute(
-                [
-                    ":id"=>$obj->getId()
-                ]
-            );
-            if ($r !== false) {
-                $result = true;
+        if($obj instanceof Specialite) {
+            if ($obj->getIdSpec() == $this->find($obj->getIdSpec())->getIdSpec()) {
+                $query = "DELETE FROM Specialite WHERE IdSpe = :id";
+                $stmt = $this->bdd->prepare($query);
+                $r = $stmt -> execute(
+                    [
+                        ":id"=>$obj->getIdSpec()
+                    ]
+                );
+                if ($r !== false) {
+                    $result = true;
+                }
             }
         }
         return $result;
