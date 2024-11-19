@@ -11,11 +11,12 @@ abstract class Utilisateur
     protected string $telUti;
     protected string $nomUti;
     protected string $preUti;
-    protected string $vilUti;
     protected string $adrUti;
     protected string $cpUti;
+    protected string $vilUti;
 
-    public function __construct(int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $vilUti, string $adrUti, string $cpUti)
+
+    public function __construct(int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
     {
         $this->idUti = $idUti;
         $this->logUti = $logUti;
@@ -24,9 +25,9 @@ abstract class Utilisateur
         $this->telUti = $telUti;
         $this->nomUti = $nomUti;
         $this->preUti = $preUti;
-        $this->vilUti = $vilUti;
         $this->adrUti = $adrUti;
         $this->cpUti = $cpUti;
+        $this->vilUti = $vilUti;
     }
 
 

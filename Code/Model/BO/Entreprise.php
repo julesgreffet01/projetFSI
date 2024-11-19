@@ -13,16 +13,17 @@ class Entreprise
     private string $mailEnt;
 
 
-    public function __construct(int $idEnt, string $vilEnt, string $cpEnt, string $adrEnt, string $nomEnt, string $telEnt, string $mailEnt, string $nomFS)
+    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt)
     {
         $this->idEnt = $idEnt;
-        $this->vilEnt = $vilEnt;
-        $this->cpEnt = $cpEnt;
-        $this->adrEnt = $adrEnt;
         $this->nomEnt = $nomEnt;
-        $this->mailEnt = $mailEnt;
+        $this->adrEnt = $adrEnt;
+        $this->cpEnt = $cpEnt;
+        $this->vilEnt = $vilEnt;
         $this->telEnt = $telEnt;
+        $this->mailEnt = $mailEnt;
     }
+
 
     public function getIdEnt(): int
     {

@@ -15,19 +15,19 @@ class Etudiant extends Utilisateur
     private array $mesBilan2;
 
 
-    public function __construct(bool $altEtu,Entreprise $monEnt, Maitre_Apprentissage $monMaitreAp, Classe $maClasse, Specialite $maSpec, Tuteur $monTuteur, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $vilUti, string $adrUti, string $cpUti)
+    public function __construct(bool $altEtu, Tuteur $monTuteur, Specialite $maSpec, Classe $maClasse, Maitre_Apprentissage $monMaitreAp, Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
     {
-        parent::__construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $vilUti, $adrUti, $cpUti);
-
+        parent::__construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $adrUti, $cpUti, $vilUti);
         $this->altEtu = $altEtu;
-        $this->monEnt = $monEnt;
-        $this->monMaitreAp = $monMaitreAp;
-        $this->maClasse = $maClasse;
-        $this->maSpec = $maSpec;
         $this->monTuteur = $monTuteur;
+        $this->maSpec = $maSpec;
+        $this->maClasse = $maClasse;
+        $this->monMaitreAp = $monMaitreAp;
+        $this->monEnt = $monEnt;
         $this->mesBilan1 = [null];
         $this->mesBilan2 = [null];
     }
+
 
     public function isAltEtu(): bool
     {

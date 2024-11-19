@@ -10,12 +10,14 @@ class Alerte
     private DateTime $datLimBil1;
     private DateTime $datLimBil2;
 
-    public function __construct(int $idAl, DateTime $datLimBil2, DateTime $datLimBil1)
+
+    public function __construct(int $idAl, DateTime $datLimBil1, DateTime $datLimBil2)
     {
         $this->idAl = $idAl;
-        $this->datLimBil2 = $datLimBil2;
         $this->datLimBil1 = $datLimBil1;
+        $this->datLimBil2 = $datLimBil2;
     }
+
 
     public function getIdAl(): int
     {

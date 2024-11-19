@@ -10,9 +10,10 @@ class Tuteur extends Utilisateur
     private int $nbMax5;
     private array $mesEtu;
 
-    public function __construct(int $nbMax3, int $nbMax4, int $nbMax5, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $vilUti, string $adrUti, string $cpUti) {
-        parent::__construct( $idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $vilUti, $adrUti, $cpUti);
 
+    public function __construct(int $nbMax3, int $nbMax4, int $nbMax5, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
+    {
+        parent::__construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $adrUti, $cpUti, $vilUti);
         $this->nbMax3 = $nbMax3;
         $this->nbMax4 = $nbMax4;
         $this->nbMax5 = $nbMax5;

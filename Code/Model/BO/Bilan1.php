@@ -11,15 +11,15 @@ class Bilan1 extends Bilan
     private string $remBil;
     private DateTime $datVisEnt;
 
-    public function __construct(float $notEnt, float $remBil, int $idBil, float $notOra, float $notBil, string $libBil, Etudiant $monEtu, DateTime $datVisEnt)
+
+    public function __construct(float $notEnt, string $remBil, DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
     {
-        parent::__construct($idBil, $notOra, $notBil, $libBil, $monEtu);
-
-
+        parent::__construct($idBil, $libBil, $notBil, $notOra, $monEtu);
         $this->notEnt = $notEnt;
         $this->remBil = $remBil;
         $this->datVisEnt = $datVisEnt;
     }
+
 
     public function getNotEnt(): float
     {
