@@ -10,17 +10,9 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
-=======
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
->>>>>>> Stashed changes
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.3">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
-=======
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
->>>>>>> 2b10a31daff5b509b3bee59411d8e612f26bb482
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

@@ -13,12 +13,12 @@ class SpecialiteDAO extends DAO
     public function create(object $obj): bool
     {
         $result = false;
-        if ($obj->getId()!= $this->find($obj->getId())) {
-            $query = "INSERT INTO Specialite (Nom_Spe) values (:libSpe)";
+        if ($obj->getIdSpec()!= $this->find($obj->getIdSpec())->getIdSpec()) {
+            $query = "INSERT INTO Specialite (NomSpe) values (:libSpe)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt -> execute(
             [
-                ":libSpe"=>$obj->getNom(),
+                ":libSpe"=>$obj->getNom()
             ]
             );
             if($r !== false){
@@ -31,18 +31,45 @@ class SpecialiteDAO extends DAO
 
     public function update(object $obj): bool
     {
-        return false;
+        $result = false;
+        if ($obj->getIdSpec() == $this->find($obj->getIdSpec())->getIdSpec()) {
+            $query = "UPDATE  Specialite SET NomSpe = :libSpe WHERE IdSpe = :id";
+            $stmt = $this->bdd->prepare($query);
+            $r = $stmt -> execute(
+                [
+                    ":libSpe"=>$obj->getNom(),
+                    ":id"=>$obj->getId()
+                ]
+            );
+            if($r !== false){
+                $result = true;
+            }
+        }
+        return $result;
     }
 
     public function delete(object $obj): bool
     {
-        return false;
+        $result = false;
+        if ($obj->getIdSpec == $this->find($obj->getIdSpec())->getIdSpec()) {
+            $query = "DELETE FROM Specialite WHERE IdSpe = :id";
+            $stmt = $this->bdd->prepare($query);
+            $r = $stmt -> execute(
+                [
+                    ":id"=>$obj->getId()
+                ]
+            );
+            if ($r !== false) {
+                $result = true;
+            }
+        }
+        return $result;
     }
 
-    public function find(int $id): ?object
+    public function find(int $id): object
     {
         $result = null;
-        $query = "SELECT * FROM Specialite WHERE id = :id";
+        $query = "SELECT * FROM Specialite WHERE IdSpe = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt -> execute(
             [
