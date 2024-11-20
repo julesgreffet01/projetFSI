@@ -5,6 +5,7 @@ namespace DAO;
 use BO\Entreprise;
 use DAO\DAO;
 use PDO;
+require_once 'DAO.php';
 
 class EntrepriseDAO extends DAO
 {

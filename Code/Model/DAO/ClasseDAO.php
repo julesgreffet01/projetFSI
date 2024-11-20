@@ -3,8 +3,8 @@
 namespace DAO;
 
 use BO\Classe;
-use DAO\DAO;
 use PDO;
+require_once 'DAO.php';
 
 class ClasseDAO extends DAO
 {
