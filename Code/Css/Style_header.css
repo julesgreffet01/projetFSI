@@ -1,0 +1,42 @@
+body{
+    background: #F5FBF5;
+    font-family: Roboto, sans-serif;
+    color: #203C25;
+}
+header{
+
+}
+nav{
+    background: #94CE9A ;
+    font-size: 25px;
+    list-style-type: none;
+    text-align: right;
+    border-radius: 20px;
+    margin-left: 180px;
+    margin-right: 20px;
+    margin-top: -155px;
+}
+
+.nomentreprise{
+    font-size: 42px;
+    display:inline-block;
+}
+
+nav ul li{
+    display:inline-block;
+    padding: 25px;
+}
+
+a{
+    color: #203C25;
+    text-decoration: none;
+}
+
+.logo{
+    height: 120px;
+    padding: 20px;
+}
+
+.logosortie{
+    height: 30px;
+}

@@ -1,0 +1,68 @@
+body {
+    background: #F5FBF5;
+    font-family: Roboto, sans-serif;
+
+}
+
+.logo{
+    height: 120px;
+    padding: 20px;
+}
+
+.vert{
+    background: #46A758;
+    display:inline-block;
+    height: 600px;
+    width: 600px;
+    color: #FBFEFB;
+}
+
+.title{
+    font-size: 25px;
+}
+
+.info{
+    font-size: 15px;
+}
+
+.blanc{
+    display:inline-block;
+    background: #DCDFDA;
+    height: 600px;
+    width: 600px;
+}
+.contenu{
+    font-size: 0px;
+    padding: 30px;
+    text-align: center;
+}
+
+.boutton a{
+    background: #203C25;
+    color: #DCDFDA;
+    padding: 5px 110px;
+    border-radius: 35px;
+    font-size: 18px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.blanc .libelle{
+    background: #94CE9A;
+    border-radius: 7px;
+    padding: 5px 110px;
+    margin-bottom: 52px;
+}
+
+.mdp a {
+    color: #203C25;
+    font-size: 12px;
+}
+
+.titleconnect{
+    color: #203C25;
+    margin-top: 75px;
+    font-size: 20px;
+}

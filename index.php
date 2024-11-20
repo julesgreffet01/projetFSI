@@ -1,2 +1,2 @@
 <?php
-header('location:Code/Test/test.php');
+header('location:Code/View/Acceuil_Admin.php');
