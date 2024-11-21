@@ -13,7 +13,6 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-            if ($obj->getIdEnt() !== $this->find($obj->getIdEnt())->getIdEnt()) {
                 $query = "INSERT INTO Entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MailEnt ) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt)";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt->execute([
@@ -27,7 +26,6 @@ class EntrepriseDAO extends DAO
                 if ($r !== false) {
                     $result = true;
                 }
-            }
         }
         return $result;
     }
@@ -36,20 +34,23 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-            if ($obj->getIdEnt() == $this->find($obj->getIdEnt())->getIdEnt()) {
-                $query = "UPDATE Entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MailEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt->execute([
-                    'nomEnt' => $obj->getNomEnt(),
-                    'adrEnt' => $obj->getAdrEnt(),
-                    'cpEnt' => $obj->getCpEnt(),
-                    'vilEnt' => $obj->getVilEnt(),
-                    'idEnt' => $obj->getIdEnt(),
-                    'telEnt' => $obj->getTelEnt(),
-                    'mailEnt' => $obj->getMailEnt()
-                ]);
-                if ($r !== false) {
-                    $result = true;
+            $foundObj = $this->find($obj->getIdEnt());
+            if ($foundObj !== null) {
+                if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
+                    $query = "UPDATE Entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MailEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
+                    $stmt = $this->bdd->prepare($query);
+                    $r = $stmt->execute([
+                        'nomEnt' => $obj->getNomEnt(),
+                        'adrEnt' => $obj->getAdrEnt(),
+                        'cpEnt' => $obj->getCpEnt(),
+                        'vilEnt' => $obj->getVilEnt(),
+                        'idEnt' => $obj->getIdEnt(),
+                        'telEnt' => $obj->getTelEnt(),
+                        'mailEnt' => $obj->getMailEnt()
+                    ]);
+                    if ($r !== false) {
+                        $result = true;
+                    }
                 }
             }
         }
@@ -60,14 +61,17 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-            if ($obj->getIdEnt() == $this->find($obj->getIdEnt())->getIdEnt()) {
-                $query = "DELETE FROM Entreprise WHERE IdEnt = :idEnt ";
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt->execute([
-                    'idEnt' => $obj->getIdEnt()
-                ]);
-                if ($r !== false) {
-                    $result = true;
+            $foundObj = $this->find($obj->getIdEnt());
+            if ($foundObj !== null) {
+                if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
+                    $query = "DELETE FROM Entreprise WHERE IdEnt = :idEnt ";
+                    $stmt = $this->bdd->prepare($query);
+                    $r = $stmt->execute([
+                        'idEnt' => $obj->getIdEnt()
+                    ]);
+                    if ($r !== false) {
+                        $result = true;
+                    }
                 }
             }
         }

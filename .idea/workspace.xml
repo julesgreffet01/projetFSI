@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules - a finir : MADAO">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/SpecialiteDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/SpecialiteDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Test/testDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Test/testDAO.php" afterDir="false" />
-    </list>
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +98,7 @@
       <workItem from="1732096019336" duration="3745000" />
       <workItem from="1732177419291" duration="6758000" />
       <workItem from="1732192410696" duration="1078000" />
-      <workItem from="1732193958219" duration="1766000" />
+      <workItem from="1732193958219" duration="1937000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -192,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732184276197</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732197054565</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732197054565</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,8 +205,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jules-BO crea" />
     <MESSAGE value="jules changement arbo" />
-    <MESSAGE value="jules" />
     <MESSAGE value="jules - a finir : MADAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="jules - a finir : MADAO" />
+    <MESSAGE value="jules" />
+    <option name="LAST_COMMIT_MESSAGE" value="jules" />
   </component>
 </project>

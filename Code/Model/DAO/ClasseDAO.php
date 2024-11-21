@@ -13,16 +13,14 @@ class ClasseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Classe) {
-            if ($obj->getIdCla() !== $this->find($obj->getIdCla())->getIdCla()) {
-                $query = "INSERT INTO classe(LibCla, NbEtu) VALUES(:libCla, :nbEtu)";
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt->execute([
-                    "libCla" => $obj->getLibCla(),
-                    "nbEtu" => $obj->getNbMaxEtu()
-                ]);
-                if ($r !== false) {
-                    $result = true;
-                }
+            $query = "INSERT INTO classe(LibCla, NbEtu) VALUES(:libCla, :nbEtu)";
+            $stmt = $this->bdd->prepare($query);
+            $r = $stmt->execute([
+                "libCla" => $obj->getLibCla(),
+                "nbEtu" => $obj->getNbMaxEtu()
+            ]);
+            if ($r !== false) {
+                $result = true;
             }
         }
         return $result;
@@ -32,16 +30,19 @@ class ClasseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Classe) {
-            if ($obj->getIdCla() == $this->find($obj->getIdCla())->getIdCla()) {
-                $query = "UPDATE Classe SET LibCla = :libCla, NbEtu = :nbEtu WHERE IdCla = :idCl";
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt->execute([
-                    "libCla" => $obj->getLibCla(),
-                    "nbEtu" => $obj->getNbMaxEtu(),
-                    "idCl" => $obj->getIdCla()
-                ]);
-                if ($r !== false) {
-                    $result = true;
+            $foundObj = $this->find($obj->getIdCla());
+            if ($foundObj !== null) {
+                if ($obj->getIdCla() == $foundObj->getIdCla()) {
+                    $query = "UPDATE Classe SET LibCla = :libCla, NbEtu = :nbEtu WHERE IdCla = :idCl";
+                    $stmt = $this->bdd->prepare($query);
+                    $r = $stmt->execute([
+                        "libCla" => $obj->getLibCla(),
+                        "nbEtu" => $obj->getNbMaxEtu(),
+                        "idCl" => $obj->getIdCla()
+                    ]);
+                    if ($r !== false) {
+                        $result = true;
+                    }
                 }
             }
         }
@@ -52,14 +53,17 @@ class ClasseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Classe) {
-            if ($obj->getIdCla() == $this->find($obj->getIdCla())->getIdCla()) {
-                $query = "DELETE FROM Classe WHERE IdCla = :idCl";
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt->execute([
-                    "idCl" => $obj->getIdCla()
-                ]);
-                if ($r !== false) {
-                    $result = true;
+            $foundObj = $this->find($obj->getIdCla());
+            if ($foundObj !== null) {
+                if ($obj->getIdCla() == $foundObj->getIdCla()) {
+                    $query = "DELETE FROM Classe WHERE IdCla = :idCl";
+                    $stmt = $this->bdd->prepare($query);
+                    $r = $stmt->execute([
+                        "idCl" => $obj->getIdCla()
+                    ]);
+                    if ($r !== false) {
+                        $result = true;
+                    }
                 }
             }
         }
