@@ -17,7 +17,6 @@ class SpecialiteDAO extends DAO
     {
         $result = false;
         if($obj instanceof Specialite){
-            if ($obj->getIdSpec()!= $this->find($obj->getIdSpec())->getIdSpec()) {
                 $query = "INSERT INTO Specialite (NomSpe) values (:libSpe)";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt -> execute(
@@ -28,8 +27,6 @@ class SpecialiteDAO extends DAO
                 if($r !== false){
                     $result = true;
                 }
-
-            }
         }
         return $result;
     }
@@ -38,17 +35,20 @@ class SpecialiteDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Specialite) {
-            if ($obj->getIdSpec() == $this->find($obj->getIdSpec())->getIdSpec()) {
-                $query = "UPDATE  Specialite SET NomSpe = :libSpe WHERE IdSpe = :id";
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt -> execute(
-                    [
-                        ":libSpe"=>$obj->getNomSpec(),
-                        ":id"=>$obj->getIdSpec()
-                    ]
-                );
-                if($r !== false){
-                    $result = true;
+            $foundObj = $this->find($obj->getIdSpec());
+            if ($foundObj != null) {
+                if ($obj->getIdSpec() == $foundObj->getIdSpec()) {
+                    $query = "UPDATE  Specialite SET NomSpe = :libSpe WHERE IdSpe = :id";
+                    $stmt = $this->bdd->prepare($query);
+                    $r = $stmt -> execute(
+                        [
+                            ":libSpe"=>$obj->getNomSpec(),
+                            ":id"=>$obj->getIdSpec()
+                        ]
+                    );
+                    if($r !== false){
+                        $result = true;
+                    }
                 }
             }
         }
@@ -59,16 +59,19 @@ class SpecialiteDAO extends DAO
     {
         $result = false;
         if($obj instanceof Specialite) {
-            if ($obj->getIdSpec() == $this->find($obj->getIdSpec())->getIdSpec()) {
-                $query = "DELETE FROM Specialite WHERE IdSpe = :id";
-                $stmt = $this->bdd->prepare($query);
-                $r = $stmt -> execute(
-                    [
-                        ":id"=>$obj->getIdSpec()
-                    ]
-                );
-                if ($r !== false) {
-                    $result = true;
+            $foundObj = $this->find($obj->getIdSpec());
+            if ($foundObj != null) {
+                if ($obj->getIdSpec() == $foundObj->getIdSpec()) {
+                    $query = "DELETE FROM Specialite WHERE IdSpe = :id";
+                    $stmt = $this->bdd->prepare($query);
+                    $r = $stmt -> execute(
+                        [
+                            ":id"=>$obj->getIdSpec()
+                        ]
+                    );
+                    if ($r !== false) {
+                        $result = true;
+                    }
                 }
             }
         }
