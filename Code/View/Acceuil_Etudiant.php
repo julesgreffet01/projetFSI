@@ -17,5 +17,5 @@ include('Nav_Bar.php');
         En simplifiant les processus administratifs et en centralisant les informations, cette solution moderne offre une gestion fluide et efficace du tutorat, <br>
         remplaçant les outils traditionnels par un espace interactif et sécurisé, parfaitement adapté aux besoins du tutorat en entreprise.<br>
     </p>
-    <img class="logopage" src="images/logo.jpeg">
+    <img class="logopage" src="../Img/logo.jpeg">
 </div>

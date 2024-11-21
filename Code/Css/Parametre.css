@@ -1,0 +1,33 @@
+label{
+font-size: 20px;
+}
+
+.typetext{
+    background: #C9E8CA;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+select{
+    background: #C9E8CA;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 240px;
+}
+
+.centre{
+    text-align: left;
+    margin-left: 200px;
+}
+
+.selection{
+    text-align: right;
+    margin-right: 50px;
+}
+
+.centre .info{
+    font-size: 20px;
+
+}
