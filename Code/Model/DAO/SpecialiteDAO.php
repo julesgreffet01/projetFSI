@@ -1,14 +1,17 @@
 <?php
+
 namespace DAO;
+
 use BO\Specialite;
 use PDO;
-
 require_once 'DAO.php';
 
 
 
 class SpecialiteDAO extends DAO
 {
+
+
 
     public function create(object $obj): bool
     {
@@ -95,7 +98,7 @@ class SpecialiteDAO extends DAO
     {
         $result = [null];
         $query = "SELECT * FROM Specialite";
-        $stmt = $this->bdd->prepare($query);
+        $stmt = $this->bdd->query($query);
         if($stmt){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row){

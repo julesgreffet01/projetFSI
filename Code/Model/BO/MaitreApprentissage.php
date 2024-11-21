@@ -2,7 +2,7 @@
 
 namespace BO;
 
-class Maitre_Apprentissage
+class MaitreApprentissage
 {
     private int $idMai;
     private string $nomMai;

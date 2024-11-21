@@ -33,7 +33,7 @@ class ClasseDAO extends DAO
         $result = false;
         if ($obj instanceof Classe) {
             if ($obj->getIdCla() == $this->find($obj->getIdCla())->getIdCla()) {
-                $query = "UPDATE Classe SET LibCla = :libCla, NbEtu = :nbEtu WHERE idCla = :idCl";
+                $query = "UPDATE Classe SET LibCla = :libCla, NbEtu = :nbEtu WHERE IdCla = :idCl";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt->execute([
                     "libCla" => $obj->getLibCla(),
@@ -87,7 +87,7 @@ class ClasseDAO extends DAO
     {
         $result = [null];
         $query = "SELECT * FROM Classe";
-        $stmt = $this->bdd->prepare($query);
+        $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {

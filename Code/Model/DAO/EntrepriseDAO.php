@@ -3,7 +3,6 @@
 namespace DAO;
 
 use BO\Entreprise;
-use DAO\DAO;
 use PDO;
 require_once 'DAO.php';
 
@@ -96,7 +95,7 @@ class EntrepriseDAO extends DAO
     {
         $result = [null];
         $query = "SELECT * FROM Entreprise ";
-        $stmt = $this->bdd->prepare($query);
+        $stmt = $this->bdd->query($query);
         if ($stmt){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row){
