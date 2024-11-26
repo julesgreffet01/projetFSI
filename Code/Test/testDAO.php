@@ -13,6 +13,7 @@ require_once "../Model/BO/Specialite.php";
 
 $bdd = initialiseConnexionBDD();
 $specDao = new SpecialiteDAO($bdd);
+//var_dump($specDao);
 $spec = new Specialite(5, "jeuAZE");
 $spec1 = $specDao->find(1);
 $specDao->update($spec);
