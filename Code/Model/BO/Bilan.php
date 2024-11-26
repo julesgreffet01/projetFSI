@@ -10,14 +10,15 @@ abstract class Bilan
     protected float $notOra;
     protected Etudiant $monEtu;
 
-    public function __construct(int $idBil, float $notOra, float $notBil, string $libBil, Etudiant $monEtu)
+    public function __construct(int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
     {
         $this->idBil = $idBil;
-        $this->notOra = $notOra;
-        $this->notBil = $notBil;
         $this->libBil = $libBil;
+        $this->notBil = $notBil;
+        $this->notOra = $notOra;
         $this->monEtu = $monEtu;
     }
+
 
     public function getIdBil(): int
     {

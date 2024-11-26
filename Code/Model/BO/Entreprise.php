@@ -9,16 +9,21 @@ class Entreprise
     private string $adrEnt;
     private string $cpEnt;
     private string $vilEnt;
+    private string $telEnt;
+    private string $mailEnt;
 
 
-    public function __construct(int $idEnt, string $vilEnt, string $cpEnt, string $adrEnt, string $nomEnt)
+    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt)
     {
         $this->idEnt = $idEnt;
-        $this->vilEnt = $vilEnt;
-        $this->cpEnt = $cpEnt;
-        $this->adrEnt = $adrEnt;
         $this->nomEnt = $nomEnt;
+        $this->adrEnt = $adrEnt;
+        $this->cpEnt = $cpEnt;
+        $this->vilEnt = $vilEnt;
+        $this->telEnt = $telEnt;
+        $this->mailEnt = $mailEnt;
     }
+
 
     public function getIdEnt(): int
     {
@@ -69,5 +74,26 @@ class Entreprise
     {
         $this->adrEnt = $adrEnt;
     }
+
+    public function getTelEnt(): string
+    {
+        return $this->telEnt;
+    }
+
+    public function setTelEnt(string $telEnt): void
+    {
+        $this->telEnt = $telEnt;
+    }
+
+    public function getMailEnt(): string
+    {
+        return $this->mailEnt;
+    }
+
+    public function setMailEnt(string $mailEnt): void
+    {
+        $this->mailEnt = $mailEnt;
+    }
+
 
 }

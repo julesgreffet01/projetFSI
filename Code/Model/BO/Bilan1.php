@@ -3,17 +3,24 @@
 namespace BO;
 
 
+use DateTime;
+
 class Bilan1 extends Bilan
 {
-    private float $notEnt;
     private string $remBil;
-    public function __construct(float $notEnt, float $remBil, int $idBil, float $notOra, float $notBil, string $libBil, Etudiant $monEtu){
-        parent::__construct($idBil,$notOra,$notBil,$libBil, $monEtu);
+    private float $notEnt;
+
+    private DateTime $datVisEnt;
 
 
-        $this->notEnt = $notEnt;
+    public function __construct(string $remBil, float $notEnt, DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
+    {
+        parent::__construct($idBil, $libBil, $notBil, $notOra, $monEtu);
         $this->remBil = $remBil;
+        $this->notEnt = $notEnt;
+        $this->datVisEnt = $datVisEnt;
     }
+
 
     public function getNotEnt(): float
     {
@@ -34,4 +41,16 @@ class Bilan1 extends Bilan
     {
         $this->remBil = $remBil;
     }
+
+    public function getDatVisEnt(): DateTime
+    {
+        return $this->datVisEnt;
+    }
+
+    public function setDatVisEnt(DateTime $datVisEnt): void
+    {
+        $this->datVisEnt = $datVisEnt;
+    }
+
+
 }

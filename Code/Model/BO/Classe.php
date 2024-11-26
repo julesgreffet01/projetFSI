@@ -8,12 +8,14 @@ class Classe
     private string $libCla;
     private int $nbMaxEtu;
 
-    public function __construct(int $idCla, int $nbMaxEtu, string $libCla)
+
+    public function __construct(int $idCla, string $libCla, int $nbMaxEtu)
     {
         $this->idCla = $idCla;
-        $this->nbMaxEtu = $nbMaxEtu;
         $this->libCla = $libCla;
+        $this->nbMaxEtu = $nbMaxEtu;
     }
+
 
     public function getIdCla(): int
     {

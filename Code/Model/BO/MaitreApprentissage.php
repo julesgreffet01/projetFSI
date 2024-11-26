@@ -2,7 +2,7 @@
 
 namespace BO;
 
-class Maitre_Apprentissage
+class MaitreApprentissage
 {
     private int $idMai;
     private string $nomMai;
@@ -11,15 +11,17 @@ class Maitre_Apprentissage
     private string $mailMai;
     private Entreprise $monEnt;
 
-    public function __construct(int $idMai, Entreprise $monEnt, string $mailMai, string $telMai, string $preMai, string $nomMai)
+
+    public function __construct(int $idMai, string $nomMai, string $preMai, string $telMai, string $mailMai, Entreprise $monEnt)
     {
         $this->idMai = $idMai;
-        $this->monEnt = $monEnt;
-        $this->mailMai = $mailMai;
-        $this->telMai = $telMai;
-        $this->preMai = $preMai;
         $this->nomMai = $nomMai;
+        $this->preMai = $preMai;
+        $this->telMai = $telMai;
+        $this->mailMai = $mailMai;
+        $this->monEnt = $monEnt;
     }
+
 
     public function getMonEnt(): Entreprise
     {

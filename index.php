@@ -1,2 +1,5 @@
 <?php
-header('location:Code/Test/test.php');
+
+//header('location:Code/Test/testBO.php');
+
+header('location:Code/Test/testDAO.php');
