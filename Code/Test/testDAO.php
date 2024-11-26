@@ -53,3 +53,4 @@ $admin = new Administrateur(1, "root", "root", "root@gmail.com", "0111110", "gre
 $adminDAO = new AdministrateurDAO($bdd);
 var_dump($adminDAO->update($admin));
 var_dump($adminDAO->getAll());
+var_dump($adminDAO->auth("root", "root"));
