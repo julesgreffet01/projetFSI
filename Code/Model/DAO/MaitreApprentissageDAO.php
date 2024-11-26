@@ -4,6 +4,7 @@ namespace DAO;
 
 use BO\MaitreApprentissage;
 use PDO;
+
 require_once 'DAO.php';
 
 class MaitreApprentissageDAO extends DAO
@@ -92,7 +93,7 @@ class MaitreApprentissageDAO extends DAO
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if ($row != null) {
                 $monEnt = $entDAO->find($row['IdEnt']);
-                $result = new MaitreApprentissage($row['IdMai'], $row['NomMai'], $row['PreMai'], $row['TelMai'], $row['MailMai'], $monEnt);
+                $result = new MaitreApprentissage($row['IdMai'], $row['NomMai'], $row['PreMai'], $row['TelMai'], $row['MaiMai'], $monEnt);
             }
         }
         return $result;

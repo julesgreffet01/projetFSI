@@ -89,7 +89,6 @@ class ClasseDAO extends DAO
 
     public function getAll(): array
     {
-        $result = [null];
         $query = "SELECT * FROM classe";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
@@ -97,6 +96,8 @@ class ClasseDAO extends DAO
             foreach ($stmt as $row) {
                 $result[] = new Classe($row['IdCla'], $row['LibCla'], $row['NbEtu']);
             }
+        } else {
+            $result = [null] ;
         }
 
         return $result;

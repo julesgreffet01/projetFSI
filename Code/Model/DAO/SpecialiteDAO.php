@@ -78,7 +78,7 @@ class SpecialiteDAO extends DAO
         return $result;
     }
 
-    public function find(int $id): object
+    public function find(int $id): ?object
     {
         $result = null;
         $query = "SELECT * FROM specialite WHERE IdSpe = :id";
@@ -99,7 +99,6 @@ class SpecialiteDAO extends DAO
 
     public function getAll(): array
     {
-        $result = [null];
         $query = "SELECT * FROM specialite";
         $stmt = $this->bdd->query($query);
         if($stmt){
@@ -107,6 +106,8 @@ class SpecialiteDAO extends DAO
             foreach ($stmt as $row){
                 $result[] = new Specialite($row['IdSpe'], $row['NomSpe']);
             }
+        } else {
+            $result = [null];
         }
         return $result;
     }

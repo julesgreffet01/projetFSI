@@ -89,7 +89,7 @@ class EntrepriseDAO extends DAO
         if ($r !== false) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if (!is_null($row)) {
-                    $result = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'],$row['VilEnt'],$row['TelEnt'],$row['MailEnt']);
+                    $result = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'],$row['VilEnt'],$row['TelEnt'],$row['MaiEnt']);
             }
         }
         return $result;
@@ -97,14 +97,15 @@ class EntrepriseDAO extends DAO
 
     public function getAll(): array
     {
-        $result = [null];
         $query = "SELECT * FROM entreprise ";
         $stmt = $this->bdd->query($query);
         if ($stmt){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row){
-                $result[] = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'], $row['VilEnt'],$row['TelEnt'],$row['MailEnt']);
+                $result[] = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'], $row['VilEnt'],$row['TelEnt'],$row['MaiEnt']);
             }
+        } else {
+            $result = [null];
         }
         return $result;
     }
