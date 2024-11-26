@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/ClasseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/ClasseDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/SpecialiteDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/SpecialiteDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Test/testDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Test/testDAO.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +85,7 @@
       <workItem from="1731665346085" duration="445000" />
       <workItem from="1731665796328" duration="1683000" />
       <workItem from="1732606480577" duration="21000" />
-      <workItem from="1732606819058" duration="6210000" />
+      <workItem from="1732606819058" duration="7433000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -154,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732608629814</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732613988321</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732613988321</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

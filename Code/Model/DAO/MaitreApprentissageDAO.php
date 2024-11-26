@@ -101,6 +101,18 @@ class MaitreApprentissageDAO extends DAO
 
     public function getAll(): array
     {
-        return [null];
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $query = "SELECT * FROM maitreapprentissage";
+        $stmt = $this->bdd->query($query);
+        if ($stmt) {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            foreach ($stmt as $row) {
+                $monEnt = $entDAO->find($row['IdEnt']);
+                $result[] = new MaitreApprentissage($row['IdMai'], $row['NomMai'], $row['PreMai'], $row['TelMai'], $row['MaiMai'], $monEnt);
+            }
+        } else {
+            $result = [null];
+        }
+        return $result;
     }
 }

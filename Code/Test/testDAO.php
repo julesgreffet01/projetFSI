@@ -33,6 +33,6 @@ var_dump($specDao->getAll());
 
 //------------------test d un DAO avec une cle etrangere-----------------------
 $MaDAO = new MaitreApprentissageDAO($bdd);
-$ma1 = $MaDAO->find(1);
+$ma1 = $MaDAO->getAll();
 var_dump($ma1);
 //$MA = new MaitreApprentissage(1, "roux", "max", "0663636363", "max@gmail.com", );
