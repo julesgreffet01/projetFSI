@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Test/testDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Test/testDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/Create_table_FSI.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bdd/Create_table_FSI.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +32,13 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/julesgreffet01/projetFSI.git",
+    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
   }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -90,6 +89,7 @@
       <workItem from="1732606819058" duration="8744000" />
       <workItem from="1732619522935" duration="2773000" />
       <workItem from="1732634980127" duration="3243000" />
+      <workItem from="1732657520751" duration="646000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />

@@ -49,6 +49,7 @@ $MA = new MaitreApprentissage(2, "roux", "maxime", "0663636363", "max@gmail.com"
 var_dump($MaDAO->getAll());
 
 
-$admin = new Administrateur(1, "root", "root", "root@gmail.com", "0111111111", "greffet", "jules", "rue des ecoles", "01120", "la boisse");
+$admin = new Administrateur(1, "root", "root", "root@gmail.com", "0111110", "greffet", "jules", "rue des ecoles", "0100", "la boisse");
 $adminDAO = new AdministrateurDAO($bdd);
+var_dump($adminDAO->update($admin));
 var_dump($adminDAO->getAll());

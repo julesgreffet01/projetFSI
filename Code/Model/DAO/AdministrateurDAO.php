@@ -40,7 +40,7 @@ class AdministrateurDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville WHERE id = :id";
+                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "log" => $obj->getLogUti(),
@@ -49,6 +49,7 @@ class AdministrateurDAO extends DAO
                         "tel" => $obj->getTelUti(),
                         "nom" => $obj->getNomUti(),
                         "pre" => $obj->getPreUti(),
+                        "adr" => $obj->getAdrUti(),
                         "cp" => $obj->getCpUti(),
                         "ville" => $obj->getVilUti(),
                         "id" => $obj->getIdUti()
@@ -86,7 +87,7 @@ class AdministrateurDAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $query = "SELECT * FROM utilisateur WHERE id = :id";
+        $query = "SELECT * FROM utilisateur WHERE IdUti = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "id" => $id
@@ -96,7 +97,6 @@ class AdministrateurDAO extends DAO
             if ($row) {
                 $result = new Administrateur($row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
-            $result = true;
         }
         return $result;
     }
