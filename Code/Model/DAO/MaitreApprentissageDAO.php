@@ -91,7 +91,7 @@ class MaitreApprentissageDAO extends DAO
         if ($r !== false) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if ($row != null) {
-                $monEnt = $entDAO->find($row['idEnt']);
+                $monEnt = $entDAO->find($row['IdEnt']);
                 $result = new MaitreApprentissage($row['IdMai'], $row['NomMai'], $row['PreMai'], $row['TelMai'], $row['MailMai'], $monEnt);
             }
         }

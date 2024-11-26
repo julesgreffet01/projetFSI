@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,12 +36,6 @@
   }
 }</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
-<<<<<<< HEAD
-=======
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
->>>>>>> jules
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -48,44 +44,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#1 on jules&quot;,
-    &quot;last_opened_file_path&quot;: &quot;A:/wamp64/www/php/projetFSI&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "jules",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "A:/Laravel/testLaravel",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "A:/wamp64/www/php/projetFSI",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
   }
 }]]></component>
->>>>>>> jules
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -107,21 +79,7 @@
       <workItem from="1731658527810" duration="1621000" />
       <workItem from="1731665346085" duration="445000" />
       <workItem from="1731665796328" duration="1683000" />
-<<<<<<< HEAD
-=======
-      <workItem from="1731668003835" duration="54000" />
-      <workItem from="1731864554966" duration="192000" />
-      <workItem from="1731864823544" duration="773000" />
-      <workItem from="1732004620823" duration="185000" />
-      <workItem from="1732004918783" duration="20000" />
-      <workItem from="1732004984885" duration="6446000" />
-      <workItem from="1732022480794" duration="5346000" />
-      <workItem from="1732046379616" duration="2844000" />
-      <workItem from="1732096019336" duration="3745000" />
-      <workItem from="1732177419291" duration="6758000" />
-      <workItem from="1732192410696" duration="1078000" />
-      <workItem from="1732193958219" duration="1937000" />
->>>>>>> jules
+      <workItem from="1732606480577" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -163,67 +121,7 @@
       <option name="project" value="LOCAL" />
       <updated>1731666565594</updated>
     </task>
-<<<<<<< HEAD
     <option name="localTasksCounter" value="6" />
-=======
-    <task id="LOCAL-00006" summary="jules">
-      <option name="closed" value="true" />
-      <created>1731883748553</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1731883748553</updated>
-    </task>
-    <task id="LOCAL-00007" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732009206550</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1732009206550</updated>
-    </task>
-    <task id="LOCAL-00008" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732011598209</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1732011598209</updated>
-    </task>
-    <task id="LOCAL-00009" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732049982889</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1732049982889</updated>
-    </task>
-    <task id="LOCAL-00010" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732104117593</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1732104117593</updated>
-    </task>
-    <task id="LOCAL-00011" summary="jules - a finir : MADAO">
-      <option name="closed" value="true" />
-      <created>1732184276197</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1732184276197</updated>
-    </task>
-    <task id="LOCAL-00012" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732197054565</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1732197054565</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
->>>>>>> jules
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,10 +130,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jules-BO crea" />
     <MESSAGE value="jules changement arbo" />
-<<<<<<< HEAD
-=======
-    <MESSAGE value="jules - a finir : MADAO" />
->>>>>>> jules
     <MESSAGE value="jules" />
     <option name="LAST_COMMIT_MESSAGE" value="jules" />
   </component>
