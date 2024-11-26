@@ -1,25 +1,25 @@
 CREATE TABLE Alerte (
-	IdAle INT,
+	IdAle INT AUTO_INCREMENT,
 	DatLimUn DATE,
 	DatLimDeux DATE,
 	CONSTRAINT Pk_Alerte PRIMARY KEY(IdAle))
 ENGINE = INNODB;
 
 CREATE TABLE Specialite (
-	IdSpe INT,
+	IdSpe INT AUTO_INCREMENT,
 	NomSpe Varchar(50),
 	CONSTRAINT Pk_Specialite PRIMARY KEY(IdSpe))
 ENGINE = INNODB; 
 
 CREATE TABLE Classe (
-	IdCla INT,
+	IdCla INT AUTO_INCREMENT,
 	LibCla Varchar(50),
 	NbEtu INT,
 	CONSTRAINT Pk_Primary PRIMARY KEY(IdCla))
 ENGINE = INNODB;
 
 CREATE TABLE Entreprise (
-	IdEnt INT,
+	IdEnt INT AUTO_INCREMENT,
 	NomEnt Varchar(50),
 	AdrEnt Varchar(100),
 	CpEnt Varchar(5),
@@ -30,13 +30,13 @@ CREATE TABLE Entreprise (
 ENGINE = INNODB;
 
 CREATE TABLE TypeUtilisateur (
-	IdTypUti INT,
+	IdTypUti INT AUTO_INCREMENT,
 	TypUti Varchar(50),
 	CONSTRAINT Pk_TypeUtilisateur PRIMARY KEY(IdTypUti))
 ENGINE = INNODB;
 
 CREATE TABLE MaitreApprentissage(
-	IdMai INT,
+	IdMai INT AUTO_INCREMENT,
 	NomMai Varchar(50),
 	PreMai Varchar(50),
 	TelMai Varchar(10),
@@ -47,7 +47,7 @@ CREATE TABLE MaitreApprentissage(
 ENGINE = INNODB;
 
 CREATE TABLE Utilisateur (
-	IdUti INT,
+	IdUti INT AUTO_INCREMENT,
 	LogUti Varchar(50),
 	MdpUti Varchar(20),
 	MaiUti Varchar(50),
@@ -74,7 +74,7 @@ CREATE TABLE Utilisateur (
 ENGINE = INNODB;
 
 CREATE TABLE Bilan1 (
-	IdBilUn INT,
+	IdBilUn INT AUTO_INCREMENT,
 	LibBilUn Varchar(50),
 	NotBilUn Varchar(200),
 	RemBilUn Varchar(200),
@@ -87,7 +87,7 @@ CREATE TABLE Bilan1 (
 ENGINE = INNODB;
 
 CREATE TABLE Bilan2 (
-	IdBilDeux INT,
+	IdBilDeux INT AUTO_INCREMENT,
 	LibBilDeux Varchar(50),
 	NotBilDeux Varchar(200),
 	NotOra2 Varchar(50),
