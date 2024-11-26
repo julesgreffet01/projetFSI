@@ -1,7 +1,10 @@
 <?php
 
 
+use BO\Entreprise;
+use BO\MaitreApprentissage;
 use BO\Specialite;
+use DAO\EntrepriseDAO;
 use DAO\SpecialiteDAO;
 use DAO\MaitreApprentissageDAO;
 
@@ -33,6 +36,10 @@ var_dump($specDao->getAll());
 
 //------------------test d un DAO avec une cle etrangere-----------------------
 $MaDAO = new MaitreApprentissageDAO($bdd);
+$entDAO = new EntrepriseDAO($bdd);
+$ent = $entDAO->find(1);
 $ma1 = $MaDAO->getAll();
 var_dump($ma1);
-//$MA = new MaitreApprentissage(1, "roux", "max", "0663636363", "max@gmail.com", );
+$MA = new MaitreApprentissage(2, "roux", "maxime", "0663636363", "max@gmail.com", $ent);
+//var_dump( $MaDAO->delete($MA));
+var_dump($MaDAO->getAll());
