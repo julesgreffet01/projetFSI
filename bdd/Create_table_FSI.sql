@@ -51,6 +51,7 @@ CREATE TABLE Utilisateur (
 	LogUti Varchar(50),
 	MdpUti Varchar(20),
 	MaiUti Varchar(50),
+	TelUti varchar(10),
 	NomUti Varchar(50),
 	PreUti Varchar(50),
 	AltUti Boolean,

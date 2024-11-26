@@ -63,6 +63,7 @@ class MaitreApprentissageDAO extends DAO
         if ($obj instanceof MaitreApprentissage) {
             $foundObj = $this->find($obj->getIdMai());
             if ($foundObj != null) {
+                //faire un find de tous les etudiants qui ont ce mec et si y en a, ne pas accepter la suppression puis mettre le $result a "clé etrangere"
                 if($obj->getIdMai() == $foundObj->getIdMai()){
                     $query = "DELETE FROM maitreapprentissage WHERE IdMai = :idMai";
                     $stmt = $this->bdd->prepare($query);
