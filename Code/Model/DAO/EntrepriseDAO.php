@@ -13,7 +13,7 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-                $query = "INSERT INTO Entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MailEnt ) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt)";
+                $query = "INSERT INTO entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MailEnt ) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt)";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt->execute([
                     'nomEnt' => $obj->getNomEnt(),
@@ -37,7 +37,7 @@ class EntrepriseDAO extends DAO
             $foundObj = $this->find($obj->getIdEnt());
             if ($foundObj !== null) {
                 if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
-                    $query = "UPDATE Entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MailEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
+                    $query = "UPDATE entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MailEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'nomEnt' => $obj->getNomEnt(),
@@ -64,7 +64,7 @@ class EntrepriseDAO extends DAO
             $foundObj = $this->find($obj->getIdEnt());
             if ($foundObj !== null) {
                 if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
-                    $query = "DELETE FROM Entreprise WHERE IdEnt = :idEnt ";
+                    $query = "DELETE FROM entreprise WHERE IdEnt = :idEnt ";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'idEnt' => $obj->getIdEnt()
@@ -81,7 +81,7 @@ class EntrepriseDAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $query = "SELECT * FROM Entreprise WHERE IdEnt = :idEnt ";
+        $query = "SELECT * FROM entreprise WHERE IdEnt = :idEnt ";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idEnt' => $id
@@ -98,7 +98,7 @@ class EntrepriseDAO extends DAO
     public function getAll(): array
     {
         $result = [null];
-        $query = "SELECT * FROM Entreprise ";
+        $query = "SELECT * FROM entreprise ";
         $stmt = $this->bdd->query($query);
         if ($stmt){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
