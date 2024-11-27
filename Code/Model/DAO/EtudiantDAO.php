@@ -4,8 +4,12 @@ namespace DAO;
 
 use BO\Bilan1;
 use BO\Bilan2;
+use BO\Entreprise;
 use BO\Etudiant;
+use BO\Specialite;
 use BO\Tuteur;
+use BO\Classe;
+use BO\MaitreApprentissage;
 use PDO;
 
 require_once "DAO.php";
@@ -92,7 +96,7 @@ class EtudiantDAO extends DAO
         if ($obj instanceof Etudiant) {
             $bil1DAO = new Bilan1DAO($this->bdd);
             $bil2DAO = new Bilan2DAO($this->bdd);
-            if ($bil1DAO->getAllBil1ByEtu($obj) !== null && $bil2DAO->getAllBil2ByEtu($obj) !== null){
+            if ($bil1DAO->getAllBil1ByEtu($obj) !== true && $bil2DAO->getAllBil2ByEtu($obj) !== true){
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getLogUti() == $foundObj->getLogUti()) {
@@ -240,5 +244,100 @@ class EtudiantDAO extends DAO
         }
         return $result;
     }
+
+    public function getAllEtuByCla(Classe $cla) : array {
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+
+        $query = "select * from utilisateur where IdCla = :idCla";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            "idCla" => $cla->getIdCla()
+        ]);
+        if ($r){
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            foreach ($stmt as $row) {
+                $ent = $entDAO->find($row["IdEnt"]);
+                $cla = $claDAO->find($row["IdCla"]);
+                $spec = $specDAO->find($row["IdSpe"]);
+                $ma = $maDAO->find($row["IdMai"]);
+                $tut = $tutDAO->find($row["IdTut"]);
+                $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
+        } else {
+            $result = [null];
+        }
+        return $result;
+    }
+
+    public function getAllEtuNoTutByCla(Classe $cla) : array {
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+        $query = "select * from utilisateur where IdCla = :idCla and IdTut is null";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            "idCla" => $cla->getIdCla()
+        ]);
+        if ($r){
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            foreach ($stmt as $row) {
+                $ent = $entDAO->find($row["IdEnt"]);
+                $cla = $claDAO->find($row["IdCla"]);
+                $spec = $specDAO->find($row["IdSpe"]);
+                $ma = $maDAO->find($row["IdMai"]);
+                $tut = $tutDAO->find($row["IdTut"]);
+                $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
+        } else {
+            $result = [null];
+        }
+        return $result;
+    }
+
+    public function getAllEtuByEnt(Entreprise $ent) : bool {
+        $result = false;
+        $query = "select * from utilisateur where IdEnt = :idEnt";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            "idEnt" => $ent->getIdEnt()
+        ]);
+        if ($r){
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function getAllEtuBySpec(Specialite $spec) : bool {
+        $result = false;
+        $query = "select * from utilisateur where IdSpe = :idSpe";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            "idSpe" => $spec->getIdSpec()
+        ]);
+        if ($r){
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function getAllEtuByMaiApp(MaitreApprentissage $ma) : bool {
+        $result = false;
+        $query = "select * from utilisateur where IdMai = :idMai";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            'idMai'=>$ma->getIdMai()
+        ]);
+        if ($r){
+            $result = true;
+        }
+        return $result;
+    }
+
 
 }

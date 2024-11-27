@@ -62,17 +62,19 @@ class MaitreApprentissageDAO extends DAO
     {
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
-            $foundObj = $this->find($obj->getIdMai());
-            if ($foundObj != null) {
-                //faire un find de tous les etudiants qui ont ce mec et si y en a, ne pas accepter la suppression puis mettre le $result a "clé etrangere"
-                if($obj->getIdMai() == $foundObj->getIdMai()){
-                    $query = "DELETE FROM maitreapprentissage WHERE IdMai = :idMai";
-                    $stmt = $this->bdd->prepare($query);
-                    $r = $stmt->execute([
-                        'idMai' => $obj->getIdMai()
-                    ]);
-                    if ($r !== false) {
-                        $result = true;
+            $etuDAO = new EtudiantDAO($this->bdd);
+            if ($etuDAO->getAllEtuByMaiApp($obj) !== true){
+                $foundObj = $this->find($obj->getIdMai());
+                if ($foundObj != null) {
+                    if($obj->getIdMai() == $foundObj->getIdMai()){
+                        $query = "DELETE FROM maitreapprentissage WHERE IdMai = :idMai";
+                        $stmt = $this->bdd->prepare($query);
+                        $r = $stmt->execute([
+                            'idMai' => $obj->getIdMai()
+                        ]);
+                        if ($r !== false) {
+                            $result = true;
+                        }
                     }
                 }
             }
@@ -118,7 +120,7 @@ class MaitreApprentissageDAO extends DAO
 
     public function getAllMaByEnt(Entreprise $ent): bool {
         $result = false;
-        $query= "Select * from entreprise where IdEnt = :idEnt";
+        $query= "Select * from maitreapprentissage where IdEnt = :idEnt";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idEnt' => $ent->getIdEnt()

@@ -59,18 +59,21 @@ class SpecialiteDAO extends DAO
     {
         $result = false;
         if($obj instanceof Specialite) {
-            $foundObj = $this->find($obj->getIdSpec());
-            if ($foundObj != null) {
-                if ($obj->getIdSpec() == $foundObj->getIdSpec()) {
-                    $query = "DELETE FROM specialite WHERE IdSpe = :id";
-                    $stmt = $this->bdd->prepare($query);
-                    $r = $stmt -> execute(
-                        [
-                            ":id"=>$obj->getIdSpec()
-                        ]
-                    );
-                    if ($r !== false) {
-                        $result = true;
+            $etuDAO = new EtudiantDAO($this->bdd);
+            if (!$etuDAO->getAllEtuBySpec($obj)) {
+                $foundObj = $this->find($obj->getIdSpec());
+                if ($foundObj != null) {
+                    if ($obj->getIdSpec() == $foundObj->getIdSpec()) {
+                        $query = "DELETE FROM specialite WHERE IdSpe = :id";
+                        $stmt = $this->bdd->prepare($query);
+                        $r = $stmt -> execute(
+                            [
+                                ":id"=>$obj->getIdSpec()
+                            ]
+                        );
+                        if ($r !== false) {
+                            $result = true;
+                        }
                     }
                 }
             }

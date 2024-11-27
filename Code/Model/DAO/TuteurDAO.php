@@ -72,16 +72,19 @@ class TuteurDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Tuteur) {
-            $foundObj = $this->find($obj->getIdUti());
-            if ($foundObj) {
-                if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "DELETE FROM utilisateur WHERE IdUti = :id";
-                    $stmt = $this->bdd->prepare($query);
-                    $r = $stmt->execute([
-                        "id" => $obj->getIdUti()
-                    ]);
-                    if ($r) {
-                        $result = true;
+            $etuDAO = new EtudiantDAO($this->bdd);
+            if($etuDAO->getAllEtuByTut($obj) != [null]) {
+                $foundObj = $this->find($obj->getIdUti());
+                if ($foundObj) {
+                    if ($obj->getIdUti() == $foundObj->getIdUti()) {
+                        $query = "DELETE FROM utilisateur WHERE IdUti = :id";
+                        $stmt = $this->bdd->prepare($query);
+                        $r = $stmt->execute([
+                            "id" => $obj->getIdUti()
+                        ]);
+                        if ($r) {
+                            $result = true;
+                        }
                     }
                 }
             }

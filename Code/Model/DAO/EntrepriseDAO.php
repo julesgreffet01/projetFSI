@@ -62,7 +62,8 @@ class EntrepriseDAO extends DAO
         $result = false;
         if ($obj instanceof Entreprise) {
             $MaDAO = new MaitreApprentissageDAO($this->bdd);
-            if($MaDAO->getAllMaByEnt($obj) !== true){
+            $etuDAO = new EtudiantDAO($this->bdd);
+            if(!$MaDAO->getAllMaByEnt($obj) && !$etuDAO->getAllEtuByEnt($obj)){
                 $foundObj = $this->find($obj->getIdEnt());
                 if ($foundObj !== null) {
                     if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
