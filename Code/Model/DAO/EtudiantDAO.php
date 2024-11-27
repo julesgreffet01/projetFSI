@@ -42,7 +42,6 @@ class EtudiantDAO extends DAO
             $bil2 = new Bilan2("", null, 0, "", 0, 0, $obj);
             $bil1DAO->create($bil1);
             $bil2DAO->create($bil2);
-
             if ($r){
                 $result = true;
             }
