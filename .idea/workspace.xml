@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Bilan1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/TuteurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/TuteurDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;jules&quot;,
-    &quot;last_opened_file_path&quot;: &quot;A:/wamp64/www/php/projetFSI&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "jules",
+    "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -101,7 +95,7 @@
       <workItem from="1732634980127" duration="3243000" />
       <workItem from="1732657520751" duration="646000" />
       <workItem from="1732695635513" duration="10771000" />
-      <workItem from="1732724491116" duration="10646000" />
+      <workItem from="1732724491116" duration="13225000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -223,7 +217,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732706701256</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732739970832</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732739970832</updated>
+    </task>
+    <task id="LOCAL-00017" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732740291443</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732740291443</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

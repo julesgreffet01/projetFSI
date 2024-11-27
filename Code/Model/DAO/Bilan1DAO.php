@@ -120,7 +120,7 @@ class Bilan1DAO extends DAO
         return $result;
     }
 
-    public function getAllBil1ByEtu(Etudiant $etudiant): array {
+    public function getAllBil1ByEtu(Etudiant $etudiant): ?array {
         $query = "select * from bilan1 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([

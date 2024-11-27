@@ -15,7 +15,7 @@ class Etudiant extends Utilisateur
     private array $mesBilan2;
 
 
-    public function __construct(bool $altEtu, Tuteur $monTuteur, Specialite $maSpec, Classe $maClasse, MaitreApprentissage $monMaitreAp, Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
+    public function __construct(bool $altEtu, ?Tuteur $monTuteur, ?Specialite $maSpec, ?Classe $maClasse, ?MaitreApprentissage $monMaitreAp, ?Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
     {
         parent::__construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $adrUti, $cpUti, $vilUti);
         $this->altEtu = $altEtu;
@@ -39,7 +39,7 @@ class Etudiant extends Utilisateur
         $this->altEtu = $altEtu;
     }
 
-    public function getMonMaitreAp(): MaitreApprentissage
+    public function getMonMaitreAp(): ?MaitreApprentissage
     {
         return $this->monMaitreAp;
     }
@@ -49,7 +49,7 @@ class Etudiant extends Utilisateur
         $this->monMaitreAp = $monMaitreAp;
     }
 
-    public function getMaClasse(): Classe
+    public function getMaClasse(): ?Classe
     {
         return $this->maClasse;
     }
@@ -59,7 +59,7 @@ class Etudiant extends Utilisateur
         $this->maClasse = $maClasse;
     }
 
-    public function getMaSpec(): Specialite
+    public function getMaSpec(): ?Specialite
     {
         return $this->maSpec;
     }
@@ -69,7 +69,7 @@ class Etudiant extends Utilisateur
         $this->maSpec = $maSpec;
     }
 
-    public function getMonTuteur(): Tuteur
+    public function getMonTuteur(): ?Tuteur
     {
         return $this->monTuteur;
     }
@@ -79,7 +79,7 @@ class Etudiant extends Utilisateur
         $this->monTuteur = $monTuteur;
     }
 
-    public function getMonEnt(): Entreprise
+    public function getMonEnt(): ?Entreprise
     {
         return $this->monEnt;
     }
@@ -89,7 +89,7 @@ class Etudiant extends Utilisateur
         $this->monEnt = $monEnt;
     }
 
-    public function getMesBilan1(): array
+    public function getMesBilan1(): ?array
     {
         return $this->mesBilan1;
     }
@@ -99,7 +99,7 @@ class Etudiant extends Utilisateur
         $this->mesBilan1 = $mesBilan1;
     }
 
-    public function getMesBilan2(): array
+    public function getMesBilan2(): ?array
     {
         return $this->mesBilan2;
     }
