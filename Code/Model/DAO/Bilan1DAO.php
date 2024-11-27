@@ -24,7 +24,7 @@ class Bilan1DAO extends DAO
                 'rem' => $obj->getRemBil(),
                 'ent' => $obj->getNotEnt(),
                 'o1' => $obj->getNotOra(),
-                'idUti' => $obj->getIdBil()
+                'idUti' => $obj->getMonEtu()->getIdUti()
             ]);
             if ($r) {
                 $result = true;

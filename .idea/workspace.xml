@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
       <workItem from="1732634980127" duration="3243000" />
       <workItem from="1732657520751" duration="646000" />
       <workItem from="1732695635513" duration="10771000" />
-      <workItem from="1732724491116" duration="14315000" />
+      <workItem from="1732724491116" duration="17462000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -238,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732743023330</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732746106863</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1732746106863</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
