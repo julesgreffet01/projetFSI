@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules update du delete">
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/TuteurDAO.php" afterDir="false" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Test/testDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Test/testDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/Create_table_FSI.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bdd/Create_table_FSI.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;jules&quot;,
-    &quot;last_opened_file_path&quot;: &quot;A:/wamp64/www/php/projetFSI&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "jules",
+    "last_opened_file_path": "A:/wamp64/www/php/projetFSI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -94,7 +92,7 @@
       <workItem from="1732619522935" duration="2773000" />
       <workItem from="1732634980127" duration="3243000" />
       <workItem from="1732657520751" duration="646000" />
-      <workItem from="1732695635513" duration="6690000" />
+      <workItem from="1732695635513" duration="10127000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -192,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732697548400</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732702994931</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732702994931</updated>
+    </task>
+    <task id="LOCAL-00014" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732703023466</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732703023466</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,8 +215,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jules-BO crea" />
     <MESSAGE value="jules changement arbo" />
-    <MESSAGE value="jules" />
     <MESSAGE value="jules update du delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="jules update du delete" />
+    <MESSAGE value="jules" />
+    <option name="LAST_COMMIT_MESSAGE" value="jules" />
   </component>
 </project>
