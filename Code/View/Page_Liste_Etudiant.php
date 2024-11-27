@@ -3,7 +3,8 @@ $titrefichier = "Acceuil";
 $stylecss = "Tableau.css";
 include('Nav_Bar.php');
 ?>
-<table>
+<div class="centre">
+<table class="tableau">
 <tr>
     <th>Nom</th>
     <th>Prénom</th>
@@ -19,3 +20,4 @@ include('Nav_Bar.php');
     <td><a href="#" class="voircss">Voir</a></td>
 </tr>
 </table>
+</div>

@@ -6,23 +6,23 @@ include('header_admin.php');
 ?>
 <div class="centre">
     <p>
-        <label for="city">Nom de l'entreprise</label>
+        <label for="name">Nom de l'entreprise</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Adresse de l'entreprise</label>
+        <label for="adresse">Adresse de l'entreprise</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Ville de l'entreprise</label>
+        <label for="ville">Ville de l'entreprise</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Code postal de l'entreprise</label>
+        <label for="cp">Code postal de l'entreprise</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Téléphone de l'entreprise</label>
+        <label for="tel">Téléphone de l'entreprise</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>

@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= isset($titrefichier) ? $titrefichier : "Titre par défaut"; ?></title>
     <link href="../Css/Style_header.css" rel="stylesheet" />
+    <link href="../Css/<?= isset($stylecss) ? $stylecss : "Styledefault.css"; ?>" rel="stylesheet" />
+
 </head>
 <body>
 <header>
