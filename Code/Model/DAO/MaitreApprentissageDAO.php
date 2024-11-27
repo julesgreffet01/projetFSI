@@ -2,6 +2,7 @@
 
 namespace DAO;
 
+use BO\Entreprise;
 use BO\MaitreApprentissage;
 use PDO;
 
@@ -111,6 +112,19 @@ class MaitreApprentissageDAO extends DAO
             }
         } else {
             $result = [null];
+        }
+        return $result;
+    }
+
+    public function getAllMaByEnt(Entreprise $ent): bool {
+        $result = false;
+        $query= "Select * from entreprise where IdEnt = :idEnt";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            'idEnt' => $ent->getIdEnt()
+        ]);
+        if ($r) {
+            $result = true;
         }
         return $result;
     }

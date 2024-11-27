@@ -61,16 +61,19 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-            $foundObj = $this->find($obj->getIdEnt());
-            if ($foundObj !== null) {
-                if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
-                    $query = "DELETE FROM entreprise WHERE IdEnt = :idEnt ";
-                    $stmt = $this->bdd->prepare($query);
-                    $r = $stmt->execute([
-                        'idEnt' => $obj->getIdEnt()
-                    ]);
-                    if ($r !== false) {
-                        $result = true;
+            $MaDAO = new MaitreApprentissageDAO($this->bdd);
+            if($MaDAO->getAllMaByEnt($obj) !== true){
+                $foundObj = $this->find($obj->getIdEnt());
+                if ($foundObj !== null) {
+                    if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
+                        $query = "DELETE FROM entreprise WHERE IdEnt = :idEnt ";
+                        $stmt = $this->bdd->prepare($query);
+                        $r = $stmt->execute([
+                            'idEnt' => $obj->getIdEnt()
+                        ]);
+                        if ($r !== false) {
+                            $result = true;
+                        }
                     }
                 }
             }
