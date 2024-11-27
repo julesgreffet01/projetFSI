@@ -66,12 +66,14 @@ CREATE TABLE Utilisateur (
 	IdCla INT,
 	IdSpe INT,
 	IdTypUti INT,
+	IdTut INT,
 	CONSTRAINT Pk_Utilisateur PRIMARY KEY (IdUti),
 	CONSTRAINT Fk_Entreprise_Utilisateur FOREIGN KEY (IdEnt) REFERENCES Entreprise (IdEnt),
 	CONSTRAINT Fk_Maitre_Utilisateur FOREIGN KEY (IdMai) REFERENCES MaitreApprentissage (IdMai),
 	CONSTRAINT Fk_Classe_Utilisateur FOREIGN KEY (IdCla) REFERENCES Classe (IdCla),
 	CONSTRAINT Fk_Specialite_Utilisateur FOREIGN KEY (IdSpe) REFERENCES Specialite (IdSpe),
-	CONSTRAINT Fk_TypeUtilisateur_Utilisateur FOREIGN KEY (IdTypUti) REFERENCES TypeUtilisateur (IdTypUti))
+	CONSTRAINT Fk_TypeUtilisateur_Utilisateur FOREIGN KEY (IdTypUti) REFERENCES TypeUtilisateur (IdTypUti),
+	CONSTRAINT FK_Tuteur FOREIGN KEY (IdTut) REFERENCES Utilisateur (IdUti));
 ENGINE = INNODB;
 
 CREATE TABLE Bilan1 (
