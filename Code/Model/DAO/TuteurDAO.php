@@ -2,18 +2,16 @@
 
 namespace DAO;
 
-use BO\Administrateur;
+use BO\Tuteur;
 use PDO;
-require_once 'DAO.php';
-
-class AdministrateurDAO extends DAO
+class TuteurDAO extends DAO
 {
 
     public function create(object $obj): bool
     {
         $result = false;
-        if ($obj instanceof Administrateur) {
-            $query = "INSERT INTO utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, 1)";
+        if ($obj instanceof Tuteur) {
+            $query = "Insert into utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, NbMaxEtu3, NbMaxEtu4, NbMaxEtu5, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, :nbMax3, :nbMax4, :nbMax5, 2)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
                 "log" => $obj->getLogUti(),
@@ -24,9 +22,12 @@ class AdministrateurDAO extends DAO
                 "pre" => $obj->getPreUti(),
                 "adr" => $obj->getAdrUti(),
                 "cp" => $obj->getCpUti(),
-                "ville" => $obj->getVilUti()
+                "ville" => $obj->getVilUti(),
+                "nbMax3" => $obj->getNbMax3(),
+                "nbMax4" => $obj->getNbMax4(),
+                "nbMax5" => $obj->getNbMax5()
             ]);
-            if ($r){
+            if ($r) {
                 $result = true;
             }
         }
@@ -36,11 +37,11 @@ class AdministrateurDAO extends DAO
     public function update(object $obj): bool
     {
         $result = false;
-        if ($obj instanceof Administrateur) {
+        if ($obj instanceof Tuteur) {
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville WHERE IdUti = :id";
+                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville, NbMaxEtu3 = :nbMax3, NbMaxEtu4 = :nbMax4, NbMaxEtu = :nbMax5 WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "log" => $obj->getLogUti(),
@@ -52,9 +53,12 @@ class AdministrateurDAO extends DAO
                         "adr" => $obj->getAdrUti(),
                         "cp" => $obj->getCpUti(),
                         "ville" => $obj->getVilUti(),
+                        "nbMax3" => $obj->getNbMax3(),
+                        "nbMax4" => $obj->getNbMax4(),
+                        "nbMax5" => $obj->getNbMax5(),
                         "id" => $obj->getIdUti()
                     ]);
-                    if ($r){
+                    if ($r) {
                         $result = true;
                     }
                 }
@@ -66,16 +70,16 @@ class AdministrateurDAO extends DAO
     public function delete(object $obj): bool
     {
         $result = false;
-        if ($obj instanceof Administrateur) {
+        if ($obj instanceof Tuteur) {
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "DELETE FROM utilisateur WHERE id = :id";
+                    $query = "DELETE FROM utilisateur WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "id" => $obj->getIdUti()
                     ]);
-                    if($r){
+                    if ($r) {
                         $result = true;
                     }
                 }
@@ -94,8 +98,8 @@ class AdministrateurDAO extends DAO
         ]);
         if ($r) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
-            if ($row) {
-                $result = new Administrateur($row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            if($row){
+                $result = new Tuteur($row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'], $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
         }
         return $result;
@@ -108,7 +112,7 @@ class AdministrateurDAO extends DAO
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
-                $result[] = new Administrateur($row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+                $result[] = new Tuteur($row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'], $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
         } else {
             $result = [null];
@@ -116,12 +120,12 @@ class AdministrateurDAO extends DAO
         return $result;
     }
 
-    public function auth(string $log, string $mdp) :bool {
+    public function auth(string $login, string $mdp): bool {
         $result = false;
-        $query = "SELECT * FROM utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypeUti = 1";
+        $query = "SELECT * FROM utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypeUti = 2";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
-            "log" => $log,
+            "login" => $login,
             "mdp" => $mdp
         ]);
         if ($r){

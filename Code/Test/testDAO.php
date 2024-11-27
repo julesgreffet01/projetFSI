@@ -5,10 +5,12 @@ use BO\Administrateur;
 use BO\Entreprise;
 use BO\MaitreApprentissage;
 use BO\Specialite;
+use BO\Tuteur;
 use DAO\AdministrateurDAO;
 use DAO\EntrepriseDAO;
 use DAO\SpecialiteDAO;
 use DAO\MaitreApprentissageDAO;
+use DAO\TuteurDAO;
 
 
 require_once "../Model/BDDManager.php";
@@ -17,11 +19,13 @@ require_once "../Model/DAO/SpecialiteDAO.php";
 require_once "../Model/DAO/MaitreApprentissageDAO.php";
 require_once "../Model/DAO/EntrepriseDAO.php";
 require_once "../Model/DAO/AdministrateurDAO.php";
+require_once "../Model/DAO/TuteurDAO.php";
 
 require_once "../Model/BO/Specialite.php";
 require_once "../Model/BO/MaitreApprentissage.php";
 require_once "../Model/BO/Entreprise.php";
 require_once "../Model/BO/Administrateur.php";
+require_once "../Model/BO/Tuteur.php";
 
 
 //test d un DAO simple
@@ -62,3 +66,7 @@ var_dump($adminDAO->auth("root", "root"));
 
 echo '--------------------------- Entreprise ------------------------------';
 var_dump($entDAO->delete($ent2));
+
+$tutDAO = new TuteurDAO($bdd);
+$tut1 = new Tuteur(1, 3, 7, 1, "tuteur", "tuteur", "tuteur@gmail.com", "0666666", "yann", "neuville", "djqnsfj", "0210", "dqs");
+var_dump($tutDAO->create($tut1));
