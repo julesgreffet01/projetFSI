@@ -3,6 +3,7 @@
 namespace DAO;
 
 use BO\Bilan2;
+use BO\Etudiant;
 use PDO;
 
 require_once 'DAO.php';
@@ -104,6 +105,25 @@ class Bilan2DAO extends DAO
         $query = "select * from bilan2";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $etudiantDAO = new EtudiantDAO($this->bdd);
+            foreach ($stmt as $row) {
+                $monEtu = $etudiantDAO->find($row['IdUti']);
+                $result[] = new Bilan2($row['SujBil'], $row['DatBil2'], $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
+            }
+        } else {
+            $result = [null];
+        }
+        return $result;
+    }
+
+    public function getAllBil2ByEtu(Etudiant $etudiant): ?array {
+        $query = "select * from bilan2 where IdUti = :idUti";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            'idUti' => $etudiant->getIdUti()
+        ]);
+        if ($r) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
