@@ -1,0 +1,33 @@
+body{
+    background-color: #F5FBF5;
+    font-family: Roboto, sans-serif;
+    color: #203C25;
+}
+
+ul li{
+    list-style: none;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    color: #203C25;
+}
+nav {
+    margin-left: 10px;
+    margin-top: 40px;
+    font-size: 25px;
+}
+img{
+    height: 30px;
+}
+
+.parametre_title{
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+.maison{
+    margin-top: 20px;
+    margin-left: 20px;
+}
