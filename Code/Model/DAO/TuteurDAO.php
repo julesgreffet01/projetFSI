@@ -4,6 +4,7 @@ namespace DAO;
 
 use BO\Tuteur;
 use PDO;
+require_once "DAO.php";
 class TuteurDAO extends DAO
 {
 

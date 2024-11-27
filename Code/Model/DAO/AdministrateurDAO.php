@@ -13,7 +13,7 @@ class AdministrateurDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Administrateur) {
-            $query = "INSERT INTO utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, 1)";
+            $query = "INSERT INTO utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, 3)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
                 "log" => $obj->getLogUti(),

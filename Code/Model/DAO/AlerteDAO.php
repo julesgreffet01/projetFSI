@@ -4,6 +4,7 @@ namespace DAO;
 
 use BO\Alerte;
 use PDO;
+require_once "DAO.php";
 
 class AlerteDAO extends DAO
 {

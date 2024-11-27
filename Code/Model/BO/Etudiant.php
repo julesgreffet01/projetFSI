@@ -9,13 +9,13 @@ class Etudiant extends Utilisateur
     private Tuteur $monTuteur;
     private Specialite $maSpec;
     private Classe $maClasse;
-    private Maitre_Apprentissage $monMaitreAp;
+    private MaitreApprentissage $monMaitreAp;
     private Entreprise $monEnt;
     private array $mesBilan1;
     private array $mesBilan2;
 
 
-    public function __construct(bool $altEtu, Tuteur $monTuteur, Specialite $maSpec, Classe $maClasse, Maitre_Apprentissage $monMaitreAp, Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
+    public function __construct(bool $altEtu, Tuteur $monTuteur, Specialite $maSpec, Classe $maClasse, MaitreApprentissage $monMaitreAp, Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
     {
         parent::__construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $adrUti, $cpUti, $vilUti);
         $this->altEtu = $altEtu;
@@ -29,7 +29,7 @@ class Etudiant extends Utilisateur
     }
 
 
-    public function isAltEtu(): bool
+    public function getAltEtu(): bool
     {
         return $this->altEtu;
     }
@@ -39,12 +39,12 @@ class Etudiant extends Utilisateur
         $this->altEtu = $altEtu;
     }
 
-    public function getMonMaitreAp(): Maitre_Apprentissage
+    public function getMonMaitreAp(): MaitreApprentissage
     {
         return $this->monMaitreAp;
     }
 
-    public function setMonMaitreAp(Maitre_Apprentissage $monMaitreAp): void
+    public function setMonMaitreAp(MaitreApprentissage $monMaitreAp): void
     {
         $this->monMaitreAp = $monMaitreAp;
     }

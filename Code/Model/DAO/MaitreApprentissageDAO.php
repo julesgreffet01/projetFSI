@@ -37,7 +37,7 @@ class MaitreApprentissageDAO extends DAO
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
             $foundObj = $this->find($obj->getIdMai());
-            if ($foundObj !== null) {
+            if ($foundObj) {
                 if ($obj->getIdMai() == $foundObj->getIdMai()) {
                     $query = "UPDATE maitreapprentissage SET NomMai = :nomMai, PreMai = :preMai, TelMai = :telMai, MaiMai = :mailMai, IdEnt = :monEnt WHERE IdMai = :idMai";
                     $stmt = $this->bdd->prepare($query);
