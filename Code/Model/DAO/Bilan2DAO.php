@@ -4,6 +4,7 @@ namespace DAO;
 
 use BO\Bilan2;
 use BO\Etudiant;
+use DateTime;
 use PDO;
 
 require_once 'DAO.php';
@@ -15,7 +16,7 @@ class Bilan2DAO extends DAO
     {
         $result = false;
         if ($obj instanceof Bilan2) {
-            $query = "insert into bilan2 (LibBilDeux, NotBilDeux, NotOra2, SujBil, IdUti) values (:lib, :not, :ora, :suj, :iduti)";
+            $query = "insert into bilan2 (LibBilDeux, NotBilDeux, NotOra2, SujBil, IdUti) values (:lib, :not, :ora, :suj, :idUti)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
                 'lib'=> $obj->getLibBil(),
@@ -118,6 +119,7 @@ class Bilan2DAO extends DAO
     }
 
     public function getAllBil2ByEtu(Etudiant $etudiant): ?array {
+        $result = [];
         $query = "select * from bilan2 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
@@ -125,10 +127,8 @@ class Bilan2DAO extends DAO
         ]);
         if ($r) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
-                $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result[] = new Bilan2($row['SujBil'], $row['DatBil2'], $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
+                $result[] = new Bilan2($row['SujBil'], new DateTime($row['DatBil2']), $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $etudiant);
             }
         } else {
             $result = [null];

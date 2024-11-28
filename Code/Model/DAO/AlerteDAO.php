@@ -3,7 +3,12 @@
 namespace DAO;
 
 use BO\Alerte;
+use BO\Bilan;
+use BO\Bilan1;
+use BO\Etudiant;
+use BO\Tuteur;
 use PDO;
+use DateTime;
 require_once "DAO.php";
 
 class AlerteDAO extends DAO
@@ -78,7 +83,7 @@ class AlerteDAO extends DAO
         if ($r) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if ($row) {
-                $result = new Alerte($row['IdAle'], $row['DatLimUn'], $row['DatLimDeux']);
+                $result = new Alerte($row['IdAle'], new DateTime($row['DatLimUn']), new DateTime($row['DatLimDeux']));
             }
         }
         return $result;
@@ -99,13 +104,19 @@ class AlerteDAO extends DAO
         return $result;
     }
 
-    public function VerifAl1(): int{
-        $verif = 0;         //a finir avec etudiantDAO
-        return $verif;
-    }
-
-    public function VerifAl2(): int{
-        $verif = 0;
-        return $verif;
+    public function getAllAl1ByTut(Tuteur $tut): ?array {
+      $al1 = $this->find(1);
+        $dateOjd = date("Y-m-d");
+        //if ($al1->getDatLimBil1() > $dateOjd) {
+     if (true) {     //to do enlever
+            $etuDAO = new EtudiantDAO($this->bdd);
+               $mesEtu = $etuDAO->getAllEtuByTut($tut);
+            var_dump($mesEtu);
+           /*   foreach ($mesEtu as $me) {
+                var_dump($me);
+                die;
+            }*/
+        }
+        return [];
     }
 }

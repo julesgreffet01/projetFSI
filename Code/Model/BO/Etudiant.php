@@ -6,11 +6,11 @@ namespace BO;
 class Etudiant extends Utilisateur
 {
     private bool $altEtu;
-    private Tuteur $monTuteur;
-    private Specialite $maSpec;
-    private Classe $maClasse;
-    private MaitreApprentissage $monMaitreAp;
-    private Entreprise $monEnt;
+    private ?Tuteur $monTuteur;
+    private ?Specialite $maSpec;
+    private ?Classe $maClasse;
+    private ?MaitreApprentissage $monMaitreAp;
+    private ?Entreprise $monEnt;
     private array $mesBilan1;
     private array $mesBilan2;
 
@@ -108,7 +108,5 @@ class Etudiant extends Utilisateur
     {
         $this->mesBilan2 = $mesBilan2;
     }
-
-
 
 }

@@ -118,7 +118,7 @@ class AdministrateurDAO extends DAO
 
     public function auth(string $log, string $mdp) :bool {
         $result = false;
-        $query = "SELECT * FROM utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypeUti = 3";
+        $query = "SELECT * FROM utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 3";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "log" => $log,

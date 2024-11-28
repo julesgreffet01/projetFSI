@@ -2,6 +2,7 @@
 
 namespace DAO;
 
+use BO\Alerte;
 use BO\Etudiant;
 use BO\Tuteur;
 use PDO;
@@ -106,11 +107,6 @@ class TuteurDAO extends DAO
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if($row){
                 $result = new Tuteur($row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'], $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
-                $etu1 = $etuDAO->getAllEtuByTut($result);
-                if ($etu1 == null) {
-                    $etu1 = [];
-                }
-                $result->setMesEtu($etu1);
             }
         }
         return $result;
@@ -133,7 +129,7 @@ class TuteurDAO extends DAO
 
     public function auth(string $login, string $mdp): bool {
         $result = false;
-        $query = "SELECT * FROM utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypeUti = 2";
+        $query = "SELECT * FROM utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypUti = 2";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "login" => $login,

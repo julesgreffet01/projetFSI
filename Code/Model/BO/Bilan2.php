@@ -7,7 +7,7 @@ use DateTime;
 class Bilan2 extends Bilan
 {
     private string $sujBil;
-    private DateTime $datBil2;
+    private ?DateTime $datBil2;
 
 
     public function __construct(string $sujBil, ?DateTime $datBil2, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
@@ -28,7 +28,7 @@ class Bilan2 extends Bilan
         $this->sujBil = $sujBil;
     }
 
-    public function getDatBil2(): DateTime
+    public function getDatBil2(): ?DateTime
     {
         return $this->datBil2;
     }

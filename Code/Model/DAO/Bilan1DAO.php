@@ -5,6 +5,7 @@ namespace DAO;
 
 use BO\Bilan1;
 use BO\Etudiant;
+use DateTime;
 use PDO;
 
 require_once "DAO.php";
@@ -121,6 +122,7 @@ class Bilan1DAO extends DAO
     }
 
     public function getAllBil1ByEtu(Etudiant $etudiant): ?array {
+        $result = [];
         $query = "select * from bilan1 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
@@ -128,10 +130,8 @@ class Bilan1DAO extends DAO
         ]);
         if ($r) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
-                $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $row['DatBil1'], $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], new DateTime($row['DatBil1']), $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
             }
         } else {
             $result = [null];
