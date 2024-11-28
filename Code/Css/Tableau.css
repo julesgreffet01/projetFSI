@@ -1,4 +1,6 @@
 .tableau {
+    table-layout: fixed;
+    width: 80%;
     border-collapse: collapse;
     text-align: center;
     border-radius: 15px;
@@ -29,4 +31,13 @@
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.alerteadmin{
+    background: #E9F6E9;
+    margin-right: 195px;
+    margin-left: 195px;
+    border-radius: 15px;
+    text-align: left;
+    padding: 5px 20px;
 }

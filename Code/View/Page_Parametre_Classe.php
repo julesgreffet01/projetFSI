@@ -14,6 +14,7 @@ include('header_admin.php');
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
 </div>
+<div class="selectclass">
 <div class="selection">
     <label for="city">Classe à modifier</label>
     <select name="classe-select">
@@ -25,5 +26,6 @@ include('header_admin.php');
         <option value="spider">Spider</option>
         <option value="goldfish">Goldfish</option>
     </select>
+</div>
 </div>
 

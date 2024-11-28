@@ -10,6 +10,7 @@ include('header_admin.php');
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
 </div>
+<div class="selectespe">
 <div class="selection">
     <label for="city">Spécialité à modifier</label>
     <select name="specialité-select">
@@ -22,5 +23,5 @@ include('header_admin.php');
         <option value="goldfish">Goldfish</option>
     </select>
 </div>
-
+</div>
 
