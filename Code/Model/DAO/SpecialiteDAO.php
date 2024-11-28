@@ -60,7 +60,7 @@ class SpecialiteDAO extends DAO
         $result = false;
         if($obj instanceof Specialite) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if (!$etuDAO->getAllEtuBySpec($obj)) {
+            if ($etuDAO->getAllEtuBySpec($obj) !== true) {
                 $foundObj = $this->find($obj->getIdSpec());
                 if ($foundObj != null) {
                     if ($obj->getIdSpec() == $foundObj->getIdSpec()) {

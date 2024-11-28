@@ -122,10 +122,10 @@ class MaitreApprentissageDAO extends DAO
         $result = false;
         $query= "Select * from maitreapprentissage where IdEnt = :idEnt";
         $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
+        $stmt->execute([
             'idEnt' => $ent->getIdEnt()
         ]);
-        if ($r) {
+        if ($stmt->rowCount() > 0) {
             $result = true;
         }
         return $result;

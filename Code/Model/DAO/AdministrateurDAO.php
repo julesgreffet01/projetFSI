@@ -103,7 +103,7 @@ class AdministrateurDAO extends DAO
 
     public function getAll(): array
     {
-        $query = "SELECT * FROM utilisateur";
+        $query = "SELECT * FROM utilisateur where IdTypUti = 3";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);

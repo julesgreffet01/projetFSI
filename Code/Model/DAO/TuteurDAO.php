@@ -114,7 +114,7 @@ class TuteurDAO extends DAO
 
     public function getAll(): array
     {
-        $query = "SELECT * FROM utilisateur";
+        $query = "SELECT * FROM utilisateur where IdTypUti = 2";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -131,11 +131,11 @@ class TuteurDAO extends DAO
         $result = false;
         $query = "SELECT * FROM utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypUti = 2";
         $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
+        $stmt->execute([
             "login" => $login,
             "mdp" => $mdp
         ]);
-        if ($r){
+        if ($stmt->rowCount() > 0) {
             $result = true;
         }
         return $result;
