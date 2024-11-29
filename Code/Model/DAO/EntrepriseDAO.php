@@ -13,7 +13,7 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-                $query = "INSERT INTO entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MailEnt ) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt)";
+                $query = "INSERT INTO entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MaiEnt ) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt)";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt->execute([
                     'nomEnt' => $obj->getNomEnt(),
@@ -37,7 +37,7 @@ class EntrepriseDAO extends DAO
             $foundObj = $this->find($obj->getIdEnt());
             if ($foundObj !== null) {
                 if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
-                    $query = "UPDATE entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MailEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
+                    $query = "UPDATE entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MaiEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'nomEnt' => $obj->getNomEnt(),
