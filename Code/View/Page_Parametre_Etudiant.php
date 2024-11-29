@@ -87,6 +87,7 @@ include('header_admin.php');
         </select>
     </p>
 </div>
+<div class="selectetudiant">
 <div class="selection">
     <label for="city">Etudiant à modifier</label>
     <select name="tuteur-select">
@@ -98,4 +99,5 @@ include('header_admin.php');
         <option value="spider">Spider</option>
         <option value="goldfish">Goldfish</option>
     </select>
+</div>
 </div>

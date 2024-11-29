@@ -14,14 +14,27 @@ include('header_admin.php');
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Téléphone de l'entreprise</label>
+        <label for="city">Téléphone du maître d'apprentissage</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Mail de l'entreprise</label>
+        <label for="city">Mail du maître d'apprentissage</label>
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
+    <p>
+        <label for="city">Entreprise</label>
+        <select name="maitre-select">
+            <option value=""></option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="goldfish">Goldfish</option>
+        </select>
+    </p>
 </div>
+<div class="selectmaitre">
 <div class="selection">
     <label for="city">Maître d'apprentissage à modifier</label>
     <select name="maitre-select">
@@ -33,4 +46,5 @@ include('header_admin.php');
         <option value="spider">Spider</option>
         <option value="goldfish">Goldfish</option>
     </select>
+</div>
 </div>

@@ -1,3 +1,43 @@
-th{
+.tableau {
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tableau th{
+    padding: 20px 70px;
     background: #B2DDB5;
+    font-size: 20px;
+}
+
+.tableau td{
+    padding: 20px 70px;
+    background: #E9F6E9;
+}
+
+.tableau .roi{
+    padding-right: 200px;
+    padding-left: 200px;
+}
+
+.bell{
+    height: 50px;
+}
+
+.centre table{
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.alerteadmin{
+    background: #E9F6E9;
+    margin-right: 195px;
+    margin-left: 195px;
+    border-radius: 15px;
+    text-align: left;
+    padding: 5px 20px;
 }
