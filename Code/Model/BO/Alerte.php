@@ -40,7 +40,7 @@ class Alerte
     }
 
 
-    public function getDatLimBil1(): DateTime
+    public function getDatLimBil1(): ?DateTime
     {
         return $this->datLimBil1;
     }

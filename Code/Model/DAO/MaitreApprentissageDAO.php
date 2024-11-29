@@ -2,6 +2,7 @@
 
 namespace DAO;
 
+use BO\Entreprise;
 use BO\MaitreApprentissage;
 use PDO;
 
@@ -36,7 +37,7 @@ class MaitreApprentissageDAO extends DAO
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
             $foundObj = $this->find($obj->getIdMai());
-            if ($foundObj !== null) {
+            if ($foundObj) {
                 if ($obj->getIdMai() == $foundObj->getIdMai()) {
                     $query = "UPDATE maitreapprentissage SET NomMai = :nomMai, PreMai = :preMai, TelMai = :telMai, MaiMai = :mailMai, IdEnt = :monEnt WHERE IdMai = :idMai";
                     $stmt = $this->bdd->prepare($query);
@@ -61,17 +62,19 @@ class MaitreApprentissageDAO extends DAO
     {
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
-            $foundObj = $this->find($obj->getIdMai());
-            if ($foundObj != null) {
-                //faire un find de tous les etudiants qui ont ce mec et si y en a, ne pas accepter la suppression puis mettre le $result a "clé etrangere"
-                if($obj->getIdMai() == $foundObj->getIdMai()){
-                    $query = "DELETE FROM maitreapprentissage WHERE IdMai = :idMai";
-                    $stmt = $this->bdd->prepare($query);
-                    $r = $stmt->execute([
-                        'idMai' => $obj->getIdMai()
-                    ]);
-                    if ($r !== false) {
-                        $result = true;
+            $etuDAO = new EtudiantDAO($this->bdd);
+            if ($etuDAO->getAllEtuByMaiApp($obj) !== true){
+                $foundObj = $this->find($obj->getIdMai());
+                if ($foundObj != null) {
+                    if($obj->getIdMai() == $foundObj->getIdMai()){
+                        $query = "DELETE FROM maitreapprentissage WHERE IdMai = :idMai";
+                        $stmt = $this->bdd->prepare($query);
+                        $r = $stmt->execute([
+                            'idMai' => $obj->getIdMai()
+                        ]);
+                        if ($r !== false) {
+                            $result = true;
+                        }
                     }
                 }
             }
@@ -111,6 +114,19 @@ class MaitreApprentissageDAO extends DAO
             }
         } else {
             $result = [null];
+        }
+        return $result;
+    }
+
+    public function getAllMaByEnt(Entreprise $ent): bool {
+        $result = false;
+        $query= "Select * from maitreapprentissage where IdEnt = :idEnt";
+        $stmt = $this->bdd->prepare($query);
+        $stmt->execute([
+            'idEnt' => $ent->getIdEnt()
+        ]);
+        if ($stmt->rowCount() > 0) {
+            $result = true;
         }
         return $result;
     }

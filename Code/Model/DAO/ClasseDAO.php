@@ -53,16 +53,19 @@ class ClasseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Classe) {
-            $foundObj = $this->find($obj->getIdCla());
-            if ($foundObj !== null) {
-                if ($obj->getIdCla() == $foundObj->getIdCla()) {
-                    $query = "DELETE FROM classe WHERE IdCla = :idCl";
-                    $stmt = $this->bdd->prepare($query);
-                    $r = $stmt->execute([
-                        "idCl" => $obj->getIdCla()
-                    ]);
-                    if ($r !== false) {
-                        $result = true;
+            $etuDAO = new EtudiantDAO($this->bdd);
+            if ($etuDAO->getAllEtuByCla($obj) == [null]) {
+                $foundObj = $this->find($obj->getIdCla());
+                if ($foundObj !== null) {
+                    if ($obj->getIdCla() == $foundObj->getIdCla()) {
+                        $query = "DELETE FROM classe WHERE IdCla = :idCl";
+                        $stmt = $this->bdd->prepare($query);
+                        $r = $stmt->execute([
+                            "idCl" => $obj->getIdCla()
+                        ]);
+                        if ($r !== false) {
+                            $result = true;
+                        }
                     }
                 }
             }

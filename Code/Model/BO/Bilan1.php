@@ -2,7 +2,7 @@
 
 namespace BO;
 
-
+require_once "Bilan.php";
 use DateTime;
 
 class Bilan1 extends Bilan
@@ -10,10 +10,10 @@ class Bilan1 extends Bilan
     private string $remBil;
     private float $notEnt;
 
-    private DateTime $datVisEnt;
+    private ?DateTime $datVisEnt;
 
 
-    public function __construct(string $remBil, float $notEnt, DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
+    public function __construct(string $remBil, float $notEnt, ?DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
     {
         parent::__construct($idBil, $libBil, $notBil, $notOra, $monEtu);
         $this->remBil = $remBil;
@@ -42,7 +42,7 @@ class Bilan1 extends Bilan
         $this->remBil = $remBil;
     }
 
-    public function getDatVisEnt(): DateTime
+    public function getDatVisEnt(): ?DateTime
     {
         return $this->datVisEnt;
     }
