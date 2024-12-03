@@ -44,7 +44,7 @@ class TuteurDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville, NbMaxEtu3 = :nbMax3, NbMaxEtu4 = :nbMax4, NbMaxEtu = :nbMax5 WHERE IdUti = :id";
+                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville, NbMaxEtu3 = :nbMax3, NbMaxEtu4 = :nbMax4, NbMaxEtu5 = :nbMax5 WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "log" => $obj->getLogUti(),

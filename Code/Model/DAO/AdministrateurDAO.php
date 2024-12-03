@@ -70,7 +70,7 @@ class AdministrateurDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "DELETE FROM utilisateur WHERE id = :id";
+                    $query = "DELETE FROM utilisateur WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "id" => $obj->getIdUti()

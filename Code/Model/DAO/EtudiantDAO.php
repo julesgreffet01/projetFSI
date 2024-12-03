@@ -14,6 +14,7 @@ use PDO;
 
 require_once "DAO.php";
 
+
 class EtudiantDAO extends DAO
 {
 
@@ -85,9 +86,34 @@ class EtudiantDAO extends DAO
         if ($obj instanceof Etudiant) {
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
-                if ($obj->getLogUti() == $foundObj->getLogUti()) {
-                    $query = "update utilisateur set LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AltUti = :alt, AdrUti = :adr, CpUti = :cp, VilUti = :vil, IdEnt = :idEnt, IdMai = :idMai, IdCla = :idCla, IdSpe = :idSpe, IdTut = :idTut where IdUti = :idUti";
+                if ($obj->getIdUti() == $foundObj->getIdUti()) {
+                    $query = "update utilisateur set LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AltUti = :alt, AdrUti = :adr, CpUti = :cp, VilUti = :ville, IdEnt = :idEnt, IdMai = :idMai, IdCla = :idCla, IdSpe = :idSpe, IdTut = :idTut where IdUti = :idUti";
                     $stmt = $this->bdd->prepare($query);
+                    if ($obj->getMonEnt()){
+                        $idEnt = $obj->getMonEnt()->getIdEnt();
+                    } else {
+                        $idEnt = null;
+                    }
+                    if ($obj->getMonMaitreAp()){
+                        $idMai = $obj->getMonMaitreAp()->getIdMai();
+                    } else {
+                        $idMai = null;
+                    }
+                    if($obj->getMaClasse()){
+                        $idCla = $obj->getMaClasse()->getIdCla();
+                    } else {
+                        $idCla = null;
+                    }
+                    if ($obj->getMonTuteur()){
+                        $idTut = $obj->getMonTuteur()->getIdUti();
+                    } else {
+                        $idTut = null;
+                    }
+                    if ($obj->getMaSpec()){
+                        $idSpec = $obj->getMaSpec()->getIdSpec();
+                    } else {
+                        $idSpec = null;
+                    }
                     $r = $stmt->execute([
                         'log' => $obj->getLogUti(),
                         'mdp' => $obj->getMdpUti(),
@@ -99,11 +125,11 @@ class EtudiantDAO extends DAO
                         'adr' => $obj->getAdrUti(),
                         'cp' => $obj->getCpUti(),
                         'ville' => $obj->getVilUti(),
-                        'idEnt' => $obj->getMonEnt()->getIdEnt(),
-                        'idMai' => $obj->getMonMaitreAp()->getIdMai(),
-                        'idCla' => $obj->getMaClasse()->getIdCla(),
-                        'idSpe' => $obj->getMaSpec()->getIdSpec(),
-                        'idTut'=> $obj->getMonTuteur()->getIdUti(),
+                        'idEnt' => $idEnt,
+                        'idMai' => $idMai,
+                        'idCla' => $idCla,
+                        'idSpe' => $idSpec,
+                        'idTut'=> $idTut,
                         'idUti' => $obj->getIdUti()
                     ]);
                     if ($r){
@@ -271,7 +297,7 @@ class EtudiantDAO extends DAO
         $etu = $this->find($etu);
         if ($tut && $etu){
             if ($etu->getMonTuteur() == null){
-                $etu->setTuteur($tut);
+                $etu->setMonTuteur($tut);
                 $a = $this->update($etu);
                 if($a){
                     $result = true;
