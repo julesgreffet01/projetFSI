@@ -54,7 +54,7 @@ class ClasseDAO extends DAO
         $result = false;
         if ($obj instanceof Classe) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if ($etuDAO->getAllEtuByCla($obj) == [null]) {
+            if ($etuDAO->getAllEtuByCla($obj) == []) {
                 $foundObj = $this->find($obj->getIdCla());
                 if ($foundObj !== null) {
                     if ($obj->getIdCla() == $foundObj->getIdCla()) {

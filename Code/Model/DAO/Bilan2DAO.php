@@ -95,7 +95,8 @@ class Bilan2DAO extends DAO
             if ($row){
                 $etudiantDAO = new EtudiantDAO($this->bdd);
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result = new Bilan2($row['SujBil'], $row['DatBil2'], $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
+                $date = $row['DatBil2'] != null ? new DateTime($row['DatBil2']) : null;
+                $result = new Bilan2($row['SujBil'], $date, $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
             }
         }
         return $result;
@@ -110,7 +111,8 @@ class Bilan2DAO extends DAO
             $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result[] = new Bilan2($row['SujBil'], $row['DatBil2'], $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
+                $date = $row['DatBil2'] != null ? new DateTime($row['DatBil2']) : null;
+                $result[] = new Bilan2($row['SujBil'], $date, $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
             }
         } else {
             $result = [null];

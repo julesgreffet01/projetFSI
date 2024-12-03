@@ -20,7 +20,7 @@ class Bilan1DAO extends DAO
             $query = "insert into bilan1 (LibBilUn, NotBilUn, RemBilUn, NotEnt, NotOra1, IdUti) VALUES (:lib, :not, :rem, :ent, :o1, :idUti)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
-                'lib' => $obj->getIdBil(),
+                'lib' => $obj->getLibBil(),
                 'not' => $obj->getNotBil(),
                 'rem' => $obj->getRemBil(),
                 'ent' => $obj->getNotEnt(),
@@ -46,7 +46,7 @@ class Bilan1DAO extends DAO
                     $query = "update bilan1 set LibBilUn = :lib, NotBilUn = :not, RemBilUn = :rem, NotEnt = :ent, NotOra1 = :o1, DatBil1 = :dat, IdUti = :idUti where IdBilUn = :idBil";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
-                        'lib' => $obj->getIdBil(),
+                        'lib' => $obj->getLibBil(),
                         'not' => $obj->getNotBil(),
                         'rem' => $obj->getRemBil(),
                         'ent' => $obj->getNotEnt(),
@@ -98,7 +98,8 @@ class Bilan1DAO extends DAO
             if ($row) {
                 $etudiantDAO = new EtudiantDAO($this->bdd);
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result = new Bilan1($row['RemBilUn'], $row['NotEnt'], $row['DatBil1'], $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
+                $date = $row['DatBil1'] != null ? new DateTime($row['DatBil1']) : null;
+                $result = new Bilan1($row['RemBilUn'], $row['NotEnt'], $date, $row['IdBilUn'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
             }
         }
         return $result;
@@ -113,7 +114,8 @@ class Bilan1DAO extends DAO
             $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $row['DatBil1'], $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
+                $date = $row['DatBil1'] != null ? new DateTime($row['DatBil1']) : null;
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $date, $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
             }
         } else {
             $result = [null];
