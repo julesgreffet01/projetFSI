@@ -1,8 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Style.css";
-include('Nav_Bar.php');
-?>
 <div class="contenu">
     <p>
         Bienvenue sur la plateforme de gestion du tutorat en alternance FSI, un espace digital conçu pour optimiser<br>

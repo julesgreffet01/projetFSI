@@ -32,15 +32,25 @@
         <div class="titleconnect">
             <h1>Connexion</h1>
         </div>
-            <input type="text" class="libelle" name="id">
+        <form action="../Controller/ControllerConnexion.php" method="POST">
+            <input type="text" class="libelle" name="log">
             <input type="text" class="libelle" name="mdp">
             <div class="mdp">
             <a href="#">Mot de passe oublié</a>
             </div>
             <div class="boutton">
-                <a href="Accueil_Admin.php">Connexion</a>
+<!--                <a href="Accueil_Admin.php">Connexion</a>-->
+            <input type="submit" value="Connexion" name="btnConnexion">
             </div>
+        </form>
 
+        <?php
+        if ($errorMessage != ""){
+            echo $errorMessage;
+        }
+        ?>
+
+        <!--        mettre le message d erreur quelque part qui se nomme $errorMessage et qui renvoie si tous les champs ne sont pas remplie ou si le log ou mdp sont faux-->
     </div>
 </div>
 </body>

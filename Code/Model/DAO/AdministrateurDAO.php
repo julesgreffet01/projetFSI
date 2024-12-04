@@ -116,16 +116,19 @@ class AdministrateurDAO extends DAO
         return $result;
     }
 
-    public function auth(string $log, string $mdp) :bool {
-        $result = false;
+    public function auth(string $log, string $mdp) :?object {
+        $result = null;
         $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 3";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "log" => $log,
             "mdp" => $mdp
         ]);
-        if ($r){
-            $result = true;
+        if ($r) {
+            $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
+            if ($row) {
+                $result = new Administrateur($row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
         }
         return $result;
     }
