@@ -1,45 +1,80 @@
-body{
-    background: #F5FBF5;
-    font-family: Roboto, sans-serif;
-    color: #203C25;
-}
-header{
+@media screen and (min-width: 1080px) {
+    body{
+        background: #F5FBF5;
+        font-family: Roboto, sans-serif;
+        color: #203C25;
+    }
+    nav{
+        background: #94CE9A ;
+        font-size: 25px;
+        list-style-type: none;
+        text-align: right;
+        border-radius: 20px;
+        margin-left: 180px;
+        margin-right: 20px;
+        margin-top: -155px;
 
-}
-nav{
-    background: #94CE9A ;
-    font-size: 25px;
-    list-style-type: none;
-    text-align: right;
-    border-radius: 20px;
-    margin-left: 180px;
-    margin-right: 20px;
-    margin-top: -155px;
+    }
 
-}
+    .nomentreprise{
+        font-size: 42px;
+        display: inline;
+        margin-right: 310px;
+    }
 
-.nomentreprise{
-    font-size: 42px;
-    display: inline;
-    margin-right: 310px;
-}
+    nav ul li{
+        display:inline-block;
+        padding: 25px;
+    }
 
-nav ul li{
-    display:inline-block;
-    padding: 25px;
-}
+    a{
+        color: #203C25;
+        text-decoration: none;
+    }
 
-a{
-    color: #203C25;
-    text-decoration: none;
-}
+    .logo{
+        height: 120px;
+        padding: 20px;
+    }
 
-.logo{
-    height: 120px;
-    padding: 20px;
+    .logosortie{
+        height: 30px;
+    }
 }
 
-.logosortie{
-    height: 30px;
+@media screen and (min-width: 1920px){
+    .nomentreprise{
+        font-size: 42px;
+        display: inline;
+        margin-right: 680px;
+    }
+    .logo{
+        height: 120px;
+        padding: 20px;
+    }
 }
 
+@media screen and (min-width: 320px) and (max-width: 600px){
+    body{
+        background: #F5FBF5;
+        font-family: Roboto, sans-serif;
+        color: #203C25;
+    }
+
+    .logo{
+        height: 80px;
+        padding: 10px;
+    }
+    .logosortie{
+        height: 20px;
+    }
+
+    a{
+        color: #203C25;
+        text-decoration: none;
+    }
+
+    nav ul li{
+        display:inline-block;
+    }
+}

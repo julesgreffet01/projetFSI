@@ -12,7 +12,8 @@
 </head>
 <body>
 <header>
-    <img class="logo" src="../Img/logo.jpeg">
+    <a href="Acceuil_Admin.php"><img class="logo" src="../Img/logo.jpeg"></a>
+
     <nav>
         <ul class="liens">
             <div class="nomentreprise">

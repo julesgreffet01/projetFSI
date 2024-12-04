@@ -1,64 +1,134 @@
-label{
-font-size: 20px;
+@media screen and (min-width: 1080px){
+    label{
+        font-size: 20px;
+    }
+
+    .typetext{
+        background: #C9E8CA;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 0px 12px;
+    }
+
+    select{
+        background: #C9E8CA;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        width: 240px;
+    }
+
+
+
+    .centre{
+        text-align: left;
+        margin-left: 360px;
+        margin-top: -460px;
+
+    }
+
+    .selection{
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .centre .info{
+        font-size: 20px;
+
+    }
+
+    .selection{
+        margin-top: -345px;
+    }
+
+    .info p{
+        font-size: 30px;
+    }
+
+    .selectclass{
+        margin-top: 280px;
+    }
+
+    .selectmaitre{
+        margin-top: 150px;
+    }
+
+    .selectetudiant{
+        margin-top: -410px;
+    }
+
+    .selectespe{
+        margin-top: 320px;
+    }
+
+    .selectentreprise{
+        margin-top: 120px;
+    }
 }
+@media screen and (min-width: 1920px){
+    label{
+        font-size: 20px;
+    }
 
-.typetext{
-    background: #C9E8CA;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 0px 12px;
-}
+    .typetext{
+        background: #C9E8CA;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 0px 12px;
+    }
 
-select{
-    background: #C9E8CA;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    width: 240px;
-}
+    select{
+        background: #C9E8CA;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        width: 240px;
+    }
 
-.centre{
-    text-align: left;
-    margin-left: 450px;
-    margin-top: -460px;
+    .centre{
+        text-align: left;
+        margin-left: 450px;
+        margin-top: -460px;
 
-}
+    }
 
-.selection{
-    text-align: right;
-    margin-right: 50px;
-}
+    .selection{
+        text-align: right;
+        margin-right: 50px;
+    }
 
-.centre .info{
-    font-size: 20px;
+    .centre .info{
+        font-size: 20px;
 
-}
+    }
 
-.selection{
-    margin-top: -345px;
-}
+    .selection{
+        margin-top: -345px;
+    }
 
-.info p{
-    font-size: 30px;
-}
+    .info p{
+        font-size: 30px;
+    }
 
-.selectclass{
-    margin-top: 280px;
-}
+    .selectclass{
+        margin-top: 280px;
+    }
 
-.selectmaitre{
-    margin-top: 150px;
-}
+    .selectmaitre{
+        margin-top: 150px;
+    }
 
-.selectetudiant{
-    margin-top: -410px;
-}
+    .selectetudiant{
+        margin-top: -410px;
+    }
 
-.selectespe{
-    margin-top: 320px;
-}
+    .selectespe{
+        margin-top: 320px;
+    }
 
-.selectentreprise{
-    margin-top: 120px;
+    .selectentreprise{
+        margin-top: 120px;
+    }
 }
