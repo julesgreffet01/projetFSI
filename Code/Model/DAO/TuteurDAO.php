@@ -97,7 +97,6 @@ class TuteurDAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $etuDAO = new EtudiantDAO($this->bdd);
         $query = "SELECT * FROM Utilisateur WHERE IdUti = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
@@ -127,16 +126,19 @@ class TuteurDAO extends DAO
         return $result;
     }
 
-    public function auth(string $login, string $mdp): bool {
-        $result = false;
+    public function auth(string $login, string $mdp): ?object {
+        $result = null;
         $query = "SELECT * FROM Utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypUti = 2";
         $stmt = $this->bdd->prepare($query);
-        $stmt->execute([
+        $r = $stmt->execute([
             "login" => $login,
             "mdp" => $mdp
         ]);
-        if ($stmt->rowCount() > 0) {
-            $result = true;
+        if ($r) {
+            $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
+            if($row){
+                $result = new Tuteur($row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'], $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
         }
         return $result;
     }

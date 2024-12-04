@@ -12,7 +12,22 @@ use BO\Classe;
 use BO\MaitreApprentissage;
 use PDO;
 
-require_once "DAO.php";
+require_once __DIR__ ."/DAO.php";
+require_once __DIR__ ."/EntrepriseDAO.php";
+require_once __DIR__ ."/ClasseDAO.php";
+require_once __DIR__ ."/SpecialiteDAO.php";
+require_once __DIR__ ."/TuteurDAO.php";
+require_once __DIR__ ."/Bilan1DAO.php";
+require_once __DIR__ ."/Bilan2DAO.php";
+require_once __DIR__ ."/MaitreApprentissageDAO.php";
+
+require_once __DIR__ . "/../BO/Etudiant.php";
+require_once  __DIR__ ."/../BO/Specialite.php";
+require_once  __DIR__ ."/../BO/Tuteur.php";
+require_once  __DIR__ ."/../BO/MaitreApprentissage.php";
+require_once  __DIR__ ."/../BO/Entreprise.php";
+require_once  __DIR__ ."/../BO/Bilan1.php";
+require_once  __DIR__ ."/../BO/Bilan2.php";
 
 
 class EtudiantDAO extends DAO
@@ -307,8 +322,17 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
-    public function auth(string $log, string $mdp) :bool {
-        $result = false;
+    public function auth(string $log, string $mdp) : ?object {
+        $result = null;
+
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+        $bil1DAO = new Bilan1DAO($this->bdd);
+        $bil2DAO = new Bilan2DAO($this->bdd);
+
         $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 1";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
@@ -316,7 +340,40 @@ class EtudiantDAO extends DAO
             "mdp" => $mdp
         ]);
         if ($r){
-            $result = true;
+            $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
+            if ($row){
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
+                $result = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+
+                $bil1 = $bil1DAO->getAllBil1ByEtu($result);
+                if ($bil1 == null){
+                    $bil1 = [];
+                }
+                $result->setMesBilan1($bil1);
+
+
+                $bil2 = $bil2DAO->getAllBil2ByEtu($result);
+                if ($bil2 == null){
+                    $bil2 = [];
+                }
+                $result->setMesBilan2($bil2);
+            }
         }
         return $result;
     }

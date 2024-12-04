@@ -1,8 +1,4 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Tableau.css";
-include('Nav_Bar.php');
-?>
+
 
 <div class="alerteadmin">
     <h1>Alerte</h1>
