@@ -96,3 +96,7 @@ $bilan1DAO = new Bilan1DAO($bdd);
 $monEtu = $etuDAO->find(4);
 //$bilan1 = new Bilan1("testModif", 12, null, 7, "test", 10, 10, $monEtu);
 //var_dump($bilan1DAO->getAllBil1ByEtu($monEtu));
+
+//------------- alerte -------------
+$aleDAO = new AlerteDAO($bdd);
+//var_dump($aleDAO->find(1));
