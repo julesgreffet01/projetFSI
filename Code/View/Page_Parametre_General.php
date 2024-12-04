@@ -1,10 +1,3 @@
-<?php
-$titrefichier = "Général";
-$stylecss = "Parametre.css";
-$titreparametre = "Général";
-include('header_admin.php');
-?>
-
 <div class="centre">
     <div class="info">
     <p>

@@ -23,14 +23,20 @@
             <li><a href="Page_Liste_Etudiant.php">Liste étudiant</a></li>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){?>
-            <li><a href="ControllerInfo_Etudiant">Mes informations</a></li>
-            <?php }else { ?>
-            <li><a href="#">Mes informations</a></li>
+            <li><a href="#etudiant">Mes informations</a></li>
+            <?php }else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
+            <li><a href="#tuteur">Mes informations</a></li>
+            <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
+            <li><a href="#admin">Mes informations</a></li>
             <?php } ?>
 
             <li><a href="Page_Alertes.php">Alertes</a></li>
-            <li><a href="Page_Parametre_General.php">Paramètre</a></li>
-            <li><a href="Leaves"><img class="logosortie"src="../Img/logout.png"></a></li>
+
+            <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
+            <li><a href="ControllerParametre_General">Paramètre</a></li>
+            <?php } ?>
+
+            <li><a href="Leaves"><img class="logosortie" src="../Img/logout.png"></a></li>
         </ul>
     </nav>
 </header>
