@@ -77,7 +77,7 @@ class AlerteDAO extends DAO
             $etuDAO = new EtudiantDAO($this->bdd);
                $mesEtu = $etuDAO->getAllEtuByTut($tut);
             var_dump($mesEtu);
-           /*   foreach ($mesEtu as $me) {    //on verif si il y a une date null ou pas. si il y en a pas alors jsp voir avec la prof
+           /*   foreach ($mesEtu as $me) {    //on verif si il y a une date null ou pas. si il y en a pas alors ajouter au tableau un objet etudiant.
                 var_dump($me);
                 die;
             }*/
