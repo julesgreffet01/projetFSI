@@ -25,7 +25,7 @@ $etudiantDAO = new EtudiantDAO($bdd);
 $_SESSION = [];
 $errorMessage = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {     //on verif que ce soit bien une methode post qui nous est envoyé
     $log = $_POST["log"];
     $mdp = $_POST["mdp"];
     if ($log && $mdp) {
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tut = $tuteurDAO->auth($log, $mdp);
         $admin = $adminDAO->auth($log, $mdp);
         if ($etu) {
-            $_SESSION['utilisateur'] = serialize($etu);
+            $_SESSION['utilisateur'] = serialize($etu);         //on met l'objet de l'utilisateur dans un $_SESSION et sa marche pas sans le serialize
             header('Location: ControllerAccueil.php');
         }
         if ($tut) {

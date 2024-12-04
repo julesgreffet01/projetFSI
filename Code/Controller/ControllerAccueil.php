@@ -3,6 +3,11 @@ session_start();
 
 require_once __DIR__."/../Model/DAO/EtudiantDAO.php";
 require_once __DIR__."/../Model/DAO/TuteurDAO.php";
+require_once __DIR__."/../Model/DAO/AdministrateurDAO.php";     //on empeche pas l admin de changer l url pour acceder a ces pages la
+
+require_once __DIR__."/../Model/BO/Etudiant.php";
+require_once __DIR__."/../Model/BO/Tuteur.php";
+require_once __DIR__."/../Model/BO/Administrateur.php";
 
 
 
@@ -10,12 +15,12 @@ $titrefichier = "Accueil";
 $stylecss = "Style.css";
 
 
-var_dump(unserialize($_SESSION['utilisateur'])); //to do enlever c est juste un test de comment on gere l objet dans les sessions
+
+if (unserialize($_SESSION['utilisateur'])){
+    include_once ('../View/Nav_Bar.php');
+    include_once ('../View/Accueil_Etudiant.php');
+} else {
+    header('location: ControllerConnexion.php');
+}
 
 
-
-
-
-
-include_once ('../View/Nav_Bar.php');
-include_once ('../View/Accueil_Etudiant.php');
