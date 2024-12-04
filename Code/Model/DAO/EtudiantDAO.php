@@ -24,7 +24,7 @@ class EtudiantDAO extends DAO
         if ($obj instanceof Etudiant) {
             $bil1DAO = new Bilan1DAO($this->bdd);
             $bil2DAO = new Bilan2DAO($this->bdd);
-            $query = "insert into utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AltUti, AdrUti, CpUti, VilUti, IdEnt, IdMai, IdCla, IdSpe, IdTut, IdTypUti) values (:log, :mdp, :mail, :tel, :nom, :pre, :alt, :adr, :cp, :ville, :idEnt, :idMai, :idCla, :idTut, :idSpe, 1)";
+            $query = "insert into Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AltUti, AdrUti, CpUti, VilUti, IdEnt, IdMai, IdCla, IdSpe, IdTut, IdTypUti) values (:log, :mdp, :mail, :tel, :nom, :pre, :alt, :adr, :cp, :ville, :idEnt, :idMai, :idCla, :idTut, :idSpe, 1)";
             $stmt = $this->bdd->prepare($query);
             if ($obj->getMonEnt()){
                 $idEnt = $obj->getMonEnt()->getIdEnt();
@@ -87,7 +87,7 @@ class EtudiantDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "update utilisateur set LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AltUti = :alt, AdrUti = :adr, CpUti = :cp, VilUti = :ville, IdEnt = :idEnt, IdMai = :idMai, IdCla = :idCla, IdSpe = :idSpe, IdTut = :idTut where IdUti = :idUti";
+                    $query = "update Utilisateur set LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AltUti = :alt, AdrUti = :adr, CpUti = :cp, VilUti = :ville, IdEnt = :idEnt, IdMai = :idMai, IdCla = :idCla, IdSpe = :idSpe, IdTut = :idTut where IdUti = :idUti";
                     $stmt = $this->bdd->prepare($query);
                     if ($obj->getMonEnt()){
                         $idEnt = $obj->getMonEnt()->getIdEnt();
@@ -151,7 +151,7 @@ class EtudiantDAO extends DAO
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getLogUti() == $foundObj->getLogUti()) {
-                        $query = "delete from utilisateur where IdUti = :idUti";
+                        $query = "delete from Utilisateur where IdUti = :idUti";
                         $stmt = $this->bdd->prepare($query);
                         $r = $stmt->execute([
                             'idUti' => $foundObj->getIdUti()
@@ -180,7 +180,7 @@ class EtudiantDAO extends DAO
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getLogUti() == $foundObj->getLogUti()) {
-                        $query = "delete from utilisateur where IdUti = :idUti";
+                        $query = "delete from Utilisateur where IdUti = :idUti";
                         $stmt = $this->bdd->prepare($query);
                         $r = $stmt->execute([
                             'idUti' => $foundObj->getIdUti()
@@ -206,7 +206,7 @@ class EtudiantDAO extends DAO
         $bil1DAO = new Bilan1DAO($this->bdd);
         $bil2DAO = new Bilan2DAO($this->bdd);
 
-        $query = "select * from utilisateur where IdUti = :idUti and IdTypUti = 1";
+        $query = "select * from Utilisateur where IdUti = :idUti and IdTypUti = 1";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idUti' => $id
@@ -257,7 +257,7 @@ class EtudiantDAO extends DAO
         $maDAO = new MaitreApprentissageDAO($this->bdd);
         $specDAO = new SpecialiteDAO($this->bdd);
         $tutDAO = new TuteurDAO($this->bdd);
-        $query = "select * from utilisateur where IdTypUti = 1";
+        $query = "select * from Utilisateur where IdTypUti = 1";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -309,7 +309,7 @@ class EtudiantDAO extends DAO
 
     public function auth(string $log, string $mdp) :bool {
         $result = false;
-        $query = "SELECT * FROM utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 1";
+        $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 1";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "log" => $log,
@@ -332,7 +332,7 @@ class EtudiantDAO extends DAO
         $bil1DAO = new Bilan1DAO($this->bdd);
         $bil2DAO = new Bilan2DAO($this->bdd);
 
-        $query = "select * from utilisateur where IdTut = :idUti and IdTypUti = 1";
+        $query = "select * from Utilisateur where IdTut = :idUti and IdTypUti = 1";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "idUti" => $tut->getIdUti()
@@ -387,7 +387,7 @@ class EtudiantDAO extends DAO
         $specDAO = new SpecialiteDAO($this->bdd);
         $tutDAO = new TuteurDAO($this->bdd);
 
-        $query = "select * from utilisateur where IdCla = :idCla";
+        $query = "select * from Utilisateur where IdCla = :idCla";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "idCla" => $cla->getIdCla()
@@ -412,7 +412,7 @@ class EtudiantDAO extends DAO
         $maDAO = new MaitreApprentissageDAO($this->bdd);
         $specDAO = new SpecialiteDAO($this->bdd);
         $tutDAO = new TuteurDAO($this->bdd);
-        $query = "select * from utilisateur where IdCla = :idCla and IdTut is null";
+        $query = "select * from Utilisateur where IdCla = :idCla and IdTut is null";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "idCla" => $cla->getIdCla()
@@ -435,7 +435,7 @@ class EtudiantDAO extends DAO
 
     public function getAllEtuByEnt(Entreprise $ent) : bool {
         $result = false;
-        $query = "select * from utilisateur where IdEnt = :idEnt";
+        $query = "select * from Utilisateur where IdEnt = :idEnt";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             "idEnt" => $ent->getIdEnt()
@@ -448,7 +448,7 @@ class EtudiantDAO extends DAO
 
     public function getAllEtuBySpec(Specialite $spec) : bool {
         $result = false;
-        $query = "select * from utilisateur where IdSpe = :idSpe";
+        $query = "select * from Utilisateur where IdSpe = :idSpe";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             "idSpe" => $spec->getIdSpec()
@@ -461,7 +461,7 @@ class EtudiantDAO extends DAO
 
     public function getAllEtuByMaiApp(MaitreApprentissage $ma) : bool {
         $result = false;
-        $query = "select * from utilisateur where IdMai = :idMai";
+        $query = "select * from Utilisateur where IdMai = :idMai";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             'idMai'=>$ma->getIdMai()
@@ -474,7 +474,7 @@ class EtudiantDAO extends DAO
 
     public function getAllEtuByTutBool(Tuteur $tut) : bool {
         $result = false;
-        $query = "select * from utilisateur where IdTut = :idTut";
+        $query = "select * from Utilisateur where IdTut = :idTut";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idTut' => $tut->getIdUti()

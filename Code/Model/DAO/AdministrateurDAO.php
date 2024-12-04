@@ -70,7 +70,7 @@ class AdministrateurDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "DELETE FROM utilisateur WHERE IdUti = :id";
+                    $query = "DELETE FROM Utilisateur WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "id" => $obj->getIdUti()
@@ -87,7 +87,7 @@ class AdministrateurDAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $query = "SELECT * FROM utilisateur WHERE IdUti = :id";
+        $query = "SELECT * FROM Utilisateur WHERE IdUti = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "id" => $id
@@ -103,7 +103,7 @@ class AdministrateurDAO extends DAO
 
     public function getAll(): array
     {
-        $query = "SELECT * FROM utilisateur where IdTypUti = 3";
+        $query = "SELECT * FROM Utilisateur where IdTypUti = 3";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -118,7 +118,7 @@ class AdministrateurDAO extends DAO
 
     public function auth(string $log, string $mdp) :bool {
         $result = false;
-        $query = "SELECT * FROM utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 3";
+        $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 3";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "log" => $log,

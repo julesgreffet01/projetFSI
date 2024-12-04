@@ -14,7 +14,7 @@ class TuteurDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Tuteur) {
-            $query = "Insert into utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, NbMaxEtu3, NbMaxEtu4, NbMaxEtu5, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, :nbMax3, :nbMax4, :nbMax5, 2)";
+            $query = "Insert into Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, NbMaxEtu3, NbMaxEtu4, NbMaxEtu5, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, :nbMax3, :nbMax4, :nbMax5, 2)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
                 "log" => $obj->getLogUti(),
@@ -44,7 +44,7 @@ class TuteurDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville, NbMaxEtu3 = :nbMax3, NbMaxEtu4 = :nbMax4, NbMaxEtu5 = :nbMax5 WHERE IdUti = :id";
+                    $query = "UPDATE Utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville, NbMaxEtu3 = :nbMax3, NbMaxEtu4 = :nbMax4, NbMaxEtu5 = :nbMax5 WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "log" => $obj->getLogUti(),
@@ -79,7 +79,7 @@ class TuteurDAO extends DAO
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                        $query = "DELETE FROM utilisateur WHERE IdUti = :id";
+                        $query = "DELETE FROM Utilisateur WHERE IdUti = :id";
                         $stmt = $this->bdd->prepare($query);
                         $r = $stmt->execute([
                             "id" => $obj->getIdUti()
@@ -98,7 +98,7 @@ class TuteurDAO extends DAO
     {
         $result = null;
         $etuDAO = new EtudiantDAO($this->bdd);
-        $query = "SELECT * FROM utilisateur WHERE IdUti = :id";
+        $query = "SELECT * FROM Utilisateur WHERE IdUti = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             "id" => $id
@@ -114,7 +114,7 @@ class TuteurDAO extends DAO
 
     public function getAll(): array
     {
-        $query = "SELECT * FROM utilisateur where IdTypUti = 2";
+        $query = "SELECT * FROM Utilisateur where IdTypUti = 2";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -129,7 +129,7 @@ class TuteurDAO extends DAO
 
     public function auth(string $login, string $mdp): bool {
         $result = false;
-        $query = "SELECT * FROM utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypUti = 2";
+        $query = "SELECT * FROM Utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypUti = 2";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             "login" => $login,

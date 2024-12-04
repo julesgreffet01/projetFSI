@@ -26,7 +26,7 @@ class AlerteDAO extends DAO
             $foundObj = $this->find($obj->getIdAl());
             if ($foundObj) {
                 if ($obj->getIdAl() == $foundObj->getIdAl()) {
-                    $query = "Update uilisateur set DatLimUn = :datLim1, DatLimDeux = :datLim2 where IdAle = :idAl";
+                    $query = "Update Alerte set DatLimUn = :datLim1, DatLimDeux = :datLim2 where IdAle = :idAl";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'datLim1' => $obj->getDatLimBil1(),
