@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -20,7 +21,13 @@
                 <li><a href="Accueil_Admin.php">FSI</a></li>
             </div>
             <li><a href="Page_Liste_Etudiant.php">Liste étudiant</a></li>
-            <li><a href="Page_Info_Admin.php">Mes informations</a></li>
+
+            <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){?>
+            <li><a href="ControllerInfo_Etudiant">Mes informations</a></li>
+            <?php }else { ?>
+            <li><a href="#">Mes informations</a></li>
+            <?php } ?>
+
             <li><a href="Page_Alertes.php">Alertes</a></li>
             <li><a href="Page_Parametre_General.php">Paramètre</a></li>
             <li><a href="Leaves"><img class="logosortie"src="../Img/logout.png"></a></li>
