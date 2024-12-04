@@ -5,41 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerAccueil_Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerAlertes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerDetail_Etudiant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerHeaderAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerListe_Etudiant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerNavBar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/controllers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerConnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Acceuil_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Accueil_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Acceuil_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Accueil_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Nav_Bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Nav_Bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Alertes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Alertes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Liste_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Liste_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Maitre_Apprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Maitre_Apprentissage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Specialite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Specialite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/header_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/header_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,13 +32,13 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;296e2d3d-ec64-4147-9f60-56262dc585a7&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/julesgreffet01/projetFSI.git",
+    "accountId": "c778ada8-d7e5-4079-9793-ac0393b01b77"
   }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php8.2.0\php.exe" />
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -80,34 +46,33 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2oqYzv8fwDoQqZwk8wAM8evFVji" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;robin&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/projetFSI&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PHP Script.testDAO.php.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "jules",
+    "last_opened_file_path": "C:/wamp64/www/php/projetFSI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -141,8 +106,11 @@
       <workItem from="1732798691829" duration="10073000" />
       <workItem from="1732824264083" duration="7988000" />
       <workItem from="1732873164742" duration="2358000" />
-      <workItem from="1733214218394" duration="6505000" />
-      <workItem from="1733302776146" duration="1237000" />
+      <workItem from="1733172623504" duration="1871000" />
+      <workItem from="1733214247760" duration="10475000" />
+      <workItem from="1733231898041" duration="6838000" />
+      <workItem from="1733251987886" duration="5357000" />
+      <workItem from="1733300784923" duration="4637000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -296,7 +264,39 @@
       <option name="project" value="LOCAL" />
       <updated>1732746106863</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733300906063</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733300906063</updated>
+    </task>
+    <task id="LOCAL-00021" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733301416637</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733301416637</updated>
+    </task>
+    <task id="LOCAL-00022" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733303899792</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733303899792</updated>
+    </task>
+    <task id="LOCAL-00023" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733308266672</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733308266672</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

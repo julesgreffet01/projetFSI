@@ -16,7 +16,7 @@ class Bilan2DAO extends DAO
     {
         $result = false;
         if ($obj instanceof Bilan2) {
-            $query = "insert into bilan2 (LibBilDeux, NotBilDeux, NotOra2, SujBil, IdUti) values (:lib, :not, :ora, :suj, :idUti)";
+            $query = "insert into Bilan2 (LibBilDeux, NotBilDeux, NotOra2, SujBil, IdUti) values (:lib, :not, :ora, :suj, :idUti)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
                 'lib'=> $obj->getLibBil(),
@@ -41,7 +41,7 @@ class Bilan2DAO extends DAO
                 if ($obj->getLibBil() == $foundObj->getLibBil()) {
                     date_default_timezone_set('Europe/Paris');
                     $date = date("Y-m-d");
-                    $query = "update bilan2 set LibBilDeux = :lib, NotBilDeux = :not, NotOra2 = :ora, SujBil = :suj, IdUti = :idUti, DatBil2 = :dat where IdBilDeux = :id";
+                    $query = "update Bilan2 set LibBilDeux = :lib, NotBilDeux = :not, NotOra2 = :ora, SujBil = :suj, IdUti = :idUti, DatBil2 = :dat where IdBilDeux = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'lib'=> $obj->getLibBil(),
@@ -68,7 +68,7 @@ class Bilan2DAO extends DAO
             $foundObj = $this->find($obj->getIdBil());
             if ($foundObj) {
                 if ($obj->getLibBil() == $foundObj->getLibBil()) {
-                    $query = "delete from bilan2 where IdBilDeux = :id";
+                    $query = "delete from Bilan2 where IdBilDeux = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'id'=>$obj->getIdBil()
@@ -85,7 +85,7 @@ class Bilan2DAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $query = "select * from bilan2 where IdBilDeux = :id";
+        $query = "select * from Bilan2 where IdBilDeux = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'id'=>$id
@@ -95,7 +95,8 @@ class Bilan2DAO extends DAO
             if ($row){
                 $etudiantDAO = new EtudiantDAO($this->bdd);
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result = new Bilan2($row['SujBil'], $row['DatBil2'], $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
+                $date = $row['DatBil2'] != null ? new DateTime($row['DatBil2']) : null;
+                $result = new Bilan2($row['SujBil'], $date, $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
             }
         }
         return $result;
@@ -103,14 +104,15 @@ class Bilan2DAO extends DAO
 
     public function getAll(): array
     {
-        $query = "select * from bilan2";
+        $query = "select * from Bilan2";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result[] = new Bilan2($row['SujBil'], $row['DatBil2'], $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
+                $date = $row['DatBil2'] != null ? new DateTime($row['DatBil2']) : null;
+                $result[] = new Bilan2($row['SujBil'], $date, $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $monEtu);
             }
         } else {
             $result = [null];
@@ -120,7 +122,7 @@ class Bilan2DAO extends DAO
 
     public function getAllBil2ByEtu(Etudiant $etudiant): ?array {
         $result = [];
-        $query = "select * from bilan2 where IdUti = :idUti";
+        $query = "select * from Bilan2 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idUti' => $etudiant->getIdUti()
@@ -128,7 +130,8 @@ class Bilan2DAO extends DAO
         if ($r) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
-                $result[] = new Bilan2($row['SujBil'], new DateTime($row['DatBil2']), $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $etudiant);
+                $dat = $row['DatBil2'] != null ? new DateTime($row['DatBil2']) : null;
+                $result[] = new Bilan2($row['SujBil'], $dat, $row['IdBilDeux'], $row['LibBilDeux'], $row['NotBilDeux'], $row['NotOra2'], $etudiant);
             }
         } else {
             $result = [null];

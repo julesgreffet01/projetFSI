@@ -17,10 +17,10 @@ class Bilan1DAO extends DAO
     {
         $result = false;
         if ($obj instanceof Bilan1) {
-            $query = "insert into bilan1 (LibBilUn, NotBilUn, RemBilUn, NotEnt, NotOra1, IdUti) VALUES (:lib, :not, :rem, :ent, :o1, :idUti)";
+            $query = "insert into Bilan1 (LibBilUn, NotBilUn, RemBilUn, NotEnt, NotOra1, IdUti) VALUES (:lib, :not, :rem, :ent, :o1, :idUti)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
-                'lib' => $obj->getIdBil(),
+                'lib' => $obj->getLibBil(),
                 'not' => $obj->getNotBil(),
                 'rem' => $obj->getRemBil(),
                 'ent' => $obj->getNotEnt(),
@@ -43,10 +43,10 @@ class Bilan1DAO extends DAO
                 if ($obj->getIdBil() == $foundObj->getIdBil()) {
                     date_default_timezone_set('Europe/Paris');
                     $date = date("Y-m-d");
-                    $query = "update bilan1 set LibBilUn = :lib, NotBilUn = :not, RemBilUn = :rem, NotEnt = :ent, NotOra1 = :o1, DatBil1 = :dat, IdUti = :idUti where IdBilUn = :idBil";
+                    $query = "update Bilan1 set LibBilUn = :lib, NotBilUn = :not, RemBilUn = :rem, NotEnt = :ent, NotOra1 = :o1, DatBil1 = :dat, IdUti = :idUti where IdBilUn = :idBil";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
-                        'lib' => $obj->getIdBil(),
+                        'lib' => $obj->getLibBil(),
                         'not' => $obj->getNotBil(),
                         'rem' => $obj->getRemBil(),
                         'ent' => $obj->getNotEnt(),
@@ -71,7 +71,7 @@ class Bilan1DAO extends DAO
             $foundObj = $this->find($obj->getIdBil());
             if ($foundObj) {
                 if ($obj->getIdBil() == $foundObj->getIdBil()) {
-                    $query = "delete from bilan1 where IdBilUn = :idBil";
+                    $query = "delete from Bilan1 where IdBilUn = :idBil";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'idBil' => $foundObj->getIdBil()
@@ -88,7 +88,7 @@ class Bilan1DAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $query = "select * from bilan1 where IdBilUn = :idBil";
+        $query = "select * from Bilan1 where IdBilUn = :idBil";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idBil' => $id
@@ -98,7 +98,8 @@ class Bilan1DAO extends DAO
             if ($row) {
                 $etudiantDAO = new EtudiantDAO($this->bdd);
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result = new Bilan1($row['RemBilUn'], $row['NotEnt'], $row['DatBil1'], $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
+                $date = $row['DatBil1'] != null ? new DateTime($row['DatBil1']) : null;
+                $result = new Bilan1($row['RemBilUn'], $row['NotEnt'], $date, $row['IdBilUn'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
             }
         }
         return $result;
@@ -106,14 +107,15 @@ class Bilan1DAO extends DAO
 
     public function getAll(): array
     {
-        $query = "select * from bilan1";
+        $query = "select * from Bilan1";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $etudiantDAO = new EtudiantDAO($this->bdd);
             foreach ($stmt as $row) {
                 $monEtu = $etudiantDAO->find($row['IdUti']);
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $row['DatBil1'], $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
+                $date = $row['DatBil1'] != null ? new DateTime($row['DatBil1']) : null;
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $date, $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
             }
         } else {
             $result = [null];
@@ -123,7 +125,7 @@ class Bilan1DAO extends DAO
 
     public function getAllBil1ByEtu(Etudiant $etudiant): ?array {
         $result = [];
-        $query = "select * from bilan1 where IdUti = :idUti";
+        $query = "select * from Bilan1 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idUti' => $etudiant->getIdUti()
@@ -131,7 +133,8 @@ class Bilan1DAO extends DAO
         if ($r) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], new DateTime($row['DatBil1']), $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
+                $dat = ($row['DatBil1'] != null) ? new DateTime($row['DatBil1']) : null;
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $dat, $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
             }
         } else {
             $result = [null];

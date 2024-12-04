@@ -73,7 +73,7 @@ CREATE TABLE Utilisateur (
 	CONSTRAINT Fk_Classe_Utilisateur FOREIGN KEY (IdCla) REFERENCES Classe (IdCla),
 	CONSTRAINT Fk_Specialite_Utilisateur FOREIGN KEY (IdSpe) REFERENCES Specialite (IdSpe),
 	CONSTRAINT Fk_TypeUtilisateur_Utilisateur FOREIGN KEY (IdTypUti) REFERENCES TypeUtilisateur (IdTypUti),
-	CONSTRAINT FK_Tuteur FOREIGN KEY (IdTut) REFERENCES Utilisateur (IdUti));
+	CONSTRAINT FK_Tuteur FOREIGN KEY (IdTut) REFERENCES Utilisateur (IdUti))
 ENGINE = INNODB;
 
 CREATE TABLE Bilan1 (

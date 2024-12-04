@@ -15,7 +15,7 @@ class MaitreApprentissageDAO extends DAO
     {
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
-                    $query = "INSERT INTO maitreapprentissage(IdMai, NomMai, PreMai, TelMai, MaiMai, IdEnt) VALUES(:idMai, :nomMai, :preMai, :telMai, :mailMai, :monEnt)";
+                    $query = "INSERT INTO MaitreApprentissage(IdMai, NomMai, PreMai, TelMai, MaiMai, IdEnt) VALUES(:idMai, :nomMai, :preMai, :telMai, :mailMai, :monEnt)";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'idMai' => $obj->getIdMai(),
@@ -39,7 +39,7 @@ class MaitreApprentissageDAO extends DAO
             $foundObj = $this->find($obj->getIdMai());
             if ($foundObj) {
                 if ($obj->getIdMai() == $foundObj->getIdMai()) {
-                    $query = "UPDATE maitreapprentissage SET NomMai = :nomMai, PreMai = :preMai, TelMai = :telMai, MaiMai = :mailMai, IdEnt = :monEnt WHERE IdMai = :idMai";
+                    $query = "UPDATE MaitreApprentissage SET NomMai = :nomMai, PreMai = :preMai, TelMai = :telMai, MaiMai = :mailMai, IdEnt = :monEnt WHERE IdMai = :idMai";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'idMai' => $obj->getIdMai(),
@@ -67,7 +67,7 @@ class MaitreApprentissageDAO extends DAO
                 $foundObj = $this->find($obj->getIdMai());
                 if ($foundObj != null) {
                     if($obj->getIdMai() == $foundObj->getIdMai()){
-                        $query = "DELETE FROM maitreapprentissage WHERE IdMai = :idMai";
+                        $query = "DELETE FROM MaitreApprentissage WHERE IdMai = :idMai";
                         $stmt = $this->bdd->prepare($query);
                         $r = $stmt->execute([
                             'idMai' => $obj->getIdMai()
@@ -86,7 +86,7 @@ class MaitreApprentissageDAO extends DAO
     {
         $result = null;
         $entDAO = new EntrepriseDAO($this->bdd);
-        $query = "SELECT * FROM maitreapprentissage WHERE IdMai = :idMai";
+        $query = "SELECT * FROM MaitreApprentissage WHERE IdMai = :idMai";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idMai' => $id
@@ -104,7 +104,7 @@ class MaitreApprentissageDAO extends DAO
     public function getAll(): array
     {
         $entDAO = new EntrepriseDAO($this->bdd);
-        $query = "SELECT * FROM maitreapprentissage";
+        $query = "SELECT * FROM MaitreApprentissage";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -120,7 +120,7 @@ class MaitreApprentissageDAO extends DAO
 
     public function getAllMaByEnt(Entreprise $ent): bool {
         $result = false;
-        $query= "Select * from maitreapprentissage where IdEnt = :idEnt";
+        $query= "Select * from MaitreApprentissage where IdEnt = :idEnt";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             'idEnt' => $ent->getIdEnt()
