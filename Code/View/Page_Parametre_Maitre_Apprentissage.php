@@ -1,5 +1,5 @@
 <?php
-$titrefichier = "Acceuil";
+$titrefichier = "Accueil";
 $stylecss = "Parametre.css";
 $titreparametre = "Maitre d'apprentissage";
 include('header_admin.php');

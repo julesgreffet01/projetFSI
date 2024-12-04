@@ -16,7 +16,7 @@
     <nav>
         <ul class="liens">
             <div class="nomentreprise">
-                <li><a href="Acceuil_Admin.php">FSI</a></li>
+                <li><a href="Accueil_Admin.php">FSI</a></li>
             </div>
             <li><a href="Page_Liste_Etudiant.php">Liste étudiant</a></li>
             <li><a href="Page_Info_Admin.php">Mes informations</a></li>

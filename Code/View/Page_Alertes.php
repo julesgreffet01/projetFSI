@@ -1,5 +1,5 @@
 <?php
-$titrefichier = "Acceuil";
+$titrefichier = "Accueil";
 $stylecss = "Tableau.css";
 include('Nav_Bar.php');
 ?>
