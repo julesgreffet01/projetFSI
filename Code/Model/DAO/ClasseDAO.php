@@ -56,7 +56,7 @@ class ClasseDAO extends DAO
             $etuDAO = new EtudiantDAO($this->bdd);
             if ($etuDAO->getAllEtuByCla($obj) == []) {
                 $foundObj = $this->find($obj->getIdCla());
-                if ($foundObj !== null) {
+                if ($foundObj) {
                     if ($obj->getIdCla() == $foundObj->getIdCla()) {
                         $query = "DELETE FROM Classe WHERE IdCla = :idCl";
                         $stmt = $this->bdd->prepare($query);
