@@ -21,12 +21,14 @@
         <th>Téléphone</th>
         <th>En savoir plus</th>
     </tr>
-    <tr>
-        <td>Graifait</td>
-        <td>Jules</td>
-        <td>1 SIO</td>
-        <td>06 05 04 03 02</td>
-        <td><a href="#" class="voircss">Voir</a></td>
-    </tr>
+    <?php foreach ($etus as $etu): ?>
+        <tr>
+            <td><?php echo ($etu->getNomUti()); ?></td>
+            <td><?php echo ($etu->getPreUti()); ?></td>
+            <td><?php echo ($etu->getMaClasse()->getLibCla()); ?></td>
+            <td><?php echo ($etu->getTelUti()); ?></td>
+            <td><a href="ControllerDetail_Etudiant.php?idEtu=<?php echo $etu->getIdUti() ?>" class="voircss">Voir</a></td>
+        </tr>
+    <?php endforeach; ?>
 </table>
 </div>
