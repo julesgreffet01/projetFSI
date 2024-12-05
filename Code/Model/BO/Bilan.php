@@ -5,12 +5,12 @@ namespace BO;
 abstract class Bilan
 {
     protected int $idBil;
-    protected string $libBil;
+    protected ?string $libBil;
     protected float $notBil;
     protected float $notOra;
     protected Etudiant $monEtu;
 
-    public function __construct(int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
+    public function __construct(int $idBil, ?string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
     {
         $this->idBil = $idBil;
         $this->libBil = $libBil;
@@ -50,7 +50,7 @@ abstract class Bilan
         $this->notBil = $notBil;
     }
 
-    public function getLibBil(): string
+    public function getLibBil(): ?string
     {
         return $this->libBil;
     }

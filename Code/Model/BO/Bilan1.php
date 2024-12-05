@@ -13,7 +13,7 @@ class Bilan1 extends Bilan
     private ?DateTime $datVisEnt;
 
 
-    public function __construct(string $remBil, float $notEnt, ?DateTime $datVisEnt, int $idBil, string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
+    public function __construct(string $remBil, float $notEnt, ?DateTime $datVisEnt, int $idBil, ?string $libBil, float $notBil, float $notOra, Etudiant $monEtu)
     {
         parent::__construct($idBil, $libBil, $notBil, $notOra, $monEtu);
         $this->remBil = $remBil;

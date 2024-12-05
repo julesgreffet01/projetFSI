@@ -70,18 +70,40 @@ class AlerteDAO extends DAO
     }
 
     public function getAllAl1ByTut(Tuteur $tut): ?array {
-      $al1 = $this->find(1);
-        $dateOjd = date("Y-m-d");
-        //if ($al1->getDatLimBil1() > $dateOjd) {
-     if (true) {     //to do enlever
+        $result = [];
+        $al1 = $this->find(1);
+        $dateOjd = new DateTime();
+        if ($al1->getDatLimBil1() < $dateOjd) {
             $etuDAO = new EtudiantDAO($this->bdd);
-               $mesEtu = $etuDAO->getAllEtuByTut($tut);
-            var_dump($mesEtu);
-           /*   foreach ($mesEtu as $me) {    //on verif si il y a une date null ou pas. si il y en a pas alors ajouter au tableau un objet etudiant.
-                var_dump($me);
-                die;
-            }*/
+            $mesEtu = $etuDAO->getAllEtuByTut($tut);
+            foreach ($mesEtu as $et) {
+                $bilan = $et->getMesBilan1();
+                foreach ($bilan as $bil) {
+                    if (is_null($bil->getLibBil())) {
+                        $result[] = $et;
+                    }
+                }
+            }
         }
-        return [];
+        return $result;
+    }
+    public function getAllAl2ByTut(Tuteur $tut): ?array {
+        $result = [];
+        $al1 = $this->find(1);
+        $dateOjd = new DateTime();
+        if ($al1->getDatLimBil2() < $dateOjd) {
+            $etuDAO = new EtudiantDAO($this->bdd);
+            $mesEtu = $etuDAO->getAllEtuByTut($tut);
+            var_dump($mesEtu);
+            foreach ($mesEtu as $et) {
+                $bilan = $et->getMesBilan2();
+                foreach ($bilan as $bil) {
+                    if (is_null($bil->getLibBil())) {
+                        $result[] = $et;
+                    }
+                }
+            }
+        }
+        return $result;
     }
 }
