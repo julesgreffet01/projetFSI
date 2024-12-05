@@ -304,6 +304,44 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
+    public function get4(): array
+    {
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+        $query = "select * from Utilisateur where IdTypUti = 1 LIMIT 4";
+        $stmt = $this->bdd->query($query);
+        if ($stmt) {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            foreach ($stmt as $row) {
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
+                $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
+        } else {
+            $result = [null];
+        }
+        //on fait pas la partie avec les bilans car y a aucun moment ou on a besoin d avoir tous les etudiant avec tous leut bilan
+        return $result;
+    }
+
     public function assignement(int $etu, int $tut): bool
     {
         $result = false;
