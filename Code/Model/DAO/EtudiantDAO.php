@@ -84,8 +84,8 @@ class EtudiantDAO extends DAO
                 'idSpe' => $idSpec
             ]);
             //creation de ses bilans de bases mais vide
-            $bil1 = new Bilan1("", 0, null, 0, "", 0, 0, $obj);
-            $bil2 = new Bilan2("", null, 0, "", 0, 0, $obj);
+            $bil1 = new Bilan1("", 0, null, 0, null, 0, 0, $obj);
+            $bil2 = new Bilan2("", null, 0, null, 0, 0, $obj);
             $bil1DAO->create($bil1);
             $bil2DAO->create($bil2);
             if ($r){
