@@ -624,16 +624,4 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
-    public function getAllEtuByTutBool(Tuteur $tut) : bool {
-        $result = false;
-        $query = "select * from Utilisateur where IdTut = :idTut";
-        $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
-            'idTut' => $tut->getIdUti()
-        ]);
-        if ($r){
-            $result = true;
-        }
-        return $result;
-    }
 }
