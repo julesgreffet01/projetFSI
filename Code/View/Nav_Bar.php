@@ -20,7 +20,12 @@
             <div class="nomentreprise">
                 <li><a href="Accueil_Admin.php">FSI</a></li>
             </div>
-            <li><a href="Page_Liste_Etudiant.php">Liste étudiant</a></li>
+
+            <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
+                <li><a href="Controller_Liste_Etudiant">Liste étudiant</a></li>
+            <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
+                <li><a href="Controller_Liste_Etudiant">Liste étudiant</a></li>
+            <?php } ?>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){?>
             <li><a href="#etudiant">Mes informations</a></li>
