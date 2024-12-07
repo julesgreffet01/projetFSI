@@ -99,4 +99,6 @@ $monEtu = $etuDAO->find(4);
 
 //------------- alerte -------------
 $aleDAO = new AlerteDAO($bdd);
-//var_dump($aleDAO->find(1));
+$tut = $tuteurDAO->find(2);
+//var_dump($aleDAO->getAllAl1ByTut($tut));
+var_dump($aleDAO->getAllAl2ByTut($tut));

@@ -1,8 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Tableau.css";
-include('Nav_Bar.php');
-?>
 <div class="centre">
 <table class="tableau">
 <tr>
