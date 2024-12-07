@@ -1,0 +1,27 @@
+body{
+
+}
+
+.block{
+    background: #E9F6E9;
+}
+
+.info{
+    color:  #65BA74;
+}
+
+.btnbilan{
+    background: #203C25;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: 30px;
+}
+
+.btnmodifier{
+    background: #8EC8F6;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
