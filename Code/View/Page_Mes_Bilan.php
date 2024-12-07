@@ -1,6 +1,6 @@
 <div class="contenu">
     <div class="cadre">
-        <div class="bilan1">
+        <div class="bilan">
             <div class="titre">
                 <h1>Bilan 1</h1>
             </div>
@@ -10,9 +10,9 @@
             <div class="datmodiflib">
                 <p>date.php</p>
             </div>
-            <a href="Bilan1.php">Accéder à mon <br>Bilan</a>
+            <a href="Bilan1.php" class="btnbil">Accéder à mon <br>Bilan</a>
         </div>
-        <div class="bilan2">
+        <div class="bilan">
             <div class="titre">
                 <h1>Bilan 2</h1>
             </div>
@@ -22,7 +22,7 @@
             <div class="datmodiflib">
                 <p>date.php</p>
             </div>
-            <a href="Bilan2.php">Accéder à mon <br>Bilan</a>
+            <a href="Bilan2.php" class="btnbil">Accéder à mon <br>Bilan</a>
         </div>
     </div>
 </div>
