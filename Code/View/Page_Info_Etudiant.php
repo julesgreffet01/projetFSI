@@ -54,11 +54,11 @@
             </p>
             <p>
                 <label class="intitu">Téléphone</label>
-                <label class="info">45322</label>
+                <label class="info"><?php echo $telMai ?></label>
             </p>
             <p>
                 <label class="intitu">Mail</label>
-                <label class="info">azrza@rzer</label>
+                <label class="info"><?php echo $mailMai ?></label>
             </p>
         </div>
 

@@ -45,18 +45,22 @@ if ($etu->getMonEnt()){
     if ($etu->getMonMaitreAp()){
         $nomMai = $etu->getMonMaitreAp()->getNomMai();
         $preMai = $etu->getMonMaitreAp()->getPreMai();
+        $telMai = $etu->getMonMaitreAp()->getTelMai();
+        $mailMai = $etu->getMonMaitreAp()->getMailMai();
     } else {
         $nomMai = "Pas assigné(e)";
         $preMai = "";
+        $telMai = "";
+        $mailMai = "";
     }
 } else {
     $ent = "Pas assigné(e)";
     $adrEnt = "";
     $nomMai = "Pas assigné(e)";
     $preMai = "";
+    $telMai = "";
+    $mailMai = "";
 }
-
-
 
 
 include_once ('../View/Nav_Bar.php');
