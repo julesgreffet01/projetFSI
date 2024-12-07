@@ -1,5 +1,3 @@
-
-
 <div class="alerteadmin">
     <h1>Alerte</h1>
     <p>

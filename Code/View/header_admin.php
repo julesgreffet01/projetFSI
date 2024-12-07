@@ -13,7 +13,7 @@
 <body>
 <header>
     <div class="maison">
-    <a href="Accueil_Admin.php"><img src="../Img/home.svg"></a>
+    <a href="ControllerAccueil_Admin.php"><img src="../Img/home.svg"></a>
     </div>
     <div class="parametre_title">
         <h1><?= isset($titreparametre) ? $titreparametre : "Paramètre"; ?></h1>

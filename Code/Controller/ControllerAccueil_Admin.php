@@ -30,7 +30,7 @@ if (unserialize($_SESSION['utilisateur'])){
         include_once ('../View/Nav_Bar.php');
         include_once('../View/Accueil_Admin.php');
     } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
-        $tut = $tutDAO->find($_SESSION['utilisateur']->getIdUti());
+        $tut = $tutDAO->find(unserialize($_SESSION['utilisateur'])->getIdUti());
         $etus = $etuDAO->get4EtuByTut($tut);
         include_once ('../View/Nav_Bar.php');
         include_once('../View/Accueil_Admin.php');

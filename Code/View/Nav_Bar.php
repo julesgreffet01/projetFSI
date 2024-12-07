@@ -13,29 +13,40 @@
 </head>
 <body>
 <header>
-    <a href="Acceuil_Admin.php"><img class="logo" src="../Img/logo.jpeg"></a>
+
+    <?php if(unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){ ?>
+    <a href="ControllerAccueil_Admin.php"><img class="logo" src="../Img/logo.jpeg"></a>
+    <?php } else { ?>
+    <a href="ControllerAccueil.php"><img class="logo" src="../Img/logo.jpeg"></a>
+    <?php } ?>
 
     <nav>
         <ul class="liens">
             <div class="nomentreprise">
-                <li><a href="Accueil_Admin.php">FSI</a></li>
+                <?php if(unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){ ?>
+                <li><a href="ControllerAccueil_Admin.php">FSI</a></li>
+                <?php } else { ?>
+                <li><a href="ControllerAccueil.php">FSI</a></li>
+                <?php } ?>
             </div>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
-                <li><a href="Controller_Liste_Etudiant">Liste étudiant</a></li>
+                <li><a href="ControllerListe_Etudiant">Liste étudiant</a></li>
             <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
-                <li><a href="Controller_Liste_Etudiant">Liste étudiant</a></li>
+                <li><a href="ControllerListe_Etudiant">Liste étudiant</a></li>
             <?php } ?>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){?>
-            <li><a href="#etudiant">Mes informations</a></li>
+            <li><a href="ControllerInfo_Etudiant.php">Mes informations</a></li>
             <?php }else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
-            <li><a href="#tuteur">Mes informations</a></li>
+            <li><a href="ControllerInfo_Admin.php">Mes informations</a></li>
             <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
-            <li><a href="#admin">Mes informations</a></li>
+            <li><a href="ControllerInfo_Admin.php">Mes informations</a></li>
             <?php } ?>
 
-            <li><a href="Page_Alertes.php">Alertes</a></li>
+            <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur): ?>
+            <li><a href="controllerAlertes">Alertes</a></li>
+            <?php endif; ?>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
             <li><a href="ControllerParametre_General">Paramètre</a></li>

@@ -1,8 +1,3 @@
-<?php
-$titrefichier = "Mes Bilan";
-$stylecss = "Style.css";
-include('Nav_Bar.php');
-?>
 <div class="contenu">
     <div class="cadre">
         <div class="bilan1">

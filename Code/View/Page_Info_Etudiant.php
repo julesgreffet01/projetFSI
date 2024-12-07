@@ -1,8 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Style.css";
-include('Nav_Bar.php');
-?>
 <div class="contenu">
     <div class="mesinfo">
         <div class="titre">
