@@ -6,33 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerAccueil_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerAccueil_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerAlertes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerAlertes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerHeaderAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerListe_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerListe_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerNavBar.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Accueil_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Accueil_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Nav_Bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Nav_Bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Alertes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Alertes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Liste_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Liste_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Mes_Bilan.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Mes_Bilan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/header_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/header_admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
