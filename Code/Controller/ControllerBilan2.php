@@ -2,7 +2,7 @@
 session_start();
 
 $titrefichier = "Accueil";
-$stylecss = "Style.css";
+$stylecss = "Blockinfo.css";
 
 include_once ('../View/Nav_Bar.php');
 include_once ('../View/Bilan2.php');

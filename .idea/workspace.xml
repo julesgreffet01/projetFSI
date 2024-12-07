@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Css/Blockinfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +64,7 @@
     "PHP Script.testDAO.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "maxime",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/wamp64/www/php/projetFSI",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
