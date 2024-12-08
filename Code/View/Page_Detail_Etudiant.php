@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Blockinfo.css";
-include('Nav_Bar.php');
-?>
-
 <div class="mesinfo">
     <div class="block">
         <h1>Mes informations</h1>

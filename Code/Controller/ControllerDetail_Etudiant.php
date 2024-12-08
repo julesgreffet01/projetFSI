@@ -21,13 +21,13 @@ $etuDAO = new EtudiantDAO($bdd);
 $entDAO = new EntrepriseDAO($bdd);
 
 $titrefichier = "Accueil";
-$stylecss = "Style.css";
+$stylecss = "Blockinfo.css";
 
 $etu = $etuDAO->find($_GET["idEtu"]);
 $ent = $entDAO->find($etu->getMonEnt()->getIdEnt());
 
 if (unserialize($_SESSION['utilisateur'])){
-    if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){   //on verif que ce soit bien un admin ou un tuteur et pas  un etudiant
+    if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){   //on vérifie que ce soit bien un admin ou un tuteur et pas un étudiant
         include_once ('../View/Nav_Bar.php');
         include_once __DIR__."/../View/Page_Detail_Etudiant.php";
     } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
