@@ -66,5 +66,3 @@ if ($uti) {
 }
 include_once ('../View/header_admin.php');
 include_once ('../View/Page_Parametre_Profil.php');
-
-var_dump($uti);
