@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Entreprise";
-$stylecss = "Parametre.css";
-$titreparametre = "Entreprise";
-include('header_admin.php');
-?>
 <div class="centre">
     <p>
         <label for="name">Nom de l'entreprise</label>

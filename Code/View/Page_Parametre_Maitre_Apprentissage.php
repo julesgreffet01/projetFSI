@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Parametre.css";
-$titreparametre = "Maitre d'apprentissage";
-include('header_admin.php');
-?>
 <div class="centre">
     <p>
         <label for="city">Prénom du maître d'apprentissage</label>

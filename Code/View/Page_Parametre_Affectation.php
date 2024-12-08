@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Affectation";
-$stylecss = "Parametre.css";
-$titreparametre = "Affectation";
-include('header_admin.php');
-?>
 <div class="centre">
     <p>
         <label for="city">Classe</label>
