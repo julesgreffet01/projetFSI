@@ -28,7 +28,7 @@ if (unserialize($_SESSION['utilisateur'])){
     if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){
         $mesEtus = $etuDAO->getAll();
     } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
-        $tut = $tutDAO->find($_SESSION['utilisateur']->getIdUti());
+        $tut = $tutDAO->find(unserialize($_SESSION['utilisateur'])->getIdUti());
         $mesEtus = $etuDAO->getAllEtuByTut($tut);
     } else {
         header('location: ControllerConnexion.php');

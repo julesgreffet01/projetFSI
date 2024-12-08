@@ -36,7 +36,6 @@ $datLim2 = $al->getDatLimBil2();
 
 $dif1 = $datLim1->diff($date);
 $dif1Day = $dif1->days;
-var_dump($dif1Day);
 if ($date > $datLim1) {
     $years1 = $dif1->y;
     $month1 = $dif1->m;
