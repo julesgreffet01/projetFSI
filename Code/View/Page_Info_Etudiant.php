@@ -4,31 +4,31 @@
             <h1>Mes informations</h1>
             <p>
                 <label class="intitu">Nom</label>
-                <label class="info">Jules</label>
+                <label class="info"><?php echo $nom ?></label>
             </p>
             <p>
                 <label class="intitu">Prénom</label>
-                <label class="info">Jules</label>
+                <label class="info"><?php echo $pre ?></label>
             </p>
             <p>
                 <label class="intitu">Téléphone</label>
-                <label class="info">05005082</label>
+                <label class="info"><?php echo $tel ?></label>
             </p>
             <p>
                 <label class="intitu">Adresse</label>
-                <label class="info">6 rue du pakniaic</label>
+                <label class="info"><?php echo $adr ?></label>
             </p>
             <p>
                 <label class="intitu">Mail</label>
-                <label class="info">afcazaàf@aicaji</label>
+                <label class="info"><?php echo $mail ?></label>
             </p>
             <p>
                 <label class="intitu">Classe</label>
-                <label class="info">9Sio</label>
+                <label class="info"><?php echo $cla ?></label>
             </p>
             <p>
                 <label class="intitu">Spécialisation</label>
-                <label class="info">dev</label>
+                <label class="info"><?php echo $spec ?></label>
             </p>
         </div>
 
@@ -38,33 +38,33 @@
             <h1>Informations de l'entreprise</h1>
             <p>
                 <label class="intitu">Nom de l'entreprise</label>
-                <label class="info">azerazer</label>
+                <label class="info"><?php echo $ent ?></label>
             </p>
             <p>
                 <label class="intitu">Adresse</label>
-                <label class="info">azerazre azerazer azeraze</label>
+                <label class="info"><?php echo $adrEnt ?></label>
             </p>
             <p>
                 <label class="intitu">Nom du maître d'apprentissage</label>
-                <label class="info">lukas</label>
+                <label class="info"><?php echo $nomMai ?></label>
             </p>
             <p>
                 <label class="intitu">Prénom du maître d'apprentissage</label>
-                <label class="info">marine</label>
+                <label class="info"><?php echo $preMai ?></label>
             </p>
             <p>
                 <label class="intitu">Téléphone</label>
-                <label class="info">45322</label>
+                <label class="info"><?php echo $telMai ?></label>
             </p>
             <p>
                 <label class="intitu">Mail</label>
-                <label class="info">azrza@rzer</label>
+                <label class="info"><?php echo $mailMai ?></label>
             </p>
         </div>
 
     </div>
     <div class="boutons">
-        <a href="Page_Mes_Bilan.php" class="btnbilan">Mes Bilans</a>
+        <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
         <a href="#" class="btnmodifier">Modifier</a>
     </div>
 </div>

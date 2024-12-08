@@ -1,10 +1,3 @@
-<?php
-$titrefichier = "Paramètre Etudiant";
-$stylecss = "Parametre.css";
-$titreparametre = "Etudiant";
-include('header_admin.php');
-?>
-
 <div class="centre">
     <p>
         <label for="city">Prénom</label>

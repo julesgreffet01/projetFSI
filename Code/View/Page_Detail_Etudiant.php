@@ -1,46 +1,40 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Blockinfo.css";
-include('Nav_Bar.php');
-?>
-
 <div class="mesinfo">
     <div class="block">
         <h1>Mes informations</h1>
         <p>
             <label class="intitu">Nom</label>
-            <label class="info">Jules</label>
+            <label class="info"><?php echo $etu->getNomUti() ?></label>
         </p>
         <p>
             <label class="intitu">Prénom</label>
-            <label class="info">Jules</label>
+            <label class="info"><?php echo $etu->getPreUti() ?></label>
         </p>
         <p>
             <label class="intitu">Téléphone</label>
-            <label class="info">05005082</label>
+            <label class="info"><?php echo $etu->getTelUti() ?></label>
         </p>
         <p>
             <label class="intitu">Adresse</label>
-            <label class="info">6 rue du pakniaic</label>
+            <label class="info"><?php echo $etu->getAdrUti() ?></label>
         </p>
         <p>
             <label class="intitu">Mail</label>
-            <label class="info">afcazaàf@aicaji</label>
+            <label class="info"><?php echo $etu->getMailUti() ?></label>
         </p>
         <p>
             <label class="intitu">Classe</label>
-            <label class="info">9Sio</label>
+            <label class="info"><?php echo $etu->getMaClasse()->getLibCla() ?></label>
         </p>
         <p>
             <label class="intitu">Spécialisation</label>
-            <label class="info">dev</label>
+            <label class="info"><?php echo $etu->getMaSpec()->getNomSpec() ?></label>
         </p>
     </div>
     <p>
-    <a href="Bilan1.php" class="btnbilan">Bilan 1</a>
-    <label class="infobtnbilan">Ajouter un Bilan 1 de rattrapage</label>
+    <a href="ControllerBilan1.php?idEtu=<?php echo $etu->getIdUti() ?>" class="btnbilan">Bilan 1</a>
+    <a href="ControllerAjoutBilan1?idEtu=<?php echo $etu->getIdUti() ?>" class="infobtnbilan">Ajouter un Bilan 1 de rattrapage</a>
     </p>
     <p>
-    <a href="Bilan2.php" class="btnbilan">Bilan 2</a>
-    <label class="infobtnbilan">Ajouter un Bilan 2 de rattrapage</label>
+    <a href="ControllerBilan2.php?idEtu=<?php echo $etu->getIdUti()?>" class="btnbilan">Bilan 2</a>
+    <a href="ControllerAjoutBilan2?idEtu=<?php echo $etu->getIdUti() ?>" class="infobtnbilan">Ajouter un Bilan 2 de rattrapage</a>
     </p>

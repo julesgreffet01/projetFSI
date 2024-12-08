@@ -94,13 +94,42 @@ class AlerteDAO extends DAO
         if ($al1->getDatLimBil2() < $dateOjd) {
             $etuDAO = new EtudiantDAO($this->bdd);
             $mesEtu = $etuDAO->getAllEtuByTut($tut);
-            var_dump($mesEtu);
             foreach ($mesEtu as $et) {
                 $bilan = $et->getMesBilan2();
                 foreach ($bilan as $bil) {
                     if (is_null($bil->getLibBil())) {
                         $result[] = $et;
                     }
+                }
+            }
+        }
+        return $result;
+    }
+
+    public function getAllAl1(): ?array {
+        $result = [];
+        $tutDAO = new TuteurDAO($this->bdd);
+        $tuts = $tutDAO->getAll();
+        if ($tuts) {
+            foreach ($tuts as $tut) {
+                $mesEtu = $this->getAllAl1ByTut($tut);
+                foreach ($mesEtu as $et) {
+                    $result[] = $et;
+                }
+            }
+        }
+        return $result;
+    }
+
+    public function getAllAl2(): ?array {
+        $result = [];
+        $tutDAO = new TuteurDAO($this->bdd);
+        $tuts = $tutDAO->getAll();
+        if ($tuts) {
+            foreach ($tuts as $tut) {
+                $mesEtu = $this->getAllAl2ByTut($tut);
+                foreach ($mesEtu as $et) {
+                    $result[] = $et;
                 }
             }
         }
