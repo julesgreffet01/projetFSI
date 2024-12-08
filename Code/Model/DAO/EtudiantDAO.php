@@ -39,7 +39,7 @@ class EtudiantDAO extends DAO
         if ($obj instanceof Etudiant) {
             $bil1DAO = new Bilan1DAO($this->bdd);
             $bil2DAO = new Bilan2DAO($this->bdd);
-            $query = "insert into Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AltUti, AdrUti, CpUti, VilUti, IdEnt, IdMai, IdCla, IdSpe, IdTut, IdTypUti) values (:log, :mdp, :mail, :tel, :nom, :pre, :alt, :adr, :cp, :ville, :idEnt, :idMai, :idCla, :idTut, :idSpe, 1)";
+            $query = "insert into Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AltUti, AdrUti, CpUti, VilUti, IdEnt, IdMai, IdCla, IdSpe, IdTut, IdTypUti) values (:log, :mdp, :mail, :tel, :nom, :pre, :alt, :adr, :cp, :ville, :idEnt, :idMai, :idCla, :idSpe, :idTut, 1)";
             $stmt = $this->bdd->prepare($query);
             if ($obj->getMonEnt()){
                 $idEnt = $obj->getMonEnt()->getIdEnt();
@@ -83,12 +83,15 @@ class EtudiantDAO extends DAO
                 'idTut'=> $idTut,
                 'idSpe' => $idSpec
             ]);
-            //creation de ses bilans de bases mais vide
-            $bil1 = new Bilan1("", 0, null, 0, null, 0, 0, $obj);
-            $bil2 = new Bilan2("", null, 0, null, 0, 0, $obj);
-            $bil1DAO->create($bil1);
-            $bil2DAO->create($bil2);
+
             if ($r){
+
+                $obj->setIdUti($this->bdd->lastInsertId());
+                //creation de ses bilans de bases mais vide
+                $bil1 = new Bilan1("", 0, null, 0, null, 0, 0, $obj);
+                $bil2 = new Bilan2("", null, 0, null, 0, 0, $obj);
+                $bil1DAO->create($bil1);
+                $bil2DAO->create($bil2);
                 $result = true;
             }
         }
