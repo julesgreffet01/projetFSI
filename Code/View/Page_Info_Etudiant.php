@@ -64,7 +64,7 @@
 
     </div>
     <div class="boutons">
-        <a href="Page_Mes_Bilan.php" class="btnbilan">Mes Bilans</a>
+        <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
         <a href="#" class="btnmodifier">Modifier</a>
     </div>
 </div>

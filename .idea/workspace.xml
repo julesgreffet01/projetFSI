@@ -6,24 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Nav_Bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Nav_Bar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Affectation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Classe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Maitre_Apprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Maitre_Apprentissage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Specialite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Specialite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Tuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/header_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/header_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +122,7 @@
       <workItem from="1733409999707" duration="3387000" />
       <workItem from="1733424112200" duration="3343000" />
       <workItem from="1733491288311" duration="3019000" />
-      <workItem from="1733648875276" duration="24361000" />
+      <workItem from="1733648875276" duration="25790000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -450,7 +436,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733679104276</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733696836103</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1733696836103</updated>
+    </task>
+    <task id="LOCAL-00041" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733696918807</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1733696918807</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
