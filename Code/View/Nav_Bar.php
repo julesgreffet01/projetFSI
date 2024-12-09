@@ -31,9 +31,9 @@
             </div>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
-                <li><a href="ControllerListe_Etudiant">Liste étudiant</a></li>
+                <li><a href="ControllerListe_Etudiant.php">Liste étudiant</a></li>
             <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
-                <li><a href="ControllerListe_Etudiant">Liste étudiant</a></li>
+                <li><a href="ControllerListe_Etudiant.php">Liste étudiant</a></li>
             <?php } ?>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){?>
@@ -45,15 +45,15 @@
             <?php } ?>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur): ?>
-            <li><a href="controllerAlertes">Alertes</a></li>
+            <li><a href="ControllerAlertes.php">Alertes</a></li>
             <?php endif; ?>
 
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
-            <li><a href="ControllerParametre_General">Paramètre</a></li>
+            <li><a href="ControllerParametre_General.php">Paramètre</a></li>
             <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){ ?>
             <li><a href="ControllerParametre_Profil.php">Profile</a></li>
             <?php } ?>
-            <li><a href="Leaves"><img class="logosortie" src="../Img/logout.png"></a></li>
+            <li><a href="Leaves.php"><img class="logosortie" src="../Img/logout.png"></a></li>
         </ul>
     </nav>
 </header>
