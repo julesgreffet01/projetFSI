@@ -1,0 +1,30 @@
+.btnrouge{
+    background-color: #EC8E7B;
+    color: white;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 15px;
+    width: 250px;
+    height: 80px;
+}
+.btnvert{
+    background-color: #53B365;
+    color: white;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 15px;
+    width: 250px;
+    height: 80px;
+}
+.btnbleu{
+    background-color: #8EC8F6;
+    color: white;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 15px;
+    width: 250px;
+    height: 80px;
+}

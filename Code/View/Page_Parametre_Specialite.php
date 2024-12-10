@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Parametre.css";
-$titreparametre = "Spécialité";
-include('header_admin.php');
-?>
 <div class="centre">
     <p>
         <label for="city">Nom de la spécialité</label>
