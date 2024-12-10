@@ -1,4 +1,5 @@
 <div class="block">
+    <form action="Bilan2.php" method="post">
     <p>
         <label class="intitu">Date du Bilan</label>
         <label class="info">2/12/12</label>
@@ -17,4 +18,5 @@
     </p>
     <input type="button" class="btnbil" value="Valider">
     <input type="button" class="btnrouge" value="Annuler">
+    </form>
 </div>
