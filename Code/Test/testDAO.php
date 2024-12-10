@@ -68,8 +68,8 @@ $tuteurDAO = new TuteurDAO($bdd);
 //-------------etudiant--------------
 $etuDAO = new EtudiantDAO($bdd);
 //$tut1 = $tuteurDAO->find(2);
-//$etu1 = new Etudiant(false, null, null, null, null, null, 7, "testEtuModif", "c", "s", "00115", "ds", "fd", "aEQ", "zqfs", "fqhsj");
-//var_dump($etuDAO->find(4));
+//$etu1 = new Etudiant(false, $tut1, null, null, null, null, 7, "testAl2", "c", "s", "00115", "ds", "fd", "aEQ", "zqfs", "fqhsj");
+//var_dump($etuDAO->create($etu1));
 
 //---------------entreprise------------
 $entDAO = new EntrepriseDAO($bdd);
@@ -99,4 +99,6 @@ $monEtu = $etuDAO->find(4);
 
 //------------- alerte -------------
 $aleDAO = new AlerteDAO($bdd);
-//var_dump($aleDAO->find(1));
+//$tut = $tuteurDAO->find(2);
+//var_dump($aleDAO->getAllAl1ByTut($tut));
+//var_dump($aleDAO->getAllAl2ByTut($tut));

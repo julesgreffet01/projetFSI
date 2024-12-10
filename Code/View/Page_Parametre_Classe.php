@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Classe";
-$stylecss = "Parametre.css";
-$titreparametre = "Classe";
-include('header_admin.php');
-?>
 <div class="centre">
     <p>
         <label for="city">Nom de la classe</label>

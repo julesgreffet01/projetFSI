@@ -2,7 +2,7 @@
 INSERT INTO Classe (LibCla, NbEtu) VALUES ('3OLEN', 3), ('4OLEN', 1), ('5OLEN', 2);
 
 -- Insérer des Alertes
-INSERT INTO Alerte (DatLimUn, DatLimDeux) VALUES ('2025-01-15', NULL), (NULL, '2025-06-27');
+INSERT INTO Alerte (DatLimUn, DatLimDeux) VALUES ('2025-01-15', '2025-06-27');
 
 -- Insérer des Spécialités
 INSERT INTO Specialite (NomSpe) VALUES ('Infra-Cyber'), ('Devellopement');

@@ -1,9 +1,3 @@
-<?php
-$titrefichier = "Paramètre Tuteur";
-$stylecss = "Parametre.css";
-$titreparametre = "Tuteur";
-include('header_admin.php');
-?>
 <div class="centre">
 <p>
     <label for="city">Prénom</label>

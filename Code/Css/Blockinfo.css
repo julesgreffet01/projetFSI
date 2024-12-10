@@ -1,5 +1,5 @@
 body{
-
+    background: #F5FBF5;
 }
 
 .block{
@@ -26,6 +26,7 @@ body{
     margin-left: 10px;
 }
 
+
 .contenu{
     margin: 70px;
     background: #E9F6E9;
@@ -43,4 +44,27 @@ body{
     width: 100px;
     height: auto;
     float:right
+
+.cadre{
+    background: #E9F6E9;
+    border-radius: 20px;
+    margin: 100px 250px;
+}
+
+.bilan{
+    margin: 55px 60px;
+    padding: 20px;
+    background: #B2DDB5;
+    text-align: center;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.btnbil{
+    background: #203C25;
+    color: #ffffff;
+}
+
+.datemodiflib{
+    font-size: 11px;
 }

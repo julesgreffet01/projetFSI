@@ -1,10 +1,3 @@
-<?php
-$titrefichier = "Accueil";
-$stylecss = "Blockinfo.css";
-include('Nav_Bar.php');
-
-
-?>
 <div class="block">
     <p>
         <label class="intitu">Date du Bilan</label>

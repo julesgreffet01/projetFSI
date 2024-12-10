@@ -39,7 +39,7 @@ class EtudiantDAO extends DAO
         if ($obj instanceof Etudiant) {
             $bil1DAO = new Bilan1DAO($this->bdd);
             $bil2DAO = new Bilan2DAO($this->bdd);
-            $query = "insert into Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AltUti, AdrUti, CpUti, VilUti, IdEnt, IdMai, IdCla, IdSpe, IdTut, IdTypUti) values (:log, :mdp, :mail, :tel, :nom, :pre, :alt, :adr, :cp, :ville, :idEnt, :idMai, :idCla, :idTut, :idSpe, 1)";
+            $query = "insert into Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AltUti, AdrUti, CpUti, VilUti, IdEnt, IdMai, IdCla, IdSpe, IdTut, IdTypUti) values (:log, :mdp, :mail, :tel, :nom, :pre, :alt, :adr, :cp, :ville, :idEnt, :idMai, :idCla, :idSpe, :idTut, 1)";
             $stmt = $this->bdd->prepare($query);
             if ($obj->getMonEnt()){
                 $idEnt = $obj->getMonEnt()->getIdEnt();
@@ -83,12 +83,15 @@ class EtudiantDAO extends DAO
                 'idTut'=> $idTut,
                 'idSpe' => $idSpec
             ]);
-            //creation de ses bilans de bases mais vide
-            $bil1 = new Bilan1("", 0, null, 0, "", 0, 0, $obj);
-            $bil2 = new Bilan2("", null, 0, "", 0, 0, $obj);
-            $bil1DAO->create($bil1);
-            $bil2DAO->create($bil2);
+
             if ($r){
+
+                $obj->setIdUti($this->bdd->lastInsertId());
+                //creation de ses bilans de bases mais vide
+                $bil1 = new Bilan1("", 0, null, 0, null, 0, 0, $obj);
+                $bil2 = new Bilan2("", null, 0, null, 0, 0, $obj);
+                $bil1DAO->create($bil1);
+                $bil2DAO->create($bil2);
                 $result = true;
             }
         }
@@ -304,6 +307,44 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
+    public function get4(): array
+    {
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+        $query = "select * from Utilisateur where IdTypUti = 1 LIMIT 4";
+        $stmt = $this->bdd->query($query);
+        if ($stmt) {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            foreach ($stmt as $row) {
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
+                $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
+        } else {
+            $result = [null];
+        }
+        //on fait pas la partie avec les bilans car y a aucun moment ou on a besoin d avoir tous les etudiant avec tous leut bilan
+        return $result;
+    }
+
     public function assignement(int $etu, int $tut): bool
     {
         $result = false;
@@ -435,6 +476,63 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
+    public function get4EtuByTut(Tuteur $tut) : ?array {
+
+        $result = [];
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+        $bil1DAO = new Bilan1DAO($this->bdd);
+        $bil2DAO = new Bilan2DAO($this->bdd);
+
+        $query = "select * from Utilisateur where IdTut = :idUti and IdTypUti = 1 LIMIT 4";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            "idUti" => $tut->getIdUti()
+        ]);
+        if ($r){
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            foreach ($stmt as $row) {
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
+                $e = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+                $bil1 = $bil1DAO->getAllBil1ByEtu($e);
+                if ($bil1 == null){
+                    $bil1 = [];
+                }
+                $e->setMesBilan1($bil1);
+
+
+                $bil2 = $bil2DAO->getAllBil2ByEtu($e);
+                if ($bil2 == null){
+                    $bil2 = [];
+                }
+                $e->setMesBilan2($bil2);
+                $result[] = $e;
+            }
+        } else {
+            $result = [null];
+        }
+        return $result;
+    }
+
     public function getAllEtuByCla(Classe $cla) : array {
         $result = [];
 
@@ -529,16 +627,4 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
-    public function getAllEtuByTutBool(Tuteur $tut) : bool {
-        $result = false;
-        $query = "select * from Utilisateur where IdTut = :idTut";
-        $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
-            'idTut' => $tut->getIdUti()
-        ]);
-        if ($r){
-            $result = true;
-        }
-        return $result;
-    }
 }

@@ -13,21 +13,27 @@
 <body>
 <header>
     <div class="maison">
-    <a href="Accueil_Admin.php"><img src="../Img/home.svg"></a>
+        <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur): ?>
+    <a href="ControllerAccueil_Admin.php"><img src="../Img/home.svg"></a>
+        <?php else: ?>
+        <a href="ControllerAccueil.php"><img src="../Img/home.svg"></a>
+        <?php endif; ?>
     </div>
     <div class="parametre_title">
         <h1><?= isset($titreparametre) ? $titreparametre : "Paramètre"; ?></h1>
     </div>
     <nav>
         <ul>
-            <li><a href="Page_Parametre_Profil.php"><img src="../Img/Profil.svg"> Profil</a> </li>
-            <li><a href="Page_Parametre_Etudiant.php"><img src="../Img/Etudiant.svg"> Etudiant</a> </li>
-            <li><a href="Page_Parametre_Tuteur.php"><img src="../Img/mentor.svg"> Tuteur</a> </li>
-            <li><a href="Page_Parametre_Affectation.php"><img src="../Img/Affectation.svg"> Affectation</a> </li>
-            <li><a href="Page_Parametre_Entreprise.php"><img src="../Img/Entreprise.svg"> Entreprise</a> </li>
-            <li><a href="Page_Parametre_Classe.php"><img src="../Img/salle-de-cours.svg"> Classe</a> </li>
-            <li><a href="Page_Parametre_Maitre_Apprentissage.php"><img src="../Img/Eleve.svg"> Maître d'apprentissage</a> </li>
-            <li><a href="Page_Parametre_Specialite.php"><img src="../Img/Enseignant.svg"> Spécialité</a> </li>
+            <li><a href="ControllerParametre_Profil.php"><img src="../Img/Profil.svg"> Profil</a> </li>
+            <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur): ?>
+            <li><a href="ControllerParametre_Etudiant.php"><img src="../Img/Etudiant.svg"> Etudiant</a> </li>
+            <li><a href="ControllerParametre_Tuteur.php"><img src="../Img/mentor.svg"> Tuteur</a> </li>
+            <li><a href="ControllerParametre_Affectation.php"><img src="../Img/Affectation.svg"> Affectation</a> </li>
+            <li><a href="ControllerParametre_Entreprise.php"><img src="../Img/Entreprise.svg"> Entreprise</a> </li>
+            <li><a href="ControllerParametre_Classe.php"><img src="../Img/salle-de-cours.svg"> Classe</a> </li>
+            <li><a href="ControllerParametre_Maitre_Apprentissage.php"><img src="../Img/Eleve.svg"> Maître d'apprentissage</a> </li>
+            <li><a href="ControllerParametre_Specialite.php"><img src="../Img/Enseignant.svg"> Spécialité</a> </li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

@@ -42,7 +42,7 @@ class Bilan1DAO extends DAO
             if ($foundObj) {
                 if ($obj->getIdBil() == $foundObj->getIdBil()) {
                     date_default_timezone_set('Europe/Paris');
-                    $date = date("Y-m-d");
+                    $date = new DateTime();
                     $query = "update Bilan1 set LibBilUn = :lib, NotBilUn = :not, RemBilUn = :rem, NotEnt = :ent, NotOra1 = :o1, DatBil1 = :dat, IdUti = :idUti where IdBilUn = :idBil";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
