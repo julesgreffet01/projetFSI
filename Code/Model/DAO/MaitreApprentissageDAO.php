@@ -2,11 +2,13 @@
 
 namespace DAO;
 
+use BO\Classe;
 use BO\Entreprise;
 use BO\MaitreApprentissage;
 use PDO;
 
 require_once 'DAO.php';
+require_once __DIR__.'/EtudiantDAO.php';
 
 class MaitreApprentissageDAO extends DAO
 {
@@ -63,7 +65,7 @@ class MaitreApprentissageDAO extends DAO
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if ($etuDAO->getAllEtuByMaiApp($obj) !== true){
+            if ($etuDAO->getAllEtuByMaiApp($obj) !== []){
                 $foundObj = $this->find($obj->getIdMai());
                 if ($foundObj != null) {
                     if($obj->getIdMai() == $foundObj->getIdMai()){

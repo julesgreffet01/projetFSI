@@ -46,9 +46,13 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $nbMax4 = ($_POST['nbMaxEtu4'] > 0) ? $_POST['nbMaxEtu4'] : 0;
             $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
             $tuteur = new Tuteur($nbMax3, $nbMax4, $nbMax5, 0, $log, $mdp, $mail, $tel, $nom, $pre, $adr, $cp, $vil);
-            if($tutDAO->create($tuteur)){
-                $Message = "le tuteur a bien été créé";
-                $tuts = $tutDAO->getAll();
+            if($tutDAO->verifLog($log)){
+                $Message = "Log deja utiliser";
+            } else {
+                if($tutDAO->create($tuteur)){
+                    $Message = "le tuteur a bien été créé";
+                    $tuts = $tutDAO->getAll();
+                }
             }
         } else {
             $Message = "veuillez remplir tous les champs";
@@ -57,33 +61,43 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
     //---------------------- modifier ---------------------------
     if (isset($_POST['btnUpdate'])){
         if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && isset($_POST['tuteur-select'])){
-            $tuteur = $tutDAO->find($_POST["tuteur-select"]);
-            $pre = $_POST['preTut'];
-            $nom = $_POST['nomTut'];
-            $tel = $_POST['telTut'];
-            $adr = $_POST['adrTut'];
-            $vil = $_POST['vilTut'];
-            $cp = $_POST['cpTut'];
-            $mail = $_POST['mailTut'];
-            $log = $_POST['logTut'];
-            $mdp = $_POST['mdpTut'];
-            $nbMax3 = ($_POST['nbMaxEtu3'] > 0) ? $_POST['nbMaxEtu3'] : 0;
-            $nbMax4 = ($_POST['nbMaxEtu4'] > 0) ? $_POST['nbMaxEtu4'] : 0;
-            $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
-            $tuteur->setPreUti($pre);
-            $tuteur->setNomUti($nom);
-            $tuteur->setTelUti($tel);
-            $tuteur->setAdrUti($adr);
-            $tuteur->setVilUti($vil);
-            $tuteur->setCpUti($cp);
-            $tuteur->setMailUti($mail);
-            $tuteur->setLogUti($log);
-            $tuteur->setMdpUti($mdp);
-            $tuteur->setNbMax3($nbMax3);
-            $tuteur->setNbMax4($nbMax4);
-            $tuteur->setNbMax5($nbMax5);
-            if($tutDAO->update($tuteur)){
-                $Message = "Le tuteur a bien été modifier";
+            if ($_POST['tuteur-select'] != ''){
+                $tuteur = $tutDAO->find($_POST["tuteur-select"]);
+                $pre = $_POST['preTut'];
+                $nom = $_POST['nomTut'];
+                $tel = $_POST['telTut'];
+                $adr = $_POST['adrTut'];
+                $vil = $_POST['vilTut'];
+                $cp = $_POST['cpTut'];
+                $mail = $_POST['mailTut'];
+                $log = $_POST['logTut'];
+                $mdp = $_POST['mdpTut'];
+                $nbMax3 = ($_POST['nbMaxEtu3'] > 0) ? $_POST['nbMaxEtu3'] : 0;
+                $nbMax4 = ($_POST['nbMaxEtu4'] > 0) ? $_POST['nbMaxEtu4'] : 0;
+                $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
+                if ($tuteur->getLogUti() != $log){                                      //verif si ca a changer : true
+                    if ($tutDAO->verifLog($log)){
+                        $Message = "Log deja utiliser";
+                    } else {
+                        $tuteur->setPreUti($pre);
+                        $tuteur->setNomUti($nom);
+                        $tuteur->setTelUti($tel);
+                        $tuteur->setAdrUti($adr);
+                        $tuteur->setVilUti($vil);
+                        $tuteur->setCpUti($cp);
+                        $tuteur->setMailUti($mail);
+                        $tuteur->setLogUti($log);
+                        $tuteur->setMdpUti($mdp);
+                        $tuteur->setNbMax3($nbMax3);
+                        $tuteur->setNbMax4($nbMax4);
+                        $tuteur->setNbMax5($nbMax5);
+                        if($tutDAO->update($tuteur)){
+                            $Message = "Le tuteur a bien été modifier";
+                        }
+                    }
+                }
+            } else {
+                $Message = "Ce tuteur n'existe pas";
             }
         } else {
             $Message = "Veuillez selectionner un tuteur à modifier";

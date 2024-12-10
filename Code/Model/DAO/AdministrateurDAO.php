@@ -132,4 +132,17 @@ class AdministrateurDAO extends DAO
         }
         return $result;
     }
+
+    public function verifLog(string $log) : bool {
+        $result = false;
+        $query = "select * from Utilisateur where LogUti = :logUti";
+        $stmt = $this->bdd->prepare($query);
+        $stmt->execute([
+            "logUti" => $log
+        ]);
+        if ($stmt->rowCount() > 0){
+            $result = true;
+        }
+        return $result;
+    }
 }

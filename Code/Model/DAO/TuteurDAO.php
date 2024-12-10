@@ -2,8 +2,7 @@
 
 namespace DAO;
 
-use BO\Alerte;
-use BO\Etudiant;
+
 use BO\Tuteur;
 use PDO;
 require_once "DAO.php";
@@ -142,4 +141,67 @@ class TuteurDAO extends DAO
         }
         return $result;
     }
+
+    public function verifLog(string $log) : bool {
+        $result = false;
+        $query = "select * from Utilisateur where LogUti = :logUti";
+        $stmt = $this->bdd->prepare($query);
+        $stmt->execute([
+            "logUti" => $log
+        ]);
+        if ($stmt->rowCount() > 0){
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function verifNbMaxEtu3(Tuteur $tuteur): bool {
+        $result = false;
+        $etuDAO = new EtudiantDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $cla = $claDAO->find(1);
+        $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
+        if ($tuteur->getNbMax3()){
+            if ($nbEtu && $nbEtu>=$tuteur->getNbMax3()) {
+                $result = true;
+            }
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function verifNbMaxEtu4(Tuteur $tuteur): bool {
+        $result = false;
+        $etuDAO = new EtudiantDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $cla = $claDAO->find(2);
+        $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
+        if ($tuteur->getNbMax4()){
+            if ($nbEtu && $nbEtu>=$tuteur->getNbMax4()) {
+                $result = true;
+            }
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function verifNbMaxEtu5(Tuteur $tuteur): bool {
+        $result = false;
+        $etuDAO = new EtudiantDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $cla = $claDAO->find(3);
+        $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
+        if ($tuteur->getNbMax5()){
+            if ($nbEtu && $nbEtu>=$tuteur->getNbMax5()) {
+                $result = true;
+            }
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+
 }

@@ -58,7 +58,7 @@
     <select name="tuteur-select" id="dropDown">
         <option value=""></option>
         <?php foreach ($tuts as $tut): ?>
-        <option value="<?php echo $tut->getIdUti() ?>"> <?php echo $tut->getNomUti() ?> </option>
+        <option value="<?php echo $tut->getIdUti() ?>"> <?php echo ($tut->getPreUti())[0].".".$tut->getNomUti() ?> </option>
         <?php endforeach; ?>
     </select>
 
