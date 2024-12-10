@@ -21,15 +21,14 @@
     <?php } ?>
 
     <nav>
-        <ul class="liens">
-            <div class="nomentreprise">
-                <?php if(unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){ ?>
+        <div class="nomentreprise">
+            <?php if(unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){ ?>
                 <li><a href="ControllerAccueil_Admin.php">FSI</a></li>
-                <?php } else { ?>
+            <?php } else { ?>
                 <li><a href="ControllerAccueil.php">FSI</a></li>
-                <?php } ?>
-            </div>
-
+            <?php } ?>
+        </div>
+        <ul class="liens">
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
                 <li><a href="ControllerListe_Etudiant">Liste étudiant</a></li>
             <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
