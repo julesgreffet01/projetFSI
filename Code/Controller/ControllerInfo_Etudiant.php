@@ -22,6 +22,7 @@ require_once  __DIR__ ."/../Model/BO/Classe.php";
 
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
+$stylecss2 = "Bouton.css";
 
 if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) {
     $etu = unserialize($_SESSION['utilisateur']);

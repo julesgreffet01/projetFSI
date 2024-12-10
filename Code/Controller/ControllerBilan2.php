@@ -17,6 +17,7 @@ require_once  __DIR__ ."/../Model/BO/Classe.php";
 
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
+$stylecss3 = "Bouton.css";
 $uti = unserialize($_SESSION['utilisateur']);
 
 if ($uti){

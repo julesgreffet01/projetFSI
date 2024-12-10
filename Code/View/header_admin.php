@@ -8,6 +8,8 @@
     <title><?= isset($titrefichier) ? $titrefichier : "Titre par défaut"; ?></title>
     <link href="../Css/Style_header_Admin.css" rel="stylesheet" />
     <link href="../Css/<?= isset($stylecss) ? $stylecss : "Styledefault.css"; ?>" rel="stylesheet" />
+    <link href="../Css/<?= isset($stylecss2) ? $stylecss2 : "Styledefault.css"; ?>" rel="stylesheet" />
+    <link href="../Css/<?= isset($stylecss3) ? $stylecss3 : "Styledefault.css"; ?>" rel="stylesheet" />
 
 </head>
 <body>

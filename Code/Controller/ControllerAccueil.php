@@ -3,7 +3,7 @@ session_start();
 
 require_once __DIR__."/../Model/DAO/EtudiantDAO.php";
 require_once __DIR__."/../Model/DAO/TuteurDAO.php";
-require_once __DIR__."/../Model/DAO/AdministrateurDAO.php";     //on empeche pas l admin de changer l url pour acceder a ces pages la
+require_once __DIR__."/../Model/DAO/AdministrateurDAO.php";
 
 require_once __DIR__."/../Model/BO/Etudiant.php";
 require_once __DIR__."/../Model/BO/Tuteur.php";

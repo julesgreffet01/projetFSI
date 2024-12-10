@@ -16,6 +16,8 @@ require_once  __DIR__ ."/../Model/BO/Classe.php";
 
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
+$stylecss3 = "Bouton.css";
+
 
 include_once ('../View/Nav_Bar.php');
 include_once ('../View/Bilan1.php');

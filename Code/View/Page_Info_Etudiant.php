@@ -1,4 +1,4 @@
-<div class="contenu">
+<div class="contenuetu">
     <div class="mesinfo">
         <div class="block">
             <h1>Mes informations</h1>
@@ -63,8 +63,8 @@
         </div>
 
     </div>
-    <div class="boutons">
-        <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
-        <a href="#" class="btnmodifier">Modifier</a>
-    </div>
+</div>
+<div class="boutons">
+    <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
+    <a href="#" class="btnbleu">Modifier</a>
 </div>
