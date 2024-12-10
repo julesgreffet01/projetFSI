@@ -32,7 +32,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
         }else {
             $Message = "";
         }
-        if (isset($_POST['preTut']) && isset($_POST['nomTut']) && isset ($_POST['telTut']) && isset($_POST['adrTut']) && isset($_POST['vilTut']) && isset($_POST['cpTut']) && isset($_POST['mailTut']) && isset($_POST['logTut']) && isset($_POST['mdpTut']) && empty($_POST['tuteur-select'])) {
+        if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && empty($_POST['tuteur-select'])) {
             $pre = $_POST['preTut'];
             $nom = $_POST['nomTut'];
             $tel = $_POST['telTut'];
@@ -47,7 +47,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
             $tuteur = new Tuteur($nbMax3, $nbMax4, $nbMax5, 0, $log, $mdp, $mail, $tel, $nom, $pre, $adr, $cp, $vil);
             if($tutDAO->create($tuteur)){
-                $Message = "";
+                $Message = "le tuteur a bien été créé";
                 $tuts = $tutDAO->getAll();
             }
         } else {
@@ -56,7 +56,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
     }
     //---------------------- modifier ---------------------------
     if (isset($_POST['btnUpdate'])){
-        if (isset($_POST['preTut']) && isset($_POST['nomTut']) && isset ($_POST['telTut']) && isset($_POST['adrTut']) && isset($_POST['vilTut']) && isset($_POST['cpTut']) && isset($_POST['mailTut']) && isset($_POST['logTut']) && isset($_POST['mdpTut']) && isset($_POST['tuteur-select'])){
+        if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && isset($_POST['tuteur-select'])){
             $tuteur = $tutDAO->find($_POST["tuteur-select"]);
             $pre = $_POST['preTut'];
             $nom = $_POST['nomTut'];
@@ -94,18 +94,25 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
         if (isset($_POST['tuteur-select'])){
             if ($_POST['tuteur-select'] != ''){
                 $tuteur = $tutDAO->find($_POST["tuteur-select"]);
-                if ($tutDAO->delete($tuteur)){
-                    $Message = "suppression ok";
-                    $tuts = $tutDAO->getAll();
+                if ($tuteur){
+                    if ($tutDAO->delete($tuteur)){
+                        $Message = 'suppression du tuteur ' . $tuteur->getNomUti();
+                        $tuts = $tutDAO->getAll();
+                    }
+                } else {
+                    $Message = "Ce tuteur n'existe pas";
                 }
+
             } else {
-                $Message = "veuillez selectionner un tuteur";
+                $Message = "veuillez selectionner un tuteur a supprimer";
             }
         } else {
-            $Message = "veuillez selectionner un tuteur";
+            $Message = "veuillez selectionner un tuteur a supprimer";
         }
     }
 
     include_once ('../View/header_admin.php');
     include_once ('../View/Page_Parametre_Tuteur.php');
+} else {
+    header('Location: ControllerConnexion.php');
 }

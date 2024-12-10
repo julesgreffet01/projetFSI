@@ -1,4 +1,5 @@
 <div class="centre">
+    <form action="ControllerParametre_Entreprise.php" method="post">
     <p>
         <label for="nameEnt">Nom de l'entreprise</label>
         <input type="text" class="typetext" name="nameEnt" value="" placeholder="" id="nameEnt"/>
@@ -33,6 +34,12 @@
         <option value="<?php echo $ent->getIdEnt(); ?>"><?php echo $ent->getNomEnt(); ?></option>
         <?php endforeach; ?>
     </select>
+
+    <input type="submit" name="btnAdd" value="Créer" class="btnvert"/>
+    <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
+    <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
+    <?php echo $Message ?>
+    </form>
     <script src="../Js/EntrepriseChangeData.js"></script>
 </div>
 </div>

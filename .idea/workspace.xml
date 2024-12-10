@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/GetData/GetDataEntreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Js/EntrepriseChangeData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/GetData/GetDataTuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/GetData/GetDataTuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Js/TuteurChangeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Js/TuteurChangeData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Nav_Bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Nav_Bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Entreprise.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -502,7 +498,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733832097272</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733851886045</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1733851886045</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
