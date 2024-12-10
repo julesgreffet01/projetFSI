@@ -36,8 +36,8 @@ try {
         'login'=>$tuteur->getLogUti(),
         'mdp'=>$tuteur->getMdpUti()
     ]);
-} catch (Exception $ex) {
+} catch (Exception $e) {
     header('Content-Type: application/json');
-    echo json_encode(['error' => 'Erreur interne : ' . $ex->getMessage()]);
+    echo json_encode(['error' => $e->getMessage()]);
     exit;
 }

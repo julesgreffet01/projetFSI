@@ -51,7 +51,7 @@
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Administrateur){?>
             <li><a href="ControllerParametre_General.php">Paramètre</a></li>
             <?php } else if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur || unserialize($_SESSION['utilisateur']) instanceof \BO\Etudiant){ ?>
-            <li><a href="ControllerParametre_Profil.php">Profile</a></li>
+            <li><a href="ControllerParametre_Profil.php">Profil</a></li>
             <?php } ?>
             <li><a href="Leaves.php"><img class="logosortie" src="../Img/logout.png"></a></li>
         </ul>

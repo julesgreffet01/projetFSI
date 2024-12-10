@@ -1,40 +1,38 @@
 <div class="centre">
     <p>
-        <label for="name">Nom de l'entreprise</label>
-        <input type="text" class="typetext" name="city" value="" placeholder="" />
+        <label for="nameEnt">Nom de l'entreprise</label>
+        <input type="text" class="typetext" name="nameEnt" value="" placeholder="" id="nameEnt"/>
     </p>
     <p>
-        <label for="adresse">Adresse de l'entreprise</label>
-        <input type="text" class="typetext" name="city" value="" placeholder="" />
+        <label for="adrEnt">Adresse de l'entreprise</label>
+        <input type="text" class="typetext" name="adrEnt" value="" placeholder="" id="adrEnt"/>
     </p>
     <p>
-        <label for="ville">Ville de l'entreprise</label>
-        <input type="text" class="typetext" name="city" value="" placeholder="" />
+        <label for="vilEnt">Ville de l'entreprise</label>
+        <input type="text" class="typetext" name="vilEnt" value="" placeholder="" id="vilEnt"/>
     </p>
     <p>
-        <label for="cp">Code postal de l'entreprise</label>
-        <input type="text" class="typetext" name="city" value="" placeholder="" />
+        <label for="cpEnt">Code postal de l'entreprise</label>
+        <input type="text" class="typetext" name="cpEnt" value="" placeholder="" id="cpEnt"/>
     </p>
     <p>
-        <label for="tel">Téléphone de l'entreprise</label>
-        <input type="text" class="typetext" name="city" value="" placeholder="" />
+        <label for="telEnt">Téléphone de l'entreprise</label>
+        <input type="text" class="typetext" name="telEnt" value="" placeholder="" id="telEnt"/>
     </p>
     <p>
-        <label for="city">Mail de l'entreprise</label>
-        <input type="text" class="typetext" name="city" value="" placeholder="" />
+        <label for="mailEnt">Mail de l'entreprise</label>
+        <input type="text" class="typetext" name="mailEnt" value="" placeholder="" id="mailEnt"/>
     </p>
 <div class="selectentreprise">
 </div>
 <div class="selection">
-    <label for="city">Tuteur à modifier</label>
-    <select name="entreprise-select">
+    <label for="entreprise-select">Entreprise à modifier</label>
+    <select name="entreprise-select" id="dropDown">
         <option value=""></option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
+        <?php foreach ($ents as $ent): ?>
+        <option value="<?php echo $ent->getIdEnt(); ?>"><?php echo $ent->getNomEnt(); ?></option>
+        <?php endforeach; ?>
     </select>
+    <script src="../Js/EntrepriseChangeData.js"></script>
 </div>
 </div>
