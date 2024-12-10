@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Tuteur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +16,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="jules" />
@@ -38,9 +47,7 @@
     &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
   }
 }</component>
-
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
-
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -52,15 +59,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.Page_Parametre_Tuteur.php.executor&quot;: &quot;Debug&quot;,
     &quot;PHP Script.testDAO.php.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maxime&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/php/projetFSI&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/php/ProjetPHP&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,24 +74,11 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "PHP Script.testDAO.php.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "jules",
-    "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "vue.rearranger.settings.migration": "true"
-
   },
   &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
     &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
       &quot;directory&quot;,
       &quot;module&quot;,
@@ -93,6 +86,16 @@
     ]
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Page_Parametre_Tuteur.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AdministrateurDAO.php/Code/View/Page_Parametre_Tuteur.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Page_Parametre_Tuteur.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -133,16 +136,14 @@
       <workItem from="1733300784923" duration="4637000" />
       <workItem from="1733330770963" duration="9851000" />
       <workItem from="1733351244265" duration="1002000" />
-
-      <workItem from="1733819431082" duration="624000" />
-
       <workItem from="1733387414264" duration="6631000" />
       <workItem from="1733395261947" duration="1677000" />
       <workItem from="1733409999707" duration="3387000" />
       <workItem from="1733424112200" duration="3343000" />
       <workItem from="1733491288311" duration="3019000" />
       <workItem from="1733648875276" duration="25790000" />
-
+      <workItem from="1733826519023" duration="4053000" />
+      <workItem from="1733836120670" duration="5201000" />
     </task>
     <task id="LOCAL-00001" summary="jules-BO crea">
       <option name="closed" value="true" />
@@ -480,7 +481,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733731500109</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733827413113</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1733827413113</updated>
+    </task>
+    <task id="LOCAL-00044" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733832097272</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1733832097272</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
