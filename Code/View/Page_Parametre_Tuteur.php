@@ -1,4 +1,5 @@
 <div class="centre">
+    <form action="ControllerParametre_Tuteur.php" method="post">
 <p>
     <label for="preTut">Prénom</label>
     <input type="text" class="typetext" name="preTut" value="" placeholder="" id="preTut"/>
@@ -15,10 +16,29 @@
     <label for="adrTut">Adresse</label>
     <input type="text" class="typetext" name="adrTut" value="" placeholder="" id="adrTut"/>
 </p>
+        <p>
+            <label for="vilTut">Ville</label>
+            <input type="text" class="typetext" name="vilTut" id="vilTut"/>
+        </p>
+        <p>
+            <label for="cpTut">Code Postale</label>
+            <input type="number" class="typetext" name="cpTut" id="cpTut"/>
+        </p>
 <p>
-    <label for="cityTut">Mail</label>
+    <label for="mailTut">Mail</label>
     <input type="text" class="typetext" name="mailTut" value="" placeholder="" id="mailTut"/>
 </p>
+        <p>
+            <label for="logTut">Log</label>
+            <input type="text" class="typetext" name="logTut" value="" id="logTut"/>
+        </p>
+
+        <p>
+            <label for="mdpTut">Mot de passe</label>
+            <input type="text" class="typetext" name="mdpTut" value="" id="mdpTut"/>
+        </p>
+
+
 <p>
     <label for="nbMaxEtu3">Nombre max d'élèves 3 OLEN</label>
     <input type="number" class="typetext" name="nbMaxEtu3" value="" placeholder="" id="nbMaxEtu3"/>
@@ -32,6 +52,7 @@
     <input type="number" class="typetext" name="nbMaxEtu5" value="" placeholder="" id="nbMaxEtu5"/>
 </p>
 </div>
+
 <div class="selection">
     <label for="city">Tuteur à modifier</label>
     <select name="tuteur-select" id="dropDown">
@@ -40,5 +61,11 @@
         <option value="<?php echo $tut->getIdUti() ?>"> <?php echo $tut->getNomUti() ?> </option>
         <?php endforeach; ?>
     </select>
+
+    <input type="submit" name="btnAdd" value="Créer"/>
+    <input type="submit" name="btnUpdate" value="Modifier"/>
+    <input type="submit" name="btnDelete" value="Supprimer"/>
+    <?php echo $Message ?>
+    </form>
     <script src="../Js/TuteurChangeData.js"></script>
 </div>

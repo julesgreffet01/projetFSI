@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nbEtu3 = document.getElementById('nbMaxEtu3');
     const nbEtu4 = document.getElementById("nbMaxEtu4");
     const nbEtu5 = document.getElementById('nbMaxEtu5');
+    const vil = document.getElementById('vilTut');
+    const cp = document.getElementById('cpTut');
+    const log = document.getElementById('logTut');
+    const mdp = document.getElementById('mdpTut');
 
     dropD.addEventListener('change', ()=>{
         const selected = dropD.value;
@@ -20,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
             nbEtu3.value = '';
             nbEtu4.value = '';
             nbEtu5.value = '';
+            vil.value = '';
+            cp.value = '';
+            log.value = '';
+            mdp.value = '';
         }
 
         fetch('../GetData/GetDataTuteur.php?idTut='+ selected)
@@ -34,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 nbEtu3.value = data.nbMax3 || 0;
                 nbEtu4.value = data.nbMax4 || 0;
                 nbEtu5.value = data.nbMax5 || 0;
+                vil.value = data.ville || '';
+                cp.value = data.cp || null;
+                log.value = data.login || '';
+                mdp.value = data.mdp || '';
             })
     })
 });

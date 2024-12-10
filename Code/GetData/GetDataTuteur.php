@@ -30,7 +30,11 @@ try {
         'mail'=> $tuteur->getMailUti(),
         'nbMax3'=> $tuteur->getNbMax3(),
         'nbMax4'=> $tuteur->getNbMax4(),
-        'nbMax5'=> $tuteur->getNbMax5()
+        'nbMax5'=> $tuteur->getNbMax5(),
+        'cp'=> $tuteur->getCpUti(),
+        'ville'=> $tuteur->getVilUti(),
+        'login'=>$tuteur->getLogUti(),
+        'mdp'=>$tuteur->getMdpUti()
     ]);
 } catch (Exception $ex) {
     header('Content-Type: application/json');
