@@ -24,13 +24,18 @@ require_once  __DIR__ ."/../Model/DAO/EtudiantDAO.php";
 require_once  __DIR__ ."/../Model/DAO/TuteurDAO.php";
 require_once __DIR__."/../Model/BDDManager.php";
 
+
+
 $titrefichier = "Profil";
 $stylecss = "Parametre.css";
 $titreparametre = "Profil";
+$stylecss3 = "Bouton.css";
 $uti = unserialize($_SESSION['utilisateur']);
 $bdd = initialiseConnexionBDD();
 $message = "";
-
+if($uti instanceof Etudiant || $uti instanceof Tuteur){
+$stylecss2 = "Profiletu.css";
+}
 if ($uti) {
     if (isset($_POST['btnProfil']) && $_POST['identifiant'] !== "" && $_POST['password'] !== "") {
         if ($uti instanceof Administrateur) {

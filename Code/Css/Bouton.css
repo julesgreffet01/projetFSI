@@ -5,8 +5,7 @@
     font-family: Roboto, sans-serif;
     border: none;
     border-radius: 15px;
-    width: 250px;
-    height: 80px;
+    padding: 20px;
 }
 .btnvert{
     background-color: #53B365;
@@ -15,8 +14,7 @@
     font-family: Roboto, sans-serif;
     border: none;
     border-radius: 15px;
-    width: 250px;
-    height: 80px;
+    padding: 20px;
 }
 .btnbleu{
     background-color: #8EC8F6;
@@ -25,6 +23,23 @@
     font-family: Roboto, sans-serif;
     border: none;
     border-radius: 15px;
-    width: 250px;
-    height: 80px;
+    padding: 20px;
+}
+
+.btnbil{
+    background: #203C25;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btnbilan{
+    background: #203C25;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 50px;
+
 }

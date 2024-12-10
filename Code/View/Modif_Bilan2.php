@@ -15,6 +15,6 @@
         <label class="intitu">Remarque éventuelles</label>
         <label class="info">maucaisbuabucb</label>
     </p>
-    <input type="button" class="btnbleu" value="Modifier">
-    <input type="button" class="btnrouge" value="Supprimer">
+    <input type="button" class="btnbil" value="Valider">
+    <input type="button" class="btnrouge" value="Annuler">
 </div>

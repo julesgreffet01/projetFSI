@@ -8,7 +8,8 @@
         <label for="city">Mot de passe</label>
         <input type="password" class="typetext" name="password" value="" placeholder="" />
     </p>
-        <input type="submit" name="btnProfil" value="Modifier">
+        <input class="btnbleu" type="submit" name="btnProfil" value="Modifier">
+
     </form>
     <?php if($message): ?>
     <p><?php echo $message ?> </p>

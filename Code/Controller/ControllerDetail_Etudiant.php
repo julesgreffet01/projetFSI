@@ -22,6 +22,7 @@ $entDAO = new EntrepriseDAO($bdd);
 
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
+$stylecss3 = "Bouton.css";
 
 $etu = $etuDAO->find($_GET["idEtu"]);
 $ent = $entDAO->find($etu->getMonEnt()->getIdEnt());

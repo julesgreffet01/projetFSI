@@ -15,21 +15,7 @@ body{
     color:  #65BA74;
 }
 
-.btnbilan{
-    background: #203C25;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    margin-left: 30px;
-}
 
-.btnmodifier{
-    background: #8EC8F6;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    margin-left: 10px;
-}
 
 
 .contenu{
@@ -38,7 +24,21 @@ body{
     border-radius: 25px;
     padding: 30px;
     padding-bottom: 130px;
+
 }
+
+.contenuetu{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+p{
+    text-align: left;
+    margin-left: 50px;
+    font-size: 18px;
+}
+
 
 .contenu p {
     text-align: justify;
@@ -53,28 +53,25 @@ body{
 .cadre{
     background: #E9F6E9;
     border-radius: 20px;
-    margin: 100px 250px;
+    margin: 50px 250px;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
 }
 
 .bilan{
-    margin: 55px 60px;
-    padding: 20px;
     background: #B2DDB5;
     text-align: center;
     border-radius: 15px;
-    display: inline-block;
+    flex: 1;
+    width: 800px;
+    margin: 100px;
+    height: 800px;
 }
 
-.btnbil{
-    background: #203C25;
-    color: #ffffff;
-}
-
-
-p{
-    text-align: left;
-    margin-left: 50px;
-    font-size: 18px;
+.contenubil .cadre .bilan .datmodiflib p {
+    text-align: center;
+    margin: 30px;
 }
 
 h1{
@@ -85,7 +82,25 @@ h1{
     font-size: 11px;
 }
 
-.mesinfo{
-    margin-left: 620px
+
+.bilan .datemodiflib p{
+    text-align: center;
 }
 
+.block{
+    flex: 1;
+    width: 800px;
+}
+
+.contenudetail{
+    display: flex;
+    justify-content: center;
+
+}
+
+.contenudetail .mesinfo .block h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px  ;
+    padding-bottom: 80px;
+}
