@@ -1,28 +1,56 @@
+<?php foreach ($bil1 as $bil): ?>
 <div class="block">
+    <form action="ControllerBilan1.php?idEtu=<?php echo $id ?>" method="post">
 <p>
     <label class="intitu">Date de la visite en entreprise</label>
-    <label class="info">12/12/12</label>
+    <?php if($bil->getDatVisEnt() == null): ?>
+    <label class="info">Pas encore réaliser</label>
+    <?php else : ?>
+    <label class="info"><?php echo $bil->getDatVisEnt()->format('d/m/Y') ?></label>
+    <?php endif; ?>
 </p>
 <p>
     <label class="intitu">Date du Bilan</label>
-    <label class="info">2/12/12</label>
+    <?php if($bil->getDatVisEnt() == null): ?>
+        <label class="info">Pas encore réaliser</label>
+    <?php else : ?>
+        <label class="info"><?php echo $bil->getDatVisEnt()->format('d/m/Y') ?></label>
+    <?php endif; ?>
 </p>
 <p>
     <label class="intitu">Note fixée par l'entreprise</label>
-    <label class="info">15</label>
+    <?php if($bil->getDatVisEnt() == null): ?>
+        <label class="info"></label>
+    <?php else : ?>
+        <label class="info"><?php echo $bil->getNotEnt() ?></label>
+    <?php endif; ?>
 </p>
 <p>
     <label class="intitu">Note d'oral</label>
-    <label class="info">9</label>
+    <?php if($bil->getDatVisEnt() == null): ?>
+        <label class="info"></label>
+    <?php else : ?>
+        <label class="info"><?php echo $bil->getNotOra() ?></label>
+    <?php endif; ?>
 </p>
 <p>
     <label class="intitu">Note du dossier</label>
-    <label class="info">65</label>
+    <?php if($bil->getDatVisEnt() == null): ?>
+        <label class="info"></label>
+    <?php else : ?>
+        <label class="info"><?php echo $bil->getNotBil() ?></label>
+    <?php endif; ?>
 </p>
 <p>
     <label class="intitu">Remarque éventuelles</label>
-    <label class="info">maucaisbuabucb</label>
+    <?php if($bil->getDatVisEnt() == null): ?>
+        <label class="info"></label>
+    <?php else : ?>
+        <label class="info"><?php echo $bil->getRemBil() ?></label>
+    <?php endif; ?>
 </p>
-    <input type="button" class="btnbleu" value="Modifier">
-    <input type="button" class="btnrouge" value="Supprimer">
+    <input type="submit" class="btnbleu" value="Modifier" name="btnUpdate">
+    <input type="submit" class="btnrouge" value="Supprimer" name="btnDelete">
+    </form>
 </div>
+<?php endforeach; ?>
