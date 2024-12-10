@@ -6,6 +6,7 @@ use BO\Classe;
 use PDO;
 require_once 'DAO.php';
 require_once __DIR__ . '/../BO/Classe.php';
+require_once __DIR__ . '/../DAO/EtudiantDAO.php';
 
 class ClasseDAO extends DAO
 {
@@ -104,6 +105,16 @@ class ClasseDAO extends DAO
             $result = [null] ;
         }
 
+        return $result;
+    }
+
+    public function verifNbMaxEtu(Classe $obj): bool{
+        $result = false;
+        $etuDAO = new EtudiantDAO($this->bdd);
+        $nbEtu = count($etuDAO->getAllEtuByCla($obj));
+        if ($nbEtu && $nbEtu >= $obj->getNbMaxEtu()) {
+            $result = true;
+        }
         return $result;
     }
 }

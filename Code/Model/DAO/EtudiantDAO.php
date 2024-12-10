@@ -550,11 +550,23 @@ class EtudiantDAO extends DAO
         if ($r){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
-                $ent = $entDAO->find($row["IdEnt"]);
-                $cla = $claDAO->find($row["IdCla"]);
-                $spec = $specDAO->find($row["IdSpe"]);
-                $ma = $maDAO->find($row["IdMai"]);
-                $tut = $tutDAO->find($row["IdTut"]);
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
                 $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
         }
@@ -575,11 +587,23 @@ class EtudiantDAO extends DAO
         if ($r){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
-                $ent = $entDAO->find($row["IdEnt"]);
-                $cla = $claDAO->find($row["IdCla"]);
-                $spec = $specDAO->find($row["IdSpe"]);
-                $ma = $maDAO->find($row["IdMai"]);
-                $tut = $tutDAO->find($row["IdTut"]);
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
                 $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
         } else {
@@ -614,17 +638,95 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
-    public function getAllEtuByMaiApp(MaitreApprentissage $ma) : bool {
-        $result = false;
+    public function getAllEtuByMaiApp(MaitreApprentissage $ma) : array {
+        $result = [];
+
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+
         $query = "select * from Utilisateur where IdMai = :idMai";
         $stmt = $this->bdd->prepare($query);
-        $stmt->execute([
+        $r = $stmt->execute([
             'idMai'=>$ma->getIdMai()
+        ]);
+        if ($r){
+            foreach ($stmt as $row) {
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
+                $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
+        }
+        return $result;
+    }
+
+    public function verifLog(string $log) : bool {
+        $result = false;
+        $query = "select * from Utilisateur where LogUti = :logUti";
+        $stmt = $this->bdd->prepare($query);
+        $stmt->execute([
+            "logUti" => $log
         ]);
         if ($stmt->rowCount() > 0){
             $result = true;
         }
         return $result;
     }
+
+    public function getAllEtuByTutAndCla(Tuteur $tut, Classe $classe) : array {
+        $result = [];
+        $entDAO = new EntrepriseDAO($this->bdd);
+        $claDAO = new ClasseDAO($this->bdd);
+        $maDAO = new MaitreApprentissageDAO($this->bdd);
+        $specDAO = new SpecialiteDAO($this->bdd);
+        $tutDAO = new TuteurDAO($this->bdd);
+        $query = "select * from Utilisateur where IdTut = :idTut and IdCla = :idCla";
+        $stmt = $this->bdd->prepare($query);
+        $r = $stmt->execute([
+            'idTut' => $tut->getIdUti(),
+            'idCla' => $classe->getIdCla()
+        ]);
+        if ($r){
+            foreach ($stmt as $row) {
+                $ent = $cla = $spec = $ma = $tut = null;
+                if ($row['IdEnt']){
+                    $ent = $entDAO->find($row["IdEnt"]);
+                }
+                if ($row['IdCla']){
+                    $cla = $claDAO->find($row["IdCla"]);
+
+                }
+                if ($row['IdSpe']){
+                    $spec = $specDAO->find($row["IdSpe"]);
+                }
+                if ($row['IdMai']){
+                    $ma = $maDAO->find($row["IdMai"]);
+                }
+                if ($row['IdTut']){
+                    $tut = $tutDAO->find($row["IdTut"]);
+                }
+                $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+            }
+        }
+        return $result;
+    }
+
 
 }

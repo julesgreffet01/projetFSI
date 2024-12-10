@@ -39,28 +39,40 @@ $stylecss2 = "Profiletu.css";
 if ($uti) {
     if (isset($_POST['btnProfil']) && $_POST['identifiant'] !== "" && $_POST['password'] !== "") {
         if ($uti instanceof Administrateur) {
-            $uti->setLogUti($_POST['identifiant']);
-            $uti->setMdpUti($_POST['password']);
             $adminDAO = new AdministrateurDAO($bdd);
-            $verif = $adminDAO->update($uti);
-            if ($verif) {
-                $message = "Identifiant et mot de passe modifier";
+            if ($uti->getLogUti() != $_POST['identifiant']) {
+                if ($adminDAO->verifLog($_POST['identifiant'])){
+                    $message = "Log deja utiliser";
+                } else {
+                    $uti->setLogUti($_POST['identifiant']);
+                    $uti->setMdpUti($_POST['password']);
+
+                    if ($adminDAO->update($uti)) {
+                        $message = "Identifiant et mot de passe modifier";
+                    }
+                }
             }
         } else if ($uti instanceof Etudiant) {
-            $uti->setLogUti($_POST['identifiant']);
-            $uti->setMdpUti($_POST['password']);
             $etuDAO = new EtudiantDAO($bdd);
-            $verif = $etuDAO->update($uti);
-            if ($verif) {
-                $message = "Identifiant et mot de passe modifier";
+            if ($uti->getLogUti() != $_POST['identifiant']) {
+                if ($etuDAO->verifLog($_POST['identifiant'])){
+                    $uti->setLogUti($_POST['identifiant']);
+                    $uti->setMdpUti($_POST['password']);
+                    if ($etuDAO->update($uti)) {
+                        $message = "Identifiant et mot de passe modifier";
+                    }
+                }
             }
         } else if ($uti instanceof Tuteur) {
-            $uti->setLogUti($_POST['identifiant']);
-            $uti->setMdpUti($_POST['password']);
             $tutDAO = new TuteurDAO($bdd);
-            $verif = $tutDAO->update($uti);
-            if ($verif) {
-                $message = "Identifiant et mot de passe modifier";
+            if ($uti->getLogUti() != $_POST['identifiant']) {
+                if ($tutDAO->verifLog($_POST['identifiant'])){
+                    $uti->setLogUti($_POST['identifiant']);
+                    $uti->setMdpUti($_POST['password']);
+                    if ($tutDAO->update($uti)) {
+                        $message = "Identifiant et mot de passe modifier";
+                    }
+                }
             }
         } else {
             header('location: ControllerConnexion.php');

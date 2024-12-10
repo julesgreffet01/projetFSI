@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('../GetData/GetDataTuteur.php?idTut='+ selected)
             .then(response =>response.json())
             .then(data => {
-                console.log(data);
                 pre.value = data.pre || '';
                 nom.value = data.nom || '';
                 tel.value = data.tel || '';
