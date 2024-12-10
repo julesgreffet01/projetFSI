@@ -17,7 +17,7 @@
 </p>
 <p>
     <label for="cityTut">Mail</label>
-    <input type="text" class="typetext" name="cityTut" value="" placeholder="" id="cityTut"/>
+    <input type="text" class="typetext" name="mailTut" value="" placeholder="" id="mailTut"/>
 </p>
 <p>
     <label for="nbMaxEtu3">Nombre max d'élèves 3 OLEN</label>

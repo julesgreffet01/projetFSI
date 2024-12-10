@@ -23,7 +23,14 @@ try {
 
     header('Content-Type: application/json');
     echo json_encode([
-        'pre' => $tuteur->getPreUti()
+        'pre' => $tuteur->getPreUti(),
+        'nom' => $tuteur->getNomUti(),
+        'tel'=> $tuteur->getTelUti(),
+        'adr'=> $tuteur->getAdrUti(),
+        'mail'=> $tuteur->getMailUti(),
+        'nbMax3'=> $tuteur->getNbMax3(),
+        'nbMax4'=> $tuteur->getNbMax4(),
+        'nbMax5'=> $tuteur->getNbMax5()
     ]);
 } catch (Exception $ex) {
     header('Content-Type: application/json');
