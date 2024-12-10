@@ -12,7 +12,7 @@ require_once __DIR__."/../Model/BO/Administrateur.php";
 
 
 $titrefichier = "Accueil";
-$stylecss = "Style.css";
+$stylecss = "Blockinfo.css";
 
 
 

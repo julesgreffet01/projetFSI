@@ -25,3 +25,22 @@ body{
     border-radius: 15px;
     margin-left: 10px;
 }
+
+.contenu{
+    margin: 70px;
+    background: #E9F6E9;
+    border-radius: 25px;
+    padding: 30px;
+    padding-bottom: 130px;
+}
+
+.contenu p {
+    text-align: justify;
+    font-size: 25px;
+}
+
+.logopage{
+    width: 100px;
+    height: auto;
+    float:right
+}
