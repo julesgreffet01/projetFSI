@@ -1,46 +1,44 @@
 <div class="centre">
 <p>
-    <label for="city">Prénom</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="preTut">Prénom</label>
+    <input type="text" class="typetext" name="preTut" value="" placeholder="" id="preTut"/>
 </p>
 <p>
-    <label for="city">Nom</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="nomTut">Nom</label>
+    <input type="text" class="typetext" name="nomTut" value="" placeholder="" id="nomTut"/>
 </p>
 <p>
-    <label for="city">Téléphone</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="telTut">Téléphone</label>
+    <input type="text" class="typetext" name="telTut" value="" placeholder="" id="telTut"/>
 </p>
 <p>
-    <label for="city">Adresse</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="adrTut">Adresse</label>
+    <input type="text" class="typetext" name="adrTut" value="" placeholder="" id="adrTut"/>
 </p>
 <p>
-    <label for="city">Mail</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="cityTut">Mail</label>
+    <input type="text" class="typetext" name="cityTut" value="" placeholder="" id="cityTut"/>
 </p>
 <p>
-    <label for="city">Nombre max d'élèves 3 OLEN</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="nbMaxEtu3">Nombre max d'élèves 3 OLEN</label>
+    <input type="number" class="typetext" name="nbMaxEtu3" value="" placeholder="" id="nbMaxEtu3"/>
 </p>
 <p>
-    <label for="city">Nombre max d'élèves 4 OLEN</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="nbMaxEtu4">Nombre max d'élèves 4 OLEN</label>
+    <input type="number" class="typetext" name="nbMaxEtu4" value="" placeholder="" id="nbMaxEtu4"/>
 </p>
 <p>
-    <label for="city">Nombre max d'élèves 5 OLEN</label>
-    <input type="text" class="typetext" name="city" value="" placeholder="" />
+    <label for="nbMaxEtu5">Nombre max d'élèves 5 OLEN</label>
+    <input type="number" class="typetext" name="nbMaxEtu5" value="" placeholder="" id="nbMaxEtu5"/>
 </p>
 </div>
 <div class="selection">
     <label for="city">Tuteur à modifier</label>
-    <select name="tuteur-select">
+    <select name="tuteur-select" id="dropDown">
         <option value=""></option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
+        <?php foreach ($tuts as $tut): ?>
+        <option value="<?php echo $tut->getIdUti() ?>"> <?php echo $tut->getNomUti() ?> </option>
+        <?php endforeach; ?>
     </select>
+    <script src="../Js/TuteurChangeData.js"></script>
 </div>
