@@ -65,7 +65,8 @@ class MaitreApprentissageDAO extends DAO
         $result = false;
         if ($obj instanceof MaitreApprentissage) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if ($etuDAO->getAllEtuByMaiApp($obj) !== []){
+            if ($etuDAO->getAllEtuByMaiApp($obj) == []){
+                var_dump($etuDAO->getAllEtuByMaiApp($obj));
                 $foundObj = $this->find($obj->getIdMai());
                 if ($foundObj != null) {
                     if($obj->getIdMai() == $foundObj->getIdMai()){
