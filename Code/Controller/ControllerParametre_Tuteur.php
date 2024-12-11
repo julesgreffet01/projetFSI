@@ -95,6 +95,21 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                             $Message = "Le tuteur a bien été modifier";
                         }
                     }
+                } else {
+                    $tuteur->setPreUti($pre);
+                    $tuteur->setNomUti($nom);
+                    $tuteur->setTelUti($tel);
+                    $tuteur->setAdrUti($adr);
+                    $tuteur->setVilUti($vil);
+                    $tuteur->setCpUti($cp);
+                    $tuteur->setMailUti($mail);
+                    $tuteur->setMdpUti($mdp);
+                    $tuteur->setNbMax3($nbMax3);
+                    $tuteur->setNbMax4($nbMax4);
+                    $tuteur->setNbMax5($nbMax5);
+                    if($tutDAO->update($tuteur)){
+                        $Message = "Le tuteur a bien été modifier";
+                    }
                 }
             } else {
                 $Message = "Ce tuteur n'existe pas";
