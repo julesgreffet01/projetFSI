@@ -65,6 +65,9 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
 
     if (isset($_POST['btnDelete'])) {
         if (isset($_POST['classe-select'])) {
+            if (!empty($_POST['classe-select'])) {
+
+            }
             $cla = $claDAO->find($_POST['classe-select']);
             if ($claDAO->delete($cla)) {
                 $Message = "suppression reussie";
