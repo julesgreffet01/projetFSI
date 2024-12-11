@@ -16,6 +16,7 @@
         display:inline-block;
         color: #FBFEFB;
         width: 50%;
+        height: 100%;
     }
 
     .title{
@@ -24,7 +25,7 @@
     }
 
     .info{
-        font-size: 15px;
+        font-size: 20px;
         text-align: center;
     }
 
@@ -34,7 +35,7 @@
         background: #DCDFDA;
         width: 50%;
         text-align: center;
-        height: 100vh;
+        height: 100%;
     }
     .contenu{
         display: flex;
@@ -77,7 +78,7 @@
 
     .messageerr{
         margin-top: 10px;
-        text-align: right;
+        text-align: center;
         margin-right: 25px;
         color: #A62609;
     }

@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../Css/Style_Connexion.css" rel="stylesheet" />
     <link href="../Css/Bouton.css" rel="stylesheet" />
-    <link href="../Css/Blockinfo.css" rel="stylesheet" />
     <title>Connexion</title>
 </head>
 <body>
