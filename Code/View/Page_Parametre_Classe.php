@@ -24,7 +24,7 @@
         <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
     </div>
     <?php
-    if($verif == true){
+    if($verif == false){
         ?><div class="messageerr">
         <?php echo $Message ?>
         </div><?php
