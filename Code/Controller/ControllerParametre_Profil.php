@@ -49,29 +49,57 @@ if ($uti) {
 
                     if ($adminDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
+                    } else {
+                        $message = "erreur update";
                     }
                 }
+            } else {
+                $uti->setMdpUti($_POST['password']);
+
+                if ($adminDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
+                } else {
+                    $message = "erreur update";
+                }
             }
+
         } else if ($uti instanceof Etudiant) {
             $etuDAO = new EtudiantDAO($bdd);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($etuDAO->verifLog($_POST['identifiant'])){
+                    $message = "Log deja utiliser";
+                } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);
+
                     if ($etuDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
                     }
                 }
+            } else {
+                $uti->setMdpUti($_POST['password']);
+
+                if ($etuDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
+                }
             }
+
         } else if ($uti instanceof Tuteur) {
             $tutDAO = new TuteurDAO($bdd);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($tutDAO->verifLog($_POST['identifiant'])){
+                    $message = "Log deja utiliser";
+                } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);
                     if ($tutDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
                     }
+                }
+            } else {
+                $uti->setMdpUti($_POST['password']);
+                if ($tutDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
                 }
             }
         } else {

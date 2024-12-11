@@ -1,6 +1,8 @@
 <?php
 use BO\Administrateur;
+use BO\Etudiant;
 use BO\Tuteur;
+use DAO\EtudiantDAO;
 
 session_start();
 
@@ -14,23 +16,33 @@ require_once  __DIR__ ."/../Model/BO/Bilan1.php";
 require_once  __DIR__ ."/../Model/BO/Bilan2.php";
 require_once  __DIR__ ."/../Model/BO/Classe.php";
 
+require_once  __DIR__ ."/../Model/BDDManager.php";
+require_once  __DIR__ ."/../Model/DAO/EtudiantDAO.php";
+
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
 $stylecss3 = "Bouton.css";
+$bdd = initialiseConnexionBDD();
 
 
-include_once ('../View/Nav_Bar.php');
-include_once ('../View/Bilan1.php');
+
+
 $uti = unserialize($_SESSION['utilisateur']);
 
 if ($uti){
-    if ($uti instanceof Administrateur){
-        //TODO finir le html
-    } else if ($uti instanceof Tuteur){
-
+    if ($uti instanceof Administrateur || $uti instanceof Tuteur) {
+        $id = intval($_GET["idEtu"]);
+        $etuDAO = new EtudiantDAO($bdd);
+        $etu = $etuDAO->find($id);
+        $bil1 = $etu->getMesBilan1();
+        if (isset($_POST['btnDelete'])){
+            //TODO a finir
+        }
     } else {
         header('Location: ControllerConnexion.php');
     }
+    include_once ('../View/Nav_Bar.php');
+    include_once ('../View/Bilan1.php');
 } else {
     header('Location: ControllerConnexion.php');
 }
