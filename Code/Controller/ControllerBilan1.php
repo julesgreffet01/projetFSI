@@ -35,12 +35,8 @@ if ($uti){
         $etuDAO = new EtudiantDAO($bdd);
         $etu = $etuDAO->find($id);
         $bil1 = $etu->getMesBilan1();
-        //modif
-        if(isset($_POST['btnUpdate'])){
-            //TODO finir
-        }
-        if(isset($_POST['btnDelete'])){
-            //TODO finir
+        if (isset($_POST['btnDelete'])){
+            //TODO a finir
         }
     } else {
         header('Location: ControllerConnexion.php');

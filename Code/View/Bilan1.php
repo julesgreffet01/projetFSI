@@ -1,6 +1,6 @@
 <?php foreach ($bil1 as $bil): ?>
 <div class="block">
-    <form action="ControllerBilan1.php?idEtu=<?php echo $id ?>" method="post">
+    <form action="ControllerModif_Bilan1.php?id=<?php echo $bil->getIdBil() ?>" method="post">
 <p>
     <label class="intitu">Date de la visite en entreprise</label>
     <?php if($bil->getDatVisEnt() == null): ?>
