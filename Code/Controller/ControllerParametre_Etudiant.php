@@ -43,11 +43,12 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     $tutDAO = new TuteurDAO($bdd);
     $etuDAO = new EtudiantDAO($bdd);
 
-    $clas = $claDAO->getAll();
+
+    $clas = $claDAO->getAllClaGood();
     $spes = $speDAO->getAll();
     $ents = $entDAO->getAll();
     $mas = $maDAO->getAll();
-    $tuts = $tutDAO->getAll();
+    $tuts = $tutDAO->getAllTutGood();
     $etus = $etuDAO->getAll();
     include_once ('../View/header_admin.php');
     include_once '../View/Page_Parametre_Etudiant.php';

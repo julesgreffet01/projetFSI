@@ -122,7 +122,7 @@ class ClasseDAO extends DAO
         $result = [];
         $mesClas = $this->getAll();
         foreach ($mesClas as $clas) {
-            if($this->verifNbMaxEtu($clas)){
+            if(!$this->verifNbMaxEtu($clas)) {
                 $result[] = $clas;
             }
         }
