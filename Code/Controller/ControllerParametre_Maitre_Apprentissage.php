@@ -14,6 +14,7 @@ require_once __DIR__."/../Model/BDDManager.php";
 $titrefichier = "Accueil";
 $stylecss = "Parametre.css";
 $titreparametre = "Maitre d'apprentissage";
+$stylecss3 = "Bouton.css";
 $bdd = initialiseConnexionBDD();
 $Message = "";
 
