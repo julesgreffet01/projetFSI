@@ -68,5 +68,5 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
     include_once ('../View/Nav_Bar.php'); //lien vers les composants de la page
     include_once ('../View/Page_Info_Etudiant.php');
 } else {
-    header('Location: ControllerConnexion.php'); //renvoie vers la page de connexion si erreur
+    header('Location: ControllerConnexion.php');
 }
