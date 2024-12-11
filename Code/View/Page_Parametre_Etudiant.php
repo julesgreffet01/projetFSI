@@ -55,20 +55,22 @@
             <option value="dog">Dog</option>
         </select>
     </p>
-    <p id="hidden">
+    <div id="hidden">
+    <p>
         <label for="ent-select">Nom de l'entreprise</label>
         <select name="ent-select" id="ent-select">
             <option value=""></option>
             <option value="dog">Dog</option>
         </select>
     </p>
-    <p id="hidden">
+    <p>
         <label for="maitre-select">Nom du maître d'apprentissage</label>
         <select name="maitre-select" id="maitre-select">
             <option value=""></option>
             <option value="dog">Dog</option>
         </select>
     </p>
+    </div>
     <p>
         <label for="tut-select">Nom et prénom du Tuteur</label>
         <select name="tut-select" id="tut-select">
@@ -92,4 +94,4 @@
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
 </div>
 </form>
-<script src="../Js/"
+<script src="../Js/EtudiantHidden.js"></script>
