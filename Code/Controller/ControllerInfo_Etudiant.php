@@ -3,7 +3,7 @@
 use BO\Administrateur;
 use BO\Etudiant;
 
-session_start();
+session_start(); // démarrage de la session de l'utilisateur
 
 
 require_once __DIR__."/../Model/BO/Administrateur.php";
@@ -20,11 +20,11 @@ require_once  __DIR__ ."/../Model/BO/Classe.php";
 
 
 
-$titrefichier = "Accueil";
+$titrefichier = "Accueil"; //lien vers tout les fichiers html/css nécessaires
 $stylecss = "Blockinfo.css";
 $stylecss2 = "Bouton.css";
 
-if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) {
+if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que c'est un étudiant
     $etu = unserialize($_SESSION['utilisateur']);
 
     $nom = $etu->getNomUti();
@@ -65,8 +65,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) {
         $telMai = "";
         $mailMai = "";
     }
-    include_once ('../View/Nav_Bar.php');
+    include_once ('../View/Nav_Bar.php'); //lien vers les composants de la page
     include_once ('../View/Page_Info_Etudiant.php');
 } else {
-    header('Location: ControllerConnexion.php');
+    header('Location: ControllerConnexion.php'); //renvoie vers la page de connexion si erreur
 }
