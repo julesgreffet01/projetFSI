@@ -10,18 +10,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const log = document.getElementById('logEtu');
     const mdp = document.getElementById('mdpEtu');
     const alt = document.getElementById('altEtu');
+    const selectEnt = document.getElementById('ent-select');
+    const selectMA = document.getElementById('maitre-select');
+    const selectSpe = document.getElementById('spec-select');
+
+    const selectCla = document.getElementById('class-select');
+    const selectTut = document.getElementById('tut-select');
+
+
+
     //----- hidden -----
     const hidden = document.getElementById('hidden')
     const checkBox = document.getElementById('altEtu');
 
-    //--- hidden ---
-    checkBox.addEventListener('change', ()=>{
-        if(checkBox.checked) {
+    function updateHiddenSection() {
+        if (checkBox.checked) {
             hidden.style.display = "block";
         } else {
             hidden.style.display = "none";
         }
-    })
+    }
+    // Vérifier l'état initial de la case à cocher
+    updateHiddenSection();
+
+    // Gérer l'événement de changement sur la case à cocher
+    checkBox.addEventListener('change', updateHiddenSection);
+
+
     dropD.addEventListener('change', ()=>{
         const selected = dropD.value;
         if(!selected){
@@ -35,6 +50,43 @@ document.addEventListener('DOMContentLoaded', ()=>{
             log.value = '';
             mdp.value = '';
             alt.value = '';
+            selectEnt.value = '';
+            selectMA.value = '';
+            selectSpe.value = '';
+            fetch('../GetData/GetDataEtudiant?reset=1')
+                .then(response =>response.json())
+                .then(data => {
+                    // Réinitialiser le menu déroulant selectCla
+                    selectCla.innerHTML = ""; // Supprime toutes les options
+                    selectTut.innerHTML = "";
+
+                    // Ajouter une option vide au début
+                    // Ajouter une option vide au début des deux sélecteurs
+                    const emptyOptionCla = document.createElement("option");
+                    emptyOptionCla.value = "";
+                    emptyOptionCla.textContent = ""; // Texte de l'option vide
+                    selectCla.appendChild(emptyOptionCla);
+
+                    const emptyOptionTut = document.createElement("option");
+                    emptyOptionTut.value = "";
+                    emptyOptionTut.textContent = ""; // Texte de l'option vide
+                    selectTut.appendChild(emptyOptionTut);
+
+                    // Ajouter les nouvelles options à partir de `data.clas`
+                    data.clas.forEach(cla => {
+                        const option = document.createElement("option");
+                        option.value = cla.idCla; // Utiliser l'identifiant de la classe
+                        option.textContent = cla.libCla; // Utiliser le nom de la classe
+                        selectCla.appendChild(option);
+                    });
+
+                    data.tuts.forEach(tut => {
+                        const option = document.createElement("option");
+                        option.value = tut.idTut;
+                        option.textContent = tut.nomTut + " " + tut.preTut;
+                        selectTut.appendChild(option);
+                    })
+                })
         }
 
         fetch('../GetData/GetDataEtudiant?idEtu=' + selected)
@@ -49,8 +101,47 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 mail.value = data.mail || '';
                 log.value = data.login || '';
                 mdp.value = data.mdp || '';
-                alt.value = data.alter || '';
+                alt.checked = data.alter || false;
+                updateHiddenSection();
+                selectEnt.value = data.ent || '';
+                selectMA.value = data.MA || '';
+                selectSpe.value = data.Spe || '';
+
+                selectCla.innerHTML = "";
+                selectTut.innerHTML = "";
+
+                const maCla = document.createElement('option');
+                maCla.value = data.idMaCla; // Utiliser l'identifiant de la classe
+                maCla.textContent = data.libMaCla; // Utiliser le nom de la classe
+                selectCla.appendChild(maCla);
+
+                const monTut = document.createElement('option');
+                monTut.value = data.idMonTut; // Utiliser l'identifiant de la classe
+                monTut.textContent = data.nomMonTu + " " + data.preMonTut; // Utiliser le nom de la classe
+                selectTut.appendChild(monTut);
+
+                data.clas.forEach(cla=>{
+                    if (cla.idCla != data.idMaCla){
+                        const option = document.createElement("option");
+                        option.value = cla.idCla; // Utiliser l'identifiant de la classe
+                        option.textContent = cla.libCla; // Utiliser le nom de la classe
+                        selectCla.appendChild(option);
+                    }
+                })
+
+                data.tuts.forEach($tut => {
+                    if ($tut.idTut != data.idMonTut){
+                        data.tuts.forEach(tut => {
+                            const option = document.createElement("option");
+                            option.value = tut.idTut;
+                            option.textContent = tut.nomTut + " " + tut.preTut;
+                            selectTut.appendChild(option);
+                        })
+                    }
+                })
             })
     })
+
+    //TODO a finir si on change de classe
 })
 

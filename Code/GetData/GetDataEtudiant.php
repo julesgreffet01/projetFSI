@@ -1,10 +1,14 @@
 <?php
 
+use DAO\ClasseDAO;
 use DAO\EtudiantDAO;
+use DAO\TuteurDAO;
 
 require_once __DIR__."/../Model/BO/Administrateur.php";
 require_once __DIR__."/../Model/BDDManager.php";
 require_once __DIR__."/../Model/DAO/EtudiantDAO.php";
+require_once __DIR__."/../Model/DAO/TuteurDAO.php";
+require_once __DIR__."/../Model/DAO/ClasseDAO.php";
 
 
 require_once __DIR__."/../Model/BO/Etudiant.php";
@@ -18,11 +22,56 @@ require_once  __DIR__ ."/../Model/BO/Classe.php";
 
 $bdd = initialiseConnexionBDD();
 $etuDAO = new EtudiantDAO($bdd);
+$tutDAO = new TuteurDAO($bdd);
+$claDAO = new ClasseDAO($bdd);
+
+if (isset($_GET['reset'])) {
+    // Récupération des données depuis la base de données ou autre source
+    $tuts = $tutDAO->getAllTutGood();
+    $clas = $claDAO->getAllClaGood();
+
+    try {
+        header('Content-Type: application/json');
+
+        // Utiliser la méthode toArray() pour chaque objet Classe
+        $clasArray = array_map(function ($cla) {
+            return $cla->toArray();  // Convertir chaque objet Classe en tableau associatif
+        }, $clas);
+
+        $tutsArray = array_map(function ($tut) {
+            return $tut->toArray();
+        }, $tuts);
+
+        // Renvoi du JSON avec les données des classes et tuteurs
+        echo json_encode([
+            'clas' => $clasArray,
+            'tuts' => $tutsArray
+        ]);
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+}
+
 
 if (isset($_GET['idEtu'])){
     $idEtu = intval($_GET['idEtu']);
+    $tuts = $tutDAO->getAllTutGood();
+    $clas = $claDAO->getAllClaGood();
     try {
         $etu = $etuDAO->find($idEtu);
+
+
+        $clasArray = array_map(function ($cla) {
+            return $cla->toArray();  // Convertir chaque objet Classe en tableau associatif
+        }, $clas);
+
+        $tutsArray = array_map(function ($tut) {
+            return $tut->toArray();
+        }, $tuts);
+
+
         if (empty($etu)) {
             header('Content-Type: application/json');
             echo json_encode(['error' => 'Tuteur introuvable']);
@@ -40,8 +89,17 @@ if (isset($_GET['idEtu'])){
             'mail' => $etu->getMailUti(),
             'login' => $etu->getLogUti(),
             'mdp' => $etu->getMdpUti(),
-            'alter' => $etu->getAltEtu()
-
+            'alter' => $etu->getAltEtu(),
+            'idMonTut' => $etu->getMonTuteur()->getIdUti(),
+            'nomMonTu'=> $etu->getMonTuteur()->getNomUti(),
+            'preMonTut'=>$etu->getMonTuteur()->getPreUti(),
+            'ent'=>$etu->getMonEnt()->getIdEnt(),
+            'MA'=> $etu->getMonMaitreAp()->getIdMai(),
+            'Spe'=>$etu->getMaSpec()->getIdSpec(),
+            'idMaCla'=>$etu->getMaClasse()->getIdCla(),
+            'libMaCla'=>$etu->getMaClasse()->getLibCla(),
+            'clas'=>$clasArray,
+            'tuts'=>$tutsArray,
         ]);
     } catch (Exception $e) {
         header('Content-Type: application/json');

@@ -83,7 +83,7 @@
         <select name="tut-select" id="tut-select">
             <option value=""></option>
             <?php foreach($tuts as $tut): ?>
-                <option value="<?php echo $tut->getIdUti() ?>"> <?php echo $tut->getNomUti() ?> </option>
+                <option value="<?php echo $tut->getIdUti() ?>"> <?php echo $tut->getNomUti() .' '. $tut->getPreUti() ?> </option>
             <?php endforeach; ?>
         </select>
     </p>

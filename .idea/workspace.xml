@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/GetData/GetDataEtudiant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Js/EtudiantHidden.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/GetData/GetDataEtudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/GetData/GetDataEtudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Classe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Tuteur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,22 +163,6 @@
       <workItem from="1733836120670" duration="5201000" />
       <workItem from="1733850394803" duration="7494000" />
       <workItem from="1733938168877" duration="4841000" />
-    </task>
-    <task id="LOCAL-00005" summary="jules">
-      <option name="closed" value="true" />
-      <created>1731666565594</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1731666565594</updated>
-    </task>
-    <task id="LOCAL-00006" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732607121459</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1732607121459</updated>
     </task>
     <task id="LOCAL-00007" summary="jules">
       <option name="closed" value="true" />
@@ -555,7 +540,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733950090729</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733955233410</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1733955233410</updated>
+    </task>
+    <task id="LOCAL-00055" summary="jules">
+      <option name="closed" value="true" />
+      <created>1733955422027</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1733955422027</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
