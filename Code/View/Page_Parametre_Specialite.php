@@ -19,8 +19,9 @@
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
     </div>
-    <?php echo $Message ?>
-</div>
+    <div class="messageerr">
+        <?php echo $Message ?>
+    </div></div>
 </div>
 
 

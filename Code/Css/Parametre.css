@@ -38,6 +38,13 @@
         margin-right: 20px;
     }
 
+    .messageerr{
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 25px;
+        color: #A62609;
+    }
+
     .centre .info{
         font-size: 20px;
 
@@ -71,3 +78,6 @@
         margin-top: 120px;
     }
 
+    .selectuteur{
+        margin-top: -485px;
+    }
