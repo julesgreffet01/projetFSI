@@ -13,7 +13,7 @@ class AdministrateurDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Administrateur) {
-            $query = "INSERT INTO utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, 3)";
+            $query = "INSERT INTO Utilisateur (LogUti, MdpUti, MaiUti, TelUti, NomUti, PreUti, AdrUti, CpUti, VilUti, IdTypUti) VALUES (:log, :mdp, :mail, :tel, :nom, :pre, :adr, :cp, :ville, 3)";
             $stmt = $this->bdd->prepare($query);
             $r = $stmt->execute([
                 "log" => $obj->getLogUti(),
@@ -40,7 +40,7 @@ class AdministrateurDAO extends DAO
             $foundObj = $this->find($obj->getIdUti());
             if ($foundObj) {
                 if ($obj->getIdUti() == $foundObj->getIdUti()) {
-                    $query = "UPDATE utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville WHERE IdUti = :id";
+                    $query = "UPDATE Utilisateur SET LogUti = :log, MdpUti = :mdp, MaiUti = :mail, TelUti = :tel, NomUti = :nom, PreUti = :pre, AdrUti = :adr, CpUti = :cp, VilUti = :ville WHERE IdUti = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "log" => $obj->getLogUti(),

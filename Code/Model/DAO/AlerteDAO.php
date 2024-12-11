@@ -50,7 +50,7 @@ class AlerteDAO extends DAO
     public function find(int $id): ?object
     {
         $result = null;
-        $query = "select * from alerte where IdAle = :idAl";
+        $query = "select * from Alerte where IdAle = :idAl";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
             'idAl' => $id
