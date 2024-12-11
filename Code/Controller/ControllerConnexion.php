@@ -28,6 +28,9 @@ $errorMessage = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {     //on verif que ce soit bien une methode post qui nous est envoyé
     $log = $_POST["log"];
     $mdp = $_POST["mdp"];
+
+    $password = password_hash($mdp, PASSWORD_DEFAULT);
+
     if ($log && $mdp) {
         $etu = $etudiantDAO->auth($log, $mdp);
         $tut = $tuteurDAO->auth($log, $mdp);
