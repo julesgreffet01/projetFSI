@@ -44,11 +44,7 @@
             </div>
         </form>
 
-        <?php
-
-        $errorMessage="Veuillez remplir tout les champs";
-
-        if ($errorMessage != ""){
+        <?php if ($errorMessage != ""){
             echo $errorMessage;
         }
         ?>
