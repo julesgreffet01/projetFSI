@@ -203,5 +203,16 @@ class TuteurDAO extends DAO
         return $result;
     }
 
+    public function getAllTutGood() :array {
+        $result = [];
+        $mesTuts = $this->getAll();
+        foreach ($mesTuts as $tut) {
+            if (!$this->verifNbMaxEtu3($tut) || !$this->verifNbMaxEtu4($tut) || !$this->verifNbMaxEtu5($tut)){
+                $result[] = $tut;
+            }
+        }
+        return $result;
+    }
+
 
 }

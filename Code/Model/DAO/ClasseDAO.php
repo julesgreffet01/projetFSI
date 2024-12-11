@@ -117,4 +117,15 @@ class ClasseDAO extends DAO
         }
         return $result;
     }
+
+    public function getAllClaGood() :array{
+        $result = [];
+        $mesClas = $this->getAll();
+        foreach ($mesClas as $clas) {
+            if($this->verifNbMaxEtu($clas)){
+                $result[] = $clas;
+            }
+        }
+        return $result;
+    }
 }
