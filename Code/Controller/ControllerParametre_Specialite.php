@@ -77,6 +77,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                     if($specDAO->delete($spe)) {
                         $Message = "la specialité ".$spe->getNomSpec()." a été supprimer";
                         $specs = $specDAO->getAll();
+                    } else {
+                        $Message = "il y a des etudiants dans cette specialite impossible de la supprimer";
                     }
                 }
             } else {
