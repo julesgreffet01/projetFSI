@@ -38,6 +38,7 @@
         padding: 30px;
     }
 
+
     a {
         color: #203C25;
         text-decoration: none;
@@ -56,27 +57,9 @@
 
 
 
-@media screen and (min-width: 320px) and (max-width: 600px){
-    body{
-        background: #F5FBF5;
-        font-family: Roboto, sans-serif;
-        color: #203C25;
-    }
-
-    .logo{
-        height: 80px;
-        padding: 10px;
-    }
-    .logosortie{
-        height: 20px;
-    }
-
-    a{
-        color: #203C25;
-        text-decoration: none;
-    }
-
-    nav ul li{
-        display:inline-block;
+@media screen and (max-width: 1300px){
+    nav ul li {
+        list-style-type: none;
+        padding: 30px 10px;
     }
 }
