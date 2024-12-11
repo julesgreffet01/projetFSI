@@ -42,7 +42,6 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     $maDAO = new MaitreApprentissageDAO($bdd);
     $tutDAO = new TuteurDAO($bdd);
     $etuDAO = new EtudiantDAO($bdd);
-
     $clas = $claDAO->getAllClaGood();
     $spes = $speDAO->getAll();
     $ents = $entDAO->getAll();
