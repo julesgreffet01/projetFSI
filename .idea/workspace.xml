@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Css/Style_Connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Css/Style_Connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Connexion.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +66,7 @@
     "PHP Script.testDAO.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Maxime",
     "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -150,6 +154,7 @@
       <workItem from="1733826519023" duration="4053000" />
       <workItem from="1733836120670" duration="5201000" />
       <workItem from="1733850394803" duration="7494000" />
+      <workItem from="1733934757778" duration="2151000" />
     </task>
     <task id="LOCAL-00002" summary="jules">
       <option name="closed" value="true" />

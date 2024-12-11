@@ -11,39 +11,36 @@
     }
 
     .vert{
+        flex: 1 1 auto;
         background: #46A758;
         display:inline-block;
-        height: 600px;
-        width: 600px;
         color: #FBFEFB;
+        width: 50%;
     }
 
     .title{
         font-size: 25px;
+        text-align: center
     }
 
     .info{
         font-size: 15px;
-    }
-
-    .blanc{
-        display:inline-block;
-        background: #DCDFDA;
-        height: 600px;
-        width: 600px;
-    }
-    .contenu{
-        font-size: 0px;
-        padding: 30px;
         text-align: center;
     }
 
-    .boutton a{
-        background: #203C25;
-        color: #DCDFDA;
-        padding: 5px 110px;
-        border-radius: 35px;
-        font-size: 18px;
+    .blanc{
+        flex: 1 1 auto;
+        display:inline-block;
+        background: #DCDFDA;
+        width: 50%;
+        text-align: center;
+        height: 100vh;
+    }
+    .contenu{
+        display: flex;
+        width: 1500px;
+        height: 750px;
+        overflow: hidden;
     }
 
     a{
@@ -53,10 +50,19 @@
     .blanc .libelle{
         background: #94CE9A;
         border-radius: 7px;
-        padding: 5px 110px;
+        width: 400px;
+        height: 25px ;
         margin-bottom: 56px;
         border: none;
     }
+
+    .centre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
 
     .mdp a {
         color: #203C25;
@@ -65,8 +71,8 @@
 
     .titleconnect{
         color: #203C25;
-        margin-top: 75px;
         font-size: 20px;
+        margin-top: 120px;
     }
 
 }
