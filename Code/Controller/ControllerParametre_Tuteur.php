@@ -111,6 +111,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                     $tuteur->setNbMax5($nbMax5);
                     if($tutDAO->update($tuteur)){
                         $Message = "Le tuteur a bien été modifier";
+                        $tuts = $tutDAO->getAll();
                     }
                 }
             } else {

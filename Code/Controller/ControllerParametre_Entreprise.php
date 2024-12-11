@@ -72,6 +72,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $ent->setCpEnt($cp);
             if ($entDAO->update($ent)){
                 $Message = "Entreprise mise a jour";
+                $ents = $entDAO->getAll();
             }
         } else {
             $Message = "Veuillez selectionner une entreprise/remplir tous les champs";

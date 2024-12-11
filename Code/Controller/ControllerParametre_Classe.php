@@ -55,6 +55,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             } else {
                 if ($claDAO->update($cla)) {
                     $Message = "modification reussie";
+                    $clas = $claDAO->getAll();
                 }
             }
         } else {

@@ -61,6 +61,7 @@ if (unserialize($_SESSION['utilisateur'])){
                 $MA->setMonEnt($entSelect);
                 if($maDAO->update($MA)){
                     $Message = "Modification reussie";
+                    $mas = $maDAO->getAll();
                 }
 
             }
