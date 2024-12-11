@@ -13,6 +13,8 @@
         </div>
     </form>
     <?php if($message): ?>
+    <div class="messageerr">
     <p><?php echo $message ?> </p>
+    </div>
     <?php endif; ?>
 </div>

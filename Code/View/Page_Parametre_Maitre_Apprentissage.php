@@ -41,9 +41,10 @@
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
     <div class="infoparametre">
+    <div class="messageerr">
     <?php echo $Message ?>
-
-<script src="../Js/MaitreAppChangeData.js"></script>
+    </div>
+        <script src="../Js/MaitreAppChangeData.js"></script>
 </div>
 </div>
 </form>

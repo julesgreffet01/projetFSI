@@ -29,7 +29,7 @@
     <input type="text" class="typetext" name="mailTut" value="" placeholder="" id="mailTut"/>
 </p>
         <p>
-            <label for="logTut">Log</label>
+            <label for="logTut">Login</label>
             <input type="text" class="typetext" name="logTut" value="" id="logTut"/>
         </p>
 
@@ -52,7 +52,7 @@
     <input type="number" class="typetext" name="nbMaxEtu5" value="" placeholder="" id="nbMaxEtu5"/>
 </p>
 </div>
-
+<div class="selectuteur">
 <div class="selection">
     <label for="city">Tuteur à modifier</label>
     <select name="tuteur-select" id="dropDown">
@@ -61,12 +61,18 @@
         <option value="<?php echo $tut->getIdUti() ?>"> <?php echo ($tut->getPreUti())[0].".".$tut->getNomUti() ?> </option>
         <?php endforeach; ?>
     </select>
+</div>
+    <div class="messageerr">
+    <?php echo $Message ?>
+    </div>
+</div>
+
     <div class="infoparametre">
     <input type="submit" name="btnAdd" value="Créer" class="btnvert"/>
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
     </div>
-    <?php echo $Message ?>
+
     </form>
     <script src="../Js/TuteurChangeData.js"></script>
 </div>

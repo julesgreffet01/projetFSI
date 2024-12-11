@@ -40,8 +40,9 @@
         <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
         <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
     </div>
-    <?php echo $Message ?>
-    </form>
+    <div class="messageerr">
+        <?php echo $Message ?>
+    </div>    </form>
     <script src="../Js/EntrepriseChangeData.js"></script>
 </div>
 </div>
