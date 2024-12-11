@@ -1,4 +1,4 @@
-<div class="block">
+    <div class="block">
     <p>
         <label class="intitu">Date du Bilan</label>
         <label class="info">2/12/12</label>
