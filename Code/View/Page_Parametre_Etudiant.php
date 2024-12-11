@@ -20,8 +20,8 @@
         <input type="text" class="typetext" name="city" value="" placeholder="" />
     </p>
     <p>
-        <label for="city">Classe</label>
-        <select name="maitre-select">
+        <label for="class-select">Classe</label>
+        <select name="class-select">
             <option value=""></option>
             <option value="dog">Dog</option>
             <option value="cat">Cat</option>
