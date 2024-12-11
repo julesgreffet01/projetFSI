@@ -129,6 +129,8 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                     if ($tutDAO->delete($tuteur)){
                         $Message = 'suppression du tuteur ' . $tuteur->getNomUti();
                         $tuts = $tutDAO->getAll();
+                    } else {
+                        $Message = "Il y a des etudiants affilié a ce tuteur";
                     }
                 } else {
                     $Message = "Ce tuteur n'existe pas";

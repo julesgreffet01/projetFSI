@@ -86,6 +86,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                     if ($entDAO->delete($ent)){
                         $Message = "l'entreprise ". $ent->getNomEnt() ." a bien été supprimer";
                         $ents = $entDAO->getAll();
+                    } else {
+                        $Message = "Il y a des etudiants ou des maitres d'apprentissage dans cet entreprise";
                     }
                 } else {
                     $Message = "Cette entreprise n'existe' pas";
