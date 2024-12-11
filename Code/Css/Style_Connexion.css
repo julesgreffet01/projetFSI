@@ -75,4 +75,11 @@
         margin-top: 120px;
     }
 
+    .messageerr{
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 25px;
+        color: #A62609;
+    }
+
 }
