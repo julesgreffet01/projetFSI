@@ -74,7 +74,7 @@ class TuteurDAO extends DAO
         $result = false;
         if ($obj instanceof Tuteur) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if($etuDAO->getAllEtuByTut($obj) == [null]) {
+            if($etuDAO->getAllEtuByTut($obj) == []) {
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getIdUti() == $foundObj->getIdUti()) {

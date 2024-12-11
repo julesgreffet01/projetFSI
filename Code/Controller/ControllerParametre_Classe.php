@@ -21,6 +21,7 @@ $titreparametre = "Classe";
 $stylecss3 = "Bouton.css";
 $bdd = initialiseConnexionBDD();
 $Message = "";
+$verif = false;
 
 if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     $claDAO = new ClasseDAO($bdd);
@@ -33,6 +34,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $cla = new Classe(0, $nom, $nb);
             if ($claDAO->create($cla)) {
                 $Message = "creation reussie";
+                $verif = true;
                 $clas = $claDAO->getAll();
             } else {
                 $Message = "erreur de creation";
@@ -55,6 +57,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             } else {
                 if ($claDAO->update($cla)) {
                     $Message = "modification reussie";
+                    $verif = true;
                     $clas = $claDAO->getAll();
                 }
             }
@@ -69,10 +72,13 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                 $cla = $claDAO->find($_POST['classe-select']);
                 if ($claDAO->delete($cla)) {
                     $Message = "suppression reussie";
+                    $verif = true;
                     $clas = $claDAO->getAll();
                 } else {
                     $Message = "Il y des etudiants dans cette classe";
                 }
+            } else {
+                $Message = "selectionnez une classe";
             }
         } else {
             $Message = "selectionnez une classe";

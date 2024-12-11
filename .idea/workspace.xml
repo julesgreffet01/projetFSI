@@ -27,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="jules" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,13 +38,14 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
-  }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\PC_Local\Logiciel\PHP\php.exe" />
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/julesgreffet01/projetFSI.git",
+    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
+  },
+  "editorReviewEnabled": false
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -62,7 +63,7 @@
     "PHP Script.testDAO.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "jules",
     "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
