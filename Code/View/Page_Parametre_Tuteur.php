@@ -61,10 +61,11 @@
         <option value="<?php echo $tut->getIdUti() ?>"> <?php echo ($tut->getPreUti())[0].".".$tut->getNomUti() ?> </option>
         <?php endforeach; ?>
     </select>
-
+    <div class="infoparametre">
     <input type="submit" name="btnAdd" value="Créer" class="btnvert"/>
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
+    </div>
     <?php echo $Message ?>
     </form>
     <script src="../Js/TuteurChangeData.js"></script>
