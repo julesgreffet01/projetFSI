@@ -46,11 +46,6 @@
         <select name="class-select" id="class-select">
             <option value=""></option>
             <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
         </select>
     </p>
     <p>
@@ -58,35 +53,20 @@
         <select name="spec-select" id="spec-select">
             <option value=""></option>
             <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
         </select>
     </p>
-    <p>
+    <p id="hidden">
         <label for="ent-select">Nom de l'entreprise</label>
         <select name="ent-select" id="ent-select">
             <option value=""></option>
             <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
         </select>
     </p>
-    <p>
+    <p id="hidden">
         <label for="maitre-select">Nom du maître d'apprentissage</label>
         <select name="maitre-select" id="maitre-select">
             <option value=""></option>
             <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
         </select>
     </p>
     <p>
@@ -94,11 +74,6 @@
         <select name="tut-select" id="tut-select">
             <option value=""></option>
             <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
         </select>
     </p>
 </div>
@@ -108,11 +83,6 @@
     <select name="etu-select" id="dropDown">
         <option value=""></option>
         <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
     </select>
 </div>
 </div>
@@ -122,3 +92,4 @@
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
 </div>
 </form>
+<script src="../Js/"

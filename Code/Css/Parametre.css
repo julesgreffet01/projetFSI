@@ -1,8 +1,8 @@
-    label{
+label{
         font-size: 20px;
         width: 300px;
     }
-    p {
+p {
         display: flex;
         align-items: center;
     }
@@ -81,3 +81,6 @@
     .selectuteur{
         margin-top: -485px;
     }
+#hidden {
+    display : none;
+}
