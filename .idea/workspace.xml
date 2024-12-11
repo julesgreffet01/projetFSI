@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Css/Style_Connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Css/Style_Connexion.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Connexion.php" afterDir="false" />
-    </list>
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="jules" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,13 +38,14 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
-  }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\PC_Local\Logiciel\PHP\php.exe" />
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/julesgreffet01/projetFSI.git",
+    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
+  },
+  "editorReviewEnabled": false
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -66,7 +63,7 @@
     "PHP Script.testDAO.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Maxime",
+    "git-widget-placeholder": "jules",
     "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -154,7 +151,6 @@
       <workItem from="1733826519023" duration="4053000" />
       <workItem from="1733836120670" duration="5201000" />
       <workItem from="1733850394803" duration="7494000" />
-      <workItem from="1733934757778" duration="2151000" />
     </task>
     <task id="LOCAL-00002" summary="jules">
       <option name="closed" value="true" />
