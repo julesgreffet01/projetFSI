@@ -45,14 +45,18 @@
         <label for="class-select">Classe</label>
         <select name="class-select" id="class-select">
             <option value=""></option>
-            <option value="dog">Dog</option>
+            <?php foreach($clas as $cla): ?>
+            <option value="<?php echo $cla->getIdCla() ?>"> <?php echo $cla->getLibCla() ?> </option>
+            <?php endforeach; ?>
         </select>
     </p>
     <p>
         <label for="spec-select">Spécialisation</label>
         <select name="spec-select" id="spec-select">
             <option value=""></option>
-            <option value="dog">Dog</option>
+            <?php foreach($spes as $spe): ?>
+                <option value="<?php echo $spe->getIdSpec() ?>"> <?php echo $spe->getNomSpec() ?> </option>
+            <?php endforeach; ?>
         </select>
     </p>
     <div id="hidden">
@@ -60,14 +64,19 @@
         <label for="ent-select">Nom de l'entreprise</label>
         <select name="ent-select" id="ent-select">
             <option value=""></option>
-            <option value="dog">Dog</option>
+            <?php foreach($ents as $ent): ?>
+                <option value="<?php echo $ent->getIdEnt() ?>"> <?php echo $ent->getNomEnt() ?> </option>
+            <?php endforeach; ?>
         </select>
     </p>
     <p>
         <label for="maitre-select">Nom du maître d'apprentissage</label>
         <select name="maitre-select" id="maitre-select">
             <option value=""></option>
-            <option value="dog">Dog</option>
+            <option value="1">aze</option>
+<!--            --><?php //foreach($mas as $ma): ?>
+<!--                <option value="--><?php //echo $ma->getIdMa() ?><!--"> --><?php //echo $ma->getNomMa() ?><!-- </option>-->
+<!--            --><?php //endforeach; ?>
         </select>
     </p>
     </div>
@@ -75,7 +84,9 @@
         <label for="tut-select">Nom et prénom du Tuteur</label>
         <select name="tut-select" id="tut-select">
             <option value=""></option>
-            <option value="dog">Dog</option>
+            <?php foreach($tuts as $tut): ?>
+                <option value="<?php echo $tut->getIdUti() ?>"> <?php echo $tut->getNomUti() ?> </option>
+            <?php endforeach; ?>
         </select>
     </p>
 </div>
