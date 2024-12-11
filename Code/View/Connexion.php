@@ -45,6 +45,9 @@
         </form>
 
         <?php
+
+        $errorMessage="Veuillez remplir tout les champs";
+
         if ($errorMessage != ""){
             echo $errorMessage;
         }

@@ -32,7 +32,4 @@ class Specialite
     {
         $this->nomSpec = $nomSpec;
     }
-
-
-
 }
