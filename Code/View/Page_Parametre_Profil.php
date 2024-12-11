@@ -14,7 +14,7 @@
     </form>
     <?php if($message): ?>
     <?php
-    if($verif == true){
+    if($verif == false){
         ?><div class="messageerr">
         <?php echo $Message ?>
     </div><?php
