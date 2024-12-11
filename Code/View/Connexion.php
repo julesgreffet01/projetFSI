@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../Css/Style_Connexion.css" rel="stylesheet" />
     <link href="../Css/Bouton.css" rel="stylesheet" />
+    <link href="../Css/Blockinfo.css" rel="stylesheet" />
     <title>Connexion</title>
 </head>
 <body>
@@ -46,12 +47,12 @@
             <input type="submit" class="btnbil" value="Connexion" name="btnConnexion">
 
         </form>
-
+        <div class="messageerr">
         <?php if ($errorMessage != ""){
             echo $errorMessage;
         }
         ?>
-
+        </div>
         <!--        mettre le message d erreur quelque part qui se nomme $errorMessage et qui renvoie si tous les champs ne sont pas remplie ou si le log ou mdp sont faux-->
     </div>
 </div>
