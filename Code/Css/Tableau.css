@@ -8,6 +8,11 @@
         overflow: hidden;
     }
 
+    .tableau a{
+        color: #46A758;
+        text-decoration: underline;
+    }
+
     .tableau th{
         padding: 20px ;
         background: #B2DDB5;
@@ -41,6 +46,7 @@
         border-radius: 15px;
         text-align: left;
         padding: 5px 20px;
+        margin-top: 50px;
     }
 }
 

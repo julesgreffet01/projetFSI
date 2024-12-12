@@ -14,8 +14,10 @@ require_once __DIR__."/../Model/BDDManager.php";
 $titrefichier = "Accueil";
 $stylecss = "Parametre.css";
 $titreparametre = "Maitre d'apprentissage";
+$stylecss3 = "Bouton.css";
 $bdd = initialiseConnexionBDD();
 $Message = "";
+$verif = false;
 
 
 if (unserialize($_SESSION['utilisateur'])){
@@ -35,6 +37,7 @@ if (unserialize($_SESSION['utilisateur'])){
             $ma = new MaitreApprentissage(0, $nomMA, $preMA, $telMA, $mailMA, $entSelect);
             if ($maDAO->create($ma)){
                 $Message = "Creation reussie";
+                $verif = true;
                 $mas = $maDAO->getAll();
             } else {
                 $Message = "Erreur creation";
@@ -60,9 +63,15 @@ if (unserialize($_SESSION['utilisateur'])){
                 $MA->setMonEnt($entSelect);
                 if($maDAO->update($MA)){
                     $Message = "Modification reussie";
+                    $verif = true;
+                    $mas = $maDAO->getAll();
                 }
 
+            } else {
+                $Message = "veuillez selectionner un Maitre d'apprentissage";
             }
+        } else {
+            $Message = "Veuillez remplir tous les champs/ selectionner un maitre d'apprentissage a modifier";
         }
     }
 
@@ -73,6 +82,7 @@ if (unserialize($_SESSION['utilisateur'])){
                 if($MA){
                     if ($maDAO->delete($MA)){
                         $Message = "Suppression reussie";
+                        $verif = true;
                         $mas = $maDAO->getAll();
                     } else {
                         $Message = "Vous ne pouvez pas supprimer ce maitre d'apprentissage car il possede un/des etudiant(s)";

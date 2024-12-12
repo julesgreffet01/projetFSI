@@ -26,8 +26,9 @@ $_SESSION = [];
 $errorMessage = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {     //on verif que ce soit bien une methode post qui nous est envoyé
-    $log = $_POST["log"];
+    $log = $_POST["log"];     //trim=récupérer les données en enlevant les espaces
     $mdp = $_POST["mdp"];
+
     if ($log && $mdp) {
         $etu = $etudiantDAO->auth($log, $mdp);
         $tut = $tuteurDAO->auth($log, $mdp);

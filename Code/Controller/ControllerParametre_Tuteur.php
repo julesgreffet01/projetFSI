@@ -17,15 +17,18 @@ require_once __DIR__."/../Model/BDDManager.php";
 $titrefichier = "Paramètre Tuteur";
 $stylecss = "Parametre.css";
 $titreparametre = "Tuteur";
+$stylecss3 = "Bouton.css";
+
 $bdd = initialiseConnexionBDD();
 $Message = "";
+$verif = false;
 
 
 
 if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
     $tutDAO = new TuteurDAO($bdd);
     $tuts = $tutDAO->getAll();
-//---------------------- créer ---------------------------
+//---------------------- création ---------------------------
     if (isset($_POST['btnAdd'])){
         if (isset($_POST['tuteur-select'])){
             $Message = "veuiller enlever la selection en cas de creation";
@@ -51,6 +54,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             } else {
                 if($tutDAO->create($tuteur)){
                     $Message = "le tuteur a bien été créé";
+                    $verif = true;
                     $tuts = $tutDAO->getAll();
                 }
             }
@@ -58,7 +62,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $Message = "veuillez remplir tous les champs";
         }
     }
-    //---------------------- modifier ---------------------------
+    //---------------------- modification ---------------------------
     if (isset($_POST['btnUpdate'])){
         if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && isset($_POST['tuteur-select'])){
             if ($_POST['tuteur-select'] != ''){
@@ -93,7 +97,26 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                         $tuteur->setNbMax5($nbMax5);
                         if($tutDAO->update($tuteur)){
                             $Message = "Le tuteur a bien été modifier";
+                            $verif = true;
+                            $tuts = $tutDAO->getAll();
                         }
+                    }
+                } else {
+                    $tuteur->setPreUti($pre);
+                    $tuteur->setNomUti($nom);
+                    $tuteur->setTelUti($tel);
+                    $tuteur->setAdrUti($adr);
+                    $tuteur->setVilUti($vil);
+                    $tuteur->setCpUti($cp);
+                    $tuteur->setMailUti($mail);
+                    $tuteur->setMdpUti($mdp);
+                    $tuteur->setNbMax3($nbMax3);
+                    $tuteur->setNbMax4($nbMax4);
+                    $tuteur->setNbMax5($nbMax5);
+                    if($tutDAO->update($tuteur)){
+                        $Message = "Le tuteur a bien été modifier";
+                        $verif = true;
+                        $tuts = $tutDAO->getAll();
                     }
                 }
             } else {
@@ -103,7 +126,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $Message = "Veuillez selectionner un tuteur à modifier";
         }
     }
-    //--------------------------------- supprimer -------------------------
+    //--------------------------------- suppression -------------------------
     if(isset($_POST['btnDelete'])){
         if (isset($_POST['tuteur-select'])){
             if ($_POST['tuteur-select'] != ''){
@@ -112,6 +135,9 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                     if ($tutDAO->delete($tuteur)){
                         $Message = 'suppression du tuteur ' . $tuteur->getNomUti();
                         $tuts = $tutDAO->getAll();
+                    } else {
+                        $Message = "Il y a des etudiants affilié a ce tuteur";
+                        $verif = true;
                     }
                 } else {
                     $Message = "Ce tuteur n'existe pas";
@@ -124,7 +150,6 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $Message = "veuillez selectionner un tuteur a supprimer";
         }
     }
-
     include_once ('../View/header_admin.php');
     include_once ('../View/Page_Parametre_Tuteur.php');
 } else {

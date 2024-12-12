@@ -14,11 +14,22 @@
         <option value="<?php echo $spec->getIdSpec() ?>"><?php echo $spec->getNomSpec() ?></option>
         <?php endforeach; ?>
     </select>
-
+    <div class="infoparametre">
     <input type="submit" name="btnAdd" value="Créer" class="btnvert"/>
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
-    <?php echo $Message ?>
+    </div>
+    <?php
+    if($verif == false){
+        ?><div class="messageerr">
+        <?php echo $Message ?>
+        </div><?php
+    }else{
+        ?><div class="messagevalide">
+        <?php echo $Message ?>
+        </div><?php
+    }
+    ?>
 </div>
 </div>
 

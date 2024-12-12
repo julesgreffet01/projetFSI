@@ -64,11 +64,11 @@ if (unserialize($_SESSION['utilisateur'])) {
     if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
         $al1 = $alDAO->getAllAl1();
         $al2 = $alDAO->getAllAl2();
-        $messAl = "Aucunes alertes pour aucuns eleves";
+        $messAl = "Aucune alerte pour aucun eleve";
     } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur) {
         $al1 = $alDAO->getAllAl1ByTut(unserialize($_SESSION['utilisateur']));
         $al2 = $alDAO->getAllAl2ByTut(unserialize($_SESSION['utilisateur']));
-        $messAl = "Aucunes alertes pour vos eleves";
+        $messAl = "Aucune alerte pour vos eleves";
     } else {
         header('location: ControllerConnexion.php');
     }

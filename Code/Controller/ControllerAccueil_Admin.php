@@ -27,14 +27,16 @@ $tutDAO = new TuteurDAO($bdd);
 if (unserialize($_SESSION['utilisateur'])){
     if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){   //on verif que ce soit bien un admin ou un tuteur et pas  un etudiant
         $etus = $etuDAO->get4();
+        include_once ('../View/Nav_Bar.php');
+        include_once('../View/Accueil_Admin.php');
     } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
         $tut = $tutDAO->find(unserialize($_SESSION['utilisateur'])->getIdUti());
         $etus = $etuDAO->get4EtuByTut($tut);
+        include_once ('../View/Nav_Bar.php');
+        include_once('../View/Accueil_Admin.php');
     } else {
         header('location: ControllerConnexion.php');
     }
-    include_once ('../View/Nav_Bar.php');
-    include_once('../View/Accueil_Admin.php');
 } else {
     header('location: ControllerConnexion.php');
 }

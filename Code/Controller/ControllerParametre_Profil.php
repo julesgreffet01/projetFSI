@@ -33,6 +33,7 @@ $stylecss3 = "Bouton.css";
 $uti = unserialize($_SESSION['utilisateur']);
 $bdd = initialiseConnexionBDD();
 $message = "";
+$verif = false;                                 //c est pour savoir si on met le message en rouge ou en vert
 if($uti instanceof Etudiant || $uti instanceof Tuteur){
 $stylecss2 = "Profiletu.css";
 }
@@ -49,29 +50,63 @@ if ($uti) {
 
                     if ($adminDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
+                        $verif = false;
+                    } else {
+                        $message = "erreur update";
                     }
                 }
+            } else {
+                $uti->setMdpUti($_POST['password']);
+
+                if ($adminDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
+                    $verif = true;
+                } else {
+                    $message = "erreur update";
+                }
             }
+
         } else if ($uti instanceof Etudiant) {
             $etuDAO = new EtudiantDAO($bdd);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($etuDAO->verifLog($_POST['identifiant'])){
+                    $message = "Log deja utiliser";
+                } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);
+
                     if ($etuDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
+                        $verif = true;
                     }
                 }
+            } else {
+                $uti->setMdpUti($_POST['password']);
+
+                if ($etuDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
+                    $verif = true;
+                }
             }
+
         } else if ($uti instanceof Tuteur) {
             $tutDAO = new TuteurDAO($bdd);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($tutDAO->verifLog($_POST['identifiant'])){
+                    $message = "Log deja utiliser";
+                } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);
                     if ($tutDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
+                        $verif = true;
                     }
+                }
+            } else {
+                $uti->setMdpUti($_POST['password']);
+                if ($tutDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
+                    $verif = true;
                 }
             }
         } else {

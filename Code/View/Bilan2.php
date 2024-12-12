@@ -1,3 +1,4 @@
+<div class="centreinf">
 <div class="block">
     <p>
         <label class="intitu">Date du Bilan</label>
@@ -15,6 +16,9 @@
         <label class="intitu">Remarque éventuelles</label>
         <label class="info">maucaisbuabucb</label>
     </p>
+    <div class="btnbila">
     <input type="button" class="btnbleu" value="Modifier">
     <input type="button" class="btnrouge" value="Supprimer">
+    </div>
+</div>
 </div>

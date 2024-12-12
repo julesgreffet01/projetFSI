@@ -74,7 +74,7 @@ class TuteurDAO extends DAO
         $result = false;
         if ($obj instanceof Tuteur) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if($etuDAO->getAllEtuByTut($obj) != [null]) {
+            if($etuDAO->getAllEtuByTut($obj) == []) {
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getIdUti() == $foundObj->getIdUti()) {
@@ -199,6 +199,17 @@ class TuteurDAO extends DAO
             }
         } else {
             $result = true;
+        }
+        return $result;
+    }
+
+    public function getAllTutGood() :array {
+        $result = [];
+        $mesTuts = $this->getAll();
+        foreach ($mesTuts as $tut) {
+            if (!$this->verifNbMaxEtu3($tut) || !$this->verifNbMaxEtu4($tut) || !$this->verifNbMaxEtu5($tut)){
+                $result[] = $tut;
+            }
         }
         return $result;
     }

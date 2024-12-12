@@ -8,10 +8,20 @@
         <label for="city">Mot de passe</label>
         <input type="password" class="typetext" name="password" value="" placeholder="" />
     </p>
+        <div class="infoparametre">
         <input class="btnbleu" type="submit" name="btnProfil" value="Modifier">
-
+        </div>
     </form>
     <?php if($message): ?>
-    <p><?php echo $message ?> </p>
-    <?php endif; ?>
+    <?php
+    if($verif == false){
+        ?><div class="messageerr">
+        <?php echo $Message ?>
+    </div><?php
+    }else{
+    ?><div class="messagevalide">
+        <?php echo $Message ?>
+    </div><?php
+    }endif
+    ?>
 </div>

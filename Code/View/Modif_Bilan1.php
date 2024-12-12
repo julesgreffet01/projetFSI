@@ -1,3 +1,4 @@
+<div class="centreinf">
 <div class="block">
     <form action="Bilan1.php" method="post">
     <p>
@@ -24,8 +25,10 @@
         <label class="intitu">Remarque éventuelles</label>
         <input type="text" class="info">
     </p>
-    <input type="button" class="btnbil" value="Valider">
+        <div class="btnbila">
+    <input type="button" class="btnbleu" value="Valider">
     <input type="button" class="btnrouge" value="Annuler">
+        </div>
     </form>
 </div>
-
+</div>

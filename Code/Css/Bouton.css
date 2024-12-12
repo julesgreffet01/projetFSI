@@ -43,3 +43,16 @@
     margin: 50px;
 
 }
+
+.infoparametre{
+    position: absolute;
+    bottom: 80px;
+    right: 80px;
+}
+
+@media (max-width: 1300px) {
+    .infoparametre{
+        bottom: 20px;
+        right: 10px;
+    }
+}

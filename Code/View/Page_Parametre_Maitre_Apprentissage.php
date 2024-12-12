@@ -36,13 +36,23 @@
         <option value="<?php echo $ma->getIdMai() ?>"><?php echo $ma->getNomMai() ?></option>
         <?php endforeach; ?>
     </select>
-
+    <div class="infoparametre">
     <input type="submit" name="btnAdd" value="Créer" class="btnvert"/>
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
-    <?php echo $Message ?>
-
-<script src="../Js/MaitreAppChangeData.js"></script>
+    <div class="infoparametre">
+        <?php
+        if($verif == false){
+            ?><div class="messageerr">
+            <?php echo $Message ?>
+            </div><?php
+        }else{
+            ?><div class="messagevalide">
+            <?php echo $Message ?>
+            </div><?php
+        }
+        ?>
+        <script src="../Js/MaitreAppChangeData.js"></script>
 </div>
 </div>
 </form>

@@ -1,8 +1,8 @@
-    label{
+label{
         font-size: 20px;
         width: 300px;
     }
-    p {
+p {
         display: flex;
         align-items: center;
     }
@@ -38,6 +38,20 @@
         margin-right: 20px;
     }
 
+    .messageerr{
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 25px;
+        color: #A62609;
+    }
+
+    .messagevalide{
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 25px;
+        color: green;
+    }
+
     .centre .info{
         font-size: 20px;
 
@@ -60,7 +74,7 @@
     }
 
     .selectetudiant{
-        margin-top: -410px;
+        margin-top: -527px;
     }
 
     .selectespe{
@@ -71,3 +85,36 @@
         margin-top: 120px;
     }
 
+    .selectuteur{
+        margin-top: -485px;
+    }
+#hidden {
+    display : none;
+}
+
+@media (max-width: 1300px) {
+    .selectclass{
+        margin-top: 240px;
+    }
+
+    .selectmaitre{
+        margin-top: 80px;
+    }
+
+    .selectetudiant{
+        margin-top: -567px;
+    }
+
+    .selectespe{
+        margin-top: 280px;
+    }
+
+    .selectentreprise{
+        margin-top: 80px;
+    }
+
+    .selectuteur{
+        margin-top: -525px;
+    }
+
+}
