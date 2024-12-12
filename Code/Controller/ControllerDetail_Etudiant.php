@@ -25,7 +25,7 @@ $stylecss = "Blockinfo.css";
 $stylecss3 = "Bouton.css";
 
 $etu = $etuDAO->find($_GET["idEtu"]);
-$ent = $entDAO->find($etu->getMonEnt()->getIdEnt());
+$ent = $etu->getMonEnt() ? $entDAO->find($etu->getMonEnt()->getIdEnt()) : null;
 
 if (unserialize($_SESSION['utilisateur'])){
     if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){   //on vérifie que ce soit bien un admin ou un tuteur et pas un étudiant
