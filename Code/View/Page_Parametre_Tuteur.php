@@ -62,9 +62,18 @@
         <?php endforeach; ?>
     </select>
 </div>
-    <div class="messageerr">
+    <?php
+    if($verif == false){
+        ?><div class="messageerr">
     <?php echo $Message ?>
-    </div>
+</div><?php
+    }else{
+        ?><div class="messagevalide">
+        <?php echo $Message ?>
+        </div><?php
+        }
+    ?>
+
 </div>
 
     <div class="infoparametre">

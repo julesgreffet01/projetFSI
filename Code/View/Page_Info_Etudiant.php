@@ -1,6 +1,6 @@
 <div class="contenuetu">
     <div class="mesinfo">
-        <div class="block">
+        <div class="blockinfor">
             <h1>Mes informations</h1>
             <p>
                 <label class="intitu">Nom</label>
@@ -34,7 +34,7 @@
 
     </div>
     <div class="infoentreprise">
-        <div class="block">
+        <div class="blockinfor">
             <h1>Informations de l'entreprise</h1>
             <p>
                 <label class="intitu">Nom de l'entreprise</label>
@@ -66,5 +66,4 @@
 </div>
 <div class="boutons">
     <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
-    <a href="#" class="btnbleu">Modifier</a>
 </div>

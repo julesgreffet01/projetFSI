@@ -46,12 +46,12 @@
             <input type="submit" class="btnbil" value="Connexion" name="btnConnexion">
 
         </form>
-
+        <div class="messageerr">
         <?php if ($errorMessage != ""){
             echo $errorMessage;
         }
         ?>
-
+        </div>
         <!--        mettre le message d erreur quelque part qui se nomme $errorMessage et qui renvoie si tous les champs ne sont pas remplie ou si le log ou mdp sont faux-->
     </div>
 </div>
