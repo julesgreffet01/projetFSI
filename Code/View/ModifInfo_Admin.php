@@ -23,8 +23,10 @@
                 <label class="intitu">Mail</label>
                 <input class="info" name="mail_admin" value="<?php echo $utilisateur->getMailUti() ?>">
             </p>
+                <div class="boutons">
                 <input type="button" class="btnvert" value="Valider">
                 <input type="button" class="btnrouge" value="Annuler">
+                </div>
             </form>
         </div>
     </div>
