@@ -40,12 +40,12 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/julesgreffet01/projetFSI.git",
-    "accountId": "296e2d3d-ec64-4147-9f60-56262dc585a7"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
+    &quot;accountId&quot;: &quot;296e2d3d-ec64-4147-9f60-56262dc585a7&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php8.2.0\php.exe" />
   <component name="ProblemsViewState">
@@ -93,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Page_Parametre_Tuteur.php" />
         <item itemvalue="JavaScript Debug.Page_Parametre_Tuteur.php" />
         <item itemvalue="JavaScript Debug.Page_Parametre_Tuteur.php" />
       </list>
