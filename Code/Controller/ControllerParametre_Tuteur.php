@@ -21,6 +21,7 @@ $stylecss3 = "Bouton.css";
 
 $bdd = initialiseConnexionBDD();
 $Message = "";
+$verif = false;
 
 
 
@@ -53,6 +54,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             } else {
                 if($tutDAO->create($tuteur)){
                     $Message = "le tuteur a bien été créé";
+                    $verif = true;
                     $tuts = $tutDAO->getAll();
                 }
             }
@@ -95,6 +97,8 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                         $tuteur->setNbMax5($nbMax5);
                         if($tutDAO->update($tuteur)){
                             $Message = "Le tuteur a bien été modifier";
+                            $verif = true;
+                            $tuts = $tutDAO->getAll();
                         }
                     }
                 } else {
@@ -111,6 +115,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                     $tuteur->setNbMax5($nbMax5);
                     if($tutDAO->update($tuteur)){
                         $Message = "Le tuteur a bien été modifier";
+                        $verif = true;
                         $tuts = $tutDAO->getAll();
                     }
                 }
@@ -132,6 +137,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                         $tuts = $tutDAO->getAll();
                     } else {
                         $Message = "Il y a des etudiants affilié a ce tuteur";
+                        $verif = true;
                     }
                 } else {
                     $Message = "Ce tuteur n'existe pas";
@@ -144,7 +150,6 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $Message = "veuillez selectionner un tuteur a supprimer";
         }
     }
-
     include_once ('../View/header_admin.php');
     include_once ('../View/Page_Parametre_Tuteur.php');
 } else {

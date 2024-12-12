@@ -63,5 +63,23 @@ class Tuteur extends Utilisateur
         $this->mesEtu = $mesEtu;
     }
 
+    public function toArray(): array {
+        return[
+            'idTut'=> $this->idUti,
+            'nomTut'=> $this->nomUti,
+            'preTut'=> $this->preUti,
+            'adrUti'=> $this->adrUti,
+            'cpUti'=> $this->cpUti,
+            'vilUti'=> $this->vilUti,
+            'telUti'=> $this->telUti,
+            'mailUti'=> $this->mailUti,
+            'nbMax3'=> $this->nbMax3,
+            'nbMax4'=> $this->nbMax4,
+            'nbMax5'=> $this->nbMax5
+        ];
+
+
+    }
+
 
 }

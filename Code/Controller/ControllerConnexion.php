@@ -54,4 +54,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {     //on verif que ce soit bien une 
 }
 
 include_once "../View/Connexion.php";
-

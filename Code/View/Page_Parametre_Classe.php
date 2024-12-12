@@ -23,9 +23,17 @@
         <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
         <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
     </div>
-    <div class="messageerr">
+    <?php
+    if($verif == false){
+        ?><div class="messageerr">
         <?php echo $Message ?>
-    </div>
+        </div><?php
+    }else{
+        ?><div class="messagevalide">
+        <?php echo $Message ?>
+        </div><?php
+    }
+    ?>
 </div>
 </div>
     <script src="../Js/ClasseChangeData.js"></script>

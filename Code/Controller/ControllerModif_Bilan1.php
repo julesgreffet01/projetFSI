@@ -5,5 +5,4 @@ $stylecss = "Blockinfo.css";
 $stylecss3 = "Bouton.css";
 
 include_once ('../View/Nav_Bar.php');
-include_once ('../View/Page_Mes_Bilan.php');
-?>
+include_once ('../View/Modif_Bilan1.php');

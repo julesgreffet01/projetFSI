@@ -19,6 +19,7 @@ $stylecss = "Parametre.css";
 $stylecss3 = "Bouton.css";
 $titreparametre = "Spécialité";
 $Message = "";
+$verif = false;                         //c est pour savoir si on met l affichage en vert ou en rouge
 $bdd = initialiseConnexionBDD();
 
 
@@ -39,6 +40,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $spe = new Specialite(0, $lib);
             if ($specDAO->create($spe)) {
                 $Message = "la spécialité a bien été créer";
+                $verif = true;
                 $specs = $specDAO->getAll();
             } else {
                 $Message = "creation echoue";
@@ -57,6 +59,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                 $spe->setNomSpec($lib);
                 if ($specDAO->update($spe)) {
                     $Message = "La specialité a bien été modifier";
+                    $verif = true;
                     $specs = $specDAO->getAll();
                 } else {
                     $Message = "update echoue";
@@ -76,7 +79,10 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                 if ($spe) {
                     if($specDAO->delete($spe)) {
                         $Message = "la specialité ".$spe->getNomSpec()." a été supprimer";
+                        $verif = true;
                         $specs = $specDAO->getAll();
+                    } else {
+                        $Message = "il y a des etudiants dans cette specialite impossible de la supprimer";
                     }
                 }
             } else {
