@@ -18,9 +18,7 @@ require_once  __DIR__ ."/../Model/BO/Classe.php";
 
 
 
-
-
-$titrefichier = "Accueil"; //lien vers tout les fichiers html/css nécessaires
+$titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
 $stylecss2 = "Bouton.css";
 
@@ -42,7 +40,6 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
     } else {
         $spe = "Pas assigné(e)";
     }
-
     if ($etu->getMonEnt()){
         $ent = $etu->getMonEnt()->getNomEnt();
         $adrEnt = $etu->getMonEnt()->getAdrEnt();
