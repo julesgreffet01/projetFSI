@@ -28,7 +28,7 @@ $verif = false;
 if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
     $tutDAO = new TuteurDAO($bdd);
     $tuts = $tutDAO->getAll();
-//---------------------- créer ---------------------------
+//---------------------- création ---------------------------
     if (isset($_POST['btnAdd'])){
         if (isset($_POST['tuteur-select'])){
             $Message = "veuiller enlever la selection en cas de creation";
@@ -62,7 +62,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $Message = "veuillez remplir tous les champs";
         }
     }
-    //---------------------- modifier ---------------------------
+    //---------------------- modification ---------------------------
     if (isset($_POST['btnUpdate'])){
         if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && isset($_POST['tuteur-select'])){
             if ($_POST['tuteur-select'] != ''){
@@ -126,7 +126,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $Message = "Veuillez selectionner un tuteur à modifier";
         }
     }
-    //--------------------------------- supprimer -------------------------
+    //--------------------------------- suppression -------------------------
     if(isset($_POST['btnDelete'])){
         if (isset($_POST['tuteur-select'])){
             if ($_POST['tuteur-select'] != ''){
