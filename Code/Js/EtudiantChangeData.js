@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', ()=> {
     const dropD = document.getElementById('dropDown');
     const pre = document.getElementById('preEtu');
     const nom = document.getElementById('nomEtu');
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const selectTut = document.getElementById('tut-select');
 
 
-
     //----- hidden -----
     const hidden = document.getElementById('hidden')
     const checkBox = document.getElementById('altEtu');
@@ -30,6 +29,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             hidden.style.display = "none";
         }
     }
+
     // Vérifier l'état initial de la case à cocher
     updateHiddenSection();
 
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     checkBox.addEventListener('change', updateHiddenSection);
 
 
-    dropD.addEventListener('change', ()=>{
+    dropD.addEventListener('change', () => {
         const selected = dropD.value;
-        if(!selected){
+        if (!selected) {
             pre.value = '';
             nom.value = '';
             tel.value = '';
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             selectMA.value = '';
             selectSpe.value = '';
             fetch('../GetData/GetDataEtudiant?reset=1')
-                .then(response =>response.json())
+                .then(response => response.json())
                 .then(data => {
                     // Réinitialiser le menu déroulant selectCla
                     selectCla.innerHTML = ""; // Supprime toutes les options
@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 monTut.textContent = data.nomMonTu + " " + data.preMonTut; // Utiliser le nom de la classe
                 selectTut.appendChild(monTut);
 
-                data.clas.forEach(cla=>{
-                    if (cla.idCla != data.idMaCla){
+                data.clas.forEach(cla => {
+                    if (cla.idCla != data.idMaCla) {
                         const option = document.createElement("option");
                         option.value = cla.idCla; // Utiliser l'identifiant de la classe
                         option.textContent = cla.libCla; // Utiliser le nom de la classe
@@ -129,19 +129,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     }
                 })
 
-                data.tuts.forEach($tut => {
-                    if ($tut.idTut != data.idMonTut){
-                        data.tuts.forEach(tut => {
-                            const option = document.createElement("option");
-                            option.value = tut.idTut;
-                            option.textContent = tut.nomTut + " " + tut.preTut;
-                            selectTut.appendChild(option);
-                        })
+                data.tuts.forEach(tut => {
+                    if (tut.idTut != data.idMonTut) {
+                        const option = document.createElement("option");
+                        option.value = tut.idTut; // Utiliser l'identifiant de la classe
+                        option.textContent = tut.nomTut + " " + tut.preTut; // Utiliser le nom de la classe
+                        selectTut.appendChild(option);
                     }
                 })
+
+                //TODO a finir si on change de classe
             })
     })
-
-    //TODO a finir si on change de classe
 })
-
