@@ -50,6 +50,12 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     $mas = $maDAO->getAll();
     $tuts = $tutDAO->getAllTutGood();
     $etus = $etuDAO->getAll();
+
+    if (isset($_POST['btnAdd'])){
+        if ($_POST['preEtu'] != "" && $_POST['nomEtu'] != "" && $_POST['telEtu'] && $_POST['adrEtu'] && $_POST['vilEtu'] && $_POST['cpEtu'] && $_POST['mailEtu'] && $_POST['logEtu'] && $_POST['altEtu'] && empty($_POST['etu-select'])){
+
+        }
+    }
     include_once ('../View/header_admin.php');
     include_once '../View/Page_Parametre_Etudiant.php';
 }

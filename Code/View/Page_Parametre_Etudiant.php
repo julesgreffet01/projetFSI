@@ -33,10 +33,6 @@
         <input type="text" class="typetext" name="logEtu" value="" placeholder="" id="logEtu"/>
     </p>
     <p>
-        <label for="mdpEtu">Mot de passe</label>
-        <input type="text" class="typetext" name="mdpEtu" value="" placeholder="" id="mdpEtu"/>
-    </p>
-    <p>
         <label for="altEtu">Alternance</label>
         <input type="checkbox" class="typecheck" name="altEtu" value="true" id="altEtu"/>
     </p>

@@ -33,10 +33,6 @@
             <input type="text" class="typetext" name="logTut" value="" id="logTut"/>
         </p>
 
-        <p>
-            <label for="mdpTut">Mot de passe</label>
-            <input type="text" class="typetext" name="mdpTut" value="" id="mdpTut"/>
-        </p>
 
 
 <p>
