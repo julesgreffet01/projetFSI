@@ -47,5 +47,12 @@ class Classe
         $this->libCla = $libCla;
     }
 
-
+    public function toArray(): array
+    {
+        return [
+            'idCla' => $this->idCla,
+            'libCla' => $this->libCla,
+            'nbMaxEtu' => $this->nbMaxEtu
+        ];
+    }
 }

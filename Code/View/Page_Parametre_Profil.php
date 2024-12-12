@@ -13,8 +13,15 @@
         </div>
     </form>
     <?php if($message): ?>
-    <div class="messageerr">
-    <p><?php echo $message ?> </p>
-    </div>
-    <?php endif; ?>
+    <?php
+    if($verif == false){
+        ?><div class="messageerr">
+        <?php echo $Message ?>
+    </div><?php
+    }else{
+    ?><div class="messagevalide">
+        <?php echo $Message ?>
+    </div><?php
+    }
+    ?>
 </div>
