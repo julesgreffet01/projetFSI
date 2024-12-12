@@ -44,7 +44,7 @@
     &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
   }
 }</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\PC_Local\Logiciel\PHP\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -62,7 +62,7 @@
     "PHP Script.testDAO.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "jules",
     "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -150,6 +150,7 @@
       <workItem from="1733826519023" duration="4053000" />
       <workItem from="1733836120670" duration="5201000" />
       <workItem from="1733850394803" duration="7494000" />
+      <workItem from="1733927426129" duration="996000" />
     </task>
     <task id="LOCAL-00002" summary="jules">
       <option name="closed" value="true" />
