@@ -2,13 +2,14 @@
     <div class="mesinfo">
         <div class="blockinfor">
             <h1>Mes informations</h1>
+            <form method="post" action="Page_Info_Etudiant.php">
             <p>
                 <label class="intitu">Nom</label>
-                <label class="info"><?php echo $nom ?></label>
+                <label class="info"><?php echo $utilisateur->getNomUti() ?></label>
             </p>
             <p>
                 <label class="intitu">Prénom</label>
-                <label class="info"><?php echo $pre ?></label>
+                <label class="info"><?php echo $utilisateur->getPreUti()?></label>
             </p>
             <p>
                 <label class="intitu">Téléphone</label>
@@ -24,11 +25,11 @@
             </p>
             <p>
                 <label class="intitu">Classe</label>
-                <label class="info"><?php echo $cla ?></label>
+                <label class="info"><?php echo $utilisateur->getMaClasse()->getLibCla() ?></label>
             </p>
             <p>
                 <label class="intitu">Spécialisation</label>
-                <label class="info"><?php echo $spec ?></label>
+                <label class="info"><?php echo $utilisateur->getMaSpec()->getNomSpec() ?></label>
             </p>
         </div>
 
@@ -38,32 +39,34 @@
             <h1>Informations de l'entreprise</h1>
             <p>
                 <label class="intitu">Nom de l'entreprise</label>
-                <label class="info"><?php echo $ent ?></label>
+                <label class="info"><?php echo $utilisateur->getMonEnt()->getNomEnt() ?></label>
             </p>
             <p>
                 <label class="intitu">Adresse</label>
-                <label class="info"><?php echo $adrEnt ?></label>
+                <label class="info"><?php echo $utilisateur->getMonEnt()->getAdrEnt() ?></label>
             </p>
             <p>
                 <label class="intitu">Nom du maître d'apprentissage</label>
-                <label class="info"><?php echo $nomMai ?></label>
+                <label class="info"><?php echo $utilisateur->getMonMaitreAp()->getNomMai() ?></label>
             </p>
             <p>
                 <label class="intitu">Prénom du maître d'apprentissage</label>
-                <label class="info"><?php echo $preMai ?></label>
+                <label class="info"><?php echo $utilisateur->getMonMaitreAp()->getPreMai() ?></label>
             </p>
             <p>
                 <label class="intitu">Téléphone</label>
-                <label class="info"><?php echo $telMai ?></label>
+                <label class="info"><?php echo $utilisateur->getMonMaitreAp()->getTelMai() ?></label>
             </p>
             <p>
                 <label class="intitu">Mail</label>
-                <label class="info"><?php echo $mailMai ?></label>
+                <label class="info"><?php echo $utilisateur->getMonMaitreAp()->getMailMai() ?></label>
             </p>
         </div>
 
     </div>
 </div>
 <div class="boutons">
-    <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
+    <input type="button" class="btnvert" value="Valider">
+    <input type="button" class="btnrouge" value="Annuler">
 </div>
+</form>
