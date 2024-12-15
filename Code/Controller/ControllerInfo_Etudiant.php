@@ -5,7 +5,6 @@ use BO\Etudiant;
 
 session_start(); // démarrage de la session de l'utilisateur
 
-
 require_once __DIR__."/../Model/BO/Administrateur.php";
 require_once __DIR__."/../Model/BO/Etudiant.php";
 require_once __DIR__."/../Model/BO/Tuteur.php";
@@ -15,7 +14,6 @@ require_once  __DIR__ ."/../Model/BO/Entreprise.php";
 require_once  __DIR__ ."/../Model/BO/Bilan1.php";
 require_once  __DIR__ ."/../Model/BO/Bilan2.php";
 require_once  __DIR__ ."/../Model/BO/Classe.php";
-
 
 
 $titrefichier = "Accueil";
