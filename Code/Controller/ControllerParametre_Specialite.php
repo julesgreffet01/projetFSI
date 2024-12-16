@@ -39,7 +39,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $lib = $_POST['libSpe'];
             $spe = new Specialite(0, $lib);
             if ($specDAO->create($spe)) {
-                $Message = "la spécialité a bien été créer";
+                $Message = "la spécialité a bien été créée";
                 $verif = true;
                 $specs = $specDAO->getAll();
             } else {

@@ -114,7 +114,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                     $tuteur->setNbMax4($nbMax4);
                     $tuteur->setNbMax5($nbMax5);
                     if($tutDAO->update($tuteur)){
-                        $Message = "Le tuteur a bien été modifier";
+                        $Message = "Le tuteur a bien été modifié";
                         $verif = true;
                         $tuts = $tutDAO->getAll();
                     }
@@ -136,7 +136,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                         $Message = 'suppression du tuteur ' . $tuteur->getNomUti();
                         $tuts = $tutDAO->getAll();
                     } else {
-                        $Message = "Il y a des etudiants affilié a ce tuteur";
+                        $Message = "Il y a des etudiants affiliés à ce tuteur";
                         $verif = true;
                     }
                 } else {
@@ -144,10 +144,10 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                 }
 
             } else {
-                $Message = "veuillez selectionner un tuteur a supprimer";
+                $Message = "Veuillez selectionner un tuteur à supprimer";
             }
         } else {
-            $Message = "veuillez selectionner un tuteur a supprimer";
+            $Message = "Veuillez selectionner un tuteur à supprimer";
         }
     }
     include_once ('../View/header_admin.php');
