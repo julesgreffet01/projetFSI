@@ -22,6 +22,6 @@
     ?><div class="messagevalide">
         <?php echo $Message ?>
     </div><?php
-    }
+    }endif
     ?>
 </div>
