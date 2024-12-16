@@ -25,6 +25,7 @@ $stylecss2 = "Bouton.css";
 if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que c'est un étudiant
     $etu = unserialize($_SESSION['utilisateur']);
 
+    $id = $etu->getIdUti();
     $nom = $etu->getNomUti();
     $pre = $etu->getPreUti();
     $tel = $etu->getTelUti();

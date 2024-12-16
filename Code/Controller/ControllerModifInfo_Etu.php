@@ -3,6 +3,7 @@
 
 session_start();
 
+use BO\Entreprise;
 use BO\Etudiant;
 use DAO\EntrepriseDAO;
 use DAO\EtudiantDAO;
@@ -21,6 +22,7 @@ $bdd = initialiseConnexionBDD();
 if(unserialize($_SESSION['utilisateur'])instanceof Etudiant){
     $etudao = new EtudiantDAO($bdd);
     $utilisateur = $etudao->find(unserialize($_SESSION['utilisateur'])->getIdUti());
+    $monEnt = $utilisateur->getMonEnt() ?: null;
 
 }else{
     header('Location: connexion.php');
