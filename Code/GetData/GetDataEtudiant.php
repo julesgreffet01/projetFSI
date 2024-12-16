@@ -56,6 +56,7 @@ if (isset($_GET['reset'])) {
 
 
 if (isset($_GET['idEtu'])){
+
     $idEtu = intval($_GET['idEtu']);
     $tuts = $tutDAO->getAllTutGood();
     $clas = $claDAO->getAllClaGood();
@@ -64,7 +65,7 @@ if (isset($_GET['idEtu'])){
 
 
         $clasArray = array_map(function ($cla) {
-            return $cla->toArray();  // Convertir chaque objet Classe en tableau associatif
+            return $cla->toArray();
         }, $clas);
 
         $tutsArray = array_map(function ($tut) {
@@ -76,6 +77,42 @@ if (isset($_GET['idEtu'])){
             header('Content-Type: application/json');
             echo json_encode(['error' => 'Tuteur introuvable']);
             exit;
+        }
+
+        if ($etu->getMonEnt()){
+            $monEnt = $etu->getMonEnt()->getIdEnt();
+        } else {
+            $monEnt = null;
+        }
+
+        if ($etu->getMonTuteur()){
+            $idTut = $etu->getMonTuteur()->getIdUti();
+            $nomTut = $etu->getMonTuteur()->getNomUti();
+            $preTut = $etu->getMonTuteur()->getPreUti();
+        } else {
+            $idTut = null;
+            $nomTut = null;
+            $preTut = null;
+        }
+
+        if ($etu->getMaClasse()){
+            $idCla = $etu->getMaClasse()->getIdCla();
+            $libCla = $etu->getMaClasse()->getLibCla();
+        } else {
+            $idCla = null;
+            $libCla = null;
+        }
+
+        if ($etu->getMonMaitreAp()){
+            $ma = $etu->getMonMaitreAp()->getIdMai();
+        } else {
+            $ma = null;
+        }
+
+        if ($etu->getMaSpec()){
+            $spec = $etu->getMaSpec()->getIdSpec();
+        } else {
+            $spec = null;
         }
 
         header('Content-Type: application/json');
@@ -90,14 +127,14 @@ if (isset($_GET['idEtu'])){
             'login' => $etu->getLogUti(),
             'mdp' => $etu->getMdpUti(),
             'alter' => $etu->getAltEtu(),
-            'idMonTut' => $etu->getMonTuteur()->getIdUti(),
-            'nomMonTu'=> $etu->getMonTuteur()->getNomUti(),
-            'preMonTut'=>$etu->getMonTuteur()->getPreUti(),
-            'ent'=>$etu->getMonEnt()->getIdEnt(),
-            'MA'=> $etu->getMonMaitreAp()->getIdMai(),
-            'Spe'=>$etu->getMaSpec()->getIdSpec(),
-            'idMaCla'=>$etu->getMaClasse()->getIdCla(),
-            'libMaCla'=>$etu->getMaClasse()->getLibCla(),
+            'idMonTut' => $idTut,
+            'nomMonTu'=> $nomTut,
+            'preMonTut'=> $preTut,
+            'ent'=> $monEnt,
+            'MA'=> $ma,
+            'Spe'=> $spec,
+            'idMaCla'=> $idCla,
+            'libMaCla'=> $libCla,
             'clas'=>$clasArray,
             'tuts'=>$tutsArray,
         ]);

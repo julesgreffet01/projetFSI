@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
             mail.value = '';
             log.value = '';
             mdp.value = '';
-            alt.value = '';
+            alt.checked = false;
+            updateHiddenSection();
             selectEnt.value = '';
             selectMA.value = '';
             selectSpe.value = '';
