@@ -28,6 +28,7 @@ $titrefichier = "Accueil";
 $stylecss = "Tableau.css";
 $ojd = date('d/m/Y');             //au cas ou il faut afficher la date d ojd
 $date = new DateTime();                 //date d ojd
+$uti = unserialize($_SESSION['utilisateur']);
 
 
 $al = $alDAO->find(1);
@@ -60,12 +61,12 @@ if ($date > $datLim2) {
 
 
 
-if (unserialize($_SESSION['utilisateur'])) {
-    if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
+if ($uti) {
+    if ($uti instanceof Administrateur) {
         $al1 = $alDAO->getAllAl1();
         $al2 = $alDAO->getAllAl2();
         $messAl = "Aucune alerte pour aucun eleve";
-    } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur) {
+    } else if ($uti instanceof Tuteur) {
         $al1 = $alDAO->getAllAl1ByTut(unserialize($_SESSION['utilisateur']));
         $al2 = $alDAO->getAllAl2ByTut(unserialize($_SESSION['utilisateur']));
         $messAl = "Aucune alerte pour vos eleves";

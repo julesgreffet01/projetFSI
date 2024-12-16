@@ -16,11 +16,11 @@
     <?php
     if($verif == false){
         ?><div class="messageerr">
-        <?php echo $Message ?>
+        <?php echo $message ?>
     </div><?php
     }else{
     ?><div class="messagevalide">
-        <?php echo $Message ?>
+        <?php echo $message ?>
     </div><?php
     } endif;
     ?>

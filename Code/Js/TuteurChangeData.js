@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const vil = document.getElementById('vilTut');
     const cp = document.getElementById('cpTut');
     const log = document.getElementById('logTut');
-    const mdp = document.getElementById('mdpTut');
-
     dropD.addEventListener('change', ()=>{
         const selected = dropD.value;
         if (!selected){
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             vil.value = '';
             cp.value = '';
             log.value = '';
-            mdp.value = '';
         }
 
         fetch('../GetData/GetDataTuteur.php?idTut='+ selected)
@@ -44,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 vil.value = data.ville || '';
                 cp.value = data.cp || null;
                 log.value = data.login || '';
-                mdp.value = data.mdp || '';
             })
     })
 });

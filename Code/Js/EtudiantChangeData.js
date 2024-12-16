@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const cp = document.getElementById('cpEtu');
     const mail = document.getElementById('mailEtu');
     const log = document.getElementById('logEtu');
-    const mdp = document.getElementById('mdpEtu');
     const alt = document.getElementById('altEtu');
     const selectEnt = document.getElementById('ent-select');
     const selectMA = document.getElementById('maitre-select');
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
             cp.value = '';
             mail.value = '';
             log.value = '';
-            mdp.value = '';
             alt.checked = false;
             updateHiddenSection();
             selectEnt.value = '';
@@ -100,7 +98,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     cp.value = data.cp || '';
                     mail.value = data.mail || '';
                     log.value = data.login || '';
-                    mdp.value = data.mdp || '';
                     alt.checked = data.alter || false;
                     updateHiddenSection();
                     selectEnt.value = data.ent || '';

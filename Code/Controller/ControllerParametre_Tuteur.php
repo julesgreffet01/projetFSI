@@ -35,7 +35,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
         }else {
             $Message = "";
         }
-        if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && empty($_POST['tuteur-select'])) {
+        if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && empty($_POST['tuteur-select'])) {
             $pre = $_POST['preTut'];
             $nom = $_POST['nomTut'];
             $tel = $_POST['telTut'];
@@ -44,7 +44,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $cp = $_POST['cpTut'];
             $mail = $_POST['mailTut'];
             $log = $_POST['logTut'];
-            $mdp = $_POST['mdpTut'];
+            $mdp = 'password';
             $nbMax3 = ($_POST['nbMaxEtu3'] > 0) ? $_POST['nbMaxEtu3'] : 0;
             $nbMax4 = ($_POST['nbMaxEtu4'] > 0) ? $_POST['nbMaxEtu4'] : 0;
             $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
@@ -64,7 +64,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
     }
     //---------------------- modification ---------------------------
     if (isset($_POST['btnUpdate'])){
-        if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && $_POST['mdpTut'] != "" && isset($_POST['tuteur-select'])){
+        if ($_POST['preTut'] != "" && $_POST['nomTut'] != "" && $_POST['telTut'] != "" && $_POST['adrTut'] != "" && $_POST['vilTut'] != "" && $_POST['cpTut'] != "" && $_POST['mailTut'] != "" && $_POST['logTut'] != "" && isset($_POST['tuteur-select'])){
             if ($_POST['tuteur-select'] != ''){
                 $tuteur = $tutDAO->find($_POST["tuteur-select"]);
                 $pre = $_POST['preTut'];
@@ -75,7 +75,6 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                 $cp = $_POST['cpTut'];
                 $mail = $_POST['mailTut'];
                 $log = $_POST['logTut'];
-                $mdp = $_POST['mdpTut'];
                 $nbMax3 = ($_POST['nbMaxEtu3'] > 0) ? $_POST['nbMaxEtu3'] : 0;
                 $nbMax4 = ($_POST['nbMaxEtu4'] > 0) ? $_POST['nbMaxEtu4'] : 0;
                 $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
@@ -91,7 +90,6 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                         $tuteur->setCpUti($cp);
                         $tuteur->setMailUti($mail);
                         $tuteur->setLogUti($log);
-                        $tuteur->setMdpUti($mdp);
                         $tuteur->setNbMax3($nbMax3);
                         $tuteur->setNbMax4($nbMax4);
                         $tuteur->setNbMax5($nbMax5);
@@ -109,7 +107,6 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                     $tuteur->setVilUti($vil);
                     $tuteur->setCpUti($cp);
                     $tuteur->setMailUti($mail);
-                    $tuteur->setMdpUti($mdp);
                     $tuteur->setNbMax3($nbMax3);
                     $tuteur->setNbMax4($nbMax4);
                     $tuteur->setNbMax5($nbMax5);

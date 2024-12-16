@@ -125,7 +125,6 @@ if (isset($_GET['idEtu'])){
             'cp' => $etu->getCpUti(),
             'mail' => $etu->getMailUti(),
             'login' => $etu->getLogUti(),
-            'mdp' => $etu->getMdpUti(),
             'alter' => $etu->getAltEtu(),
             'idMonTut' => $idTut,
             'nomMonTu'=> $nomTut,
