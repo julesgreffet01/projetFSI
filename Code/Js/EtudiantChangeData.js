@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     // Gérer l'événement de changement sur la case à cocher
     checkBox.addEventListener('change', updateHiddenSection);
+
     selectCla.addEventListener('change', updateTutByCla);
 
     dropD.addEventListener('change', () => {
