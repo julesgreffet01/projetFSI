@@ -29,12 +29,62 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     }
 
+    function updateTutByCla(){
+        const selected = selectCla.value;
+        if (!selected){
+            fetch("../GetData/GetDataEtudiant?resetTut=1")
+                .then(response => response.json())
+                .then(data => {
+                    selectTut.innerHTML = "";
+
+                    const emptyOptionTut = document.createElement("option");
+                    emptyOptionTut.value = "";
+                    emptyOptionTut.textContent = ""; // Texte de l'option vide
+                    selectTut.appendChild(emptyOptionTut);
+
+
+                    data.tuts.forEach(tut => {
+                        const option = document.createElement("option");
+                        option.value = tut.idTut;
+                        option.textContent = tut.nomTut + " " + tut.preTut;
+                        selectTut.appendChild(option);
+                    })
+                })
+        } else {
+            fetch('../GetData/GetDataEtudiant?idCla=' + selected)
+                .then(response => response.json())
+                .then(data =>{
+                    selectTut.innerHTML = "";
+
+                    if((data.tuts).length){
+                        const emptyOptionTut = document.createElement("option");
+                        emptyOptionTut.value = "";
+                        emptyOptionTut.textContent = ""; // Texte de l'option vide
+                        selectTut.appendChild(emptyOptionTut);
+
+                        data.tuts.forEach(tut => {
+                            const option = document.createElement("option");
+                            option.value = tut.idTut;
+                            option.textContent = tut.nomTut + " " + tut.preTut;
+                            selectTut.appendChild(option);
+                        })
+                    } else {
+                        const option = document.createElement('option');
+                        option.value="";
+                        option.textContent = "Pas de tuteur valide";
+                        selectTut.appendChild(option);
+                    }
+
+                })
+        }
+    }
+
     // Vérifier l'état initial de la case à cocher
     updateHiddenSection();
 
     // Gérer l'événement de changement sur la case à cocher
     checkBox.addEventListener('change', updateHiddenSection);
-
+    selectCla.addEventListener('change', updateTutByCla);
 
     dropD.addEventListener('change', () => {
         const selected = dropD.value;
@@ -135,8 +185,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
                         }
                     })
 
-                    //TODO a finir si on change de classe
                 })
+            selectCla.addEventListener('change', updateTutByCla);
         }
 
 
