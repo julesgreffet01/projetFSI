@@ -2,7 +2,7 @@
     <div class="mesinfo">
         <div class="block">
             <h1>Mes informations</h1>
-            <form method="post" action="Page_Info_Admin.php">
+            <form method="post" action="ControllerModifInfo_Admin.php">
             <p>
                 <label class="intitu">Nom</label>
                 <label class="info"><?php echo $utilisateur->getNomUti() ?></label>
@@ -24,8 +24,8 @@
                 <input class="info" name="mail_admin" value="<?php echo $utilisateur->getMailUti() ?>">
             </p>
                 <div class="boutons">
-                <input type="button" class="btnvert" value="Valider">
-                <input type="button" class="btnrouge" value="Annuler">
+                <input type="submit" class="btnvert" value="Valider" name="btnValid">
+                <input type="submit" class="btnrouge" value="Annuler" name="btnCancel">
                 </div>
             </form>
         </div>
