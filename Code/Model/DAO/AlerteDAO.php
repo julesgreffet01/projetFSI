@@ -142,7 +142,7 @@ class AlerteDAO extends DAO
         $mesAl2 = $this->getAllAl2ByTut($tut);
         $compteur = 0;
             foreach ($mesAl1 as $al1) {
-                $result[] = $al1;
+                $result[] = "La visite en entreprise de ".$al1->getPreUti()." ".$al1->getNomUti()." est en retard";
                 $compteur++;
                 if ($compteur >= 2) {
                     break;
@@ -162,7 +162,7 @@ class AlerteDAO extends DAO
 
             if($max != 0){
                 foreach ($mesAl2 as $al2) {
-                    $result[] = $al2;
+                    $result[] = "Le bilan 2 de ".$al2->getPreUti()." ".$al2->getNomUti()." est en retard";
                     $compteur++;
                     if ($compteur >= $max) {
                         break;

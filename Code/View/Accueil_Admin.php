@@ -3,7 +3,7 @@
     <?php foreach($als as $etu): ?>
     <p>
 <!--        <input type="checkbox" class="coche">-->
-        <label> L'étudiant <?php echo $etu->getPreUti() . " " . $etu->getNomUti() ?> a du retard sur un de ses bilan</label>
+        <label><?php echo $etu?> </label>
     </p>
     <?php endforeach; ?>
 </div>
