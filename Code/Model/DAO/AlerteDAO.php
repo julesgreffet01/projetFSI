@@ -135,4 +135,57 @@ class AlerteDAO extends DAO
         }
         return $result;
     }
+
+    public function getAlAccueilEtuByTut(Tuteur $tut): ?array {
+        $result = [];
+        $mesAl1 = $this->getAllAl1ByTut($tut);
+        $mesAl2 = $this->getAllAl2ByTut($tut);
+        $compteur = 0;
+            foreach ($mesAl1 as $al1) {
+                $result[] = $al1;
+                $compteur++;
+                if ($compteur >= 2) {
+                    break;
+                }
+            }
+            $max = 0;
+            switch ($compteur) {
+                case 0:
+                    $max = 2;
+                    break;
+                case 1 :
+                    $max = 1;
+                    break;
+                case 2 :
+                    break;
+            }
+
+            if($max != 0){
+                foreach ($mesAl2 as $al2) {
+                    $result[] = $al2;
+                    $compteur++;
+                    if ($compteur >= $max) {
+                        break;
+                    }
+                }
+            }
+        return $result;
+    }
+
+    public function getAlAcceuil(): ?array {
+        $result = [];
+        $tutDAO = new TuteurDAO($this->bdd);
+        $tuts = $tutDAO->getAll();
+        if ($tuts) {
+            foreach ($tuts as $tut) {
+                $mesEtu = $this->getAlAccueilEtuByTut($tut);
+                foreach ($mesEtu as $et) {
+                    $result[] = $et;
+                }
+            }
+        }
+        return $result;
+    }
+
+
 }

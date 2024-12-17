@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModifInfo_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModifInfo_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModifInfo_Etu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModifInfo_Etu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/ModifInfo_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/ModifInfo_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/ModifInfo_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/ModifInfo_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerAccueil_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerAccueil_Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Accueil_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Accueil_Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Alertes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Alertes.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,14 +160,6 @@
       <workItem from="1733999983982" duration="909000" />
       <workItem from="1734006468394" duration="8096000" />
       <workItem from="1734359625389" duration="785000" />
-    </task>
-    <task id="LOCAL-00005" summary="jules">
-      <option name="closed" value="true" />
-      <created>1731666565594</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1731666565594</updated>
     </task>
     <task id="LOCAL-00006" summary="jules">
       <option name="closed" value="true" />
@@ -556,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734362560021</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="jules">
+      <option name="closed" value="true" />
+      <created>1734459909952</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1734459909953</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
