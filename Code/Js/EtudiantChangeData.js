@@ -79,6 +79,59 @@ document.addEventListener('DOMContentLoaded', ()=> {
         }
     }
 
+    function updateMA(){
+        const selected = selectEnt.value;
+        if (!selected){
+            fetch('../GetData/GetDataEtudiant?resetMA=1')
+                .then(response => response.json())
+                .then(data => {
+                    selectMA.innerHTML = "";
+
+                    const emptyOptionMA = document.createElement("option");
+                    emptyOptionMA.value = "";
+                    emptyOptionMA.textContent = ""; // Texte de l'option vide
+                    selectMA.appendChild(emptyOptionMA);
+
+
+                    data.MAs.forEach(ma => {
+                        const option = document.createElement("option");
+                        option.value = ma.idMA;
+                        option.textContent = ma.nomMA;
+                        selectMA.appendChild(option);
+                    })
+                })
+        } else {
+            fetch('../GetData/GetDataEtudiant?idEnt='+ selected)
+                .then(response => response.json())
+                .then(data => {
+
+                    console.log('ca passe');
+                    selectMA.innerHTML = "";
+
+                    if((data.MAs).length){
+                        const emptyOptionMA = document.createElement("option");
+                        emptyOptionMA.value = "";
+                        emptyOptionMA.textContent = ""; // Texte de l'option vide
+                        selectMA.appendChild(emptyOptionMA);
+
+
+                        data.MAs.forEach(ma => {
+                            const option = document.createElement("option");
+                            option.value = ma.idMA;
+                            option.textContent = ma.nomMA;
+                            selectMA.appendChild(option);
+                        })
+                    } else {
+                        const emptyOptionMA = document.createElement("option");
+                        emptyOptionMA.value = "";
+                        emptyOptionMA.textContent = "Pas de Maitre a dans cette entreprise";
+                        selectMA.appendChild(emptyOptionMA);
+                    }
+                })
+        }
+
+    }
+
     // Vérifier l'état initial de la case à cocher
     updateHiddenSection();
 
@@ -86,6 +139,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     checkBox.addEventListener('change', updateHiddenSection);
 
     selectCla.addEventListener('change', updateTutByCla);
+
+    selectEnt.addEventListener('change', updateMA);
+
 
     dropD.addEventListener('change', () => {
         const selected = dropD.value;
@@ -168,6 +224,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     monTut.textContent = data.nomMonTu + " " + data.preMonTut; // Utiliser le nom de la classe
                     selectTut.appendChild(monTut);
 
+
                     data.clas.forEach(cla => {
                         if (cla.idCla != data.idMaCla) {
                             const option = document.createElement("option");
@@ -186,8 +243,18 @@ document.addEventListener('DOMContentLoaded', ()=> {
                         }
                     })
 
+                    const emptyOptionCla = document.createElement("option");
+                    emptyOptionCla.value = "";
+                    emptyOptionCla.textContent = "Enlever la classe"; // Texte de l'option vide
+                    selectCla.appendChild(emptyOptionCla);
+
+                    const emptyOptionTut = document.createElement("option");
+                    emptyOptionTut.value = "";
+                    emptyOptionTut.textContent = "Enlever le tuteur"; // Texte de l'option vide
+                    selectTut.appendChild(emptyOptionTut);
                 })
             selectCla.addEventListener('change', updateTutByCla);
+            selectEnt.addEventListener('change', updateMA);
         }
 
 

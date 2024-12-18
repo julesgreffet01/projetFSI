@@ -120,15 +120,18 @@ class MaitreApprentissageDAO extends DAO
         return $result;
     }
 
-    public function getAllMaByEnt(Entreprise $ent): bool {
-        $result = false;
+    public function getAllMaByEnt(Entreprise $ent): array {
+        $result = [];
         $query= "Select * from MaitreApprentissage where IdEnt = :idEnt";
         $stmt = $this->bdd->prepare($query);
-        $stmt->execute([
+        $r = $stmt->execute([
             'idEnt' => $ent->getIdEnt()
         ]);
-        if ($stmt->rowCount() > 0) {
-            $result = true;
+        if ($r) {
+            foreach ($stmt as $row) {
+                $result[] = new MaitreApprentissage($row['IdMai'], $row['NomMai'], $row['PreMai'], $row['TelMai'], $row['MaiMai'], $ent);
+
+            }
         }
         return $result;
     }
