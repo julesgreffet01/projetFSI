@@ -1,13 +1,11 @@
 <div class="alerteadmin">
     <h1>Alerte</h1>
+    <?php foreach($als as $etu): ?>
     <p>
-        <input type="checkbox" class="coche">
-        <label>Visite pour Jules Neuville le 27/09/2025</label>
+<!--        <input type="checkbox" class="coche">-->
+        <label><?php echo $etu?> </label>
     </p>
-    <p>
-        <input type="checkbox" class="coche">
-        <label>Visite pour Jules Greffet le 27/09/2025</label>
-    </p>
+    <?php endforeach; ?>
 </div>
 
 <div class="centre">

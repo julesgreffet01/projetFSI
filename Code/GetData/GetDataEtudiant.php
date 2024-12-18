@@ -55,6 +55,51 @@ if (isset($_GET['reset'])) {
 }
 
 
+if(isset($_GET['resetTut'])){
+    $tuts = $tutDAO->getAllTutGood();
+    try {
+        header('Content-Type: application/json');
+
+        $tutsArray = array_map(function ($tut) {
+            return $tut->toArray();
+        }, $tuts);
+
+        echo json_encode([
+            'tuts' => $tutsArray
+        ]);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+
+
+}
+
+if (isset($_GET['idCla'])){
+    $idCla = intval($_GET['idCla']);
+    $tuts = $tutDAO->getTutByCla($idCla);
+    try {
+
+        header('Content-Type: application/json');
+
+        $tutsArray = array_map(function ($tut) {
+            return $tut->toArray();
+        }, $tuts);
+
+        echo json_encode([
+            'tuts' => $tutsArray
+        ]);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+}
+
+
 if (isset($_GET['idEtu'])){
 
     $idEtu = intval($_GET['idEtu']);
