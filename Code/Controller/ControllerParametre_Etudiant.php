@@ -89,7 +89,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     }
 
     if (isset($_POST['btnUpdate'])){
-
+        //TODO finir
     }
     include_once ('../View/header_admin.php');
     include_once '../View/Page_Parametre_Etudiant.php';
