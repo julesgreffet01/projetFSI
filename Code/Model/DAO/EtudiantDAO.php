@@ -574,6 +574,7 @@ class EtudiantDAO extends DAO
     }
 
     public function getAllEtuNoTutByCla(Classe $cla) : array {
+        $result = [];
         $entDAO = new EntrepriseDAO($this->bdd);
         $claDAO = new ClasseDAO($this->bdd);
         $maDAO = new MaitreApprentissageDAO($this->bdd);
@@ -606,8 +607,6 @@ class EtudiantDAO extends DAO
                 }
                 $result[] = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
-        } else {
-            $result = [null];
         }
         return $result;
     }

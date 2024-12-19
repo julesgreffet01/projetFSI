@@ -109,4 +109,12 @@ class Etudiant extends Utilisateur
         $this->mesBilan2 = $mesBilan2;
     }
 
+    public function toArray(): array{
+        return [
+            'idEtu' => $this->idUti,
+            'preEtu' => $this->preUti,
+            'nomEtu' => $this->nomUti
+        ];
+    }
+
 }

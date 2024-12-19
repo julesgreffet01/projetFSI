@@ -214,44 +214,82 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     selectCla.innerHTML = "";
                     selectTut.innerHTML = "";
 
-                    const maCla = document.createElement('option');
-                    maCla.value = data.idMaCla; // Utiliser l'identifiant de la classe
-                    maCla.textContent = data.libMaCla; // Utiliser le nom de la classe
-                    selectCla.appendChild(maCla);
 
-                    const monTut = document.createElement('option');
-                    monTut.value = data.idMonTut; // Utiliser l'identifiant de la classe
-                    monTut.textContent = data.nomMonTu + " " + data.preMonTut; // Utiliser le nom de la classe
-                    selectTut.appendChild(monTut);
+                    if(data.idMaCla){
+                        const maCla = document.createElement('option');
+                        maCla.value = data.idMaCla; // Utiliser l'identifiant de la classe
+                        maCla.textContent = data.libMaCla; // Utiliser le nom de la classe
+                        selectCla.appendChild(maCla);
+
+                        data.clas.forEach(cla => {
+                            if (cla.idCla != data.idMaCla) {
+                                const option = document.createElement("option");
+                                option.value = cla.idCla; // Utiliser l'identifiant de la classe
+                                option.textContent = cla.libCla; // Utiliser le nom de la classe
+                                selectCla.appendChild(option);
+                            }
+                        })
+
+                        const emptyOptionCla = document.createElement("option");
+                        emptyOptionCla.value = "";
+                        emptyOptionCla.textContent = "Enlever la classe"; // Texte de l'option vide
+                        selectCla.appendChild(emptyOptionCla);
+
+                    } else {
+                        const emptyCla = document.createElement('option');
+                        emptyCla.value='';
+                        emptyCla.textContent = '';
+                        selectCla.appendChild(emptyCla);
+
+                        data.clas.forEach(cla => {
+                            if (cla.idCla != data.idMaCla) {
+                                const option = document.createElement("option");
+                                option.value = cla.idCla; // Utiliser l'identifiant de la classe
+                                option.textContent = cla.libCla; // Utiliser le nom de la classe
+                                selectCla.appendChild(option);
+                            }
+                        })
+                    }
 
 
-                    data.clas.forEach(cla => {
-                        if (cla.idCla != data.idMaCla) {
-                            const option = document.createElement("option");
-                            option.value = cla.idCla; // Utiliser l'identifiant de la classe
-                            option.textContent = cla.libCla; // Utiliser le nom de la classe
-                            selectCla.appendChild(option);
-                        }
-                    })
 
-                    data.tuts.forEach(tut => {
-                        if (tut.idTut != data.idMonTut) {
-                            const option = document.createElement("option");
-                            option.value = tut.idTut; // Utiliser l'identifiant de la classe
-                            option.textContent = tut.nomTut + " " + tut.preTut; // Utiliser le nom de la classe
-                            selectTut.appendChild(option);
-                        }
-                    })
 
-                    const emptyOptionCla = document.createElement("option");
-                    emptyOptionCla.value = "";
-                    emptyOptionCla.textContent = "Enlever la classe"; // Texte de l'option vide
-                    selectCla.appendChild(emptyOptionCla);
+                    if(data.idMonTut){
+                        const monTut = document.createElement('option');
+                        monTut.value = data.idMonTut; // Utiliser l'identifiant de la classe
+                        monTut.textContent = data.nomMonTu + " " + data.preMonTut; // Utiliser le nom de la classe
+                        selectTut.appendChild(monTut);
 
-                    const emptyOptionTut = document.createElement("option");
-                    emptyOptionTut.value = "";
-                    emptyOptionTut.textContent = "Enlever le tuteur"; // Texte de l'option vide
-                    selectTut.appendChild(emptyOptionTut);
+                        data.tuts.forEach(tut => {
+                            if (tut.idTut != data.idMonTut) {
+                                const option = document.createElement("option");
+                                option.value = tut.idTut; // Utiliser l'identifiant de la classe
+                                option.textContent = tut.nomTut + " " + tut.preTut; // Utiliser le nom de la classe
+                                selectTut.appendChild(option);
+                            }
+                        })
+
+                        const emptyOptionTut = document.createElement("option");
+                        emptyOptionTut.value = "";
+                        emptyOptionTut.textContent = "Enlever le tuteur"; // Texte de l'option vide
+                        selectTut.appendChild(emptyOptionTut);
+
+                    } else {
+                        const emptyTut = document.createElement('option');
+                        emptyTut.value = ""; // Utiliser l'identifiant de la classe
+                        emptyTut.textContent = ""; // Utiliser le nom de la classe
+                        selectTut.appendChild(emptyTut);
+
+                        data.tuts.forEach(tut => {
+                            if (tut.idTut != data.idMonTut) {
+                                const option = document.createElement("option");
+                                option.value = tut.idTut; // Utiliser l'identifiant de la classe
+                                option.textContent = tut.nomTut + " " + tut.preTut; // Utiliser le nom de la classe
+                                selectTut.appendChild(option);
+                            }
+                        })
+                    }
+
                 })
             selectCla.addEventListener('change', updateTutByCla);
             selectEnt.addEventListener('change', updateMA);
