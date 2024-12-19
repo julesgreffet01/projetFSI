@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/GetData/GetDataEtudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/GetData/GetDataEtudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/MaitreApprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/MaitreApprentissage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Tuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +41,13 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/julesgreffet01/projetFSI.git",
+    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
   }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
