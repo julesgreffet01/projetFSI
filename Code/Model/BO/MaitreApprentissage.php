@@ -82,6 +82,11 @@ class MaitreApprentissage
     {
         $this->nomMai = $nomMai;
     }
-
+    public function toArray(): array {
+        return[
+            'idMA'=> $this->idMai,
+            'nomMA'=> $this->nomMai
+        ];
+    }
 
 }

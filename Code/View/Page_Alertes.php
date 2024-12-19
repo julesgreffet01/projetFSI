@@ -45,7 +45,7 @@
                 <?php if($uti instanceof \BO\Tuteur): ?>
                 <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> </td>
                 <?php elseif($uti instanceof \BO\Administrateur): ?>
-                <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> géré par : <?php $etu->getMonTuteur()->getNomUti() ?> </td>
+                <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> géré par : <?php echo $etu->getMonTuteur()->getNomUti() ?> </td>
                 <?php endif; ?>
                 <td>en retard de <?php if ($years2){ echo $years2?> anné(es), <?php } if ($month2){ echo $month2 ?> mois et <?php } if ($day2){ echo $day2 ?> jour(s) <?php } ?></td>
             </tr>
@@ -55,7 +55,7 @@
                 <?php if($uti instanceof \BO\Tuteur): ?>
                     <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> </td>
                 <?php elseif($uti instanceof \BO\Administrateur): ?>
-                    <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> géré par : <?php $etu->getMonTuteur()->getNomUti() ?> </td>
+                    <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> géré par : <?php echo $etu->getMonTuteur()->getNomUti() ?> </td>
                 <?php endif; ?>
                 <td>en retard de <?php if ($years2){ echo $years2?> anné(es), <?php } if ($month2){ echo $month2 ?> mois et <?php } if ($day2){ echo $day2 ?> jour(s) <?php } ?></td>
             </tr>
@@ -65,7 +65,7 @@
                 <?php if($uti instanceof \BO\Tuteur): ?>
                     <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> </td>
                 <?php elseif($uti instanceof \BO\Administrateur): ?>
-                    <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> géré par : <?php $etu->getMonTuteur()->getNomUti() ?> </td>
+                    <td class="roi">Date de l'oral du bilan 2 pour : <?php echo $etu->getNomUti() ?> géré par : <?php echo $etu->getMonTuteur()->getNomUti() ?> </td>
                 <?php endif; ?>
                 <td>en retard de <?php if ($years2){ echo $years2?> anné(es), <?php } if ($month2){ echo $month2 ?> mois et <?php } if ($day2){ echo $day2 ?> jour(s) <?php } ?></td>
             </tr>

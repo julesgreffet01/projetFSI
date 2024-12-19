@@ -77,8 +77,6 @@ class Tuteur extends Utilisateur
             'nbMax4'=> $this->nbMax4,
             'nbMax5'=> $this->nbMax5
         ];
-
-
     }
 
 

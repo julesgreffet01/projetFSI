@@ -51,6 +51,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $tuteur = new Tuteur($nbMax3, $nbMax4, $nbMax5, 0, $log, $mdp, $mail, $tel, $nom, $pre, $adr, $cp, $vil);
             if($tutDAO->verifLog($log)){
                 $Message = "Log deja utiliser";
+                $verif = false;
             } else {
                 if($tutDAO->create($tuteur)){
                     $Message = "le tuteur a bien été créé";
@@ -60,6 +61,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             }
         } else {
             $Message = "veuillez remplir tous les champs";
+            $verif = false;
         }
     }
     //---------------------- modification ---------------------------
@@ -81,6 +83,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                 if ($tuteur->getLogUti() != $log){                                      //verif si ca a changer : true
                     if ($tutDAO->verifLog($log)){
                         $Message = "Log deja utiliser";
+                        $verif = false;
                     } else {
                         $tuteur->setPreUti($pre);
                         $tuteur->setNomUti($nom);
@@ -118,9 +121,11 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                 }
             } else {
                 $Message = "Ce tuteur n'existe pas";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez selectionner un tuteur à modifier";
+            $verif = false;
         }
     }
     //--------------------------------- suppression -------------------------
@@ -131,20 +136,24 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
                 if ($tuteur){
                     if ($tutDAO->delete($tuteur)){
                         $Message = 'suppression du tuteur ' . $tuteur->getNomUti();
+                        $verif = true;
                         $tuts = $tutDAO->getAll();
                     } else {
                         $Message = "Il y a des etudiants affilié a ce tuteur";
-                        $verif = true;
+                        $verif = false;
                     }
                 } else {
                     $Message = "Ce tuteur n'existe pas";
+                    $verif = false;
                 }
 
             } else {
                 $Message = "veuillez selectionner un tuteur a supprimer";
+                $verif = false;
             }
         } else {
             $Message = "veuillez selectionner un tuteur a supprimer";
+            $verif = false;
         }
     }
     include_once ('../View/header_admin.php');

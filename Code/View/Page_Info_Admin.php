@@ -24,4 +24,7 @@
 
         </div>
     </div>
+    <div class="boutons">
+        <a href="ControllerModifInfo_Admin.php" class="btnModif">Modifier</a>
+    </div>
 </div>

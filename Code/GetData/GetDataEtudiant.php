@@ -1,7 +1,9 @@
 <?php
 
 use DAO\ClasseDAO;
+use DAO\EntrepriseDAO;
 use DAO\EtudiantDAO;
+use DAO\MaitreApprentissageDAO;
 use DAO\TuteurDAO;
 
 require_once __DIR__."/../Model/BO/Administrateur.php";
@@ -9,6 +11,8 @@ require_once __DIR__."/../Model/BDDManager.php";
 require_once __DIR__."/../Model/DAO/EtudiantDAO.php";
 require_once __DIR__."/../Model/DAO/TuteurDAO.php";
 require_once __DIR__."/../Model/DAO/ClasseDAO.php";
+require_once __DIR__."/../Model/DAO/MaitreApprentissageDAO.php";
+require_once __DIR__."/../Model/DAO/EntrepriseDAO.php";
 
 
 require_once __DIR__."/../Model/BO/Etudiant.php";
@@ -24,6 +28,8 @@ $bdd = initialiseConnexionBDD();
 $etuDAO = new EtudiantDAO($bdd);
 $tutDAO = new TuteurDAO($bdd);
 $claDAO = new ClasseDAO($bdd);
+$MADAO = new MaitreApprentissageDAO($bdd);
+$entDAO = new EntrepriseDAO($bdd);
 
 if (isset($_GET['reset'])) {
     // Récupération des données depuis la base de données ou autre source
@@ -47,6 +53,94 @@ if (isset($_GET['reset'])) {
             'clas' => $clasArray,
             'tuts' => $tutsArray
         ]);
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+}
+
+
+if(isset($_GET['resetTut'])){
+    $tuts = $tutDAO->getAllTutGood();
+    try {
+        header('Content-Type: application/json');
+
+        $tutsArray = array_map(function ($tut) {
+            return $tut->toArray();
+        }, $tuts);
+
+        echo json_encode([
+            'tuts' => $tutsArray
+        ]);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+
+
+}
+
+if(isset($_GET['resetMA'])){
+        $MAs = $MADAO->getAll();
+    try {
+        header('Content-Type: application/json');
+
+        $MasArray = array_map(function ($ma) {
+            return $ma->toArray();
+        }, $MAs);
+
+        echo json_encode([
+            'MAs' => $MasArray
+        ]);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+}
+
+if(isset($_GET['idEnt'])){
+    $idEnt = $_GET['idEnt'];
+    $ent = $entDAO->find($idEnt);
+    $MAs = $MADAO->getAllMaByEnt($ent);
+
+    try {
+        header('Content-Type: application/json');
+
+        $maArray = array_map(function ($ma) {
+            return $ma->toArray();
+        }, $MAs);
+
+        echo json_encode([
+            'MAs' => $maArray
+        ]);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
+    }
+}
+
+if (isset($_GET['idCla'])){
+    $idCla = intval($_GET['idCla']);
+    $tuts = $tutDAO->getTutByCla($idCla);
+    try {
+
+        header('Content-Type: application/json');
+
+        $tutsArray = array_map(function ($tut) {
+            return $tut->toArray();
+        }, $tuts);
+
+        echo json_encode([
+            'tuts' => $tutsArray
+        ]);
+
     } catch (Exception $e) {
         header('Content-Type: application/json');
         echo json_encode(['error' => $e->getMessage()]);

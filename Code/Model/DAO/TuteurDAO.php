@@ -214,5 +214,26 @@ class TuteurDAO extends DAO
         return $result;
     }
 
+    public function getTutByCla(int $idCla) :array {
+        $result = [];
+        $tuts = $this->getAllTutGood();
+        foreach ($tuts as $tut) {
+            if($idCla == 1){
+                if (!$this->verifNbMaxEtu3($tut)){
+                    $result[] = $tut;
+                }
+            } else if($idCla == 2){
+                if (!$this->verifNbMaxEtu4($tut)){
+                    $result[] = $tut;
+                }
+            } else if($idCla == 3){
+                if (!$this->verifNbMaxEtu5($tut)){
+                    $result[] = $tut;
+                }
+            }
+        }
+        return $result;
+    }
+
 
 }

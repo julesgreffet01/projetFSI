@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change afterPath="$PROJECT_DIR$/Code/GetData/GetDataAffectation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Js/AffectationChangeData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Affectation.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -38,13 +53,13 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/julesgreffet01/projetFSI.git",
+    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
   }
-}</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -56,34 +71,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.Page_Parametre_Tuteur.php.executor": "Debug",
-    "PHP Script.testDAO.php.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.Page_Parametre_Tuteur.php.executor&quot;: &quot;Debug&quot;,
+    &quot;PHP Script.testDAO.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/php/ProjetPHP&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Page_Parametre_Tuteur.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AdministrateurDAO.php/Code/View/Page_Parametre_Tuteur.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -154,30 +169,7 @@
       <workItem from="1733999983982" duration="909000" />
       <workItem from="1734006468394" duration="8096000" />
       <workItem from="1734359625389" duration="785000" />
-    </task>
-    <task id="LOCAL-00005" summary="jules">
-      <option name="closed" value="true" />
-      <created>1731666565594</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1731666565594</updated>
-    </task>
-    <task id="LOCAL-00006" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732607121459</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1732607121459</updated>
-    </task>
-    <task id="LOCAL-00007" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732608305079</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1732608305079</updated>
+      <workItem from="1734514688021" duration="6814000" />
     </task>
     <task id="LOCAL-00008" summary="jules">
       <option name="closed" value="true" />
@@ -547,7 +539,31 @@
       <option name="project" value="LOCAL" />
       <updated>1734362560021</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="jules">
+      <option name="closed" value="true" />
+      <created>1734364533201</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1734364533201</updated>
+    </task>
+    <task id="LOCAL-00055" summary="jules">
+      <option name="closed" value="true" />
+      <created>1734514776081</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1734514776081</updated>
+    </task>
+    <task id="LOCAL-00056" summary="jules">
+      <option name="closed" value="true" />
+      <created>1734621719698</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1734621719699</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

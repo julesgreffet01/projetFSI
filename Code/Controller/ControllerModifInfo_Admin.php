@@ -16,14 +16,37 @@ require_once __DIR__."/../Model/BDDManager.php";
 $bdd = initialiseConnexionBDD();
 
 
+
 if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){
     $nameof = "Admin";
     $Admin = new AdministrateurDAO($bdd);
     $utilisateur = $Admin->find(unserialize($_SESSION['utilisateur'])->getIdUti());
+    if (isset($_POST['btnValid'])){
+        if ($_POST['telephone_admin'] != '' && $_POST['adresse_admin'] != '' && $_POST['mail_admin'] != ''){
+            $utilisateur->setTelUti($_POST['telephone_admin']);
+            $utilisateur->setAdrUti($_POST['adresse_admin']);
+            $utilisateur->setMailUti($_POST['mail_admin']);
+            if($Admin->update($utilisateur)){
+                header('Location:ControllerInfo_Admin.php');
+            }
+        }
+    }
 }elseif (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
     $nameof = "Tuteur";
     $Tuteur = new TuteurDAO($bdd);
     $utilisateur = $Tuteur->find(unserialize($_SESSION['utilisateur'])->getIdUti());
+    if (isset($_POST['btnValid'])){
+        if ($_POST['telephone_admin'] != '' && $_POST['adresse_admin'] != '' && $_POST['mail_admin'] != ''){
+            $utilisateur->setTelUti($_POST['telephone_admin']);
+            $utilisateur->setAdrUti($_POST['adresse_admin']);
+            $utilisateur->setMailUti($_POST['mail_admin']);
+            if($Tuteur->update($utilisateur)){
+                header('Location:ControllerInfo_Admin.php');
+            }
+        }
+    }
+} else {
+    header("Location:ControllerConnexion.php");
 }
 
 
