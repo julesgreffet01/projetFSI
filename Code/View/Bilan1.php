@@ -1,7 +1,6 @@
 <?php foreach ($bil1 as $bil): ?>
 <div class="centreinf">
 <div class="block">
-    <form action="ControllerModif_Bilan1.php?id=<?php echo $bil->getIdBil() ?>" method="post">
 <p>
     <label class="intitu">Date de la visite en entreprise</label>
     <?php if($bil->getDatVisEnt() == null): ?>
@@ -51,10 +50,18 @@
     <?php endif; ?>
 </p>
     <div class="btnbila">
+        <form action="ControllerModif_Bilan1.php?id=<?php echo $bil->getIdBil() ?>" method="post">
     <input type="submit" class="btnbleu" value="Modifier" name="btnUpdate">
-    <input type="submit" class="btnrouge" value="Supprimer" name="btnDelete">
-    </div>
     </form>
+        <?php if($compteur>0): ?>
+        <form action="ControllerBilan1.php?id=<?php echo $bil->getIdBil() ?>&idEtu=<?php echo $id ?>" method="post">
+    <input type="submit" class="btnrouge" value="Supprimer" name="btnDelete">
+    </form>
+    <?php endif; ?>
+    </div>
+
 </div>
 </div>
+<?php echo $Message ?>
+<?php $compteur++ ?>
 <?php endforeach; ?>

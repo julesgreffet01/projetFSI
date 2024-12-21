@@ -45,7 +45,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
     if ($etu->getMaSpec()){
         $spec = $etu->getMaSpec()->getNomSpec();
     } else {
-        $spe = "Pas assigné(e)";
+        $spec = "Pas assigné(e)";
     }
     if ($etu->getMonEnt()){
         $ent = $etu->getMonEnt()->getNomEnt();

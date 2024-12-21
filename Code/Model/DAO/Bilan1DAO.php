@@ -134,7 +134,7 @@ class Bilan1DAO extends DAO
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
                 $dat = ($row['DatBil1'] != null) ? new DateTime($row['DatBil1']) : null;
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $dat, $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $dat, $row['IdBilUn'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
             }
         } else {
             $result = [null];
