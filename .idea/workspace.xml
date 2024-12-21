@@ -7,12 +7,11 @@
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerDetail_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerDetail_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Mes_Bilan.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Mes_Bilan.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,15 +163,7 @@
       <workItem from="1734006468394" duration="8096000" />
       <workItem from="1734359625389" duration="785000" />
       <workItem from="1734514688021" duration="6814000" />
-      <workItem from="1734776959530" duration="6800000" />
-    </task>
-    <task id="LOCAL-00008" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732608629814</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1732608629814</updated>
+      <workItem from="1734776959530" duration="15069000" />
     </task>
     <task id="LOCAL-00009" summary="jules">
       <option name="closed" value="true" />
@@ -558,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734621719699</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="jules">
+      <option name="closed" value="true" />
+      <created>1734789571508</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1734789571509</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

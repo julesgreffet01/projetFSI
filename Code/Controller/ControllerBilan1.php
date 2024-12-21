@@ -27,13 +27,11 @@ $stylecss3 = "Bouton.css";
 $bdd = initialiseConnexionBDD();
 $Message = "";
 $verif = false;
-
-
-
 $uti = unserialize($_SESSION['utilisateur']);
 
+
 if ($uti){
-    if ($uti instanceof Administrateur || $uti instanceof Tuteur) {
+
         $id = intval($_GET["idEtu"]);
         $etuDAO = new EtudiantDAO($bdd);
         $etu = $etuDAO->find($id);
@@ -55,9 +53,6 @@ if ($uti){
                 $Message = "Ce bilan n'existe pas";
             }
         }
-    } else {
-        header('Location: ControllerConnexion.php');
-    }
 } else {
     header('Location: ControllerConnexion.php');
 }

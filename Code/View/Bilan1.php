@@ -1,20 +1,19 @@
 <?php foreach ($bil1 as $bil): ?>
 <div class="centreinf">
 <div class="block">
+
+    <?php if($bil->getLibBil() == null): ?>
+        <label class="info"></label>
+    <?php else : ?>
+        <label class="info"><?php echo $bil->getLibBil() ?></label>
+    <?php endif; ?>
+
 <p>
     <label class="intitu">Date de la visite en entreprise</label>
     <?php if($bil->getDatVisEnt() == null): ?>
     <label class="info">Pas encore réaliser</label>
     <?php else : ?>
     <label class="info"><?php echo $bil->getDatVisEnt()->format('d/m/Y') ?></label>
-    <?php endif; ?>
-</p>
-<p>
-    <label class="intitu">Date du Bilan</label>
-    <?php if($bil->getDatVisEnt() == null): ?>
-        <label class="info">Pas encore réaliser</label>
-    <?php else : ?>
-        <label class="info"><?php echo $bil->getDatVisEnt()->format('d/m/Y') ?></label>
     <?php endif; ?>
 </p>
 <p>
@@ -49,6 +48,7 @@
         <label class="info"><?php echo $bil->getRemBil() ?></label>
     <?php endif; ?>
 </p>
+    <?php if($uti instanceof BO\Administrateur || $uti instanceof BO\Tuteur): ?>
     <div class="btnbila">
         <form action="ControllerModif_Bilan1.php?id=<?php echo $bil->getIdBil() ?>" method="post">
     <input type="submit" class="btnbleu" value="Modifier" name="btnUpdate">
@@ -59,6 +59,7 @@
     </form>
     <?php endif; ?>
     </div>
+    <?php endif; ?>
 
 </div>
 </div>
