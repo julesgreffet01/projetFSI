@@ -39,8 +39,6 @@ class Bilan2DAO extends DAO
             $foundObj = $this->find($obj->getIdBil());
             if ($foundObj) {
                 if ($obj->getLibBil() == $foundObj->getLibBil()) {
-                    date_default_timezone_set('Europe/Paris');
-                    $date = new DateTime();
                     $query = "update Bilan2 set LibBilDeux = :lib, NotBilDeux = :not, NotOra2 = :ora, SujBil = :suj, IdUti = :idUti, DatBil2 = :dat where IdBilDeux = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
@@ -49,7 +47,7 @@ class Bilan2DAO extends DAO
                         'ora'=>$obj->getNotOra(),
                         'suj'=> $obj->getSujBil(),
                         'idUti'=>$obj->getMonEtu()->getIdUti(),
-                        'dat'=>$date,
+                        'dat'=>$obj->getDatBil2()->format('Y-m-d H:i:s'),
                         'id'=>$obj->getIdBil()
                     ]);
                     if ($r){

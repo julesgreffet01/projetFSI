@@ -30,5 +30,6 @@
     <input type="submit" class="btnrouge" value="Annuler" name="btnCancel">
         </div>
     </form>
+    <?php echo $Message ?>
 </div>
 </div>

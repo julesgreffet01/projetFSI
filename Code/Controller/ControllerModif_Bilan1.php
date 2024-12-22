@@ -22,14 +22,37 @@ $stylecss = "Blockinfo.css";
 $stylecss3 = "Bouton.css";
 $bdd = initialiseConnexionBDD();
 $uti = unserialize($_SESSION['utilisateur']);
+$Message = "";
 
 if($uti instanceof Administrateur || $uti instanceof Tuteur){
+
         $idBil = intval($_GET['id']);
         $bil1DAO = new Bilan1DAO($bdd);
         $bil1 = $bil1DAO->find($idBil);
         if(isset($_POST['btnValid']) && $_POST['libBil'] != '' && $_POST['datVisEnt'] != '' && $_POST['notEnt'] != '' && $_POST['notOra'] != '' && $_POST['notDos'] != ''){
-            //TODO finir la partie modif
+            $lib = $_POST['libBil'];
+            $dat = new DateTime($_POST['datVisEnt']);
+            $notEnt = floatval($_POST['notEnt']);
+            $notOra = floatval($_POST['notOra']);
+            $notBil = floatval($_POST['notDos']);
+            $remBil = $_POST['remBil'] ?: '';
+            $bil1->setLibBil($lib);
+            $bil1->setDatVisEnt($dat);
+            $bil1->setNotEnt($notEnt);
+            $bil1->setNotOra($notOra);
+            $bil1->setNotBil($notBil);
+            $bil1->setRemBil($remBil);
+            if($bil1DAO->update($bil1)){
+                header('Location: ControllerBilan1.php?idEtu='.$bil1->getMonEtu()->getIdUti());
+            } else {
+                $Message = "echec de la modification du bilan";
+            }
         }
+
+    if(isset($_POST['btnCancel'])){
+        header('Location: ControllerBilan1.php?idEtu='.$bil1->getMonEtu()->getIdUti());
+    }
+
 } else {
     header('Location: ControllerConnexion.php');
 }
