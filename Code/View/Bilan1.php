@@ -1,3 +1,4 @@
+<?php echo $Message ?>
 <?php foreach ($bil1 as $bil): ?>
 <div class="centreinf">
 <div class="block">
@@ -63,6 +64,5 @@
 
 </div>
 </div>
-<?php echo $Message ?>
 <?php $compteur++ ?>
 <?php endforeach; ?>

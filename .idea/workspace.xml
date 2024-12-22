@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerCrea_Bilan1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Controller/ControllerCrea_Bilan2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/View/Crea_Bilan1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/View/Crea_Bilan2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Modif_Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Modif_Bilan1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Modif_Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Modif_Bilan2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Bilan2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Detail_Etudiant.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,15 +167,7 @@
       <workItem from="1734359625389" duration="785000" />
       <workItem from="1734514688021" duration="6814000" />
       <workItem from="1734776959530" duration="18281000" />
-      <workItem from="1734874211880" duration="3160000" />
-    </task>
-    <task id="LOCAL-00011" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732620961891</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1732620961891</updated>
+      <workItem from="1734874211880" duration="9076000" />
     </task>
     <task id="LOCAL-00012" summary="jules update du delete">
       <option name="closed" value="true" />
@@ -558,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734823122196</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="jules">
+      <option name="closed" value="true" />
+      <created>1734877549405</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1734877549405</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
