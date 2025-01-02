@@ -65,5 +65,9 @@
     </div>
 </div>
 <div class="boutons">
-    <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
+    <a href="ControllerMesBilans.php?" class="btnbilan">Mes Bilans</a>
+</div>
+
+<div class="boutons">
+    <a href="ControllerModifInfo_Etu.php?idEtu=<?php echo $id ?>" class="btnModif">Modifier</a>
 </div>

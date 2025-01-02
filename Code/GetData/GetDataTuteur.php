@@ -33,8 +33,7 @@ try {
         'nbMax5'=> $tuteur->getNbMax5(),
         'cp'=> $tuteur->getCpUti(),
         'ville'=> $tuteur->getVilUti(),
-        'login'=>$tuteur->getLogUti(),
-        'mdp'=>$tuteur->getMdpUti()
+        'login'=>$tuteur->getLogUti()
     ]);
 } catch (Exception $e) {
     header('Content-Type: application/json');

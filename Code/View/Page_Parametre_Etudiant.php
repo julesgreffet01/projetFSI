@@ -1,4 +1,4 @@
-<form action="ControllerParametre_Etudiant.php">
+<form action="ControllerParametre_Etudiant.php" method="post">
 <div class="centre">
     <p>
         <label for="preEtu">Prénom</label>
@@ -31,10 +31,6 @@
     <p>
         <label for="logEtu">Log</label>
         <input type="text" class="typetext" name="logEtu" value="" placeholder="" id="logEtu"/>
-    </p>
-    <p>
-        <label for="mdpEtu">Mot de passe</label>
-        <input type="text" class="typetext" name="mdpEtu" value="" placeholder="" id="mdpEtu"/>
     </p>
     <p>
         <label for="altEtu">Alternance</label>
@@ -97,6 +93,7 @@
             <option value="<?php echo $etu->getIdUti() ?>"> <?php echo $etu->getNomUti() ?> </option>
         <?php endforeach; ?>
     </select>
+    <?php echo $Message ?>
 </div>
 </div>
 <div class="infoparametre">
@@ -104,5 +101,6 @@
     <input type="submit" name="btnUpdate" value="Modifier" class="btnbleu"/>
     <input type="submit" name="btnDelete" value="Supprimer" class="btnrouge"/>
 </div>
+
     <script src = "../Js/EtudiantChangeData.js"></script>
 </form>

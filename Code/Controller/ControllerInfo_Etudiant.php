@@ -2,6 +2,7 @@
 
 use BO\Administrateur;
 use BO\Etudiant;
+use DAO\EtudiantDAO;
 
 session_start(); // démarrage de la session de l'utilisateur
 
@@ -15,14 +16,20 @@ require_once  __DIR__ ."/../Model/BO/Bilan1.php";
 require_once  __DIR__ ."/../Model/BO/Bilan2.php";
 require_once  __DIR__ ."/../Model/BO/Classe.php";
 
+require_once __DIR__ ."/../Model/DAO/EtudiantDAO.php";
+require_once __DIR__ ."/../Model/BDDManager.php";
+
 
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
 $stylecss2 = "Bouton.css";
+$bdd = initialiseConnexionBDD();
 
 if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que c'est un étudiant
-    $etu = unserialize($_SESSION['utilisateur']);
+    $etuDAO = new EtudiantDAO($bdd);
+    $etu = $etuDAO->find(unserialize($_SESSION['utilisateur'])->getIdUti());
 
+    $id = $etu->getIdUti();
     $nom = $etu->getNomUti();
     $pre = $etu->getPreUti();
     $tel = $etu->getTelUti();

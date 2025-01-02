@@ -44,15 +44,17 @@ if ($uti) {
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($adminDAO->verifLog($_POST['identifiant'])){
                     $message = "Log deja utiliser";
+                    $verif = false;
                 } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);
 
                     if ($adminDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
-                        $verif = false;
+                        $verif = true;
                     } else {
                         $message = "erreur update";
+                        $verif = false;
                     }
                 }
             } else {
@@ -63,6 +65,7 @@ if ($uti) {
                     $verif = true;
                 } else {
                     $message = "erreur update";
+                    $verif = false;
                 }
             }
 
@@ -71,6 +74,7 @@ if ($uti) {
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($etuDAO->verifLog($_POST['identifiant'])){
                     $message = "Log deja utiliser";
+                    $verif = false;
                 } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);
@@ -94,6 +98,7 @@ if ($uti) {
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($tutDAO->verifLog($_POST['identifiant'])){
                     $message = "Log deja utiliser";
+                    $verif = false;
                 } else {
                     $uti->setLogUti($_POST['identifiant']);
                     $uti->setMdpUti($_POST['password']);

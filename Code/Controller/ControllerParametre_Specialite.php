@@ -31,6 +31,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     if (isset($_POST['btnAdd'])) {
         if (isset($_POST['specialité-select'])) {
             $Message = "Veuillez en pas selectionner pour le create";
+            $verif = false;
         } else {
             $Message = "";
         }
@@ -44,9 +45,11 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                 $specs = $specDAO->getAll();
             } else {
                 $Message = "creation echoue";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez remplir tous les champs/ne pas selectionner une spécialité";
+            $verif = false;
         }
     }
     //----- update ----
@@ -63,12 +66,15 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                     $specs = $specDAO->getAll();
                 } else {
                     $Message = "update echoue";
+                    $verif = false;
                 }
             } else {
                 $Message = "Cette specialite n'existe pas";
+                $verif = false;
             }
         } else {
             $Message="selectionner une specialité/remplissez tous les champs";
+            $verif = false;
         }
     }
     //------------ delete----------
@@ -83,13 +89,16 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                         $specs = $specDAO->getAll();
                     } else {
                         $Message = "il y a des etudiants dans cette specialite impossible de la supprimer";
+                        $verif = false;
                     }
                 }
             } else {
                 $Message = "Cette specialite n'existe pas";
+                $verif = false;
             }
         } else {
             $Message = "selectionnez une specialité";
+            $verif = false;
         }
     }
     include_once ('../View/header_admin.php');

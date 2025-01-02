@@ -44,7 +44,7 @@ class Etudiant extends Utilisateur
         return $this->monMaitreAp;
     }
 
-    public function setMonMaitreAp(MaitreApprentissage $monMaitreAp): void
+    public function setMonMaitreAp(?MaitreApprentissage $monMaitreAp): void
     {
         $this->monMaitreAp = $monMaitreAp;
     }
@@ -54,7 +54,7 @@ class Etudiant extends Utilisateur
         return $this->maClasse;
     }
 
-    public function setMaClasse(Classe $maClasse): void
+    public function setMaClasse(?Classe $maClasse): void
     {
         $this->maClasse = $maClasse;
     }
@@ -64,7 +64,7 @@ class Etudiant extends Utilisateur
         return $this->maSpec;
     }
 
-    public function setMaSpec(Specialite $maSpec): void
+    public function setMaSpec(?Specialite $maSpec): void
     {
         $this->maSpec = $maSpec;
     }
@@ -74,7 +74,7 @@ class Etudiant extends Utilisateur
         return $this->monTuteur;
     }
 
-    public function setMonTuteur(Tuteur $monTuteur): void
+    public function setMonTuteur(?Tuteur $monTuteur): void
     {
         $this->monTuteur = $monTuteur;
     }
@@ -84,7 +84,7 @@ class Etudiant extends Utilisateur
         return $this->monEnt;
     }
 
-    public function setMonEnt(Entreprise $monEnt): void
+    public function setMonEnt(?Entreprise $monEnt): void
     {
         $this->monEnt = $monEnt;
     }
@@ -107,6 +107,14 @@ class Etudiant extends Utilisateur
     public function setMesBilan2(array $mesBilan2): void
     {
         $this->mesBilan2 = $mesBilan2;
+    }
+
+    public function toArray(): array{
+        return [
+            'idEtu' => $this->idUti,
+            'preEtu' => $this->preUti,
+            'nomEtu' => $this->nomUti
+        ];
     }
 
 }

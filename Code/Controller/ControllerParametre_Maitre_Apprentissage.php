@@ -41,9 +41,11 @@ if (unserialize($_SESSION['utilisateur'])){
                 $mas = $maDAO->getAll();
             } else {
                 $Message = "Erreur creation";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez remplir tous les champs/ne pas selectionner un Maitre d'apprentissage";
+            $verif = false;
         }
     }
 
@@ -69,9 +71,11 @@ if (unserialize($_SESSION['utilisateur'])){
 
             } else {
                 $Message = "veuillez selectionner un Maitre d'apprentissage";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez remplir tous les champs/ selectionner un maitre d'apprentissage a modifier";
+            $verif = false;
         }
     }
 
@@ -86,13 +90,16 @@ if (unserialize($_SESSION['utilisateur'])){
                         $mas = $maDAO->getAll();
                     } else {
                         $Message = "Vous ne pouvez pas supprimer ce maitre d'apprentissage car il possede un/des etudiant(s)";
+                        $verif = false;
                     }
                 }
             } else {
                 $Message = "Pas de Maitre d'apprentissage a cet id";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez selectionner un maitre d'apprentissage";
+            $verif = false;
         }
     }
     include_once ('../View/header_admin.php');

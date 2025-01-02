@@ -34,6 +34,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     if (isset($_POST['btnAdd'])){
         if (isset($_POST['entreprise-select'])){
             $Message = "Enlevez l'entreprise selectionner pour la création";
+            $verif = false;
         } else {
             $Message = "";
         }
@@ -53,6 +54,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             }
         } else {
             $Message = "Veuillez remplir tous les champs/selectionner une entreprise";
+            $verif = false;
         }
     }
 
@@ -79,12 +81,15 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                    $ents = $entDAO->getAll();
                } else {
                    $Message = 'erreur de modification';
+                   $verif = false;
                }
            } else {
                $Message = "Cette entreprise n'existe' pas";
+               $verif = false;
            }
         } else {
             $Message = "Veuillez selectionner une entreprise/remplir tous les champs";
+            $verif = false;
         }
     }
 
@@ -99,15 +104,19 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                         $ents = $entDAO->getAll();
                     } else {
                         $Message = "Il y a des etudiants ou des maitres d'apprentissage dans cet entreprise";
+                        $verif = false;
                     }
                 } else {
                     $Message = "Cette entreprise n'existe' pas";
+                    $verif = false;
                 }
             } else {
                 $Message = "Veuillez selectionner une entreprise";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez selectionner une entreprise";
+            $verif = false;
         }
     }
 

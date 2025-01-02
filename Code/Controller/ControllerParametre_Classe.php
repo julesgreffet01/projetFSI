@@ -38,9 +38,11 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                 $clas = $claDAO->getAll();
             } else {
                 $Message = "erreur de creation";
+                $verif = false;
             }
         } else {
             $Message = "Veuillez remplir tous les champs/ na pas séléctioner une classe";
+            $verif = false;
         }
     }
 
@@ -63,6 +65,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             }
         } else {
             $Message = "selectionnez une classe / remplissez tous les champs";
+            $verif = false;
         }
     }
 
@@ -76,12 +79,15 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                     $clas = $claDAO->getAll();
                 } else {
                     $Message = "Il y des etudiants dans cette classe";
+                    $verif = false;
                 }
             } else {
                 $Message = "selectionnez une classe";
+                $verif = false;
             }
         } else {
             $Message = "selectionnez une classe";
+            $verif = false;
         }
 
     }

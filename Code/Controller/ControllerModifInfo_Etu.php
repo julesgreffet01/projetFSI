@@ -3,6 +3,7 @@
 
 session_start();
 
+use BO\Entreprise;
 use BO\Etudiant;
 use DAO\EntrepriseDAO;
 use DAO\EtudiantDAO;
@@ -20,8 +21,19 @@ $bdd = initialiseConnexionBDD();
 
 if(unserialize($_SESSION['utilisateur'])instanceof Etudiant){
     $etudao = new EtudiantDAO($bdd);
-    $utilisateur = $etudao->find(unserialize($_SESSION['utilisateur'])->getIdUti());
-
+    $utilisateur = $etudao->find($_GET['idEtu']);
+    if (isset($_POST['btnValide'])){
+        if ($_POST['telephone_etu'] != '' && $_POST['adresse_etu'] != '' && $_POST['mail_etu'] != ''){
+            $utilisateur->setTelUti($_POST['telephone_etu']);
+            $utilisateur->setAdrUti($_POST['adresse_etu']);
+            $utilisateur->setMailUti($_POST['mail_etu']);
+            if($etudao->update($utilisateur)){
+                header('location:ControllerInfo_Etudiant.php');
+            }
+        }
+    } else if(isset($_POST['btnCancel'])){
+        header('location:ControllerInfo_Etudiant.php');
+    }
 }else{
     header('Location: connexion.php');
 }
