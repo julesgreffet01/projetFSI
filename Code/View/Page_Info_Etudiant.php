@@ -30,6 +30,15 @@
                 <label class="intitu">Spécialisation</label>
                 <label class="info"><?php echo $spec ?></label>
             </p>
+            <div class="gauche">
+            <div class="boutons">
+                <a href="ControllerMesBilans.php?" class="btnbilan">Mes Bilans</a>
+            </div>
+
+            <div class="boutons">
+                <a href="ControllerModifInfo_Etu.php?idEtu=<?php echo $id ?>" class="btnbleu">Modifier</a>
+            </div>
+            </div>
         </div>
 
     </div>
@@ -60,14 +69,9 @@
                 <label class="intitu">Mail</label>
                 <label class="info"><?php echo $mailMai ?></label>
             </p>
+
         </div>
 
     </div>
 </div>
-<div class="boutons">
-    <a href="ControllerMesBilans.php?" class="btnbilan">Mes Bilans</a>
-</div>
 
-<div class="boutons">
-    <a href="ControllerModifInfo_Etu.php?idEtu=<?php echo $id ?>" class="btnModif">Modifier</a>
-</div>
