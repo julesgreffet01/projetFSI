@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/GetData/GetDataAffectation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Js/AffectationChangeData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Affectation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Maitre_Apprentissage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Specialite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Js/EtudiantChangeData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Affectation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Affectation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Etudiant.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,12 +42,16 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/julesgreffet01/projetFSI.git",
-    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
-  }
-}]]></component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
+    &quot;accountId&quot;: &quot;dac9bae2-1424-4f9c-8b16-57ee56d7800a&quot;
+  },
+  &quot;editorReviewEnabled&quot;: false
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -165,11 +158,31 @@
       <workItem from="1733826519023" duration="4053000" />
       <workItem from="1733836120670" duration="5201000" />
       <workItem from="1733850394803" duration="7494000" />
-      <workItem from="1733927426129" duration="996000" />
-      <workItem from="1733999983982" duration="909000" />
-      <workItem from="1734006468394" duration="8096000" />
-      <workItem from="1734359625389" duration="785000" />
-      <workItem from="1734514688021" duration="6814000" />
+      <workItem from="1733938168877" duration="4841000" />
+    </task>
+    <task id="LOCAL-00005" summary="jules">
+      <option name="closed" value="true" />
+      <created>1731666565594</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731666565594</updated>
+    </task>
+    <task id="LOCAL-00006" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732607121459</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732607121459</updated>
+    </task>
+    <task id="LOCAL-00007" summary="jules">
+      <option name="closed" value="true" />
+      <created>1732608305079</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732608305079</updated>
     </task>
     <task id="LOCAL-00008" summary="jules">
       <option name="closed" value="true" />
@@ -517,53 +530,29 @@
     </task>
     <task id="LOCAL-00051" summary="jules">
       <option name="closed" value="true" />
-      <created>1734014699988</created>
+      <created>1733940467944</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1734014699988</updated>
+      <updated>1733940467944</updated>
     </task>
     <task id="LOCAL-00052" summary="jules">
       <option name="closed" value="true" />
-      <created>1734359686134</created>
+      <created>1733948245155</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1734359686134</updated>
+      <updated>1733948245155</updated>
     </task>
     <task id="LOCAL-00053" summary="jules">
       <option name="closed" value="true" />
-      <created>1734362560021</created>
+      <created>1733950090728</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1734362560021</updated>
+      <updated>1733950090729</updated>
     </task>
-    <task id="LOCAL-00054" summary="jules">
-      <option name="closed" value="true" />
-      <created>1734364533201</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1734364533201</updated>
-    </task>
-    <task id="LOCAL-00055" summary="jules">
-      <option name="closed" value="true" />
-      <created>1734514776081</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1734514776081</updated>
-    </task>
-    <task id="LOCAL-00056" summary="jules">
-      <option name="closed" value="true" />
-      <created>1734621719698</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1734621719699</updated>
-    </task>
-    <option name="localTasksCounter" value="57" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
