@@ -6,7 +6,6 @@ use DAO\AdministrateurDAO;
 use DAO\TuteurDAO;
 
 session_start();
-
 require_once __DIR__."/../Model/BO/Administrateur.php";
 require_once __DIR__."/../Model/BO/Etudiant.php";
 require_once __DIR__."/../Model/BO/Tuteur.php";
@@ -21,6 +20,7 @@ require_once __DIR__."/../Model/BDDManager.php";
 
 $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
+$stylecss2 = "Bouton.css";
 $bdd = initialiseConnexionBDD();
 $uti = unserialize($_SESSION['utilisateur']);
 
