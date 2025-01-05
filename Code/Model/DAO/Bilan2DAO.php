@@ -16,14 +16,16 @@ class Bilan2DAO extends DAO
     {
         $result = false;
         if ($obj instanceof Bilan2) {
-            $query = "insert into Bilan2 (LibBilDeux, NotBilDeux, NotOra2, SujBil, IdUti) values (:lib, :not, :ora, :suj, :idUti)";
+            $query = "insert into Bilan2 (LibBilDeux, NotBilDeux, NotOra2, SujBil, IdUti, DatBil2) values (:lib, :not, :ora, :suj, :idUti, :datBil)";
             $stmt = $this->bdd->prepare($query);
+            $dat = $obj->getDatBil2() ? $obj->getDatBil2()->format('Y-m-d H:i:s') : null;
             $r = $stmt->execute([
                 'lib'=> $obj->getLibBil(),
                 'not'=> $obj->getNotBil(),
                 'ora'=>$obj->getNotOra(),
                 'suj'=> $obj->getSujBil(),
-                'idUti'=>$obj->getMonEtu()->getIdUti()
+                'idUti'=>$obj->getMonEtu()->getIdUti(),
+                'datBil'=>$dat
             ]);
             if ($r){
                 $result = true;
@@ -39,17 +41,16 @@ class Bilan2DAO extends DAO
             $foundObj = $this->find($obj->getIdBil());
             if ($foundObj) {
                 if ($obj->getLibBil() == $foundObj->getLibBil()) {
-                    date_default_timezone_set('Europe/Paris');
-                    $date = new DateTime();
                     $query = "update Bilan2 set LibBilDeux = :lib, NotBilDeux = :not, NotOra2 = :ora, SujBil = :suj, IdUti = :idUti, DatBil2 = :dat where IdBilDeux = :id";
                     $stmt = $this->bdd->prepare($query);
+                    $dat = $obj->getDatBil2() ? $obj->getDatBil2()->format('Y-m-d H:i:s') : null;
                     $r = $stmt->execute([
                         'lib'=> $obj->getLibBil(),
                         'not'=> $obj->getNotBil(),
                         'ora'=>$obj->getNotOra(),
                         'suj'=> $obj->getSujBil(),
                         'idUti'=>$obj->getMonEtu()->getIdUti(),
-                        'dat'=>$date,
+                        'dat'=>$dat,
                         'id'=>$obj->getIdBil()
                     ]);
                     if ($r){

@@ -294,7 +294,5 @@ document.addEventListener('DOMContentLoaded', ()=> {
             selectCla.addEventListener('change', updateTutByCla);
             selectEnt.addEventListener('change', updateMA);
         }
-
-
     })
 })

@@ -25,6 +25,6 @@
         </div>
     </div>
     <div class="boutons">
-        <a href="ControllerModifInfo_Admin.php" class="btnModif">Modifier</a>
+        <a href="ControllerModifInfo_Admin.php" class="btnbleu">Modifier</a>
     </div>
 </div>

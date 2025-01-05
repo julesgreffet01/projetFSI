@@ -24,21 +24,36 @@ $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
 $stylecss3 = "Bouton.css";
 
-$etu = $etuDAO->find($_GET["idEtu"]);
-$ent = $etu->getMonEnt() ? $entDAO->find($etu->getMonEnt()->getIdEnt()) : null;
+
 
 if (unserialize($_SESSION['utilisateur'])){
-    if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){   //on vérifie que ce soit bien un admin ou un tuteur et pas un étudiant
-        include_once ('../View/Nav_Bar.php');
-        include_once __DIR__."/../View/Page_Detail_Etudiant.php";
-    } else if (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
-        include_once ('../View/Nav_Bar.php');
-        include_once __DIR__."/../View/Page_Detail_Etudiant.php";
+    if (unserialize($_SESSION['utilisateur']) instanceof Administrateur || unserialize($_SESSION['utilisateur']) instanceof Tuteur){   //on vérifie que ce soit bien un admin ou un tuteur et pas un étudiant
+        $etu = $etuDAO->find($_GET["idEtu"]);
+        $id = $etu->getIdUti();
+        $nom = $etu->getNomUti();
+        $pre = $etu->getPreUti();
+        $tel = $etu->getTelUti();
+        $adr = $etu->getAdrUti();
+        $mail = $etu->getMailUti();
+
+        if ($etu->getMaClasse()){
+            $cla = $etu->getMaClasse()->getLibCla();
+        } else {
+            $cla = "Pas assigné(e)";
+        }
+
+        if ($etu->getMaSpec()){
+            $spec = $etu->getMaSpec()->getNomSpec();
+        } else {
+            $spec = "Pas assigné(e)";
+        }
+
     } else {
         header('location: ControllerConnexion.php');
     }
 } else {
     header('location: ControllerConnexion.php');
 }
-
+include_once ('../View/Nav_Bar.php');
+include_once __DIR__."/../View/Page_Detail_Etudiant.php";
 

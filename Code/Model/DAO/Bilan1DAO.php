@@ -17,15 +17,17 @@ class Bilan1DAO extends DAO
     {
         $result = false;
         if ($obj instanceof Bilan1) {
-            $query = "insert into Bilan1 (LibBilUn, NotBilUn, RemBilUn, NotEnt, NotOra1, IdUti) VALUES (:lib, :not, :rem, :ent, :o1, :idUti)";
+            $query = "insert into Bilan1 (LibBilUn, NotBilUn, RemBilUn, NotEnt, NotOra1, IdUti, DatBil1) VALUES (:lib, :not, :rem, :ent, :o1, :idUti, :dat)";
             $stmt = $this->bdd->prepare($query);
+            $dat = $obj->getDatVisEnt()?->format('Y-m-d H:i:s');
             $r = $stmt->execute([
                 'lib' => $obj->getLibBil(),
                 'not' => $obj->getNotBil(),
                 'rem' => $obj->getRemBil(),
                 'ent' => $obj->getNotEnt(),
                 'o1' => $obj->getNotOra(),
-                'idUti' => $obj->getMonEtu()->getIdUti()
+                'idUti' => $obj->getMonEtu()->getIdUti(),
+                'dat' => $dat
             ]);
             if ($r) {
                 $result = true;
@@ -41,17 +43,16 @@ class Bilan1DAO extends DAO
             $foundObj = $this->find($obj->getIdBil());
             if ($foundObj) {
                 if ($obj->getIdBil() == $foundObj->getIdBil()) {
-                    date_default_timezone_set('Europe/Paris');
-                    $date = new DateTime();
                     $query = "update Bilan1 set LibBilUn = :lib, NotBilUn = :not, RemBilUn = :rem, NotEnt = :ent, NotOra1 = :o1, DatBil1 = :dat, IdUti = :idUti where IdBilUn = :idBil";
                     $stmt = $this->bdd->prepare($query);
+                    $dat = $obj->getDatVisEnt()?->format('Y-m-d H:i:s');
                     $r = $stmt->execute([
                         'lib' => $obj->getLibBil(),
                         'not' => $obj->getNotBil(),
                         'rem' => $obj->getRemBil(),
                         'ent' => $obj->getNotEnt(),
                         'o1' => $obj->getNotOra(),
-                        'dat'=> $date,
+                        'dat'=> $dat,
                         'idUti'=> $obj->getMonEtu()->getIdUti(),
                         'idBil' => $obj->getIdBil()
                         ]);
@@ -134,7 +135,7 @@ class Bilan1DAO extends DAO
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
                 $dat = ($row['DatBil1'] != null) ? new DateTime($row['DatBil1']) : null;
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $dat, $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $dat, $row['IdBilUn'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $etudiant);
             }
         } else {
             $result = [null];
