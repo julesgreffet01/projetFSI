@@ -181,12 +181,12 @@ class EtudiantDAO extends DAO
                 }
             }
             else {
-                $query = "delete from bilan1 where IdUti = :idUti";
+                $query = "delete from Bilan1 where IdUti = :idUti";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt->execute([
                     'idUti' => $obj->getIdUti()
                 ]);
-                $query2 = "delete from bilan2 where IdUti = :idUti";
+                $query2 = "delete from Bilan2 where IdUti = :idUti";
                 $stmt = $this->bdd->prepare($query2);
                 $r2 = $stmt->execute([
                     'idUti' => $obj->getIdUti()
@@ -363,9 +363,10 @@ class EtudiantDAO extends DAO
         return $result;
     }
 
-    public function auth(string $log, string $mdp) : ?object {
+    public function auth(string $log, string $mdp): ?object {
         $result = null;
 
+        // Initialisation des autres DAO nécessaires
         $entDAO = new EntrepriseDAO($this->bdd);
         $claDAO = new ClasseDAO($this->bdd);
         $maDAO = new MaitreApprentissageDAO($this->bdd);
@@ -374,49 +375,51 @@ class EtudiantDAO extends DAO
         $bil1DAO = new Bilan1DAO($this->bdd);
         $bil2DAO = new Bilan2DAO($this->bdd);
 
-        $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 1";
+        // Requête pour récupérer uniquement par login (pas de vérification de mot de passe ici)
+        $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND IdTypUti = 1";
         $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
-            "log" => $log,
-            "mdp" => $mdp
-        ]);
-        if ($r){
-            $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
-            if ($row){
+        $stmt->execute(["log" => $log]);
+
+        if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            // Vérification du mot de passe haché avec password_verify
+            if (password_verify($mdp, $row['MdpUti'])) {
+                // Chargement des données associées (si les identifiants sont valides)
                 $ent = $cla = $spec = $ma = $tut = null;
-                if ($row['IdEnt']){
+
+                if ($row['IdEnt']) {
                     $ent = $entDAO->find($row["IdEnt"]);
                 }
-                if ($row['IdCla']){
+                if ($row['IdCla']) {
                     $cla = $claDAO->find($row["IdCla"]);
-
                 }
-                if ($row['IdSpe']){
+                if ($row['IdSpe']) {
                     $spec = $specDAO->find($row["IdSpe"]);
                 }
-                if ($row['IdMai']){
+                if ($row['IdMai']) {
                     $ma = $maDAO->find($row["IdMai"]);
                 }
-                if ($row['IdTut']){
+                if ($row['IdTut']) {
                     $tut = $tutDAO->find($row["IdTut"]);
                 }
-                $result = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
 
+                // Création de l'objet Etudiant avec les données récupérées
+                $result = new Etudiant(
+                    $row['AltUti'], $tut, $spec, $cla, $ma, $ent,
+                    $row['IdUti'], $row['LogUti'], $row['MdpUti'],
+                    $row['MaiUti'], $row['TelUti'], $row['NomUti'],
+                    $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']
+                );
+
+                // Chargement des bilans associés
                 $bil1 = $bil1DAO->getAllBil1ByEtu($result);
-                if ($bil1 == null){
-                    $bil1 = [];
-                }
-                $result->setMesBilan1($bil1);
-
+                $result->setMesBilan1($bil1 ?? []);
 
                 $bil2 = $bil2DAO->getAllBil2ByEtu($result);
-                if ($bil2 == null){
-                    $bil2 = [];
-                }
-                $result->setMesBilan2($bil2);
+                $result->setMesBilan2($bil2 ?? []);
             }
         }
-        return $result;
+
+        return $result; // Retourne l'objet Etudiant ou null si la connexion échoue
     }
 
     public function getAllEtuByTut(Tuteur $tut) : ?array {

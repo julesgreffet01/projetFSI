@@ -4,7 +4,7 @@ namespace DAO;
 
 use BO\Specialite;
 use PDO;
-require_once 'DAO.php';
+require_once __DIR__."/DAO.php";
 
 
 
