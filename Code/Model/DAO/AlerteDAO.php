@@ -9,7 +9,7 @@ use BO\Etudiant;
 use BO\Tuteur;
 use PDO;
 use DateTime;
-require_once "DAO.php";
+require_once __DIR__."/DAO.php";
 
 class AlerteDAO extends DAO
 {

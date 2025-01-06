@@ -49,7 +49,7 @@ ENGINE = INNODB;
 CREATE TABLE Utilisateur (
 	IdUti INT AUTO_INCREMENT,
 	LogUti Varchar(50),
-	MdpUti Varchar(20),
+	MdpUti Varchar(250),
 	MaiUti Varchar(50),
 	TelUti varchar(10),
 	NomUti Varchar(50),

@@ -4,7 +4,7 @@ namespace DAO;
 
 use BO\Administrateur;
 use PDO;
-require_once 'DAO.php';
+require_once __DIR__."/DAO.php";
 
 class AdministrateurDAO extends DAO
 {
@@ -116,22 +116,26 @@ class AdministrateurDAO extends DAO
         return $result;
     }
 
-    public function auth(string $log, string $mdp) :?object {
+    public function auth(string $log, string $mdp): ?object {
         $result = null;
-        $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND MdpUti = :mdp AND IdTypUti = 3";
+        $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND IdTypUti = 3"; // On ne vérifie pas encore le mot de passe ici
         $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
-            "log" => $log,
-            "mdp" => $mdp
-        ]);
-        if ($r) {
-            $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
-            if ($row) {
-                $result = new Administrateur($row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+        $stmt->execute(["log" => $log]);
+
+        if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            // Vérification du mot de passe haché
+            if (password_verify($mdp, $row['MdpUti'])) {
+                // Si la vérification réussit, on retourne un objet Administrateur
+                $result = new Administrateur(
+                    $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'],
+                    $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'],
+                    $row['CpUti'], $row['VilUti']
+                );
             }
         }
-        return $result;
+        return $result; // Retourne null si la connexion échoue
     }
+
 
     public function verifLog(string $log) : bool {
         $result = false;

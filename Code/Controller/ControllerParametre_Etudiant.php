@@ -62,7 +62,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $cp = $_POST['cpEtu'];
             $mail = $_POST['mailEtu'];
             $log = $_POST['logEtu'];
-            $mdp = 'password';
+            $mdp = password_hash('password', PASSWORD_DEFAULT);
             $alt = isset($_POST['altEtu']) ? true : false;
             $monEnt = ($_POST['ent-select'] != '') ? $entDAO->find($_POST['ent-select']) : null;
             $monMA = ($_POST['maitre-select'] != '') ? $maDAO->find($_POST['maitre-select']) : null;

@@ -5,7 +5,7 @@ namespace DAO;
 
 use BO\Tuteur;
 use PDO;
-require_once "DAO.php";
+require_once __DIR__."/DAO.php";
 class TuteurDAO extends DAO
 {
 
@@ -127,20 +127,25 @@ class TuteurDAO extends DAO
 
     public function auth(string $login, string $mdp): ?object {
         $result = null;
-        $query = "SELECT * FROM Utilisateur WHERE LogUti = :login AND MdpUti = :mdp AND IdTypUti = 2";
+
+        $query = "SELECT * FROM Utilisateur WHERE LogUti = :login AND IdTypUti = 2";
         $stmt = $this->bdd->prepare($query);
-        $r = $stmt->execute([
-            "login" => $login,
-            "mdp" => $mdp
-        ]);
-        if ($r) {
-            $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
-            if($row){
-                $result = new Tuteur($row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'], $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+        $stmt->execute(["login" => $login]);
+
+        if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (password_verify($mdp, $row['MdpUti'])) {
+                $result = new Tuteur(
+                    $row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'],
+                    $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'],
+                    $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'],
+                    $row['CpUti'], $row['VilUti']
+                );
             }
         }
-        return $result;
+
+        return $result; // Retourne null si la connexion échoue
     }
+
 
     public function verifLog(string $log) : bool {
         $result = false;
