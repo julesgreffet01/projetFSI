@@ -9,8 +9,8 @@ use DAO\TuteurDAO;
 require_once __DIR__."/../Model/BO/Administrateur.php";
 require_once __DIR__."/../Model/BO/Tuteur.php";
 
-require_once  __DIR__ ."/../Model/DAO/AdministrateurDAO.php";
-require_once  __DIR__ ."/../Model/DAO/TuteurDAO.php";
+require_once __DIR__ ."/../Model/DAO/AdministrateurDAO.php";
+require_once __DIR__ ."/../Model/DAO/TuteurDAO.php";
 require_once __DIR__."/../Model/BDDManager.php";
 
 $bdd = initialiseConnexionBDD();
@@ -30,6 +30,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){
                 header('Location:ControllerInfo_Admin.php');
             }
         }
+    }else if(isset($_POST['btnCancel'])){
+        header('location:ControllerInfo_Admin.php');
     }
 }elseif (unserialize($_SESSION['utilisateur']) instanceof Tuteur){
     $nameof = "Tuteur";
@@ -44,6 +46,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur){
                 header('Location:ControllerInfo_Admin.php');
             }
         }
+    }else if(isset($_POST['btnCancel'])){
+        header('location:ControllerInfo_Admin.php');
     }
 } else {
     header("Location:ControllerConnexion.php");

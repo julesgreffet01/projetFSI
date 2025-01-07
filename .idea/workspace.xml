@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Test/hashage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bdd/update.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerConnexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Tuteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AlerteDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan1DAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/Bilan2DAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/ClasseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/ClasseDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/MaitreApprentissageDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/SpecialiteDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/SpecialiteDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/TuteurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/TuteurDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bdd/Create_table_FSI.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bdd/Create_table_FSI.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModifInfo_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModifInfo_Admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,10 +44,10 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;dac9bae2-1424-4f9c-8b16-57ee56d7800a&quot;
+    &quot;accountId&quot;: &quot;c778ada8-d7e5-4079-9793-ac0393b01b77&quot;
   }
 }</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -76,34 +59,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.Page_Parametre_Tuteur.php.executor": "Debug",
-    "PHP Script.testDAO.php.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "jules",
-    "last_opened_file_path": "C:/wamp64/www/php/projetFsiProd",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.Page_Parametre_Tuteur.php.executor&quot;: &quot;Debug&quot;,
+    &quot;PHP Script.testDAO.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/php/projetFsiProd&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Page_Parametre_Tuteur.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AdministrateurDAO.php/Code/View/Page_Parametre_Tuteur.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -179,6 +162,8 @@
       <workItem from="1734874211880" duration="9076000" />
       <workItem from="1736098461184" duration="289000" />
       <workItem from="1736193703887" duration="3706000" />
+      <workItem from="1736245532575" duration="134000" />
+      <workItem from="1736246858311" duration="927000" />
     </task>
     <task id="LOCAL-00012" summary="jules update du delete">
       <option name="closed" value="true" />
