@@ -1,5 +1,4 @@
-<div class="contenu">
-    <div class="mesinfo">
+    <div class="contenusolotoutseulSEULENCOREPLUS">
         <div class="block">
             <h1>Mes informations</h1>
             <p>
@@ -21,10 +20,10 @@
             <p>
                 <label class="intitu">Mail</label>
                 <label class="info"><?php echo $utilisateur->getMailUti() ?></label>
-
+            <div class="gauche">
+            <div class="boutons">
+                <a href="ControllerModifInfo_Admin.php" class="btnbleu">Modifier</a>
+            </div>
+            </div>
         </div>
     </div>
-    <div class="boutons">
-        <a href="ControllerModifInfo_Admin.php" class="btnbleu">Modifier</a>
-    </div>
-</div>

@@ -1,5 +1,5 @@
-<div class="contenu">
-    <div class="mesinfo">
+<div class="contenusolotoutseul">
+<div class="mesinfo">
         <div class="block">
             <h1>Mes informations</h1>
             <form method="post" action="ControllerModifInfo_Admin.php">
