@@ -4,7 +4,7 @@ namespace DAO;
 
 use BO\Classe;
 use PDO;
-require_once 'DAO.php';
+require_once __DIR__."/DAO.php";
 require_once __DIR__ . '/../BO/Classe.php';
 require_once __DIR__ . '/../DAO/EtudiantDAO.php';
 

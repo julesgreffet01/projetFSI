@@ -7,7 +7,7 @@ use BO\Entreprise;
 use BO\MaitreApprentissage;
 use PDO;
 
-require_once 'DAO.php';
+require_once __DIR__."/DAO.php";
 require_once __DIR__.'/EtudiantDAO.php';
 
 class MaitreApprentissageDAO extends DAO

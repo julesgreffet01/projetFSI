@@ -41,13 +41,14 @@ if ($uti) {
     if (isset($_POST['btnProfil']) && $_POST['identifiant'] !== "" && $_POST['password'] !== "") {
         if ($uti instanceof Administrateur) {
             $adminDAO = new AdministrateurDAO($bdd);
+            $mdpHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($adminDAO->verifLog($_POST['identifiant'])){
                     $message = "Log deja utiliser";
                     $verif = false;
                 } else {
                     $uti->setLogUti($_POST['identifiant']);
-                    $uti->setMdpUti($_POST['password']);
+                    $uti->setMdpUti($mdpHash);
 
                     if ($adminDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
@@ -58,7 +59,7 @@ if ($uti) {
                     }
                 }
             } else {
-                $uti->setMdpUti($_POST['password']);
+                $uti->setMdpUti($mdpHash);
 
                 if ($adminDAO->update($uti)) {
                     $message = "Identifiant et mot de passe modifier";

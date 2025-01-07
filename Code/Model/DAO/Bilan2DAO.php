@@ -7,7 +7,7 @@ use BO\Etudiant;
 use DateTime;
 use PDO;
 
-require_once 'DAO.php';
+require_once __DIR__."/DAO.php";
 
 class Bilan2DAO extends DAO
 {

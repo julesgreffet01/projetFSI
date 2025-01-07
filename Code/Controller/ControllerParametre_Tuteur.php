@@ -44,7 +44,7 @@ if (unserialize($_SESSION["utilisateur"]) instanceof Administrateur) {
             $cp = $_POST['cpTut'];
             $mail = $_POST['mailTut'];
             $log = $_POST['logTut'];
-            $mdp = 'password';
+            $mdp = password_hash('password', PASSWORD_DEFAULT);
             $nbMax3 = ($_POST['nbMaxEtu3'] > 0) ? $_POST['nbMaxEtu3'] : 0;
             $nbMax4 = ($_POST['nbMaxEtu4'] > 0) ? $_POST['nbMaxEtu4'] : 0;
             $nbMax5 = ($_POST['nbMaxEtu5'] > 0) ? $_POST['nbMaxEtu5'] : 0;
