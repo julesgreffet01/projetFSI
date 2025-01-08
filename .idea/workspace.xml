@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Css/Blockinfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Css/Blockinfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/ModifInfo_Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/ModifInfo_Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerConnexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/BDDManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BDDManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +43,13 @@
     &quot;assignee&quot;: &quot;julesgreffet01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/julesgreffet01/projetFSI.git",
-    "accountId": "dac9bae2-1424-4f9c-8b16-57ee56d7800a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
+    &quot;accountId&quot;: &quot;dac9bae2-1424-4f9c-8b16-57ee56d7800a&quot;
   },
-  "editorReviewEnabled": false
-}]]></component>
+  &quot;editorReviewEnabled&quot;: false
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
@@ -71,8 +71,8 @@
     "PHP Script.testDAO.php.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
+    "git-widget-placeholder": "jules",
+    "last_opened_file_path": "C:/wamp64/www/php/projetFsiProd",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
