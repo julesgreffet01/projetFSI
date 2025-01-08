@@ -1,8 +1,6 @@
 body{
-
     background: #F5FBF5;
 }
-
 .block{
     text-align: center;
     background: #E9F6E9;
@@ -10,36 +8,25 @@ body{
     height: 500px;
     border-radius: 30px;
 }
-
 .info{
     color:  #65BA74;
 }
-
-
-
-
 .contenu{
     margin: 70px;
     background: #E9F6E9;
     border-radius: 25px;
     padding: 30px;
     padding-bottom: 130px;
-
 }
-
-
 p{
     text-align: left;
     margin-left: 50px;
     font-size: 18px;
 }
-
-
 .contenu p {
     text-align: justify;
     font-size: 25px;
 }
-
 .logopage {
     width: 100px;
     height: auto;
@@ -53,94 +40,166 @@ p{
     gap: 80px;
     justify-content: center;
 }
-
 .bilan{
     background: #B2DDB5;
     text-align: center;
     border-radius: 15px;
     flex: 1;
     width: 800px;
-    margin: 100px;
+    margin: 50px;
     height: 800px;
 }
-
 .contenubil .cadre .bilan .datmodiflib p {
     text-align: center;
     margin: 30px;
 }
-
 h1{
     margin-top: 100px;
 }
-
 .datemodiflib{
     font-size: 11px;
 }
-
-
 .bilan .datemodiflib p{
     text-align: center;
 }
-
 .block{
     flex: 1;
     width: 800px;
 }
-
 .contenudetail{
     display: flex;
     justify-content: center;
 
 }
-
 .contenudetail .mesinfo .block h1{
     display: flex;
     justify-content: center;
     padding-top: 40px  ;
     padding-bottom: 80px;
 }
-
 .centreinf {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 400px;
+    padding: 80px 800px;
 }
-
 .btnbila{
     bottom: 10px;
     padding: 50px;
     background: #E9F6E9;
     text-align: left;
 }
-
 .contenuetu {
     display: flex;
     justify-content: center;
     gap: 40px;
     padding: 20px;
 }
-
 .mesinfo, .infoentreprise {
     flex: 1;
     max-width: 45%;
 }
-
 .blockinfor{
     text-align: center;
     background: #E9F6E9;
     width: 100%;
     height: 500px;
     border-radius: 30px;
-    }
-
+}
 .boutons{
     text-align: left;
     display: inline;
-
 }
-
 .gauche{
     text-align: left;
     margin-top: 100px;
+}
+.contenusolo{
+    margin: 70px;
+    margin-left: 800px;
+    margin-right: 800px;
+    background: #E9F6E9;
+    border-radius: 25px;
+    padding: 30px;
+    padding-bottom: 130px;
+}
+.contenusolotoutseul{
+    margin: 70px;
+    margin-left: 800px;
+    margin-right: 800px;
+    background: #E9F6E9;
+    border-radius: 25px;
+    padding: 30px;
+    padding-bottom: 130px;
+}
+.titreinfo{
+    color: #65BA74;
+    font-size: 30px;
+}
+.contenusolotoutseulSEULENCOREPLUS{
+    margin: 70px;
+    margin-left: 500px;
+    margin-right: 800px;
+    background: #E9F6E9;
+    border-radius: 25px;
+    padding: 0px;
+    padding-bottom: 0px;
+}
+@media  (max-width: 2000px) {
+    .centreinf {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 700px;
+    }
+}
+@media  (max-width: 1800px) {
+    .contenusolotoutseul {
+        margin: 70px;
+        margin-left: 800px;
+        margin-right: 800px;
+        background: #E9F6E9;
+        border-radius: 25px;
+        padding: 0px;
+        padding-bottom: 0px;
+    }
+    .centreinf {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 400px;
+    }
+}
+@media  (max-width: 1500px) {
+    .bilan{
+        background: #B2DDB5;
+        text-align: center;
+        border-radius: 15px;
+        flex: 1;
+        width: 800px;
+        margin: 10px;
+        height: 800px;
+    }
+    .contenusolotoutseul{
+        margin: 70px;
+        margin-left: 200px;
+        margin-right: 200px;
+        background: #E9F6E9;
+        border-radius: 25px;
+        padding: 30px;
+        padding-bottom: 130px;
+    }
+    .block{
+        flex: 1;
+        width: 100%;
+    }
+    .contenusolotoutseulSEULENCOREPLUS{
+        margin: 70px;
+        margin-left: 200px;
+        margin-right: 200px;
+        background: #E9F6E9;
+        border-radius: 25px;
+        padding: 0px;
+        padding-bottom: 0px;
+    }
 }
