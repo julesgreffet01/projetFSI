@@ -32,11 +32,11 @@
             </p>
             <div class="gauche">
             <div class="boutons">
-                <a href="ControllerMesBilans.php?" class="btnbilan">Mes Bilans</a>
+                <a href="ControllerMesBilans.php" class="btnbilan">Mes Bilans</a>
             </div>
 
             <div class="boutons">
-                <a href="ControllerModifInfo_Etu.php?idEtu=<?php echo $id ?>" class="btnbleu">Modifier</a>
+                <a href="ControllerModifInfo_Etu.php" class="btnbleu">Modifier</a>
             </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
     <div class="mesinfo">
         <div class="blockinfor">
             <h1>Mes informations</h1>
-            <form method="post" action="ControllerModifInfo_Etu.php?idEtu=<?php echo $_GET['idEtu'] ?>">
+            <form method="post" action="ControllerModifInfo_Etu.php">
             <p>
                 <label class="intitu">Nom</label>
                 <label class="info"><?php echo $utilisateur->getNomUti() ?></label>

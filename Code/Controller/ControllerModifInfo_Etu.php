@@ -21,7 +21,7 @@ $bdd = initialiseConnexionBDD();
 
 if(unserialize($_SESSION['utilisateur'])instanceof Etudiant){
     $etudao = new EtudiantDAO($bdd);
-    $utilisateur = $etudao->find($_GET['idEtu']);
+    $utilisateur = $etudao->find(unserialize($_SESSION['utilisateur'])->getIdUti());
     if (isset($_POST['btnValide'])){
         if ($_POST['telephone_etu'] != '' && $_POST['adresse_etu'] != '' && $_POST['mail_etu'] != ''){
             $utilisateur->setTelUti($_POST['telephone_etu']);
