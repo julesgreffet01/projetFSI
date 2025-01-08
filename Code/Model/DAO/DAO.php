@@ -1,13 +1,15 @@
 <?php
 
 namespace DAO;
+
 use PDO;
 
 abstract class DAO
 {
     protected PDO $bdd;
 
-    public function __construct(PDO $bdd) {
+    public function __construct(PDO $bdd)
+    {
         $this->bdd = $bdd;
     }
 

@@ -4,7 +4,8 @@ namespace DAO;
 
 use BO\Classe;
 use PDO;
-require_once __DIR__."/DAO.php";
+
+require_once __DIR__ . "/DAO.php";
 require_once __DIR__ . '/../BO/Classe.php';
 require_once __DIR__ . '/../DAO/EtudiantDAO.php';
 
@@ -102,13 +103,14 @@ class ClasseDAO extends DAO
                 $result[] = new Classe($row['IdCla'], $row['LibCla'], $row['NbEtu']);
             }
         } else {
-            $result = [null] ;
+            $result = [null];
         }
 
         return $result;
     }
 
-    public function verifNbMaxEtu(Classe $obj): bool{
+    public function verifNbMaxEtu(Classe $obj): bool
+    {
         $result = false;
         $etuDAO = new EtudiantDAO($this->bdd);
         $nbEtu = count($etuDAO->getAllEtuByCla($obj));
@@ -118,11 +120,12 @@ class ClasseDAO extends DAO
         return $result;
     }
 
-    public function getAllClaGood() :array{
+    public function getAllClaGood(): array
+    {
         $result = [];
         $mesClas = $this->getAll();
         foreach ($mesClas as $clas) {
-            if(!$this->verifNbMaxEtu($clas)) {
+            if (!$this->verifNbMaxEtu($clas)) {
                 $result[] = $clas;
             }
         }

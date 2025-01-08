@@ -8,7 +8,7 @@ use BO\Etudiant;
 use DateTime;
 use PDO;
 
-require_once __DIR__."/DAO.php";
+require_once __DIR__ . "/DAO.php";
 
 class Bilan1DAO extends DAO
 {
@@ -52,10 +52,10 @@ class Bilan1DAO extends DAO
                         'rem' => $obj->getRemBil(),
                         'ent' => $obj->getNotEnt(),
                         'o1' => $obj->getNotOra(),
-                        'dat'=> $dat,
-                        'idUti'=> $obj->getMonEtu()->getIdUti(),
+                        'dat' => $dat,
+                        'idUti' => $obj->getMonEtu()->getIdUti(),
                         'idBil' => $obj->getIdBil()
-                        ]);
+                    ]);
                     if ($r) {
                         $result = true;
                     }
@@ -124,7 +124,8 @@ class Bilan1DAO extends DAO
         return $result;
     }
 
-    public function getAllBil1ByEtu(Etudiant $etudiant): ?array {
+    public function getAllBil1ByEtu(Etudiant $etudiant): ?array
+    {
         $result = [];
         $query = "select * from Bilan1 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);

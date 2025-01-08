@@ -9,7 +9,8 @@ use BO\Etudiant;
 use BO\Tuteur;
 use PDO;
 use DateTime;
-require_once __DIR__."/DAO.php";
+
+require_once __DIR__ . "/DAO.php";
 
 class AlerteDAO extends DAO
 {
@@ -69,7 +70,8 @@ class AlerteDAO extends DAO
         return [];
     }
 
-    public function getAllAl1ByTut(Tuteur $tut): ?array {
+    public function getAllAl1ByTut(Tuteur $tut): ?array
+    {
         $result = [];
         $al1 = $this->find(1);
         $dateOjd = new DateTime();
@@ -87,7 +89,9 @@ class AlerteDAO extends DAO
         }
         return $result;
     }
-    public function getAllAl2ByTut(Tuteur $tut): ?array {
+
+    public function getAllAl2ByTut(Tuteur $tut): ?array
+    {
         $result = [];
         $al1 = $this->find(1);
         $dateOjd = new DateTime();
@@ -106,7 +110,8 @@ class AlerteDAO extends DAO
         return $result;
     }
 
-    public function getAllAl1(): ?array {
+    public function getAllAl1(): ?array
+    {
         $result = [];
         $tutDAO = new TuteurDAO($this->bdd);
         $tuts = $tutDAO->getAll();
@@ -121,7 +126,8 @@ class AlerteDAO extends DAO
         return $result;
     }
 
-    public function getAllAl2(): ?array {
+    public function getAllAl2(): ?array
+    {
         $result = [];
         $tutDAO = new TuteurDAO($this->bdd);
         $tuts = $tutDAO->getAll();
@@ -136,43 +142,45 @@ class AlerteDAO extends DAO
         return $result;
     }
 
-    public function getAlAccueilEtuByTut(Tuteur $tut): ?array {
+    public function getAlAccueilEtuByTut(Tuteur $tut): ?array
+    {
         $result = [];
         $mesAl1 = $this->getAllAl1ByTut($tut);
         $mesAl2 = $this->getAllAl2ByTut($tut);
         $compteur = 0;
-            foreach ($mesAl1 as $al1) {
-                $result[] = "La visite en entreprise de ".$al1->getPreUti()." ".$al1->getNomUti()." est en retard";
-                $compteur++;
-                if ($compteur >= 2) {
-                    break;
-                }
+        foreach ($mesAl1 as $al1) {
+            $result[] = "La visite en entreprise de " . $al1->getPreUti() . " " . $al1->getNomUti() . " est en retard";
+            $compteur++;
+            if ($compteur >= 2) {
+                break;
             }
-            $max = 0;
-            switch ($compteur) {
-                case 0:
-                    $max = 2;
-                    break;
-                case 1 :
-                    $max = 1;
-                    break;
-                case 2 :
-                    break;
-            }
+        }
+        $max = 0;
+        switch ($compteur) {
+            case 0:
+                $max = 2;
+                break;
+            case 1 :
+                $max = 1;
+                break;
+            case 2 :
+                break;
+        }
 
-            if($max != 0){
-                foreach ($mesAl2 as $al2) {
-                    $result[] = "Le bilan 2 de ".$al2->getPreUti()." ".$al2->getNomUti()." est en retard";
-                    $compteur++;
-                    if ($compteur >= $max) {
-                        break;
-                    }
+        if ($max != 0) {
+            foreach ($mesAl2 as $al2) {
+                $result[] = "Le bilan 2 de " . $al2->getPreUti() . " " . $al2->getNomUti() . " est en retard";
+                $compteur++;
+                if ($compteur >= $max) {
+                    break;
                 }
             }
+        }
         return $result;
     }
 
-    public function getAlAcceuil(): ?array {
+    public function getAlAcceuil(): ?array
+    {
         $result = [];
         $tutDAO = new TuteurDAO($this->bdd);
         $tuts = $tutDAO->getAll();
