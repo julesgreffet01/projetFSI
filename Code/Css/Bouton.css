@@ -25,7 +25,6 @@
     border-radius: 15px;
     padding: 20px;
 }
-
 .btnbil{
     background: #203C25;
     color: #ffffff;
@@ -33,7 +32,6 @@
     padding: 20px;
     font-size: 20px;
 }
-
 .btnbilan{
     background: #203C25;
     color: #ffffff;
@@ -43,13 +41,11 @@
     margin: 50px;
 
 }
-
 .infoparametre{
     position: absolute;
     bottom: 80px;
     right: 80px;
 }
-
 @media (max-width: 1300px) {
     .infoparametre{
         bottom: 20px;

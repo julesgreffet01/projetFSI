@@ -39,6 +39,12 @@
                 <label class="info">Pas assigné(e)</label>
                 <?php endif; ?>
             </p>
+            <div class="gauche">
+            <div class="boutons">
+                <input type="submit" class="btnvert" value="Valider" name="btnValide">
+                <input type="submit" class="btnrouge" value="Annuler" name="btnCancel">
+            </div>
+            </div>
         </div>
 
     </div>
@@ -103,9 +109,5 @@
         </div>
 
     </div>
-</div>
-<div class="boutons">
-    <input type="submit" class="btnvert" value="Valider" name="btnValide">
-    <input type="submit" class="btnrouge" value="Annuler" name="btnCancel">
 </div>
 </form>
