@@ -27,6 +27,8 @@ $bdd = initialiseConnexionBDD();
 if($uti instanceof Administrateur || $uti instanceof Tuteur){
     $idBil = intval($_GET['id']);
     $bil2DAO = new Bilan2DAO($bdd);
+
+    //probleme de l url
     if ($uti instanceof Tuteur){
         $mesBil = [];
         foreach($uti->getMesEtu() as $etu){

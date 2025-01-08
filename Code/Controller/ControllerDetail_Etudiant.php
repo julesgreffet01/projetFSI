@@ -24,10 +24,36 @@ $titrefichier = "Accueil";
 $stylecss = "Blockinfo.css";
 $stylecss3 = "Bouton.css";
 
+$uti = unserialize($_SESSION['utilisateur']);
 
+if ($uti){
+    if ($uti instanceof Administrateur || $uti instanceof Tuteur){   //on vérifie que ce soit bien un admin ou un tuteur et pas un étudiant
+        $idEtu = $_GET["idEtu"];
+        if ($uti instanceof Tuteur) {
+            $mesEtu = [];
+            foreach ($uti->getMesEtu() as $e) {
+                $mesEtu[] = $e->getIdUti();
+            }
 
-if (unserialize($_SESSION['utilisateur'])){
-    if (unserialize($_SESSION['utilisateur']) instanceof Administrateur || unserialize($_SESSION['utilisateur']) instanceof Tuteur){   //on vérifie que ce soit bien un admin ou un tuteur et pas un étudiant
+            if (in_array($idEtu, $mesEtu)) {
+                $etu = $etuDAO->find($idEtu);
+            } else {
+                header("Location:ControllerAccueil_Admin.php");
+            }
+        }
+
+        if ($uti instanceof Administrateur) {
+            $mesEtu = [];
+            foreach ($etuDAO->getAll() as $et) {
+                $mesEtu[] = $et->getIdUti();
+            }
+
+            if (in_array($idEtu, $mesEtu)) {
+                $etu = $etuDAO->find($idEtu);
+            } else {
+                header("Location:ControllerAccueil_Admin.php");
+            }
+        }
         $etu = $etuDAO->find($_GET["idEtu"]);
         $id = $etu->getIdUti();
         $nom = $etu->getNomUti();

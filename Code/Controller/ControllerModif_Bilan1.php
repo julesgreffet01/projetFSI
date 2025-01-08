@@ -29,6 +29,8 @@ if($uti instanceof Administrateur || $uti instanceof Tuteur){
 
         $idBil = intval($_GET['id']);
         $bil1DAO = new Bilan1DAO($bdd);
+
+    //probleme de l url
         if ($uti instanceof Tuteur){
             $mesEtus = [];
             foreach($uti->getMesEtu() as $etu){

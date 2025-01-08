@@ -1,6 +1,8 @@
 <?php
 
+use BO\Administrateur;
 use BO\Bilan1;
+use BO\Tuteur;
 use DAO\Bilan1DAO;
 use DAO\EtudiantDAO;
 
@@ -23,11 +25,38 @@ $bdd = initialiseConnexionBDD();
 $uti = unserialize($_SESSION['utilisateur']);
 $Message = "";
 
-if($uti){
+if($uti instanceof Administrateur || $uti instanceof Tuteur){
     $idEtu = intval($_GET['idEtu']);
     $bil1DAO = new Bilan1DAO($bdd);
     $etuDAO = new EtudiantDAO($bdd);
-    $etu = $etuDAO->find($idEtu);
+
+
+    //probleme de l url
+    if ($uti instanceof Tuteur) {
+        $mesEtu = [];
+        foreach ($uti->getMesEtu() as $e) {
+            $mesEtu[] = $e->getIdUti();
+        }
+
+        if (in_array($idEtu, $mesEtu)) {
+            $etu = $etuDAO->find($idEtu);
+        } else {
+            header("Location:ControllerAccueil_Admin.php");
+        }
+    }
+
+    if ($uti instanceof Administrateur) {
+        $mesEtu = [];
+        foreach ($etuDAO->getAll() as $et) {
+            $mesEtu[] = $et->getIdUti();
+        }
+
+        if (in_array($idEtu, $mesEtu)) {
+            $etu = $etuDAO->find($idEtu);
+        } else {
+            header("Location:ControllerAccueil_Admin.php");
+        }
+    }
     if(isset($_POST['btnValid']) && $_POST['libBil'] != '' && $_POST['datVisEnt'] != '' && $_POST['notEnt'] != '' && $_POST['notOra'] != '' && $_POST['notDos'] != ''){
         $remBil = $_POST['remBil'] ?: '';
         $bil = new Bilan1($remBil, $_POST['notEnt'], new DateTime($_POST['datVisEnt']), 0, $_POST['libBil'], floatval($_POST['notDos']), floatval($_POST['notOra']), $etu);

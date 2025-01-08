@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerBilan2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerCrea_Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerCrea_Bilan1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerDetail_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerDetail_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerModif_Bilan2.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,34 +64,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.Page_Parametre_Tuteur.php.executor&quot;: &quot;Debug&quot;,
-    &quot;PHP Script.testDAO.php.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/php/ProjetPHP&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.Page_Parametre_Tuteur.php.executor": "Debug",
+    "PHP Script.testDAO.php.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "jules",
+    "last_opened_file_path": "C:/wamp64/www/php/ProjetPHP",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;,
-      &quot;repository&quot;
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Page_Parametre_Tuteur.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AdministrateurDAO.php/Code/View/Page_Parametre_Tuteur.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -160,14 +168,6 @@
       <workItem from="1736255938256" duration="1270000" />
       <workItem from="1736280495779" duration="1561000" />
       <workItem from="1736330055340" duration="7820000" />
-    </task>
-    <task id="LOCAL-00012" summary="jules update du delete">
-      <option name="closed" value="true" />
-      <created>1732697548400</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1732697548400</updated>
     </task>
     <task id="LOCAL-00013" summary="jules">
       <option name="closed" value="true" />
@@ -553,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734877549405</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="jules">
+      <option name="closed" value="true" />
+      <created>1736363755695</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1736363755695</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,8 +582,8 @@
     <MESSAGE value="jules-BO crea" />
     <MESSAGE value="jules changement arbo" />
     <MESSAGE value="jules update du delete" />
-    <MESSAGE value="jules" />
     <MESSAGE value="Revert &quot;jules&quot;&#10;&#10;This reverts commit e16a11f9" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;jules&quot;&#10;&#10;This reverts commit e16a11f9" />
+    <MESSAGE value="jules" />
+    <option name="LAST_COMMIT_MESSAGE" value="jules" />
   </component>
 </project>
