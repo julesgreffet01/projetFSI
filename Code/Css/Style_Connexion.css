@@ -1,63 +1,64 @@
-@media screen and (min-width: 1080px){
+@media screen and (min-width: 1080px) {
     body {
         background: #F5FBF5;
         font-family: Roboto, sans-serif;
 
     }
 
-    .logo{
+    .logo {
         height: 120px;
         padding: 20px;
     }
 
-    .vert{
+    .vert {
         flex: 1 1 auto;
         background: #46A758;
-        display:inline-block;
+        display: inline-block;
         color: #FBFEFB;
         width: 50%;
         height: 100%;
     }
 
-    .title{
+    .title {
         font-size: 25px;
         text-align: center
     }
 
-    .info{
+    .info {
         font-size: 20px;
         text-align: center;
     }
 
-    .blanc{
+    .blanc {
         flex: 1 1 auto;
-        display:inline-block;
+        display: inline-block;
         background: #DCDFDA;
         width: 50%;
         text-align: center;
         height: 100%;
     }
-    .contenu{
+
+    .contenu {
         display: flex;
         width: 1500px;
         height: 750px;
         overflow: hidden;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 
-    .blanc .libelle{
+    .blanc .libelle {
         background: #94CE9A;
         border-radius: 7px;
         width: 400px;
-        height: 25px ;
+        height: 25px;
         margin-bottom: 56px;
         border: none;
     }
 
-    .centre{
+    .centre {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -70,13 +71,13 @@
         font-size: 12px;
     }
 
-    .titleconnect{
+    .titleconnect {
         color: #203C25;
         font-size: 20px;
         margin-top: 120px;
     }
 
-    .messageerr{
+    .messageerr {
         margin-top: 10px;
         text-align: center;
         margin-right: 25px;

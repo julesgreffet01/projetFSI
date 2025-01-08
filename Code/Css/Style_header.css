@@ -55,9 +55,7 @@
 }
 
 
-
-
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1300px) {
     nav ul li {
         list-style-type: none;
         padding: 30px 10px;
