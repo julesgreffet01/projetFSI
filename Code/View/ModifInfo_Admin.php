@@ -1,4 +1,4 @@
-<div class="contenusolotoutseul">
+<div id="modifInfo">
     <div class="mesinfo">
         <div class="block">
             <h1>Mes informations</h1>
