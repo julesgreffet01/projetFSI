@@ -2,7 +2,7 @@
     <div class="mesinfo">
         <div class="blockinfor">
             <h1>Mes informations</h1>
-            <form method="post" action="ControllerModifInfo_Etu.php?idEtu=<?php echo $_GET['idEtu'] ?>">
+            <form method="post" action="ControllerModifInfo_Etu.php">
             <p>
                 <label class="intitu">Nom</label>
                 <label class="info"><?php echo $utilisateur->getNomUti() ?></label>
@@ -39,12 +39,6 @@
                 <label class="info">Pas assigné(e)</label>
                 <?php endif; ?>
             </p>
-            <div class="gauche">
-            <div class="boutons">
-                <input type="submit" class="btnvert" value="Valider" name="btnValide">
-                <input type="submit" class="btnrouge" value="Annuler" name="btnCancel">
-            </div>
-            </div>
         </div>
 
     </div>
@@ -109,5 +103,9 @@
         </div>
 
     </div>
+</div>
+<div class="boutons">
+    <input type="submit" class="btnvert" value="Valider" name="btnValide">
+    <input type="submit" class="btnrouge" value="Annuler" name="btnCancel">
 </div>
 </form>

@@ -141,6 +141,12 @@ class TuteurDAO extends DAO
                     $row['CpUti'], $row['VilUti']
                 );
             }
+            $etuDAO = new EtudiantDAO($this->bdd);
+            $mesEtus = $etuDAO->getAllEtuByTut($result);
+            if ($mesEtus == null) {
+                $mesEtus = [];
+            }
+            $result->setMesEtu($mesEtus);
         }
 
         return $result; // Retourne null si la connexion échoue

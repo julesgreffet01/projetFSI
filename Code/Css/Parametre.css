@@ -1,94 +1,121 @@
-label{
-        font-size: 20px;
-        width: 300px;
-    }
+label {
+    font-size: 20px;
+    width: 300px;
+}
+
 p {
-        display: flex;
-        align-items: center;
-    }
-.typetext{
+    display: flex;
+    align-items: center;
+}
+
+
+.typetext {
     background: #C9E8CA;
     border: none;
     border-radius: 5px;
     font-size: 20px;
     padding: 0px 12px;
 }
-select{
+
+select {
     background: #C9E8CA;
     border: none;
     border-radius: 5px;
     font-size: 20px;
     width: 240px;
 }
-.centre{
+
+
+.centre {
     text-align: left;
     margin-left: 360px;
     margin-top: -460px;
+
 }
-.selection{
+
+.selection {
     text-align: right;
     margin-right: 20px;
 }
-.messageerr{
+
+.messageerr {
     margin-top: 10px;
     text-align: right;
     margin-right: 25px;
     color: #A62609;
 }
-.messagevalide{
+
+.messagevalide {
     margin-top: 10px;
     text-align: right;
     margin-right: 25px;
     color: green;
 }
-.centre .info{
+
+.centre .info {
     font-size: 20px;
+
 }
-.selection{
+
+.selection {
     margin-top: -345px;
 }
-.info p{
+
+.info p {
     font-size: 30px;
 }
-.selectclass{
+
+.selectclass {
     margin-top: 280px;
 }
-.selectmaitre{
+
+.selectmaitre {
     margin-top: 120px;
 }
-.selectetudiant{
+
+.selectetudiant {
     margin-top: -527px;
 }
-.selectespe{
+
+.selectespe {
     margin-top: 320px;
 }
-.selectentreprise{
+
+.selectentreprise {
     margin-top: 120px;
 }
-.selectuteur{
+
+.selectuteur {
     margin-top: -485px;
 }
+
 #hidden {
-    display : none;
+    display: none;
 }
 
 @media (max-width: 1300px) {
-    .selectclass{
+    .selectclass {
         margin-top: 240px;
     }
-    .selectmaitre{
+
+    .selectmaitre {
         margin-top: 80px;
     }
-    .selectetudiant{
+
+    .selectetudiant {
         margin-top: -567px;
     }
-    .selectespe{
+
+    .selectespe {
         margin-top: 280px;
     }
-    .selectentreprise{
+
+    .selectentreprise {
         margin-top: 80px;
     }
-    .selectuteur{
+
+    .selectuteur {
         margin-top: -525px;
     }
+
 }

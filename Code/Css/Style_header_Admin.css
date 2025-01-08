@@ -1,70 +1,76 @@
-@media screen and (min-width: 1080px){
-    body{
+@media screen and (min-width: 1080px) {
+    body {
         background-color: #F5FBF5;
         font-family: Roboto, sans-serif;
         color: #203C25;
     }
 
-    ul li{
+    ul li {
         list-style: none;
         padding: 10px;
     }
-    a{
+
+    a {
         text-decoration: none;
         color: #203C25;
     }
+
     nav {
         margin-left: 10px;
         margin-top: 40px;
         font-size: 25px;
     }
-    img{
+
+    img {
         height: 30px;
     }
 
-    .parametre_title{
+    .parametre_title {
         font-size: 22px;
         margin-top: 10px;
         margin-left: 300px;
     }
 
-    .maison{
+    .maison {
         margin-top: 20px;
         margin-left: 20px;
     }
 }
 
-@media screen and (min-width: 1920px){
-    body{
+@media screen and (min-width: 1920px) {
+    body {
         background-color: #F5FBF5;
         font-family: Roboto, sans-serif;
         color: #203C25;
     }
 
-    ul li{
+    ul li {
         list-style: none;
         padding: 10px;
     }
-    a{
+
+    a {
         text-decoration: none;
         color: #203C25;
     }
+
     nav {
         margin-left: 10px;
         margin-top: 40px;
         font-size: 25px;
     }
-    img{
+
+    img {
         height: 30px;
     }
 
-    .parametre_title{
+    .parametre_title {
         font-size: 22px;
         margin-top: 10px;
         margin-left: 300px;
     }
 
-    .maison{
+    .maison {
         margin-top: 20px;
         margin-left: 20px;
     }

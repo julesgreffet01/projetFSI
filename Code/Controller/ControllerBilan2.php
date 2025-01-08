@@ -2,6 +2,9 @@
 
 use DAO\Bilan2DAO;
 use DAO\EtudiantDAO;
+use BO\Tuteur;
+use BO\Administrateur;
+use BO\Etudiant;
 
 session_start();
 
@@ -31,7 +34,35 @@ $verif = false;
 if ($uti){
     $id = intval($_GET["idEtu"]);
     $etuDAO = new EtudiantDAO($bdd);
-    $etu = $etuDAO->find($id);
+    if ($uti instanceof Etudiant) {
+        $etu = $etuDAO->find($uti->getIdUti());
+    }
+
+    if ($uti instanceof Tuteur) {
+        $mesEtu = [];
+        foreach ($uti->getMesEtu() as $e) {
+            $mesEtu[] = $e->getIdUti();
+        }
+
+        if (in_array($id, $mesEtu)) {
+            $etu = $etuDAO->find($id);
+        } else {
+            header("Location:ControllerAccueil_Admin.php");
+        }
+    }
+
+    if ($uti instanceof Administrateur) {
+        $mesEtu = [];
+        foreach ($etuDAO->getAll() as $et) {
+            $mesEtu[] = $et->getIdUti();
+        }
+
+        if (in_array($id, $mesEtu)) {
+            $etu = $etuDAO->find($id);
+        } else {
+            header("Location:ControllerAccueil_Admin.php");
+        }
+    }
     $bil2 = $etu->getMesBilan2();
     $compteur = 0;
     if (isset($_POST['btnDelete'])){

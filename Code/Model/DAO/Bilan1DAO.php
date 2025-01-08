@@ -116,7 +116,7 @@ class Bilan1DAO extends DAO
             foreach ($stmt as $row) {
                 $monEtu = $etudiantDAO->find($row['IdUti']);
                 $date = $row['DatBil1'] != null ? new DateTime($row['DatBil1']) : null;
-                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $date, $row['IdUti'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
+                $result[] = new Bilan1($row['RemBilUn'], $row['NotEnt'], $date, $row['IdBilUn'], $row['LibBilUn'], $row['NotBilUn'], $row['NotOra1'], $monEtu);
             }
         } else {
             $result = [null];

@@ -27,6 +27,30 @@ $bdd = initialiseConnexionBDD();
 if($uti instanceof Administrateur || $uti instanceof Tuteur){
     $idBil = intval($_GET['id']);
     $bil2DAO = new Bilan2DAO($bdd);
+    if ($uti instanceof Tuteur){
+        $mesBil = [];
+        foreach($uti->getMesEtu() as $etu){
+            foreach($etu->getMesBilan2() as $bil2){
+                $mesBil[] = $bil2->getIdBil();
+            }
+        }
+        if(!in_array($idBil, $mesBil)){
+            header('Location: ControllerAccueil_Admin.php');
+        }
+    }
+
+    if ($uti instanceof Administrateur){
+        $mesBil = [];
+
+        foreach ($bil2DAO->getAll() as $bil){
+            $mesBil[] = $bil->getIdBil();
+        }
+
+        if(!in_array($idBil, $mesBil)){
+            header('Location: ControllerAccueil_Admin.php');
+        }
+    }
+
     $bil2 = $bil2DAO->find($idBil);
 
     if(isset($_POST['btnValid']) && $_POST['libBil'] != '' && $_POST['datBil'] != '' && $_POST['notOra'] != '' && $_POST['notDos'] != '' && $_POST['sujBil'] != ''){

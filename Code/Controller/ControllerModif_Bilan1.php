@@ -2,6 +2,7 @@
 
 use BO\Administrateur;
 use BO\Bilan;
+use BO\Etudiant;
 use BO\Tuteur;
 use DAO\Bilan1DAO;
 
@@ -28,6 +29,29 @@ if($uti instanceof Administrateur || $uti instanceof Tuteur){
 
         $idBil = intval($_GET['id']);
         $bil1DAO = new Bilan1DAO($bdd);
+        if ($uti instanceof Tuteur){
+            $mesEtus = [];
+            foreach($uti->getMesEtu() as $etu){
+                foreach($etu->getMesBilan1() as $bil1){
+                    $mesEtus[] = $bil1->getIdBil();
+                }
+            }
+            if(!in_array($idBil, $mesEtus)){
+                header('Location: ControllerAccueil_Admin.php');
+            }
+        }
+
+        if ($uti instanceof Administrateur){
+            $mesBil = [];
+
+            foreach ($bil1DAO->getAll() as $bil){
+                $mesBil[] = $bil->getIdBil();
+            }
+
+            if(!in_array($idBil, $mesBil)){
+                header('Location: ControllerAccueil_Admin.php');
+            }
+        }
         $bil1 = $bil1DAO->find($idBil);
         if(isset($_POST['btnValid']) && $_POST['libBil'] != '' && $_POST['datVisEnt'] != '' && $_POST['notEnt'] != '' && $_POST['notOra'] != '' && $_POST['notDos'] != ''){
             $lib = $_POST['libBil'];
