@@ -42,34 +42,33 @@ if ($uti) {
         if ($uti instanceof Administrateur) {
             $adminDAO = new AdministrateurDAO($bdd);
             $mdpHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            var_dump($mdpHash);
-//            if ($uti->getLogUti() != $_POST['identifiant']) {
-//                if ($adminDAO->verifLog($_POST['identifiant'])){
-//                    $message = "Log deja utiliser";
-//                    $verif = false;
-//                } else {
-//                    $uti->setLogUti($_POST['identifiant']);
-//                    $uti->setMdpUti($mdpHash);
-//
-//                    if ($adminDAO->update($uti)) {
-//                        $message = "Identifiant et mot de passe modifier";
-//                        $verif = true;
-//                    } else {
-//                        $message = "erreur update";
-//                        $verif = false;
-//                    }
-//                }
-//            } else {
-//                $uti->setMdpUti($mdpHash);
-//
-//                if ($adminDAO->update($uti)) {
-//                    $message = "Identifiant et mot de passe modifier";
-//                    $verif = true;
-//                } else {
-//                    $message = "erreur update";
-//                    $verif = false;
-//                }
-//            }
+            if ($uti->getLogUti() != $_POST['identifiant']) {
+                if ($adminDAO->verifLog($_POST['identifiant'])){
+                    $message = "Log deja utiliser";
+                    $verif = false;
+                } else {
+                    $uti->setLogUti($_POST['identifiant']);
+                    $uti->setMdpUti($mdpHash);
+
+                    if ($adminDAO->update($uti)) {
+                        $message = "Identifiant et mot de passe modifier";
+                        $verif = true;
+                    } else {
+                        $message = "erreur update";
+                        $verif = false;
+                    }
+                }
+            } else {
+                $uti->setMdpUti($mdpHash);
+
+                if ($adminDAO->update($uti)) {
+                    $message = "Identifiant et mot de passe modifier";
+                    $verif = true;
+                } else {
+                    $message = "erreur update";
+                    $verif = false;
+                }
+            }
 
         } else if ($uti instanceof Etudiant) {
             $etuDAO = new EtudiantDAO($bdd);
