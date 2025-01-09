@@ -35,6 +35,8 @@ if ($uti) {
     $id = intval($_GET["idEtu"]);
     $etuDAO = new EtudiantDAO($bdd);
 
+
+    //probleme de l url
     if ($uti instanceof Etudiant) {
         $etu = $etuDAO->find($uti->getIdUti());
     }

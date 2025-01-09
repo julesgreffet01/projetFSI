@@ -5,7 +5,9 @@ namespace DAO;
 
 use BO\Tuteur;
 use PDO;
-require_once __DIR__."/DAO.php";
+
+require_once __DIR__ . "/DAO.php";
+
 class TuteurDAO extends DAO
 {
 
@@ -74,7 +76,7 @@ class TuteurDAO extends DAO
         $result = false;
         if ($obj instanceof Tuteur) {
             $etuDAO = new EtudiantDAO($this->bdd);
-            if($etuDAO->getAllEtuByTut($obj) == []) {
+            if ($etuDAO->getAllEtuByTut($obj) == []) {
                 $foundObj = $this->find($obj->getIdUti());
                 if ($foundObj) {
                     if ($obj->getIdUti() == $foundObj->getIdUti()) {
@@ -103,7 +105,7 @@ class TuteurDAO extends DAO
         ]);
         if ($r) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
-            if($row){
+            if ($row) {
                 $result = new Tuteur($row['NbMaxEtu3'], $row['NbMaxEtu4'], $row['NbMaxEtu5'], $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
             }
         }
@@ -125,7 +127,8 @@ class TuteurDAO extends DAO
         return $result;
     }
 
-    public function auth(string $login, string $mdp): ?object {
+    public function auth(string $login, string $mdp): ?object
+    {
         $result = null;
 
         $query = "SELECT * FROM Utilisateur WHERE LogUti = :login AND IdTypUti = 2";
@@ -140,40 +143,42 @@ class TuteurDAO extends DAO
                     $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'],
                     $row['CpUti'], $row['VilUti']
                 );
+                $etuDAO = new EtudiantDAO($this->bdd);
+                $mesEtus = $etuDAO->getAllEtuByTut($result);
+                if ($mesEtus == null) {
+                    $mesEtus = [];
+                }
+                $result->setMesEtu($mesEtus);
             }
-            $etuDAO = new EtudiantDAO($this->bdd);
-            $mesEtus = $etuDAO->getAllEtuByTut($result);
-            if ($mesEtus == null) {
-                $mesEtus = [];
-            }
-            $result->setMesEtu($mesEtus);
         }
 
         return $result; // Retourne null si la connexion échoue
     }
 
 
-    public function verifLog(string $log) : bool {
+    public function verifLog(string $log): bool
+    {
         $result = false;
         $query = "select * from Utilisateur where LogUti = :logUti";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             "logUti" => $log
         ]);
-        if ($stmt->rowCount() > 0){
+        if ($stmt->rowCount() > 0) {
             $result = true;
         }
         return $result;
     }
 
-    public function verifNbMaxEtu3(Tuteur $tuteur): bool {
+    public function verifNbMaxEtu3(Tuteur $tuteur): bool
+    {
         $result = false;
         $etuDAO = new EtudiantDAO($this->bdd);
         $claDAO = new ClasseDAO($this->bdd);
         $cla = $claDAO->find(1);
         $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
-        if ($tuteur->getNbMax3()){
-            if ($nbEtu && $nbEtu>=$tuteur->getNbMax3()) {
+        if ($tuteur->getNbMax3()) {
+            if ($nbEtu && $nbEtu >= $tuteur->getNbMax3()) {
                 $result = true;
             }
         } else {
@@ -182,14 +187,15 @@ class TuteurDAO extends DAO
         return $result;
     }
 
-    public function verifNbMaxEtu4(Tuteur $tuteur): bool {
+    public function verifNbMaxEtu4(Tuteur $tuteur): bool
+    {
         $result = false;
         $etuDAO = new EtudiantDAO($this->bdd);
         $claDAO = new ClasseDAO($this->bdd);
         $cla = $claDAO->find(2);
         $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
-        if ($tuteur->getNbMax4()){
-            if ($nbEtu && $nbEtu>=$tuteur->getNbMax4()) {
+        if ($tuteur->getNbMax4()) {
+            if ($nbEtu && $nbEtu >= $tuteur->getNbMax4()) {
                 $result = true;
             }
         } else {
@@ -198,14 +204,15 @@ class TuteurDAO extends DAO
         return $result;
     }
 
-    public function verifNbMaxEtu5(Tuteur $tuteur): bool {
+    public function verifNbMaxEtu5(Tuteur $tuteur): bool
+    {
         $result = false;
         $etuDAO = new EtudiantDAO($this->bdd);
         $claDAO = new ClasseDAO($this->bdd);
         $cla = $claDAO->find(3);
         $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
-        if ($tuteur->getNbMax5()){
-            if ($nbEtu && $nbEtu>=$tuteur->getNbMax5()) {
+        if ($tuteur->getNbMax5()) {
+            if ($nbEtu && $nbEtu >= $tuteur->getNbMax5()) {
                 $result = true;
             }
         } else {
@@ -214,31 +221,33 @@ class TuteurDAO extends DAO
         return $result;
     }
 
-    public function getAllTutGood() :array {
+    public function getAllTutGood(): array
+    {
         $result = [];
         $mesTuts = $this->getAll();
         foreach ($mesTuts as $tut) {
-            if (!$this->verifNbMaxEtu3($tut) || !$this->verifNbMaxEtu4($tut) || !$this->verifNbMaxEtu5($tut)){
+            if (!$this->verifNbMaxEtu3($tut) || !$this->verifNbMaxEtu4($tut) || !$this->verifNbMaxEtu5($tut)) {
                 $result[] = $tut;
             }
         }
         return $result;
     }
 
-    public function getTutByCla(int $idCla) :array {
+    public function getTutByCla(int $idCla): array
+    {
         $result = [];
         $tuts = $this->getAllTutGood();
         foreach ($tuts as $tut) {
-            if($idCla == 1){
-                if (!$this->verifNbMaxEtu3($tut)){
+            if ($idCla == 1) {
+                if (!$this->verifNbMaxEtu3($tut)) {
                     $result[] = $tut;
                 }
-            } else if($idCla == 2){
-                if (!$this->verifNbMaxEtu4($tut)){
+            } else if ($idCla == 2) {
+                if (!$this->verifNbMaxEtu4($tut)) {
                     $result[] = $tut;
                 }
-            } else if($idCla == 3){
-                if (!$this->verifNbMaxEtu5($tut)){
+            } else if ($idCla == 3) {
+                if (!$this->verifNbMaxEtu5($tut)) {
                     $result[] = $tut;
                 }
             }

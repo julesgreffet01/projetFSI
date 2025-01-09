@@ -4,7 +4,8 @@ namespace DAO;
 
 use BO\Administrateur;
 use PDO;
-require_once __DIR__."/DAO.php";
+
+require_once __DIR__ . "/DAO.php";
 
 class AdministrateurDAO extends DAO
 {
@@ -26,7 +27,7 @@ class AdministrateurDAO extends DAO
                 "cp" => $obj->getCpUti(),
                 "ville" => $obj->getVilUti()
             ]);
-            if ($r){
+            if ($r) {
                 $result = true;
             }
         }
@@ -54,7 +55,7 @@ class AdministrateurDAO extends DAO
                         "ville" => $obj->getVilUti(),
                         "id" => $obj->getIdUti()
                     ]);
-                    if ($r){
+                    if ($r) {
                         $result = true;
                     }
                 }
@@ -75,7 +76,7 @@ class AdministrateurDAO extends DAO
                     $r = $stmt->execute([
                         "id" => $obj->getIdUti()
                     ]);
-                    if($r){
+                    if ($r) {
                         $result = true;
                     }
                 }
@@ -116,7 +117,8 @@ class AdministrateurDAO extends DAO
         return $result;
     }
 
-    public function auth(string $log, string $mdp): ?object {
+    public function auth(string $log, string $mdp): ?object
+    {
         $result = null;
         $query = "SELECT * FROM Utilisateur WHERE LogUti = :log AND IdTypUti = 3"; // On ne vérifie pas encore le mot de passe ici
         $stmt = $this->bdd->prepare($query);
@@ -136,15 +138,15 @@ class AdministrateurDAO extends DAO
         return $result; // Retourne null si la connexion échoue
     }
 
-
-    public function verifLog(string $log) : bool {
+    public function verifLog(string $log): bool
+    {
         $result = false;
         $query = "select * from Utilisateur where LogUti = :logUti";
         $stmt = $this->bdd->prepare($query);
         $stmt->execute([
             "logUti" => $log
         ]);
-        if ($stmt->rowCount() > 0){
+        if ($stmt->rowCount() > 0) {
             $result = true;
         }
         return $result;

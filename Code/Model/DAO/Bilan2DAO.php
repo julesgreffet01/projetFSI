@@ -7,7 +7,7 @@ use BO\Etudiant;
 use DateTime;
 use PDO;
 
-require_once __DIR__."/DAO.php";
+require_once __DIR__ . "/DAO.php";
 
 class Bilan2DAO extends DAO
 {
@@ -20,14 +20,14 @@ class Bilan2DAO extends DAO
             $stmt = $this->bdd->prepare($query);
             $dat = $obj->getDatBil2() ? $obj->getDatBil2()->format('Y-m-d H:i:s') : null;
             $r = $stmt->execute([
-                'lib'=> $obj->getLibBil(),
-                'not'=> $obj->getNotBil(),
-                'ora'=>$obj->getNotOra(),
-                'suj'=> $obj->getSujBil(),
-                'idUti'=>$obj->getMonEtu()->getIdUti(),
-                'datBil'=>$dat
+                'lib' => $obj->getLibBil(),
+                'not' => $obj->getNotBil(),
+                'ora' => $obj->getNotOra(),
+                'suj' => $obj->getSujBil(),
+                'idUti' => $obj->getMonEtu()->getIdUti(),
+                'datBil' => $dat
             ]);
-            if ($r){
+            if ($r) {
                 $result = true;
             }
         }
@@ -45,15 +45,15 @@ class Bilan2DAO extends DAO
                     $stmt = $this->bdd->prepare($query);
                     $dat = $obj->getDatBil2() ? $obj->getDatBil2()->format('Y-m-d H:i:s') : null;
                     $r = $stmt->execute([
-                        'lib'=> $obj->getLibBil(),
-                        'not'=> $obj->getNotBil(),
-                        'ora'=>$obj->getNotOra(),
-                        'suj'=> $obj->getSujBil(),
-                        'idUti'=>$obj->getMonEtu()->getIdUti(),
-                        'dat'=>$dat,
-                        'id'=>$obj->getIdBil()
+                        'lib' => $obj->getLibBil(),
+                        'not' => $obj->getNotBil(),
+                        'ora' => $obj->getNotOra(),
+                        'suj' => $obj->getSujBil(),
+                        'idUti' => $obj->getMonEtu()->getIdUti(),
+                        'dat' => $dat,
+                        'id' => $obj->getIdBil()
                     ]);
-                    if ($r){
+                    if ($r) {
                         $result = true;
                     }
                 }
@@ -72,9 +72,9 @@ class Bilan2DAO extends DAO
                     $query = "delete from Bilan2 where IdBilDeux = :id";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
-                        'id'=>$obj->getIdBil()
+                        'id' => $obj->getIdBil()
                     ]);
-                    if ($r){
+                    if ($r) {
                         $result = true;
                     }
                 }
@@ -89,11 +89,11 @@ class Bilan2DAO extends DAO
         $query = "select * from Bilan2 where IdBilDeux = :id";
         $stmt = $this->bdd->prepare($query);
         $r = $stmt->execute([
-            'id'=>$id
+            'id' => $id
         ]);
-        if ($r){
+        if ($r) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
-            if ($row){
+            if ($row) {
                 $etudiantDAO = new EtudiantDAO($this->bdd);
                 $monEtu = $etudiantDAO->find($row['IdUti']);
                 $date = $row['DatBil2'] != null ? new DateTime($row['DatBil2']) : null;
@@ -121,7 +121,7 @@ class Bilan2DAO extends DAO
         return $result;
     }
 
-    public function getAllBil2ByEtu(Etudiant $etudiant): ?array {
+    public function getAllBil2ByEtu(Etudiant $etudiant): ?array{
         $result = [];
         $query = "select * from Bilan2 where IdUti = :idUti";
         $stmt = $this->bdd->prepare($query);

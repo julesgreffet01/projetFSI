@@ -6,7 +6,7 @@
     <?php if($bil->getLibBil() == null): ?>
         <label class="info"></label>
     <?php else : ?>
-        <label class="info"><?php echo $bil->getLibBil() ?></label>
+        <label class="titreinfo"><?php echo $bil->getLibBil() ?></label>
     <?php endif; ?>
 
 
