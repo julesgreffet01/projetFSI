@@ -178,7 +178,7 @@ class TuteurDAO extends DAO
         $cla = $claDAO->find(1);
         $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
         if ($tuteur->getNbMax3()) {
-            if ($nbEtu && $nbEtu > $tuteur->getNbMax3()) {
+            if ($nbEtu >= $tuteur->getNbMax3()) {
                 $result = true;
             }
         } else {
@@ -195,7 +195,7 @@ class TuteurDAO extends DAO
         $cla = $claDAO->find(2);
         $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
         if ($tuteur->getNbMax4()) {
-            if ($nbEtu && $nbEtu > $tuteur->getNbMax4()) {
+            if ($nbEtu >= $tuteur->getNbMax4()) {
                 $result = true;
             }
         } else {
@@ -212,7 +212,7 @@ class TuteurDAO extends DAO
         $cla = $claDAO->find(3);
         $nbEtu = count($etuDAO->getAllEtuByTutAndCla($tuteur, $cla));
         if ($tuteur->getNbMax5()) {
-            if ($nbEtu && $nbEtu > $tuteur->getNbMax5()) {
+            if ($nbEtu >= $tuteur->getNbMax5()) {
                 $result = true;
             }
         } else {
