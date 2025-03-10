@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/API/jules.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/API/jules.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,15 +166,8 @@
       <workItem from="1736536569743" duration="16000" />
       <workItem from="1741612310682" duration="1177000" />
       <workItem from="1741631933567" duration="138000" />
-      <workItem from="1741635108510" duration="1668000" />
-    </task>
-    <task id="LOCAL-00010" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732616437355</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1732616437355</updated>
+      <workItem from="1741635108510" duration="2458000" />
+      <workItem from="1741642144426" duration="33000" />
     </task>
     <task id="LOCAL-00011" summary="jules">
       <option name="closed" value="true" />
@@ -561,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741632070542</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="jules">
+      <option name="closed" value="true" />
+      <created>1741637993507</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1741637993507</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

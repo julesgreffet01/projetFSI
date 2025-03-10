@@ -51,12 +51,12 @@ $data = [
     'remarqueBil1' => $bil1?->getRemBil() ?? "pas de remarque",
     'noteEntBil1' => $bil1?->getNotEnt() ?? "-",
     'noteOralBil1' => $bil1?->getNotOra() ?? "-",
-    'dateBil1' => $bil1?->getDatVisEnt() ?? "pas encore réalisé",
+    'dateBil1' => $bil1?->getDatVisEnt() instanceof DateTime ? $bil1->getDatVisEnt()->format('d-m-Y') : "pas encore réalisé",
     'libBil2' => $bil2?->getLibBil() ?? "",
     'noteBil2' => $bil2?->getNotBil() ?? "-",
     'noteOralBil2' => $bil2?->getNotOra() ?? "-",
     'sujMemoire' => $bil2?->getSujBil() ?? "pas de sujet",
-    'dateBil2' => $bil2?->getDatBil2() ?? "pas encore réalisé"
+    'dateBil2' => $bil2?->getDatBil2() instanceof DateTime ? $bil2->getDatBil2()->format('d-m-Y') : "pas encore réalisé"
 ];
 
 
