@@ -36,6 +36,7 @@ $data = [
     'id' => $etu->getIdUti() ?? "",
     'nomUti' => $etu->getNomUti() ?? "",
     'prenomUti' => $etu->getPreUti() ?? "",
+    'telUti' => $etu->getTelUti() ?? "",
     'adresseUti' => $etu->getAdrUti() ?? "",
     'mailUti' => $etu->getMailUti() ?? "",
     'nomMA' => $etu->getMonMaitreAp()?->getNomMai() ?? "pas de maitre d'apprentissage",
