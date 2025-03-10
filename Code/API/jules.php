@@ -49,12 +49,12 @@ $data = [
     'libBil1' => $bil1?->getLibBil() ?? "",
     'notBil1' => $bil1?->getNotBil() ?? "-",
     'remarqueBil1' => $bil1?->getRemBil() ?? "pas de remarque",
-    'noteEntBil1' => $bil1?->getNotEnt() ?? 0,
-    'noteOralBil1' => $bil1?->getNotOra() ?? 0,
+    'noteEntBil1' => $bil1?->getNotEnt() ?? 100,
+    'noteOralBil1' => $bil1?->getNotOra() ?? 100,
     'dateBil1' => $bil1?->getDatVisEnt() instanceof DateTime ? $bil1->getDatVisEnt()->format('d-m-Y') : "pas encore réalisé",
     'libBil2' => $bil2?->getLibBil() ?? "",
-    'noteBil2' => $bil2?->getNotBil() ?? 0,
-    'noteOralBil2' => $bil2?->getNotOra() ?? 0,
+    'noteBil2' => $bil2?->getNotBil() ?? 100,
+    'noteOralBil2' => $bil2?->getNotOra() ?? 100,
     'sujMemoire' => $bil2?->getSujBil() ?? "pas de sujet",
     'dateBil2' => $bil2?->getDatBil2() instanceof DateTime ? $bil2->getDatBil2()->format('d-m-Y') : "pas encore réalisé"
 ];
