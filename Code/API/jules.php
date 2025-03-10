@@ -14,7 +14,7 @@ function decryptAES($encryptedText, $secretKey, $iv) {
 $secretKey = "0123456789abcdef0123456789abcdef";
 $iv = "abcdef9876543210";
 
-function sendJsonResponse($status, $data = null) {
+    function sendJsonResponse($status, $data = null) {
     header('Content-Type: application/json');
 
     $response = [
@@ -35,8 +35,21 @@ if($_POST['mdp'] && $_POST['login']){
     $login = $_POST['login'];
     if ($decryptedPassword) {
         $etuDAO = new EtudiantDAO($bdd);
-        if($etuDAO->auth($login, $decryptedPassword)){
-
+        $etu = $etuDAO->auth($login, $decryptedPassword);
+        if($etu != null){
+            $data['id'] = $etu->getId();
+            $data['nomUti'] = $etu->getNomUti();
+            $data['prenomUti'] = $etu->getPrenomUti();
+            $data['adresseUti'] = $etu->getAdresseUti();
+            $data['mailUti'] = $etu->getMailUti();
+            $data['nomMA'] = $etu->getMonMaitreAp() ? $etu->getMonMaitreAp()->getNomMai() : "pas de maitre d'apprentissage";
+            $data['prenomMA'] = $etu->getMonMaitreAp() ? $etu->getMonMaitreAp()->getPreMai() : "pas de maitre d'apprentissage";
+            $data['telMA'] = $etu->getMonMaitreAp() ? $etu->getMonMaitreAp()->getTelMai() : "pas de maitre d'apprentissage";
+            $data['mailMA'] = $etu->getMonMaitreAp() ? $etu->getMonMaitreAp()->getMailMai() : "pas de maitre d'apprentissage";
+            $data['nomEnt'] = $etu->getMonEnt() ? $etu->getMonEnt()->getNomEnt() : "pas d'entreprise";
+            $data['adresseEnt'] = $etu->getMonEnt() ? $etu->getMonEnt()->getAdrEnt() : "pas d'entreprise";
+            $data['telEnt'] = $etu->getMonEnt() ? $etu->getMonEnt()->getTelEnt() : "pas d'entreprise";
+            //todo mettre le rest des donnees
         } else {
             sendJsonResponse("error", "Login ou mot de passe incorrect");
             exit;
@@ -44,5 +57,7 @@ if($_POST['mdp'] && $_POST['login']){
     } else {
 
     }
+} else {
+    sendJsonResponse("error", "il manque des infos");
 }
 
