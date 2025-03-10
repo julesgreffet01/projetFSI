@@ -53,7 +53,6 @@ if(isset($_GET['idCla'])){
     $cla = $claDAO->find($idCla);
     $tuts = $tutDAO->getTutByCla($idCla);
     $etus = $etuDAO->getAllEtuNoTutByCla($cla);
-
     try {
         header("Content-type: application/json");
 

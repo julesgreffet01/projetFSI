@@ -72,13 +72,14 @@ if ($uti) {
 
         } else if ($uti instanceof Etudiant) {
             $etuDAO = new EtudiantDAO($bdd);
+            $mdpHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($etuDAO->verifLog($_POST['identifiant'])){
                     $message = "Log deja utiliser";
                     $verif = false;
                 } else {
                     $uti->setLogUti($_POST['identifiant']);
-                    $uti->setMdpUti($_POST['password']);
+                    $uti->setMdpUti($mdpHash);
 
                     if ($etuDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
@@ -86,7 +87,7 @@ if ($uti) {
                     }
                 }
             } else {
-                $uti->setMdpUti($_POST['password']);
+                $uti->setMdpUti($mdpHash);
 
                 if ($etuDAO->update($uti)) {
                     $message = "Identifiant et mot de passe modifier";
@@ -96,20 +97,21 @@ if ($uti) {
 
         } else if ($uti instanceof Tuteur) {
             $tutDAO = new TuteurDAO($bdd);
+            $mdpHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
             if ($uti->getLogUti() != $_POST['identifiant']) {
                 if ($tutDAO->verifLog($_POST['identifiant'])){
                     $message = "Log deja utiliser";
                     $verif = false;
                 } else {
                     $uti->setLogUti($_POST['identifiant']);
-                    $uti->setMdpUti($_POST['password']);
+                    $uti->setMdpUti($mdpHash);
                     if ($tutDAO->update($uti)) {
                         $message = "Identifiant et mot de passe modifier";
                         $verif = true;
                     }
                 }
             } else {
-                $uti->setMdpUti($_POST['password']);
+                $uti->setMdpUti($mdpHash);
                 if ($tutDAO->update($uti)) {
                     $message = "Identifiant et mot de passe modifier";
                     $verif = true;
