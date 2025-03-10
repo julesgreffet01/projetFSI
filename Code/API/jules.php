@@ -9,14 +9,6 @@ require_once __DIR__."/../Model/BDDManager.php";
 
 $bdd = initialiseConnexionBDD();
 
-function decryptAES($encryptedText, $secretKey, $iv) {
-    $cipher = "AES-256-CBC";
-    $encryptedText = base64_decode($encryptedText);
-    return openssl_decrypt($encryptedText, $cipher, $secretKey, OPENSSL_RAW_DATA, $iv);
-}
-
-$secretKey = "0123456789abcdef0123456789abcdef";
-$iv = "abcdef9876543210";
 
 function sendJsonResponse($status, $data = null) {
     header('Content-Type: application/json');
@@ -28,13 +20,9 @@ if (!isset($_POST['mdp']) || !isset($_POST['login'])) {
     sendJsonResponse("error", "Il manque des informations");
 }
 
-$decryptedPassword = decryptAES($_POST['mdp'], $secretKey, $iv);
-if (!$decryptedPassword) {
-    sendJsonResponse("error", "Erreur lors du déchiffrement du mot de passe");
-}
 
 $etuDAO = new EtudiantDAO($bdd);
-$etu = $etuDAO->auth($_POST['login'], $decryptedPassword);
+$etu = $etuDAO->auth($_POST['login'], $_POST['mdp']);
 
 if (!$etu) {
     sendJsonResponse("error", "Login ou mot de passe incorrect");
