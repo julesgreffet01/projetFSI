@@ -57,18 +57,18 @@ function verif_send($login, $mdp) {
         foreach ($etudiant->getMesBilan1() as $bilan) {
             $bilan1Array[] = [
                 'libBil1'      => $bilan?->getLibBil() ?? "vide",
-                'notBil1'      => $bilan?->getNotBil() ?? -1,
+                'notBil1'      => $bilan?->getNotBil() ?? 1000,
                 'remarqueBil1' => $bilan?->getRemBil() ?? "vide",
-                'noteEntBil1'  => $bilan?->getNotEnt() ?? -1,
-                'noteOralBil1' => $bilan?->getNotOra() ?? -1,
+                'noteEntBil1'  => $bilan?->getNotEnt() ?? 1000,
+                'noteOralBil1' => $bilan?->getNotOra() ?? 1000,
                 'dateBil1'     => $bilan?->getDatVisEnt()->format("d/m/Y") ?? "vide",
             ];   
         }
         foreach ($etudiant->getMesBilan2() as $bilan) {
               $bilan2Array[] = [
                 'libBil2'      => $bilan?->getLibBil() ?? "vide",
-                'noteBil2'     => $bilan?->getNotBil() ?? -1,
-                'noteOralBil2' => $bilan?->getNotOra() ?? -1,
+                'noteBil2'     => $bilan?->getNotBil() ?? 1000,
+                'noteOralBil2' => $bilan?->getNotOra() ?? 1000,
                 'sujMemoire'   => $bilan?->getSujBil() ?? "vide",
                 'dateBil2'     => $bilan?->getDatBil2()->format("d/m/Y") ?? "vide",
             ];    

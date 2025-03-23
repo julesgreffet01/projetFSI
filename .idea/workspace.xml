@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/API/Maxime.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/API/Maxime.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/API/Maxime.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +171,7 @@
       <workItem from="1742229350610" duration="3198000" />
       <workItem from="1742239682553" duration="140000" />
       <workItem from="1742240615480" duration="58000" />
-      <workItem from="1742745542117" duration="782000" />
+      <workItem from="1742745542117" duration="2322000" />
     </task>
     <task id="LOCAL-00005" summary="jules">
       <option name="closed" value="true" />
