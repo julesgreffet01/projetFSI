@@ -117,6 +117,7 @@ class AdministrateurDAO extends DAO
         return $result;
     }
 
+
     public function auth(string $log, string $mdp): ?object
     {
         $result = null;

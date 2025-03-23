@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
+      <change afterPath="$PROJECT_DIR$/Code/API/Maxime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/AdministrateurDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EtudiantDAO.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="jules" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,14 +47,14 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/julesgreffet01/projetFSI.git&quot;,
-    &quot;accountId&quot;: &quot;dac9bae2-1424-4f9c-8b16-57ee56d7800a&quot;
+    &quot;accountId&quot;: &quot;7ed9ba66-6154-44b3-887f-4e5da0919b32&quot;
   },
   &quot;editorReviewEnabled&quot;: false
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Code/Controller/ControllerParametre_Etudiant.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\wamp64\bin\php\php7.4.33\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\PC_Local\Logiciel\PHP\php.exe" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -67,8 +72,8 @@
     &quot;PHP Script.testDAO.php.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/php/ProjetPHP&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Maxime&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/projetFSI&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -89,6 +94,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projetFSI\Code\API" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Page_Parametre_Tuteur.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AdministrateurDAO.php/Code/View/Page_Parametre_Tuteur.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -158,6 +168,12 @@
       <workItem from="1733938168877" duration="4841000" />
       <workItem from="1736277420469" duration="5834000" />
       <workItem from="1736374810287" duration="308000" />
+      <workItem from="1741806886455" duration="218000" />
+      <workItem from="1741814579678" duration="432000" />
+      <workItem from="1742229350610" duration="3198000" />
+      <workItem from="1742239682553" duration="140000" />
+      <workItem from="1742240615480" duration="58000" />
+      <workItem from="1742745542117" duration="782000" />
     </task>
     <task id="LOCAL-00005" summary="jules">
       <option name="closed" value="true" />

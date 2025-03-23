@@ -419,7 +419,7 @@ class EtudiantDAO extends DAO
             }
         }
 
-        return $result; // Retourne l'objet Etudiant ou null si la connexion échoue
+        return $result;
     }
 
     public function getAllEtuByTut(Tuteur $tut) : ?array {
