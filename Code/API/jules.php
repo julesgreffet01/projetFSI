@@ -71,7 +71,6 @@ if(isset($_GET['modif'])){
         sendJsonResponse("error", "Il manque des informations");
     }
 
-
     $etu = $etuDAO->auth($_POST['login'], $_POST['mdp']);
 
     if (!$etu) {
@@ -79,8 +78,6 @@ if(isset($_GET['modif'])){
     }
     $bil1 = current(array_filter($etu->getMesBilan1(), fn($row) => $row instanceof Bilan1)) ?: null;
     $bil2 = current(array_filter($etu->getMesBilan2(), fn($row) => $row instanceof Bilan2)) ?: null;
-
-
 
     $data = [
         'id' => $etu->getIdUti() ?? "",
@@ -111,9 +108,5 @@ if(isset($_GET['modif'])){
         'sujMemoire' => $bil2?->getSujBil() ?? "pas de sujet",
         'dateBil2' => $bil2?->getDatBil2() instanceof DateTime ? $bil2->getDatBil2()->format('d-m-Y') : "pas encore réalisé"
     ];
-
     sendJsonResponse("success", $data);
 }
-
-
-
