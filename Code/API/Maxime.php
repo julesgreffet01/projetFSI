@@ -111,7 +111,4 @@ function verif_send($login, $mdp) {
     }
 
 }
-
-
-
 ?>
