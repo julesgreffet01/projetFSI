@@ -13,7 +13,7 @@ class EntrepriseDAO extends DAO
     {
         $result = false;
         if ($obj instanceof Entreprise) {
-                $query = "INSERT INTO Entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MaiEnt ) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt)";
+                $query = "INSERT INTO Entreprise(NomEnt, AdrEnt, CpEnt, VilEnt, TelEnt, MaiEnt, SiretEnt) values (:nomEnt, :adrEnt, :cpEnt, :vilEnt, :telEnt, :mailEnt, :SiretEnt)";
                 $stmt = $this->bdd->prepare($query);
                 $r = $stmt->execute([
                     'nomEnt' => $obj->getNomEnt(),
@@ -21,7 +21,8 @@ class EntrepriseDAO extends DAO
                     'cpEnt' => $obj->getCpEnt(),
                     'vilEnt' => $obj->getVilEnt(),
                     'telEnt' => $obj->getTelEnt(),
-                    'mailEnt' => $obj->getMailEnt()
+                    'mailEnt' => $obj->getMailEnt(),
+                    'SiretEnt' => $obj->getSirenEnt(),
                 ]);
                 if ($r !== false) {
                     $result = true;
@@ -37,7 +38,7 @@ class EntrepriseDAO extends DAO
             $foundObj = $this->find($obj->getIdEnt());
             if ($foundObj !== null) {
                 if ($obj->getIdEnt() == $foundObj->getIdEnt()) {
-                    $query = "UPDATE Entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MaiEnt = :mailEnt WHERE IdEnt = :idEnt ";  //a finir
+                    $query = "UPDATE Entreprise SET NomEnt = :nomEnt, AdrEnt = :adrEnt, CpEnt = :cpEnt, VilEnt = :vilEnt, TelEnt = :telEnt, MaiEnt = :mailEnt , SiretEnt = :SiretEnt WHERE IdEnt = :idEnt";  //a finir
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         'nomEnt' => $obj->getNomEnt(),
@@ -46,7 +47,8 @@ class EntrepriseDAO extends DAO
                         'vilEnt' => $obj->getVilEnt(),
                         'idEnt' => $obj->getIdEnt(),
                         'telEnt' => $obj->getTelEnt(),
-                        'mailEnt' => $obj->getMailEnt()
+                        'mailEnt' => $obj->getMailEnt(),
+                        'SiretEnt' => $obj->getSirenEnt(),
                     ]);
                     if ($r !== false) {
                         $result = true;
@@ -93,7 +95,7 @@ class EntrepriseDAO extends DAO
         if ($r !== false) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if (!is_null($row)) {
-                    $result = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'],$row['VilEnt'],$row['TelEnt'],$row['MaiEnt']);
+                    $result = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'],$row['VilEnt'],$row['TelEnt'],$row['MaiEnt'], $row['SiretEnt']);
             }
         }
         return $result;
@@ -106,7 +108,7 @@ class EntrepriseDAO extends DAO
         if ($stmt){
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row){
-                $result[] = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'], $row['VilEnt'],$row['TelEnt'],$row['MaiEnt']);
+                $result[] = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'], $row['VilEnt'],$row['TelEnt'],$row['MaiEnt'], $row['SiretEnt']);
             }
         } else {
             $result = [null];

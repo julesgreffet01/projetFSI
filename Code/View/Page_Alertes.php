@@ -36,7 +36,7 @@
     <?php endif; ?>
     <?php endforeach; ?>
 
-    <!-- ------------------- alertesd e bilan2 ------------------ -->
+    <!-- ------------------- alertes de bilan2 ------------------ -->
 
     <?php foreach($al2 as $etu): ?>
         <?php if ($dif2Day <= 5): ?>

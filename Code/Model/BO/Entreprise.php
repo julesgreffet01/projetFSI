@@ -12,8 +12,10 @@ class Entreprise
     private string $telEnt;
     private string $mailEnt;
 
+    private string $SirenEnt;
 
-    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt)
+
+    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt, string $SirenEnt)
     {
         $this->idEnt = $idEnt;
         $this->nomEnt = $nomEnt;
@@ -22,8 +24,18 @@ class Entreprise
         $this->vilEnt = $vilEnt;
         $this->telEnt = $telEnt;
         $this->mailEnt = $mailEnt;
+        $this->SirenEnt = $SirenEnt;
     }
 
+    public function getSirenEnt(): string
+    {
+        return $this->SirenEnt;
+    }
+
+    public function setSirenEnt(string $SirenEnt): void
+    {
+        $this->SirenEnt = $SirenEnt;
+    }
 
     public function getIdEnt(): int
     {

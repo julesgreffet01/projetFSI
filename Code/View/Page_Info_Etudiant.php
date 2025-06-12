@@ -54,6 +54,10 @@
                 <label class="info"><?php echo $adrEnt ?></label>
             </p>
             <p>
+                <label class="intitu">Siret de l'entreprise</label>
+                <label class="info"><?php echo $Siren ?></label>
+            </p>
+            <p>
                 <label class="intitu">Nom du maître d'apprentissage</label>
                 <label class="info"><?php echo $nomMai ?></label>
             </p>

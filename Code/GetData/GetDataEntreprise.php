@@ -27,7 +27,8 @@ try {
         'tel' => $ent->getTelEnt(),
         'mail' => $ent->getMailEnt(),
         'cp' => $ent->getCpEnt(),
-        'vil' => $ent->getVilEnt()
+        'vil' => $ent->getVilEnt(),
+        'Siret' => $ent->getSiretEnt(),
     ]);
 } catch (Exception $e) {
     header('Content-Type: application/json');

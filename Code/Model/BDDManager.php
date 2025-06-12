@@ -3,7 +3,7 @@
 function initialiseConnexionBDD(): PDO {
     $bdd = null;
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=projetFSI;charset=utf8',
+        $bdd = new PDO('mysql:host=localhost;dbname=p2025_2sio_projet_tutorat;charset=utf8',
             'root',
             ''
         );

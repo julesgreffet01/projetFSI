@@ -11,6 +11,7 @@ class Etudiant extends Utilisateur
     private ?Classe $maClasse;
     private ?MaitreApprentissage $monMaitreAp;
     private ?Entreprise $monEnt;
+    private ?Entreprise $SirenEnt;
     private array $mesBilan1;
     private array $mesBilan2;
 
@@ -26,6 +27,16 @@ class Etudiant extends Utilisateur
         $this->monEnt = $monEnt;
         $this->mesBilan1 = [null];
         $this->mesBilan2 = [null];
+    }
+
+    public function getSirenEnt(): ?Entreprise
+    {
+        return $this->SirenEnt;
+    }
+
+    public function setSirenEnt(?Entreprise $SirenEnt): void
+    {
+        $this->SirenEnt = $SirenEnt;
     }
 
 

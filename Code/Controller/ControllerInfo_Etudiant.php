@@ -48,6 +48,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
     if ($etu->getMonEnt()){
         $ent = $etu->getMonEnt()->getNomEnt();
         $adrEnt = $etu->getMonEnt()->getAdrEnt();
+        $Siren = $etu->getMonEnt()->getSirenEnt();
         if ($etu->getMonMaitreAp()){
             $nomMai = $etu->getMonMaitreAp()->getNomMai();
             $preMai = $etu->getMonMaitreAp()->getPreMai();
@@ -62,6 +63,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
     } else {
         $ent = "Pas assigné(e)";
         $adrEnt = "";
+        $Siren = "";
         $nomMai = "Pas assigné(e)";
         $preMai = "";
         $telMai = "";

@@ -39,14 +39,15 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $Message = "";
         }
 
-        if ($_POST['nameEnt'] != '' && $_POST['adrEnt'] != '' && $_POST['vilEnt'] != '' && $_POST['telEnt'] != '' && $_POST['mailEnt'] != '' && $_POST['cpEnt'] != '' && empty($_POST['entreprise-select'])) {
+        if ($_POST['nameEnt'] != '' && $_POST['adrEnt'] != '' && $_POST['vilEnt'] != '' && $_POST['telEnt'] != '' && $_POST['mailEnt'] != '' && $_POST['cpEnt'] != '' && $_POST['SiretEnt'] != '' && empty($_POST['entreprise-select'])) {
             $name = $_POST['nameEnt'];
             $adr = $_POST['adrEnt'];
             $ville = $_POST['vilEnt'];
             $tel = $_POST['telEnt'];
             $mail = $_POST['mailEnt'];
             $cp = $_POST['cpEnt'];
-            $ent = new Entreprise(0, $name, $adr, $cp, $ville, $tel, $mail);
+            $Siret = $_POST['SiretEnt'];
+            $ent = new Entreprise(0, $name, $adr, $cp, $ville, $tel, $mail, $Siret);
             if($entDAO->create($ent)){
                 $Message = "l'entreprise à bien été créé";
                 $verif = true;
@@ -60,7 +61,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
 
     //----- update ---
     if (isset($_POST['btnUpdate'])){
-        if (isset($_POST['entreprise-select']) && $_POST['nameEnt'] != '' && $_POST['adrEnt'] != '' && $_POST['vilEnt'] != '' && $_POST['telEnt'] != '' && $_POST['mailEnt'] != '' && $_POST['cpEnt'] != ''){
+        if (isset($_POST['entreprise-select']) && $_POST['nameEnt'] != '' && $_POST['adrEnt'] != '' && $_POST['vilEnt'] != '' && $_POST['telEnt'] != '' && $_POST['mailEnt'] != '' && $_POST['cpEnt'] != '' && $_POST['SiretEnt'] != ''){
            if ($_POST['entreprise-select'] != ""){
                $ent = $entDAO->find($_POST['entreprise-select']);
                $name = $_POST['nameEnt'];
@@ -69,12 +70,14 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
                $tel = $_POST['telEnt'];
                $mail = $_POST['mailEnt'];
                $cp = $_POST['cpEnt'];
+               $Siret = $_POST['SiretEnt'];
                $ent->setNomEnt($name);
                $ent->setAdrEnt($adr);
                $ent->setVilEnt($ville);
                $ent->setTelEnt($tel);
                $ent->setMailEnt($mail);
                $ent->setCpEnt($cp);
+               $SirenEnt = setSirenEnt($Siret);
                if ($entDAO->update($ent)){
                    $Message = "Entreprise mise a jour";
                    $verif = true;
