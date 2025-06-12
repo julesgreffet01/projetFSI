@@ -73,6 +73,10 @@
                 <label class="intitu">directeur</label>
                 <label class="info"><?php echo $directeur ?></label>
             </p>
+            <p>
+                <label class="intitu">date Affectation</label>
+                <label class="info"><?php echo $dateAffec ?></label>
+            </p>
 
         </div>
 

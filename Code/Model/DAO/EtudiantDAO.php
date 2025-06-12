@@ -11,6 +11,7 @@ use BO\Tuteur;
 use BO\Classe;
 use BO\MaitreApprentissage;
 use PDO;
+use DateTime;
 
 require_once __DIR__ ."/DAO.php";
 require_once __DIR__ ."/EntrepriseDAO.php";
@@ -249,7 +250,7 @@ class EtudiantDAO extends DAO
                 if ($row['IdTut']){
                     $tut = $tutDAO->find($row["IdTut"]);
                 }
-                $result = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti']);
+                $result = new Etudiant($row['AltUti'],$tut, $spec, $cla, $ma, $ent, $row['IdUti'], $row['LogUti'], $row['MdpUti'], $row['MaiUti'], $row['TelUti'], $row['NomUti'], $row['PreUti'], $row['AdrUti'], $row['CpUti'], $row['VilUti'], new DateTime($row['dateAffec']));
 
                 $bil1 = $bil1DAO->getAllBil1ByEtu($result);
                 if ($bil1 == null){

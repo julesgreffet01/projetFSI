@@ -1,6 +1,8 @@
 <?php
 
 namespace BO;
+use DateTime;
+
 require_once __DIR__.'/Utilisateur.php';
 
 class Etudiant extends Utilisateur
@@ -13,9 +15,10 @@ class Etudiant extends Utilisateur
     private ?Entreprise $monEnt;
     private array $mesBilan1;
     private array $mesBilan2;
+    private ?DateTime $dateAffec;
 
 
-    public function __construct(bool $altEtu, ?Tuteur $monTuteur, ?Specialite $maSpec, ?Classe $maClasse, ?MaitreApprentissage $monMaitreAp, ?Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti)
+    public function __construct(bool $altEtu, ?Tuteur $monTuteur, ?Specialite $maSpec, ?Classe $maClasse, ?MaitreApprentissage $monMaitreAp, ?Entreprise $monEnt, int $idUti, string $logUti, string $mdpUti, string $mailUti, string $telUti, string $nomUti, string $preUti, string $adrUti, string $cpUti, string $vilUti, ?DateTime $dateAffec = null)
     {
         parent::__construct($idUti, $logUti, $mdpUti, $mailUti, $telUti, $nomUti, $preUti, $adrUti, $cpUti, $vilUti);
         $this->altEtu = $altEtu;
@@ -26,6 +29,16 @@ class Etudiant extends Utilisateur
         $this->monEnt = $monEnt;
         $this->mesBilan1 = [null];
         $this->mesBilan2 = [null];
+    }
+
+    public function getDateAffec(): ?DateTime
+    {
+        return $this->dateAffec;
+    }
+
+    public function setDateAffec(?DateTime $dateAffec): void
+    {
+        $this->dateAffec = $dateAffec;
     }
 
 

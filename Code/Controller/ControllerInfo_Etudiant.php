@@ -50,6 +50,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
     if ($etu->getMonEnt()){
         $ent = $etu->getMonEnt()->getNomEnt();
         $adrEnt = $etu->getMonEnt()->getAdrEnt();
+        $directeur = $etu->getMonEnt()->getDirecteur()->getNom();
+        $dateAffec = $etu->getDateAffec();
         if ($etu->getMonMaitreAp()){
             $nomMai = $etu->getMonMaitreAp()->getNomMai();
             $preMai = $etu->getMonMaitreAp()->getPreMai();
@@ -68,6 +70,8 @@ if (unserialize($_SESSION['utilisateur']) instanceof Etudiant) { //vérifie que 
         $preMai = "";
         $telMai = "";
         $mailMai = "";
+        $directeur = "";
+        $dateAffec = "";
     }
     include_once ('../View/Nav_Bar.php'); //lien vers les composants de la page
     include_once ('../View/Page_Info_Etudiant.php');

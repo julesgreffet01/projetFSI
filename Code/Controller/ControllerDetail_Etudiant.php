@@ -65,6 +65,7 @@ if ($uti){
             $ent = $etu->getMonEnt()->getNomEnt();
             $adrEnt = $etu->getMonEnt()->getAdrEnt();
             $directeur = $etu->getMonEnt()->getDirecteur()->getNom();
+            $dateAffec = $etu->getDateAffec();
             if ($etu->getMonMaitreAp()){
                 $nomMai = $etu->getMonMaitreAp()->getNomMai();
                 $preMai = $etu->getMonMaitreAp()->getPreMai();
@@ -84,6 +85,7 @@ if ($uti){
             $telMai = "";
             $mailMai = "";
             $directeur = "";
+            $dateAffec = "";
         }
 
         if ($etu->getMaClasse()){
