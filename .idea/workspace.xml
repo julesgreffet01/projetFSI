@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/DirecteurDAO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Test/testEpreuve.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
+    <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="directeur">
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerMesBilans.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Mes_Bilan.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Mes_Bilan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,23 +181,7 @@
       <workItem from="1742285856515" duration="52000" />
       <workItem from="1742819726904" duration="5588000" />
       <workItem from="1748289869267" duration="1597000" />
-      <workItem from="1749714007494" duration="1447000" />
-    </task>
-    <task id="LOCAL-00016" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732739970832</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1732739970832</updated>
-    </task>
-    <task id="LOCAL-00017" summary="jules">
-      <option name="closed" value="true" />
-      <created>1732740291443</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1732740291443</updated>
+      <workItem from="1749714007494" duration="1892000" />
     </task>
     <task id="LOCAL-00018" summary="jules">
       <option name="closed" value="true" />
@@ -579,7 +559,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741876939157</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="directeur">
+      <option name="closed" value="true" />
+      <created>1749715738334</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1749715738334</updated>
+    </task>
+    <task id="LOCAL-00066" summary="directeur">
+      <option name="closed" value="true" />
+      <created>1749715763259</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1749715763259</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,6 +597,7 @@
     <MESSAGE value="jules changement arbo" />
     <MESSAGE value="jules update du delete" />
     <MESSAGE value="jules" />
-    <option name="LAST_COMMIT_MESSAGE" value="jules" />
+    <MESSAGE value="directeur" />
+    <option name="LAST_COMMIT_MESSAGE" value="directeur" />
   </component>
 </project>

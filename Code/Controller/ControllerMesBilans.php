@@ -24,16 +24,19 @@ if ($uti instanceof Etudiant) {
     $bil2 = $uti->getMesBilan2();
     $lastBil1 = null;
     $lastBil2 = null;
+    $moyenne1 = 0;
+    $moyenne2 = 0;
     foreach($bil1 as $bil){
         if($bil->getDatVisEnt()){
             $lastBil1 = $bil->getDatVisEnt()->format("d/m/Y");
-            $moyenne = $bil->getNot;
+            $moyenne1 = ($bil->getNotEnt()*1 + $bil->getNotOra()*2 + $bil->getNotBil()*2)/5;
         }
     }
 
     foreach($bil2 as $bil){
         if($bil->getDatBil2()){
             $lastBil2 = $bil->getDatBil2()->format("d/m/Y");
+            $moyenne2 = ($bil->getNotOra()*2 + $bil->getNotBil()*2)/4;
         }
     }
 } else {
