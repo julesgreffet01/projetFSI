@@ -58,6 +58,10 @@
                 <label class="intitu">Mail</label>
                 <label class="info"><?php echo $mailMai ?></label>
             </p>
+            <p>
+                <label class="intitu">directeur</label>
+                <label class="info"><?php echo $directeur ?></label>
+            </p>
 
         </div>
 
