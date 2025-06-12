@@ -30,6 +30,14 @@
                 <li><a href="ControllerAccueil.php">FSI</a></li>
             <?php } ?>
         </div>
+        <?php
+            $utilisateur = unserialize($_SESSION['utilisateur']);
+            $nomUti = method_exists($utilisateur, 'getNomUti') ? $utilisateur->getNomUti() : '';
+            $preUti = method_exists($utilisateur, 'getPreUti') ? $utilisateur->getPreUti() : '';
+        ?>
+        <div class="utilisateur-connecte">
+            Connecté en tant que : <strong><?= ($preUti . ' ' . $nomUti) ?></strong>
+        </div>
         <ul class="liens">
             <?php if (unserialize($_SESSION['utilisateur']) instanceof \BO\Tuteur){ ?>
                 <li><a href="ControllerListe_Etudiant.php">Liste étudiant</a></li>

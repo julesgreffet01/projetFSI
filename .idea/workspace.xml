@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/GetData/GetDataEntreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/GetData/GetDataEntreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BDDManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BDDManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Alertes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Alertes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Css/Style_header.css" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Css/Style_header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Nav_Bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Nav_Bar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +186,7 @@
       <workItem from="1749540741923" duration="5689000" />
       <workItem from="1749578396342" duration="717000" />
       <workItem from="1749631103589" duration="5697000" />
-      <workItem from="1749717652327" duration="6348000" />
+      <workItem from="1749717652327" duration="7787000" />
     </task>
     <task id="LOCAL-00016" summary="jules">
       <option name="closed" value="true" />
