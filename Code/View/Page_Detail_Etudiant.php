@@ -31,6 +31,37 @@
             <label class="info"><?php echo $spec ?></label>
         </p>
     </div>
+    <div class="infoentreprise">
+        <div class="blockinfor">
+            <h1>Informations de l'entreprise</h1>
+            <p>
+                <label class="intitu">Nom de l'entreprise</label>
+                <label class="info"><?php echo $ent ?></label>
+            </p>
+            <p>
+                <label class="intitu">Adresse</label>
+                <label class="info"><?php echo $adrEnt ?></label>
+            </p>
+            <p>
+                <label class="intitu">Nom du maître d'apprentissage</label>
+                <label class="info"><?php echo $nomMai ?></label>
+            </p>
+            <p>
+                <label class="intitu">Prénom du maître d'apprentissage</label>
+                <label class="info"><?php echo $preMai ?></label>
+            </p>
+            <p>
+                <label class="intitu">Téléphone</label>
+                <label class="info"><?php echo $telMai ?></label>
+            </p>
+            <p>
+                <label class="intitu">Mail</label>
+                <label class="info"><?php echo $mailMai ?></label>
+            </p>
+
+        </div>
+
+    </div>
     <p>
     <a href="ControllerBilan1.php?idEtu=<?php echo $etu->getIdUti() ?>" class="btnbilan">Bilan 1</a>
     <a href="ControllerCrea_Bilan1?idEtu=<?php echo $etu->getIdUti() ?>" class="infobtnbilan">Ajouter un Bilan 1 de rattrapage</a>

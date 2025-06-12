@@ -13,6 +13,7 @@ require_once  __DIR__ ."/../Model/BO/Entreprise.php";
 require_once  __DIR__ ."/../Model/BO/Bilan1.php";
 require_once  __DIR__ ."/../Model/BO/Bilan2.php";
 require_once  __DIR__ ."/../Model/BO/Classe.php";
+require_once  __DIR__ ."/../Model/BO/Directeur.php";
 
 $titrefichier = "Mes Bilan";
 $stylecss = "Blockinfo.css";

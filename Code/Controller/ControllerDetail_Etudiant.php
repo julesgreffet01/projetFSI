@@ -61,6 +61,28 @@ if ($uti){
         $tel = $etu->getTelUti();
         $adr = $etu->getAdrUti();
         $mail = $etu->getMailUti();
+        if ($etu->getMonEnt()){
+            $ent = $etu->getMonEnt()->getNomEnt();
+            $adrEnt = $etu->getMonEnt()->getAdrEnt();
+            if ($etu->getMonMaitreAp()){
+                $nomMai = $etu->getMonMaitreAp()->getNomMai();
+                $preMai = $etu->getMonMaitreAp()->getPreMai();
+                $telMai = $etu->getMonMaitreAp()->getTelMai();
+                $mailMai = $etu->getMonMaitreAp()->getMailMai();
+            } else {
+                $nomMai = "Pas assigné(e)";
+                $preMai = "";
+                $telMai = "";
+                $mailMai = "";
+            }
+        } else {
+            $ent = "Pas assigné(e)";
+            $adrEnt = "";
+            $nomMai = "Pas assigné(e)";
+            $preMai = "";
+            $telMai = "";
+            $mailMai = "";
+        }
 
         if ($etu->getMaClasse()){
             $cla = $etu->getMaClasse()->getLibCla();

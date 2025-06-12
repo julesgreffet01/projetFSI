@@ -5,6 +5,7 @@ namespace DAO;
 use BO\Entreprise;
 use PDO;
 require_once __DIR__."/DAO.php";
+require_once __DIR__.'/DirecteurDAO.php';
 
 class EntrepriseDAO extends DAO
 {

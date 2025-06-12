@@ -4,6 +4,9 @@ namespace DAO;
 
 use BO\Directeur;
 use DAO\DAO;
+use PDO;
+require_once __DIR__."/DAO.php";
+require_once __DIR__.'/../BO/Directeur.php';
 
 class DirecteurDAO extends DAO
 {
@@ -36,7 +39,7 @@ class DirecteurDAO extends DAO
         if($r !== false){
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;       //permet de dire que si il prens pas de valeur le mettre null
             if (!is_null($row)) {
-                $result = new Directeur($row['Id'], $row['nom'], $row['prenom']);
+                $result = new Directeur($row['id'], $row['nom'], $row['prenom']);
             }
         }
         return $result;
