@@ -7,13 +7,25 @@ class Classe
     private int $idCla;
     private string $libCla;
     private int $nbMaxEtu;
+    private ?Professeur $prof;
 
 
-    public function __construct(int $idCla, string $libCla, int $nbMaxEtu)
+    public function __construct(int $idCla, string $libCla, int $nbMaxEtu, Professeur $prof)
     {
         $this->idCla = $idCla;
         $this->libCla = $libCla;
         $this->nbMaxEtu = $nbMaxEtu;
+        $this->prof = $prof;
+    }
+
+    public function getProf(): ?Professeur
+    {
+        return $this->prof;
+    }
+
+    public function setProf(?Professeur $prof): void
+    {
+        $this->prof = $prof;
     }
 
 

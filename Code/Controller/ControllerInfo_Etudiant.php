@@ -6,7 +6,7 @@ use DAO\EtudiantDAO;
 
 session_start(); // démarrage de la session de l'utilisateur
 
-
+require_once __DIR__."/../Model/BO/Professeur.php";
 require_once __DIR__."/../Model/BO/Administrateur.php";
 require_once __DIR__."/../Model/BO/Etudiant.php";
 require_once __DIR__."/../Model/BO/Tuteur.php";
@@ -17,6 +17,7 @@ require_once  __DIR__ ."/../Model/BO/Bilan1.php";
 require_once  __DIR__ ."/../Model/BO/Bilan2.php";
 require_once  __DIR__ ."/../Model/BO/Classe.php";
 
+require_once __DIR__."/../Model/DAO/ProfesseurDAO.php";
 require_once __DIR__ ."/../Model/DAO/EtudiantDAO.php";
 require_once __DIR__ ."/../Model/BDDManager.php";
 

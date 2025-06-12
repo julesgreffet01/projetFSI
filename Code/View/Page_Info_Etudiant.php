@@ -27,6 +27,10 @@
                 <label class="info"><?php echo $cla ?></label>
             </p>
             <p>
+                <label class="intitu">Prof Ref</label>
+                <label class="info"><?php echo $etu->getMaClasse()->getProf()->getNomprof() .' '. $etu->getMaClasse()->getProf()->getPreprof() ?></label>
+            </p>
+            <p>
                 <label class="intitu">Spécialisation</label>
                 <label class="info"><?php echo $spec ?></label>
             </p>

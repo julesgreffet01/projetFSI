@@ -12,6 +12,7 @@ use DAO\AlerteDAO;
 use DAO\Bilan1DAO;
 use DAO\ClasseDAO;
 use DAO\EntrepriseDAO;
+use DAO\ProfesseurDAO;
 use DAO\SpecialiteDAO;
 use DAO\MaitreApprentissageDAO;
 use DAO\TuteurDAO;
@@ -32,9 +33,10 @@ require_once "../Model/DAO/Bilan2DAO.php";
 require_once "../Model/DAO/ClasseDAO.php";
 require_once "../Model/DAO/EtudiantDAO.php";
 require_once "../Model/DAO/AlerteDAO.php";
+require_once "../Model/DAO/ProfesseurDAO.php";
 
 
-
+require_once "../Model/BO/Professeur.php";
 require_once "../Model/BO/Specialite.php";
 require_once "../Model/BO/MaitreApprentissage.php";
 require_once "../Model/BO/Entreprise.php";
@@ -88,7 +90,7 @@ $maitreDAO = new MaitreApprentissageDAO($bdd);
 //---------------- classe -----------
 $claDAO = new ClasseDAO($bdd);
 //$classe1 = new Classe(4, "testClaModif", 25);
-//var_dump($claDAO->find(3));
+var_dump($claDAO->find(3));
 
 
 //---------------------- bilan 1-----------------------
@@ -102,3 +104,11 @@ $aleDAO = new AlerteDAO($bdd);
 //$tut = $tuteurDAO->find(2);
 //var_dump($aleDAO->getAllAl1ByTut($tut));
 //var_dump($aleDAO->getAllAl2ByTut($tut));
+
+
+//------------- prof -------------
+$profDAO = new ProfesseurDAO($bdd);
+//$prof = $profDAO->find(2);
+//var_dump($prof);
+//$profs = $profDAO->getAll();
+

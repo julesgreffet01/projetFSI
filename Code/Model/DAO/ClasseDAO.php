@@ -8,6 +8,7 @@ use PDO;
 require_once __DIR__ . "/DAO.php";
 require_once __DIR__ . '/../BO/Classe.php';
 require_once __DIR__ . '/../DAO/EtudiantDAO.php';
+require_once __DIR__ . '/../DAO/ProfesseurDAO.php';
 
 class ClasseDAO extends DAO
 {
@@ -36,12 +37,13 @@ class ClasseDAO extends DAO
             $foundObj = $this->find($obj->getIdCla());
             if ($foundObj !== null) {
                 if ($obj->getIdCla() == $foundObj->getIdCla()) {
-                    $query = "UPDATE Classe SET LibCla = :libCla, NbEtu = :nbEtu WHERE IdCla = :idCl";
+                    $query = "UPDATE Classe SET LibCla = :libCla, NbEtu = :nbEtu ,IdProf = :IdProf WHERE IdCla = :idCl";
                     $stmt = $this->bdd->prepare($query);
                     $r = $stmt->execute([
                         "libCla" => $obj->getLibCla(),
                         "nbEtu" => $obj->getNbMaxEtu(),
-                        "idCl" => $obj->getIdCla()
+                        "idCl" => $obj->getIdCla(),
+                        "IdProf" => $obj->getProf()->getIdProf()
                     ]);
                     if ($r !== false) {
                         $result = true;
@@ -78,6 +80,7 @@ class ClasseDAO extends DAO
 
     public function find(int $id): ?object
     {
+        $profdao = new ProfesseurDAO($this->bdd);
         $result = null;
         $query = "SELECT * FROM Classe WHERE IdCla = :idCl";
         $stmt = $this->bdd->prepare($query);
@@ -87,7 +90,7 @@ class ClasseDAO extends DAO
         if ($r !== false) {
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if (!is_null($row)) {
-                $result = new Classe($row['IdCla'], $row['LibCla'], $row['NbEtu']);
+                $result = new Classe($row['IdCla'], $row['LibCla'], $row['NbEtu'], $profdao->find($row['IdProf']));
             }
         }
         return $result;
@@ -95,12 +98,13 @@ class ClasseDAO extends DAO
 
     public function getAll(): array
     {
+        $profdao = new ProfesseurDAO($this->bdd);
         $query = "SELECT * FROM Classe";
         $stmt = $this->bdd->query($query);
         if ($stmt) {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row) {
-                $result[] = new Classe($row['IdCla'], $row['LibCla'], $row['NbEtu']);
+                $result[] = new Classe($row['IdCla'], $row['LibCla'], $row['NbEtu'], $profdao->find($row['IdProf']));
             }
         } else {
             $result = [null];
