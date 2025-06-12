@@ -46,7 +46,7 @@ if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
             $tel = $_POST['telEnt'];
             $mail = $_POST['mailEnt'];
             $cp = $_POST['cpEnt'];
-            $ent = new Entreprise(0, $name, $adr, $cp, $ville, $tel, $mail);
+            $ent = new Entreprise(0, $name, $adr, $cp, $ville, $tel, $mail, null);
             if($entDAO->create($ent)){
                 $Message = "l'entreprise à bien été créé";
                 $verif = true;

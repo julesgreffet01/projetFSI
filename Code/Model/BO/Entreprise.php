@@ -11,9 +11,10 @@ class Entreprise
     private string $vilEnt;
     private string $telEnt;
     private string $mailEnt;
+    private Directeur $directeur;
 
 
-    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt)
+    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt, Directeur $directeur)
     {
         $this->idEnt = $idEnt;
         $this->nomEnt = $nomEnt;
@@ -22,6 +23,17 @@ class Entreprise
         $this->vilEnt = $vilEnt;
         $this->telEnt = $telEnt;
         $this->mailEnt = $mailEnt;
+        $this->directeur = $directeur;
+    }
+
+    public function getDirecteur(): Directeur
+    {
+        return $this->directeur;
+    }
+
+    public function setDirecteur(Directeur $directeur): void
+    {
+        $this->directeur = $directeur;
     }
 
 

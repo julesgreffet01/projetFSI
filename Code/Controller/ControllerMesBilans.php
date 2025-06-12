@@ -27,6 +27,7 @@ if ($uti instanceof Etudiant) {
     foreach($bil1 as $bil){
         if($bil->getDatVisEnt()){
             $lastBil1 = $bil->getDatVisEnt()->format("d/m/Y");
+            $moyenne = $bil->getNot;
         }
     }
 

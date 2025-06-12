@@ -91,9 +91,11 @@ class EntrepriseDAO extends DAO
             'idEnt' => $id
         ]);
         if ($r !== false) {
+            $directeurDAO = new DirecteurDAO($this->bdd);
             $row = ($tmp = $stmt->fetch(PDO::FETCH_ASSOC)) ? $tmp : null;
             if (!is_null($row)) {
-                    $result = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'],$row['VilEnt'],$row['TelEnt'],$row['MaiEnt']);
+                $directeur = $directeurDAO->find($row['idDirecteur']);
+                    $result = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'],$row['VilEnt'],$row['TelEnt'],$row['MaiEnt'], $directeur);
             }
         }
         return $result;
@@ -104,9 +106,11 @@ class EntrepriseDAO extends DAO
         $query = "SELECT * FROM Entreprise ";
         $stmt = $this->bdd->query($query);
         if ($stmt){
+            $directeurDAO = new DirecteurDAO($this->bdd);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             foreach ($stmt as $row){
-                $result[] = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'], $row['VilEnt'],$row['TelEnt'],$row['MaiEnt']);
+                $directeur = $directeurDAO->find($row['idDirecteur']);
+                $result[] = new Entreprise($row['IdEnt'], $row['NomEnt'], $row['AdrEnt'], $row['CpEnt'], $row['VilEnt'],$row['TelEnt'],$row['MaiEnt'], $directeur);
             }
         } else {
             $result = [null];
