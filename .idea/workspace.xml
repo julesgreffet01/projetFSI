@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69bbf138-77f2-4331-96d8-4b2113e5ab9c" name="Changes" comment="jules">
-      <change afterPath="$PROJECT_DIR$/Code/Model/BO/Professeur.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Model/DAO/ProfesseurDAO.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bdd/epreuveMax.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerInfo_Etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BDDManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BDDManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Classe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/ClasseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/ClasseDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Test/testDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Test/testDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Controller/ControllerParametre_Classe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/BO/Entreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Model/DAO/EntrepriseDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Info_Etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/View/Page_Parametre_Classe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Code/View/Page_Parametre_Classe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bdd/epreuveMax.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bdd/epreuveMax.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +187,7 @@
       <workItem from="1742819726904" duration="5588000" />
       <workItem from="1748289869267" duration="1597000" />
       <workItem from="1749561675835" duration="328000" />
-      <workItem from="1749729183564" duration="5013000" />
+      <workItem from="1749729183564" duration="6594000" />
     </task>
     <task id="LOCAL-00016" summary="jules">
       <option name="closed" value="true" />

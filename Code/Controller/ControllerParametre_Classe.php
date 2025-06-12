@@ -2,15 +2,22 @@
 
 use BO\Administrateur;
 use BO\Classe;
+use BO\Professeur;
+use DAO\ProfesseurDAO;
 use DAO\ClasseDAO;
 use DAO\EtudiantDAO;
+
 
 session_start();
 
 require_once __DIR__."/../Model/BO/Administrateur.php";
 require_once __DIR__."/../Model/BO/Etudiant.php";
 require_once __DIR__."/../Model/BO/Tuteur.php";
+require_once __DIR__."/../Model/DAO/ProfesseurDAO.php";
 
+
+
+require_once __DIR__."/../Model/BO/Professeur.php";
 require_once __DIR__."/../Model/DAO/ClasseDAO.php";
 require_once __DIR__."/../Model/DAO/EtudiantDAO.php";
 require_once __DIR__."/../Model/BDDManager.php";
@@ -23,8 +30,13 @@ $bdd = initialiseConnexionBDD();
 $Message = "";
 $verif = false;
 
+
+
 if (unserialize($_SESSION['utilisateur']) instanceof Administrateur) {
     $claDAO = new ClasseDAO($bdd);
+    $profDAO = new ProfesseurDAO($bdd);
+    $profs = $profDAO->getAll();
+
     $clas = $claDAO->getAll();
 
     if (isset($_POST['btnAdd'])){

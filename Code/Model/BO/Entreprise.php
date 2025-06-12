@@ -11,9 +11,10 @@ class Entreprise
     private string $vilEnt;
     private string $telEnt;
     private string $mailEnt;
+    private ?string $siret;
 
 
-    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt)
+    public function __construct(int $idEnt, string $nomEnt, string $adrEnt, string $cpEnt, string $vilEnt, string $telEnt, string $mailEnt, string $siret)
     {
         $this->idEnt = $idEnt;
         $this->nomEnt = $nomEnt;
@@ -22,6 +23,17 @@ class Entreprise
         $this->vilEnt = $vilEnt;
         $this->telEnt = $telEnt;
         $this->mailEnt = $mailEnt;
+        $this->siret = $siret;
+    }
+
+    public function getSiret(): string
+    {
+        return $this->siret;
+    }
+
+    public function setSiret(string $siret): void
+    {
+        $this->siret = $siret;
     }
 
 

@@ -73,6 +73,10 @@
                 <label class="intitu">Mail</label>
                 <label class="info"><?php echo $mailMai ?></label>
             </p>
+            <p>
+                <label class="intitu">Siret</label>
+                <label class="info"><?php echo $siret ?></label>
+            </p>
 
         </div>
 

@@ -8,6 +8,15 @@
         <label for="nb">Nombre d'étudiant max</label>
         <input type="number" class="typetext" name="nb" value="" placeholder="" id="nb"/>
     </p>
+
+    <p>
+        <label for="idprof">Prof ref de la classe</label>
+        <select name="idprof" id="idprof">
+            <?php foreach ($profs as $prof): ?>
+                <option value="<?php echo $prof->getPreProf(); ?>"><?php echo $prof->getPreProf(); ?></option>
+            <?php endforeach; ?>
+        </select>
+    </p>
 </div>
 <div class="selectclass">
 <div class="selection">
